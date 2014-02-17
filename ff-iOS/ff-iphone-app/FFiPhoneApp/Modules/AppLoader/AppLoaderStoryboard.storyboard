@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9SJ-L6-mB1">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Loader View Controller-->
+        <scene sceneID="DF4-Mv-fNG">
+            <objects>
+                <viewController storyboardIdentifier="APPLLoaderViewController" id="9SJ-L6-mB1" customClass="APPLLoaderViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Fs-1p-d9z">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="apploader_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ezv-SM-6Nw"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="apploader_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="obF-tz-h1p">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="FYo-BK-TyX"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HRa-kV-jpf"/>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HRa-kV-jpf" secondAttribute="bottom" constant="123" id="8xV-gV-JKa"/>
+                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="leading" secondItem="1Fs-1p-d9z" secondAttribute="leading" type="default" id="CdU-Oq-nIm"/>
+                            <constraint firstAttribute="trailing" secondItem="obF-tz-h1p" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Isv-g3-uxN"/>
+                            <constraint firstItem="obF-tz-h1p" firstAttribute="leading" secondItem="1Fs-1p-d9z" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="X7y-3S-Sng"/>
+                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="top" secondItem="1Fs-1p-d9z" secondAttribute="top" type="default" id="bNA-qF-ah3"/>
+                            <constraint firstItem="obF-tz-h1p" firstAttribute="top" secondItem="1Fs-1p-d9z" secondAttribute="top" constant="90" id="m8R-a0-fcc"/>
+                            <constraint firstItem="HRa-kV-jpf" firstAttribute="centerX" secondItem="obF-tz-h1p" secondAttribute="centerX" type="default" id="rOA-W7-rm6"/>
+                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="bottom" secondItem="1Fs-1p-d9z" secondAttribute="bottom" type="default" id="wvw-31-Wbo"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="atQ-jx-Ai2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="159" y="-96"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="apploader_background.png" width="320" height="480"/>
+        <image name="apploader_logo.png" width="150" height="104"/>
+    </resources>
+    <classes>
+        <class className="APPLLoaderViewController" superclassName="AppLoaderBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/APPLLoaderViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityIndicatorImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="AppLoaderBaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppLoaderBaseViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

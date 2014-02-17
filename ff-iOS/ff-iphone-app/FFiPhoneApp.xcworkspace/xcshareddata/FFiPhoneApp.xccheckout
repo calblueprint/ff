@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>67FA54CD-3E5A-44B7-8A76-50C0B19C5BE0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FFiPhoneApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E0F7F77F-3CFC-48F4-9020-0B575BDAC5CD</key>
+		<string>https://bitbucket.org/andrewafinch/ff-iphone-app-new.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FFiPhoneApp.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E0F7F77F-3CFC-48F4-9020-0B575BDAC5CD</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/andrewafinch/ff-iphone-app-new.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E0F7F77F-3CFC-48F4-9020-0B575BDAC5CD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E0F7F77F-3CFC-48F4-9020-0B575BDAC5CD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FF-iPhone-App-New</string>
+		</dict>
+	</array>
+</dict>
+</plist>

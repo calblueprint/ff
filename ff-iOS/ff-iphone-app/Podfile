@@ -1,0 +1,2 @@
+platform :ios, '6.1'
+pod 'AFNetworking', {:git => 'https://github.com/AFNetworking/AFNetworking.git'} 

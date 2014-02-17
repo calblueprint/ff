@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NNm-Dz-iyd">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Share Donation View Controller-->
+        <scene sceneID="4O2-Ch-L6e">
+            <objects>
+                <viewController storyboardIdentifier="SOCSShareDonationViewController" id="NNm-Dz-iyd" customClass="SOCSShareDonationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WdN-Bb-aP5">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44w-i0-MQY">
+                                <items>
+                                    <navigationItem title="Share Donation" id="zj3-bV-mDl">
+                                        <barButtonItem key="leftBarButtonItem" id="Ary-65-d2O">
+                                            <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b8R-4O-ilx">
+                                                <rect key="frame" x="5" y="5" width="71" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" image="navigationbar_top_left_icon.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="vB9-Af-vzr">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KrQ-cZ-3Ld">
+                                                <rect key="frame" x="265" y="-3" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <state key="normal" title="X">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonExit_onTouchUpInside:" destination="NNm-Dz-iyd" eventType="touchUpInside" id="ytv-RS-13Y"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xih-H5-niz">
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="viQ-33-p8p">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="1Mr-NE-mPu"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I just donated 500 lbs of Chicken Sandwitch via Feeding Forward (http://www.feedingforward.org)" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="kem-tu-Dyo">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="270" type="user" id="7L0-eu-DQA"/>
+                                            <constraint firstAttribute="height" constant="50" id="DsZ-Pq-EgC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="“" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAo-yu-z4J">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="31" id="YJn-uW-CxV"/>
+                                            <constraint firstAttribute="height" constant="51" id="vg1-BR-6Li"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="70"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96470588450000005" green="0.96470588450000005" blue="0.96470588450000005" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="248" type="user" id="3k2-4M-MkG"/>
+                                    <constraint firstItem="kem-tu-Dyo" firstAttribute="top" secondItem="xih-H5-niz" secondAttribute="top" constant="25" id="9Eo-H3-Tz1"/>
+                                    <constraint firstItem="sAo-yu-z4J" firstAttribute="top" secondItem="xih-H5-niz" secondAttribute="top" constant="7" id="J4c-xC-mrA"/>
+                                    <constraint firstItem="viQ-33-p8p" firstAttribute="trailing" secondItem="kem-tu-Dyo" secondAttribute="trailing" type="default" id="MYA-fh-NYn"/>
+                                    <constraint firstItem="viQ-33-p8p" firstAttribute="leading" secondItem="kem-tu-Dyo" secondAttribute="leading" type="default" id="ci0-qj-5cE"/>
+                                    <constraint firstItem="kem-tu-Dyo" firstAttribute="centerX" secondItem="xih-H5-niz" secondAttribute="centerX" type="default" id="eIm-g1-DL8"/>
+                                    <constraint firstAttribute="width" constant="300" type="user" id="gLc-nA-Uhj"/>
+                                    <constraint firstItem="sAo-yu-z4J" firstAttribute="leading" secondItem="kem-tu-Dyo" secondAttribute="leading" type="default" id="mPj-gi-exq"/>
+                                    <constraint firstItem="viQ-33-p8p" firstAttribute="top" secondItem="xih-H5-niz" secondAttribute="top" constant="77" id="ydV-vl-rdv"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdl-0i-Xlf" customClass="FFButtonWithStyleGreenH40">
+                                <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" type="user" id="4vr-fR-KJw"/>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="Ajl-bv-4Qw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="15"/>
+                                <state key="normal" title="Share...">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonShare_onTouchUpInside:" destination="NNm-Dz-iyd" eventType="touchUpInside" id="V0d-QP-0uz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zk0-oN-tNo">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="hZC-Mi-uWt"/>
+                                    <constraint firstAttribute="height" constant="33" type="user" id="hh4-5Q-kRQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j65-b4-CXO" customClass="FFButtonWithStyleGreenH40">
+                                <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="hpV-yI-pCk"/>
+                                    <constraint firstAttribute="width" constant="300" type="user" id="iPF-pI-hsQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonCancel_onTouchUpInside:" destination="NNm-Dz-iyd" eventType="touchUpInside" id="tk5-SM-kRU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="44w-i0-MQY" firstAttribute="leading" secondItem="WdN-Bb-aP5" secondAttribute="leading" type="user" id="4Wi-Rw-8Qa"/>
+                            <constraint firstItem="zk0-oN-tNo" firstAttribute="top" secondItem="WdN-Bb-aP5" secondAttribute="top" constant="54" id="6p3-Ve-FSQ"/>
+                            <constraint firstItem="j65-b4-CXO" firstAttribute="top" secondItem="WdN-Bb-aP5" secondAttribute="top" constant="408" type="user" id="8DC-hX-eix"/>
+                            <constraint firstItem="j65-b4-CXO" firstAttribute="leading" secondItem="WdN-Bb-aP5" secondAttribute="leading" constant="10" type="user" id="DrE-Nd-X2e"/>
+                            <constraint firstItem="xih-H5-niz" firstAttribute="top" secondItem="WdN-Bb-aP5" secondAttribute="top" constant="90" type="user" id="J0t-DR-BAC"/>
+                            <constraint firstItem="xih-H5-niz" firstAttribute="leading" secondItem="WdN-Bb-aP5" secondAttribute="leading" constant="10" type="user" id="YTm-hs-H1l"/>
+                            <constraint firstItem="zk0-oN-tNo" firstAttribute="leading" secondItem="WdN-Bb-aP5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Z6Q-JG-dKf"/>
+                            <constraint firstItem="Kdl-0i-Xlf" firstAttribute="leading" secondItem="WdN-Bb-aP5" secondAttribute="leading" constant="10" type="user" id="k8i-eQ-Irm"/>
+                            <constraint firstItem="44w-i0-MQY" firstAttribute="top" secondItem="WdN-Bb-aP5" secondAttribute="top" type="default" id="wgp-47-dBQ"/>
+                            <constraint firstItem="44w-i0-MQY" firstAttribute="trailing" secondItem="WdN-Bb-aP5" secondAttribute="trailing" type="user" id="zeA-jf-7CQ"/>
+                            <constraint firstItem="Kdl-0i-Xlf" firstAttribute="top" secondItem="WdN-Bb-aP5" secondAttribute="top" constant="354" type="user" id="zya-qb-06m"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="imageViewPicture" destination="viQ-33-p8p" id="ybt-Xv-gJJ"/>
+                        <outlet property="labelMessage" destination="kem-tu-Dyo" id="a4x-hl-PQE"/>
+                        <outlet property="viewMessageBackground" destination="xih-H5-niz" id="VTJ-NK-RHo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jem-7A-1yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="-18"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="navigationbar_top_left_icon.png" width="50" height="31"/>
+    </resources>
+    <classes>
+        <class className="FFButtonWithStyleGreenH40" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFButtonWithStyleGreenH40.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SOCSShareDonationViewController" superclassName="SocialShareBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SOCSShareDonationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonCancel_onTouchUpInside:"/>
+                <relationship kind="action" name="buttonExit_onTouchUpInside:"/>
+                <relationship kind="action" name="buttonShare_onTouchUpInside:"/>
+                <relationship kind="outlet" name="imageViewPicture" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelMessage" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="viewMessageBackground" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="SocialShareBaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialShareBaseViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
