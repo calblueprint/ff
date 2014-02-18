@@ -18,7 +18,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class ActivityDonate extends ActionBarActivity
+public class DonateActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
@@ -51,7 +51,7 @@ public class ActivityDonate extends ActionBarActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, DummyFragment.newInstance(position + 1))
+                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
     }
 
@@ -83,7 +83,7 @@ public class ActivityDonate extends ActionBarActivity
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
-            getMenuInflater().inflate(R.menu.activity_donate, menu);
+            getMenuInflater().inflate(R.menu.donate, menu);
             restoreActionBar();
             return true;
         }
@@ -95,17 +95,17 @@ public class ActivityDonate extends ActionBarActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                return true;
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     /**
-     * A dummy fragment containing a simple view.
+     * A placeholder fragment containing a simple view.
      */
-    public static class DummyFragment extends Fragment {
+    public static class PlaceholderFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -116,30 +116,30 @@ public class ActivityDonate extends ActionBarActivity
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static DummyFragment newInstance(int sectionNumber) {
-            DummyFragment fragment = new DummyFragment();
+        public static PlaceholderFragment newInstance(int sectionNumber) {
+            PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
 
-        public DummyFragment() {
+        public PlaceholderFragment() {
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_donate, container, false);
-            TextView dummyTextView = (TextView) rootView.findViewById(R.id.section_label);
-            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
 
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
-            ((ActivityDonate) activity).onSectionAttached(
+            ((DonateActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
