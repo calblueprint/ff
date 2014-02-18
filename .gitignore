@@ -7,3 +7,12 @@ ff-iOS/ff-iphone-app/FFiPhoneApp.xcodeproj/xcuserdata/
 ff-iOS/ff-iphone-app/FFiPhoneApp.xcworkspace/xcshareddata/
 ff-iOS/ff-iphone-app/Pods/Pods.xcodeproj/xcuserdata/
 ff-iOS/ff-iphone-app/FFiPhoneApp.xcworkspace/xcuserdata/
+
+
+ff-android/.idea/gradle.xml
+ff-android/.idea/misc.xml
+ff-android/.idea/modules.xml
+ff-android/.idea/workspace.xml
+ff-android/ff-android.iml
+ff-android/ff-android/ff-android-ff-android.iml
+ff-android/local.properties
