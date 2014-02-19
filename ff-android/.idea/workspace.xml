@@ -12,20 +12,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="459e5f96-b06a-4814-b0f6-928a044d419b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable/blue_button.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable/box_green.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable/box_unset.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable/disabled_button.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable/facebook_button.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable/green_button.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable/red_button.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable/text_field.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable/text_field_bordered.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ff-android/ff-android-ff-android.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ff-android.iml" afterPath="$PROJECT_DIR$/ff-android.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-hdpi/donation_image.PNG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-mdpi/donation_image.PNG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xhdpi/donation_image.PNG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xxhdpi/donation_image.PNG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-hdpi/donation_image_padded.PNG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-mdpi/donation_image_padded.PNG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xhdpi/donation_image_padded.PNG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xxhdpi/donation_image_padded.PNG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-hdpi/vehicle_large.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-mdpi/vehicle_large.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xhdpi/vehicle_large.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xxhdpi/vehicle_large.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-hdpi/vehicle_medium.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-mdpi/vehicle_medium.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xhdpi/vehicle_medium.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xxhdpi/vehicle_medium.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-hdpi/vehicle_none.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-mdpi/vehicle_none.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xhdpi/vehicle_none.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xxhdpi/vehicle_none.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-hdpi/vehicle_small.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-mdpi/vehicle_small.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xhdpi/vehicle_small.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xxhdpi/vehicle_small.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ff-android/src/main/res/values/colors.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ff-android/src/main/res/drawable-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-hdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ff-android/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-mdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/ff-android/src/main/res/drawable-xxhdpi/ic_launcher.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ff-android.iws" />
@@ -135,10 +150,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blue_button.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="blue_button.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ff-android/src/main/res/drawable/blue_button.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="596">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ff-android/src/main/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
               <folding />
             </state>
           </provider>
@@ -1087,6 +1111,156 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xxhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-mdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-hdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ff-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="drawable" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1131,7 +1305,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ff-android/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/ff-android/src/main/res/values" />
+      <recent name="$PROJECT_DIR$/ff-android/src/main/res/drawable-xxhdpi" />
+      <recent name="$PROJECT_DIR$/ff-android/src/main/res/drawable-xhdpi" />
+      <recent name="$PROJECT_DIR$/ff-android/src/main/res/drawable-mdpi" />
+      <recent name="$PROJECT_DIR$/ff-android/src/main/res/drawable-hdpi" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.ff-android-ff-android">
@@ -1324,7 +1502,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32959402" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1531,6 +1709,13 @@
     <entry file="file://$PROJECT_DIR$/ff-android/src/main/res/drawable/blue_button.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ff-android/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="596">
           <folding />
         </state>
       </provider>
