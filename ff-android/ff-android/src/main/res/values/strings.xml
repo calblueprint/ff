@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">My Module</string>
+    <string name="donation_start">Make a donation!</string>
+    <string name="donation_start_title">Title</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
@@ -12,5 +14,6 @@
     <string name="title_activity_title">TitleActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_field">Title</string>
 
 </resources>
