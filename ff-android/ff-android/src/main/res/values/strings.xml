@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">My Module</string>
     <string name="donation_start">Make a donation!</string>
     <string name="donation_start_title">Title</string>
     <string name="app_name">Feeding Forward</string>
