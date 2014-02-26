@@ -3,29 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/grey"
     tools:context="com.blueprint.ffandroid.TitleFragment">
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/title_textview_horizontal"
+        android:paddingTop="@dimen/title_textview_vertical"
+        android:textSize="@dimen/title_text_size"
         android:text="Title"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/donation_title"
+        android:paddingLeft="@dimen/title_textview_horizontal"
         android:hint="Enter a title here" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/title_textview_horizontal"
+        android:paddingTop="@dimen/title_textview_vertical"
+        android:textSize="@dimen/title_text_size"
         android:text="Description"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/donation_description"
+        android:paddingLeft="@dimen/title_textview_horizontal"
         android:hint="Enter a description here"/>
 
 

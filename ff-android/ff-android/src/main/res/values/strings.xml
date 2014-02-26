@@ -16,4 +16,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_field">Title</string>
 
+    <color name="custom_grey">#707070</color>
+
 </resources>
