@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grey"
+    tools:context="com.blueprint.ffandroid.TitleFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/location_margin"
+        android:paddingTop="@dimen/location_margin"
+        android:paddingBottom="@dimen/location_margin"
+        android:textSize="@dimen/location_title_font_size"
+        android:text="Where is this donation?"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/address_line_1"
+        android:paddingLeft="@dimen/location_margin"
+        android:paddingRight="@dimen/location_margin"
+        android:layout_marginBottom="@dimen/location_form_height_separation"
+        android:hint="Address Line 1" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/address_line_2"
+        android:paddingLeft="@dimen/location_margin"
+        android:paddingRight="@dimen/location_margin"
+        android:layout_marginBottom="@dimen/location_form_height_separation"
+        android:hint="Address Line 2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/city"
+        android:paddingLeft="@dimen/location_margin"
+        android:paddingRight="@dimen/location_margin"
+        android:layout_marginBottom="@dimen/location_form_height_separation"
+        android:hint="City" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_alignParentBottom="true">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/state_spinner" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Zipcode"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/location_margin"
+        android:text="Forward!"/>
+
+</LinearLayout>
