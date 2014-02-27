@@ -2,6 +2,7 @@
 <resources>
 
     <string name="donation_start">Make a donation!</string>
+    <string name="account_information">Account Information</string>
     <string name="donation_start_title">Title</string>
     <string name="app_name">Feeding Forward</string>
     <string name="title_section1">Section 1</string>
