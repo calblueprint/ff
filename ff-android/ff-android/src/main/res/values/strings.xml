@@ -17,10 +17,6 @@
     <string name="title_field">Title</string>
 
     <string name="account_information">Account Information</string>
-    <string name="account_name">Temp Name</string>
-    <string name="account_email">Temp Email</string>
-    <string name="account_organization">Temp Organization</string>
-    <string name="account_phone_number">Temp Phone</string>
     <color name="custom_grey">#707070</color>
 
 </resources>

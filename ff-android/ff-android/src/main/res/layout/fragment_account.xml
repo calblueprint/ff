@@ -8,8 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Name"
-        android:id="@+id/textView" />
+        android:text="Name" />
 
     <View
         android:layout_width="fill_parent"
