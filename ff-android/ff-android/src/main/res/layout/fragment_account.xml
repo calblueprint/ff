@@ -21,14 +21,13 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/account_name"
-        android:id="@+id/textView"
+        android:id="@+id/account_name"
         android:layout_gravity="center_horizontal" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Email"
-        android:id="@+id/textView" />
+        android:text="Email" />
 
     <View
         android:layout_width="fill_parent"
@@ -40,14 +39,13 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/account_email"
-        android:id="@+id/textView"
+        android:id="@+id/account_email"
         android:layout_gravity="center_horizontal" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Organization"
-        android:id="@+id/textView" />
+        android:text="Organization" />
 
     <View
         android:layout_width="fill_parent"
@@ -59,14 +57,13 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/account_organization"
-        android:id="@+id/textView"
+        android:id="@+id/account_organization"
         android:layout_gravity="center_horizontal" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Phone Number"
-        android:id="@+id/textView" />
+        android:text="Phone Number" />
 
     <View
         android:layout_width="fill_parent"
@@ -78,6 +75,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/account_phone_number"
-        android:id="@+id/textView"
+        android:id="@+id/account_number"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

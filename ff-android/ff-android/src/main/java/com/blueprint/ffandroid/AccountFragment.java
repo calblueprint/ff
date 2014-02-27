@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -52,6 +53,7 @@ public class AccountFragment extends Fragment {
         email = "swag@swag.com";
         organization = "SwagTT";
         phoneNumber = "911-911-9111";
+
     }
 
     @Override
@@ -64,7 +66,16 @@ public class AccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
+        TextView editText = (TextView) rootView.findViewById(R.id.account_name);
+        editText.setText(name);
+        editText = (TextView) rootView.findViewById(R.id.account_email);
+        editText.setText(email);
+        editText = (TextView) rootView.findViewById(R.id.account_organization);
+        editText.setText(organization);
+        editText = (TextView) rootView.findViewById(R.id.account_number);
+        editText.setText(phoneNumber);
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
