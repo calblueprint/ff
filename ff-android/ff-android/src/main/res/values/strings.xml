@@ -17,6 +17,10 @@
     <string name="title_field">Title</string>
 
     <string name="account_information">Account Information</string>
+    <string name="name_header">Name</string>
+    <string name="email_header">Email</string>
+    <string name="organization_header">Organization</string>
+    <string name="phone_header">Phone Number</string>
     <color name="custom_grey">#707070</color>
 
 </resources>
