@@ -18,4 +18,8 @@
 
     <color name="custom_grey">#707070</color>
 
+    <!-- AmountFragment Strings -->
+    <string name="title">How many pounds can you donate?</string>
+    <string name="transportation_size">What is the smallest vehicle this donation will fit in?</string>
+
 </resources>
