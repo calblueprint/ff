@@ -20,7 +20,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/account_name"
         android:id="@+id/account_name"
         android:layout_gravity="center_horizontal" />
     <TextView
@@ -38,7 +37,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/account_email"
         android:id="@+id/account_email"
         android:layout_gravity="center_horizontal" />
     <TextView
@@ -56,7 +54,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/account_organization"
         android:id="@+id/account_organization"
         android:layout_gravity="center_horizontal" />
     <TextView
@@ -74,7 +71,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/account_phone_number"
         android:id="@+id/account_number"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>
