@@ -11,6 +11,7 @@
     <dimen name="title_textview_horizontal">32dp</dimen>
     <dimen name="title_textview_vertical">64dp</dimen>
     <dimen name="title_text_size">24sp</dimen>
+    <dimen name="description_height">128dp</dimen>
 
         <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
          https://developer.android.com/design/patterns/navigation-drawer.html -->
