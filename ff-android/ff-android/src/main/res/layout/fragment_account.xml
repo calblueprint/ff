@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Swagmaster9000"
+        android:text="@string/account_name"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
     <TextView
@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Yolo@swag.com"
+        android:text="@string/account_email"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
     <TextView
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="SwagTT"
+        android:text="@string/account_organization"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
     <TextView
@@ -77,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="911-911-9111"
+        android:text="@string/account_phone_number"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>
