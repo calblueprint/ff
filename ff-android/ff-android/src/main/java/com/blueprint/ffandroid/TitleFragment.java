@@ -1,7 +1,6 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
-import android.support.v4.app.FragmentManager;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
