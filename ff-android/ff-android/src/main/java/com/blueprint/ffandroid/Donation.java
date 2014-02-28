@@ -94,4 +94,44 @@ public class Donation {
     public Date getEndDate() {
         return _endDate;
     }
+
+    /** Sets the TITLE. */
+    public void setTitle(String title){
+        _title = title;
+    }
+
+    /** Sets the DESCRIPTION. */
+    public void setDescription(String description){
+        _description = description;
+    }
+
+    /** Sets the PICTURE. */
+    public void setPicture(Picture picture){
+        _picture = picture;
+    }
+
+    /** Sets the LOCATION. */
+    public void setLocation(Location location){
+        _location = location;
+    }
+
+    /** Sets the Weight. */
+    public void setWeight(double weight) {
+        _weight = weight;
+    }
+
+    /** Sets the VEHICLE. */
+    public void setVehicle(String vehicle) {
+        _vehicle = vehicle;
+    }
+
+    /** Sets the START date. */
+    public void setStartDate(Date start) {
+        _startDate = start;
+    }
+
+    /** Sets the END date. */
+    public void setEndDate(Date end) {
+        _endDate = end;
+    }
 }
