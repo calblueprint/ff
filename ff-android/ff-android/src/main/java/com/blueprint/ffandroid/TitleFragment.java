@@ -27,8 +27,6 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
 
-    private FragmentManager fragmentManager;
-
     // TODO: Rename and change types of parameters
     private String mParam1;
 
@@ -43,12 +41,11 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
      * @return A new instance of fragment TitleFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TitleFragment newInstance(FragmentManager fragMan, String param1) {
+    public static TitleFragment newInstance(String param1) {
         TitleFragment fragment = new TitleFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         fragment.setArguments(args);
-        fragment.fragmentManager = fragMan;
         return fragment;
     }
     public TitleFragment() {
@@ -112,8 +109,8 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         switch(v.getId()){
             case (R.id.forward_button):
                 updateDonationModel();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, LocationFragment.newInstance(fragmentManager, "Param 1"))
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, LocationFragment.newInstance("Param 1"))
                         .commit();
                 break;
         }

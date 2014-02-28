@@ -25,8 +25,6 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
 
     private String mParam1;
 
-    private FragmentManager fragmentManager;
-
     private OnFragmentInteractionListener mListener;
 
     /**
@@ -37,12 +35,11 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
      * @return A new instance of fragment LocationFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LocationFragment newInstance(FragmentManager fragMan, String param1) {
+    public static LocationFragment newInstance(String param1) {
         LocationFragment fragment = new LocationFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         fragment.setArguments(args);
-        fragment.fragmentManager = fragMan;
         return fragment;
     }
     public LocationFragment() {
