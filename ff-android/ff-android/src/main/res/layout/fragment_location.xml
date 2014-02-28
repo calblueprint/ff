@@ -45,13 +45,13 @@
     <LinearLayout
         android:id="@+id/LinearLayout02"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:layout_alignParentBottom="true">
+        android:layout_width="fill_parent">
 
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:entries="@array/states"
             android:id="@+id/state_spinner" />
 
         <EditText
