@@ -42,6 +42,19 @@ public class Donation {
         _endDate = end;
     }
 
+    /** Returns an empty donation.
+     */
+    public Donation() {
+        _title = "";
+        _description = "";
+        _picture = new Picture();
+        _location = null;
+        _weight = 0.0;
+        _vehicle = "";
+        _startDate = new Date();
+        _endDate = new Date();
+    }
+
     /** Returns the title of the donation.*/
     public String getTitle(){
         return _title;
