@@ -2,6 +2,10 @@ package com.blueprint.ffandroid;
 
 import android.graphics.Picture;
 import android.location.Location;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Date;
 /**
  * An object to represent a donation in the Feeding Forward application.
@@ -133,5 +137,25 @@ public class Donation {
     /** Sets the END date. */
     public void setEndDate(Date end) {
         _endDate = end;
+    }
+
+    /** Returns a String that is in JSON format. */
+    public String toJSON() {
+        try {
+            JSONObject jsonObj = new JSONObject();
+            jsonObj.put("title", getTitle());
+            jsonObj.put("description", getDescription());
+            jsonObj.put("location", getLocation().toString());
+            jsonObj.put("weight", Double.toString(getWeight()));
+            jsonObj.put("vehicle", getVehicle());
+            jsonObj.put("start", getStartDate().toString());
+            jsonObj.put("end", getEndDate().toString());
+            return jsonObj.toString();
+        }
+        catch(JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+
     }
 }
