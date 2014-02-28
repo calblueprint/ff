@@ -42,5 +42,43 @@ public class Donation {
         _endDate = end;
     }
 
+    /** Returns the title of the donation.*/
+    public String getTitle(){
+        return _title;
+    }
 
+    /** Returns the description of the donation. */
+    public String getDescription(){
+        return _description;
+    }
+
+    /** Returns the picture of the donation. */
+    public Picture getPicture(){
+        return _picture;
+    }
+
+    /** Returns the location of the donation. */
+    public Location getLocation(){
+        return _location;
+    }
+
+    /** Returns the weight of the donation. */
+    public double getWeight() {
+        return _weight;
+    }
+
+    /** Returns the vehicle of the donation. */
+    public String getVehicle() {
+        return _vehicle;
+    }
+
+    /** Returns the start date. */
+    public Date getStartDate() {
+        return _startDate;
+    }
+
+    /** Returns the vehicle of the donation. */
+    public Date getEndDate() {
+        return _endDate;
+    }
 }
