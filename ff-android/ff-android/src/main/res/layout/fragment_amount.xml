@@ -6,7 +6,6 @@
     android:background="@color/grey"
     tools:context="com.blueprint.ffandroid.TitleFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,6 +47,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="@string/no_vehicle"/>
             </LinearLayout>
 
@@ -66,6 +66,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="@string/small_sedan"/>
         </LinearLayout>
 
@@ -91,6 +92,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="@string/medium_vehicle"/>
         </LinearLayout>
 
@@ -109,6 +111,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="@string/large_vehicle"/>
         </LinearLayout>
 
