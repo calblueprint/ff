@@ -8,6 +8,12 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -19,13 +25,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  *
  */
-public class AmountFragment extends Fragment {
+public class AmountFragment extends Fragment implements View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
 
     private String mParam1;
-
-    private FragmentManager fragmentManager;
 
     private OnFragmentInteractionListener mListener;
 
@@ -38,12 +42,11 @@ public class AmountFragment extends Fragment {
      * @return A new instance of fragment AmountFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AmountFragment newInstance(FragmentManager fragMan, String param1) {
+    public static AmountFragment newInstance(String param1) {
         AmountFragment fragment = new AmountFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         fragment.setArguments(args);
-        fragment.fragmentManager = fragMan;
         return fragment;
     }
     public AmountFragment() {
@@ -63,6 +66,11 @@ public class AmountFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_amount, container, false);
+        Button forward = (Button) rootView.findViewById(R.id.forward_button);
+        forward.setOnClickListener(this);
+
+        setUpView(rootView);
+
         return rootView;
     }
 
@@ -76,12 +84,6 @@ public class AmountFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
     }
 
     @Override
@@ -103,5 +105,26 @@ public class AmountFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         public void onFragmentInteraction(Uri uri);
     }
+
+    public void setUpView(View rootView) {
+        Spinner poundsSpinner = (Spinner) rootView.findViewById(R.id.pounds_spinner);
+
+        List pounds = new ArrayList();
+        
+        pounds.add("1 pound");
+        for (int i = 2; i <= 500; i++) {
+            pounds.add(i+" pounds");
+        }
+
+        ArrayAdapter dataAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, pounds);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        poundsSpinner.setAdapter(dataAdapter);
+
+    }
+
+    public void onClick(View view) {
+
+    }
+
 
 }
