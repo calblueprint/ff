@@ -53,12 +53,12 @@ public class DonateActivity extends ActionBarActivity
         switch (position) {
             case 0:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, TitleFragment.newInstance("Param 1", "Param 2"))
+                        .replace(R.id.container, TitleFragment.newInstance("Param 2"))
                         .commit();
                 break;
-            default:
+            case 1:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                        .replace(R.id.container, AccountFragment.newInstance())
                         .commit();
                 break;
         }

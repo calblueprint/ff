@@ -1,12 +1,15 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -18,15 +21,13 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  *
  */
-public class TitleFragment extends Fragment {
+public class TitleFragment extends Fragment implements View.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
@@ -39,11 +40,10 @@ public class TitleFragment extends Fragment {
      * @return A new instance of fragment TitleFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TitleFragment newInstance(String param1, String param2) {
+    public static TitleFragment newInstance(String param1) {
         TitleFragment fragment = new TitleFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -54,10 +54,8 @@ public class TitleFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.out.println("Created title fragment!");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -65,14 +63,10 @@ public class TitleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_title, container, false);
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+        View rootView = inflater.inflate(R.layout.fragment_title, container, false);
+        Button forward = (Button) rootView.findViewById(R.id.forward_button);
+        forward.setOnClickListener(this);
+        return rootView;
     }
 
     @Override
@@ -99,6 +93,26 @@ public class TitleFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
+    }
+
+    /**
+     * Update the donation model with the current info on the
+     * screen before passing it along.
+     */
+    private void updateDonationModel() {
+        return;
+    }
+
+    @Override
+    public void onClick(View v){
+        switch(v.getId()){
+            case (R.id.forward_button):
+                updateDonationModel();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, LocationFragment.newInstance("Param 1"))
+                        .commit();
+                break;
+        }
     }
 
 }

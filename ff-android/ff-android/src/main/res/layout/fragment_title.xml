@@ -30,12 +30,20 @@
         android:textSize="@dimen/title_text_size"
         android:text="Description"/>
 
+
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/description_height"
         android:id="@+id/donation_description"
         android:paddingLeft="@dimen/title_textview_horizontal"
         android:hint="Enter a description here"/>
+
+    <Button
+        android:id="@+id/forward_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/location_margin"
+        android:text="Forward!" />
 
 
 </LinearLayout>

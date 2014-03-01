@@ -7,22 +7,30 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link LocationFragment.OnFragmentInteractionListener} interface
+ * {@link TitleFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link LocationFragment#newInstance} factory method to
+ * Use the {@link TitleFragment#newInstance} factory method to
  * create an instance of this fragment.
  *
+ * @author howardchen
+ *
  */
-public class LocationFragment extends Fragment implements View.OnClickListener {
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
+public class AccountFragment extends Fragment {
 
-    private String mParam1;
+    /** The name of the account.*/
+    private String name;
+    /** The email of the account.*/
+    private String email;
+    /** The Organization of the account.*/
+    private String organization;
+    /** The phone number of the account.*/
+    private String phoneNumber;
 
     private OnFragmentInteractionListener mListener;
 
@@ -30,34 +38,51 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @return A new instance of fragment LocationFragment.
+     * @return A new instance of fragment AccountFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    public static LocationFragment newInstance(String param1) {
-        LocationFragment fragment = new LocationFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        fragment.setArguments(args);
+    public static AccountFragment newInstance() {
+        AccountFragment fragment = new AccountFragment();
         return fragment;
     }
-    public LocationFragment() {
-        // Required empty public constructor
+
+    /**
+     * Basic AccountFragment constructor.
+     */
+    public AccountFragment() {
+        name = "Yolo";
+        email = "swag@swag.com";
+        organization = "SwagTT";
+        phoneNumber = "911-911-9111";
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-        }
+        System.out.println("Created account fragment!");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_location, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
+        TextView editText = (TextView) rootView.findViewById(R.id.account_name);
+        editText.setText(name);
+        editText = (TextView) rootView.findViewById(R.id.account_email);
+        editText.setText(email);
+        editText = (TextView) rootView.findViewById(R.id.account_organization);
+        editText.setText(organization);
+        editText = (TextView) rootView.findViewById(R.id.account_number);
+        editText.setText(phoneNumber);
+        return rootView;
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
     }
 
     @Override
@@ -86,20 +111,4 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
         public void onFragmentInteraction(Uri uri);
     }
 
-    /**
-     * Update the donation model with the current info on the
-     * screen before passing it along.
-     */
-    private void updateDonationModel() {
-        return;
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            default:
-                updateDonationModel();
-                break;
-        }
-    }
 }
