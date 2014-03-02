@@ -14,12 +14,21 @@
     <string name="hello_world">Hello world!</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_field">Title</string>
+    <string name="forward_button">Forward!</string>
 
     <string name="account_information">Account Information</string>
     <string name="name_header">Name</string>
     <string name="email_header">Email</string>
     <string name="organization_header">Organization</string>
     <string name="phone_header">Phone Number</string>
+
+    <!-- AmountFragment Strings -->
+    <string name="title">How many pounds can you donate?</string>
+    <string name="transportation_size">What is the smallest vehicle this donation will fit in?</string>
+    <string name="small_sedan">Small (Sedan)</string>
+    <string name="no_vehicle">Can be carried</string>
+    <string name="medium_vehicle">Medium (Van, SUV)</string>
+    <string name="large_vehicle">Large (Truck)</string>
 
     <string-array name="states">
         <item>Alabama</item>

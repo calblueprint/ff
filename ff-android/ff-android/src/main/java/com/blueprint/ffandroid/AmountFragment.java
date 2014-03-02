@@ -4,22 +4,28 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link LocationFragment.OnFragmentInteractionListener} interface
+ * {@link AmountFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link LocationFragment#newInstance} factory method to
+ * Use the {@link AmountFragment#newInstance} factory method to
  * create an instance of this fragment.
  *
  */
-public class LocationFragment extends Fragment implements View.OnClickListener {
+public class AmountFragment extends Fragment implements View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
 
@@ -32,17 +38,18 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
-     * @return A new instance of fragment LocationFragment.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment AmountFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LocationFragment newInstance(String param1) {
-        LocationFragment fragment = new LocationFragment();
+    public static AmountFragment newInstance(String param1) {
+        AmountFragment fragment = new AmountFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         fragment.setArguments(args);
         return fragment;
     }
-    public LocationFragment() {
+    public AmountFragment() {
         // Required empty public constructor
     }
 
@@ -58,10 +65,20 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView =  inflater.inflate(R.layout.fragment_location, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_amount, container, false);
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
         forward.setOnClickListener(this);
+
+        setUpView(rootView);
+
         return rootView;
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
     }
 
     @Override
@@ -86,27 +103,28 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
 
-    /**
-     * Update the donation model with the current info on the
-     * screen before passing it along.
-     */
-    private void updateDonationModel() {
-        return;
+    public void setUpView(View rootView) {
+        Spinner poundsSpinner = (Spinner) rootView.findViewById(R.id.pounds_spinner);
+
+        List pounds = new ArrayList();
+        
+        pounds.add("1 pound");
+        for (int i = 2; i <= 500; i++) {
+            pounds.add(i+" pounds");
+        }
+
+        ArrayAdapter dataAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, pounds);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        poundsSpinner.setAdapter(dataAdapter);
+
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case (R.id.forward_button):
-                updateDonationModel();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, AmountFragment.newInstance("Param 1"))
-                        .commit();
-                break;
-        }
+    public void onClick(View view) {
+
     }
+
+
 }
