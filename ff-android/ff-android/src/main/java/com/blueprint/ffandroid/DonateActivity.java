@@ -31,7 +31,7 @@ public class DonateActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
     /** The donation object that is created and updated. */
-    private Donation donation;
+    public Donation donation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

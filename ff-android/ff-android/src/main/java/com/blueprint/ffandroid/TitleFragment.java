@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 
 /**
@@ -28,15 +29,16 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
 
     // TODO: Rename and change types of parameters
     private String mParam1;
+    private DonateActivity parent;
 
     private OnFragmentInteractionListener mListener;
+    private EditText title;
 
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment TitleFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -65,7 +67,9 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_title, container, false);
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
+        title = (EditText) rootView.findViewById(R.id.title);
         forward.setOnClickListener(this);
+        parent = (DonateActivity)this.getActivity();
         return rootView;
     }
 
@@ -100,6 +104,8 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
      * screen before passing it along.
      */
     private void updateDonationModel() {
+        String titleText = title.getText().toString();
+        parent.donation.setTitle(titleText);
         return;
     }
 
@@ -108,7 +114,7 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         switch(v.getId()){
             case (R.id.forward_button):
                 updateDonationModel();
-                getActivity().getSupportFragmentManager().beginTransaction()
+                parent.getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, LocationFragment.newInstance("Param 1"))
                         .commit();
                 break;
