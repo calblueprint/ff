@@ -33,6 +33,7 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
 
     private OnFragmentInteractionListener mListener;
     private EditText title;
+    private EditText description;
 
     /**
      * Use this factory method to create a new instance of
@@ -68,6 +69,7 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         View rootView = inflater.inflate(R.layout.fragment_title, container, false);
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
         title = (EditText) rootView.findViewById(R.id.title);
+        description = (EditText) rootView.findViewById(R.id.donation_description);
         forward.setOnClickListener(this);
         parent = (DonateActivity)this.getActivity();
         return rootView;
@@ -104,9 +106,8 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
      * screen before passing it along.
      */
     private void updateDonationModel() {
-        String titleText = title.getText().toString();
-        parent.donation.setTitle(titleText);
-        return;
+        parent.donation.setTitle(title.getText().toString());
+        parent.donation.setDescription(description.getText().toString());
     }
 
     @Override
