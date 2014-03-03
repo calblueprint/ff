@@ -33,6 +33,8 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
 
     private OnFragmentInteractionListener mListener;
 
+
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -122,8 +124,13 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    public void onClick(View view) {
+    /** Updates the donation. */
+    private void updateDonation() {
 
+    }
+    /** Takes in the VIEW and updates the donation. */
+    public void onClick(View view) {
+        updateDonation();
     }
 
 

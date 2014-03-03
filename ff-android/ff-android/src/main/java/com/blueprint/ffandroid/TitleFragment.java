@@ -32,7 +32,9 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
     private DonateActivity parent;
 
     private OnFragmentInteractionListener mListener;
+    /** The EditText that contains the title. */
     private EditText title;
+    /** The EditText that contains the description. */
     private EditText description;
 
     /**
