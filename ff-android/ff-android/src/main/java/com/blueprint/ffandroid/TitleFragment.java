@@ -29,6 +29,7 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
 
     // TODO: Rename and change types of parameters
     private String mParam1;
+    /** The parent DonateActivity. */
     private DonateActivity parent;
 
     private OnFragmentInteractionListener mListener;
