@@ -80,4 +80,10 @@
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:layout_weight="1"/>
+    <CheckBox android:id="@+id/checkbox_cheese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/social_media"
+        android:layout_gravity="center"
+        android:onClick="onCheckboxClicked"/>
 </LinearLayout>
