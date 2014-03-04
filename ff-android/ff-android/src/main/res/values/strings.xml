@@ -21,6 +21,7 @@
     <string name="email_header">Email</string>
     <string name="organization_header">Organization</string>
     <string name="phone_header">Phone Number</string>
+    <string name="social_media">Share with social networks</string>
 
     <!-- AmountFragment Strings -->
     <string name="title">How many pounds can you donate?</string>

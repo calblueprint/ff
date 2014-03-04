@@ -14,13 +14,15 @@
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#cccccc"
-        android:paddingTop="20dp" />
+        android:layout_marginTop="5dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="10dp"
         android:id="@+id/account_name"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center"
+        android:layout_weight="1" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,13 +33,15 @@
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#cccccc"
-        android:paddingTop="20dp" />
+        android:layout_marginTop="5dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/account_email"
-        android:layout_gravity="center_horizontal" />
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_weight="1" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,13 +52,15 @@
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#cccccc"
-        android:paddingTop="20dp" />
+        android:layout_marginTop="5dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/account_organization"
-        android:layout_gravity="center_horizontal" />
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_weight="1" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,11 +71,19 @@
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#cccccc"
-        android:paddingTop="20dp" />
+        android:layout_marginTop="5dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/account_number"
-        android:layout_gravity="center_horizontal" />
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"/>
+    <CheckBox android:id="@+id/checkbox_cheese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/social_media"
+        android:layout_gravity="center"
+        android:onClick="onCheckboxClicked"/>
 </LinearLayout>
