@@ -33,12 +33,16 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
 
     private OnFragmentInteractionListener mListener;
 
+    /** The parent activity of this fragment. */
+    private DonateActivity parent;
+    /** The spinner that holds the amount. */
+    private Spinner amount;
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment AmountFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -59,6 +63,7 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
         }
+
     }
 
     @Override
@@ -70,7 +75,8 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
         forward.setOnClickListener(this);
 
         setUpView(rootView);
-
+        parent = (DonateActivity) getActivity();
+        amount = (Spinner) rootView.findViewById(R.id.pounds_spinner);
         return rootView;
     }
 
@@ -122,8 +128,16 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    public void onClick(View view) {
+    /** Updates the donation. */
+    private void updateDonation() {
+        String weight = amount.getSelectedItem().toString();
+        weight = weight.substring(0, weight.length() - 7);
+        parent.donation.setWeight(Double.parseDouble(weight));
+    }
 
+    /** Takes in the VIEW and updates the donation. */
+    public void onClick(View view) {
+        updateDonation();
     }
 
 
