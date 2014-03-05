@@ -21,7 +21,7 @@ import android.widget.TextView;
  * @author howardchen
  *
  */
-public class AccountFragment extends Fragment {
+public class AccountFragment extends Fragment implements View.OnClickListener{
 
     /** The name of the account.*/
     private String name;
@@ -94,6 +94,17 @@ public class AccountFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case(R.id.checkbox_cheese):
+                //Do whatever is supposed to be done when the checkbox is toggled.
+                break;
+            default:
+                break;
+        }
     }
 
     /**
