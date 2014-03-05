@@ -123,6 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/location_margin"
         android:id="@+id/forward_button"
+        android:background="@drawable/green_button"
         android:text="@string/forward_button"/>
 
 </LinearLayout>
