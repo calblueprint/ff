@@ -1,11 +1,9 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
-import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -109,8 +107,12 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
      * screen before passing it along.
      */
     private void updateDonationModel() {
-        parent.donation.setTitle(title.getText().toString());
-        parent.donation.setDescription(description.getText().toString());
+        if(title.getText()!= null){
+            parent.donation.setTitle(title.getText().toString());
+        }
+        if(description.getText()!= null){
+            parent.donation.setDescription(description.getText().toString());
+        }
     }
 
     @Override
