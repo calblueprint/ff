@@ -69,7 +69,7 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_title, container, false);
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
-        title = (EditText) rootView.findViewById(R.id.title);
+        title = (EditText) rootView.findViewById(R.id.donation_title);
         description = (EditText) rootView.findViewById(R.id.donation_description);
         forward.setOnClickListener(this);
         parent = (DonateActivity)this.getActivity();
@@ -107,12 +107,8 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
      * screen before passing it along.
      */
     private void updateDonationModel() {
-        if(title.getText()!= null){
-            parent.donation.setTitle(title.getText().toString());
-        }
-        if(description.getText()!= null){
-            parent.donation.setDescription(description.getText().toString());
-        }
+        parent.donation.setTitle(title.getText().toString());
+        parent.donation.setDescription(description.getText().toString());
     }
 
     @Override

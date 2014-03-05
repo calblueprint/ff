@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -131,7 +130,7 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
     /** Updates the donation. */
     private void updateDonation() {
         String weight = amount.getSelectedItem().toString();
-        weight = weight.substring(0, weight.length() - 7);
+        weight = weight.substring(0, weight.length() - 6);
         parent.donation.setWeight(Double.parseDouble(weight));
     }
 
