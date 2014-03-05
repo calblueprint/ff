@@ -5,6 +5,7 @@
     <color name="donation_servings_colour">#00BE56</color>
     <color name="button_darkish_blue">#495698</color>
     <color name="button_green">#00BE56</color>
+    <color name="button_green_pressed">#00a54a</color>
     <color name="navy_blue">#030A37</color>
     <color name="white">#FFFFFF</color>
     <color name="grey">#EEEEEE</color>
