@@ -27,8 +27,8 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
 
     // TODO: Rename and change types of parameters
     private String mParam1;
-    /** The parent DonateActivity. */
-    private DonateActivity parent;
+    /** The parent MainActivity. */
+    private MainActivity parent;
 
     private OnFragmentInteractionListener mListener;
     /** The EditText that contains the title. */
@@ -72,7 +72,7 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         title = (EditText) rootView.findViewById(R.id.donation_title);
         description = (EditText) rootView.findViewById(R.id.donation_description);
         forward.setOnClickListener(this);
-        parent = (DonateActivity)this.getActivity();
+        parent = (MainActivity)this.getActivity();
         return rootView;
     }
 

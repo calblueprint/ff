@@ -33,7 +33,7 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
     private OnFragmentInteractionListener mListener;
 
     /** The parent activity of this fragment. */
-    private DonateActivity parent;
+    private MainActivity parent;
     /** The spinner that holds the amount. */
     private Spinner amount;
 
@@ -74,7 +74,7 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
         forward.setOnClickListener(this);
 
         setUpView(rootView);
-        parent = (DonateActivity) getActivity();
+        parent = (MainActivity) getActivity();
         amount = (Spinner) rootView.findViewById(R.id.pounds_spinner);
         return rootView;
     }
