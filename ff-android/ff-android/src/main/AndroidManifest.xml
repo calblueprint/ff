@@ -16,10 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.blueprint.ffandroid.TitleActivity"
-            android:label="@string/title_activity_title" >
-        </activity>
     </application>
     <uses-feature android:name="android.hardware.camera"
         android:required="true" />
