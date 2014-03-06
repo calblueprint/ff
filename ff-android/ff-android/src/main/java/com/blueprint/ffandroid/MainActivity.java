@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity
                         .replace(R.id.container, TitleFragment.newInstance("Param 2"))
                         .commit();
                 break;
-            case 1:
+            case 2:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, AccountFragment.newInstance())
                         .commit();
