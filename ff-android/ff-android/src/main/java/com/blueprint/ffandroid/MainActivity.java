@@ -28,6 +28,12 @@ public class MainActivity extends ActionBarActivity
     private CharSequence mTitle;
     /** The donation object that is created and updated. */
     public Donation donation;
+    /**Fragment Declarations**/
+    TitleFragment titleFragment;
+    AmountFragment amountFragment;
+    LocationFragment locationFragment;
+    PhotoFragment photoFragment;
+    AccountFragment accountFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,12 @@ public class MainActivity extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         donation = new Donation();
+        titleFragment = TitleFragment.newInstance("param");
+        amountFragment = AmountFragment.newInstance("param");
+        locationFragment = LocationFragment.newInstance("param");
+        photoFragment = PhotoFragment.newInstance();
+        accountFragment = AccountFragment.newInstance();
+
     }
 
     @Override
@@ -52,12 +64,12 @@ public class MainActivity extends ActionBarActivity
         switch (position) {
             case 0:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, TitleFragment.newInstance("Param 2"))
+                        .replace(R.id.container, titleFragment)
                         .commit();
                 break;
             case 2:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, AccountFragment.newInstance())
+                        .replace(R.id.container, accountFragment)
                         .commit();
                 break;
         }
