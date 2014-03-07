@@ -28,7 +28,7 @@ public class MainActivity extends ActionBarActivity
     private CharSequence mTitle;
     /** The donation object that is created and updated. */
     public Donation donation;
-    /**Fragment Declarations**/
+    /**Fragment declarations**/
     TitleFragment titleFragment;
     AmountFragment amountFragment;
     LocationFragment locationFragment;
@@ -38,6 +38,7 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initializeFragments();
         setContentView(R.layout.activity_donate);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -49,12 +50,14 @@ public class MainActivity extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         donation = new Donation();
+    }
+
+    private void initializeFragments(){
         titleFragment = TitleFragment.newInstance("param");
         amountFragment = AmountFragment.newInstance("param");
         locationFragment = LocationFragment.newInstance("param");
         photoFragment = PhotoFragment.newInstance();
         accountFragment = AccountFragment.newInstance();
-
     }
 
     @Override
