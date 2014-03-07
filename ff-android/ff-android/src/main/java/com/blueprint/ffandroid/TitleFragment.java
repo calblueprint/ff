@@ -116,9 +116,7 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         switch(v.getId()){
             case (R.id.forward_button):
                 updateDonationModel();
-                parent.getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, parent.locationFragment)
-                        .commit();
+                parent.replaceFragment(parent.locationFragment);
                 break;
         }
     }
