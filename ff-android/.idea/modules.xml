@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ff-android.iml" filepath="$PROJECT_DIR$/ff-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/ff-android/ff-android-ff-android.iml" filepath="$PROJECT_DIR$/ff-android/ff-android-ff-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ff-android/ff-android-ff-android.iml" filepath="$PROJECT_DIR$/ff-android/ff-android-ff-android.iml" />
     </modules>
   </component>
 </project>
