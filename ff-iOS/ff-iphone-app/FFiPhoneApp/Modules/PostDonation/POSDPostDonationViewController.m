@@ -10,6 +10,7 @@
 #import "POSDChooseLocationViewController.h"
 #import "POSDChooseAmountViewController.h"
 #import "POSDChooseTimeViewController.h"
+#import "POSDTitleViewController.h"
 
 #import "PostDonationConstants.h"
 #import "PostDonationModuleController.h"
@@ -18,6 +19,7 @@
 #import "FFKit.h"
 
 #import "UIImage+Resize.h"
+
 
 static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or Special Instructions";
 
@@ -43,7 +45,7 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 @property (strong, nonatomic) POSDChooseLocationViewController *chooseLocationViewController;
 @property (strong, nonatomic) POSDChooseAmountViewController *chooseAmountViewController;
 @property (strong, nonatomic) POSDChooseTimeViewController *chooseTimeViewController;
-
+@property (strong, nonatomic) POSDTitleViewController *chooseTitleViewController;
 @property (strong, nonatomic) NSMutableDictionary *buttonLabelCollection;
 @property (strong, nonatomic) NSMutableDictionary *buttonImageViewCollection;
 
@@ -52,6 +54,13 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 - (IBAction)buttonPicture_onTouchUpInside:(id)sender;
 - (IBAction)buttonCross_onTouchUpInside:(id)sender;
 - (IBAction)donationTitle_onEditingChanged:(id)sender;
+
+// NEW STUFF
+- (IBAction)startDonation:(id)sender;
+@property	(strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) NSArray *donationControllers;
+@property (strong, nonatomic) NSArray *viewControllers;
+@property int currentIndex;
 
 @end
 
@@ -86,92 +95,117 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveFFPostDonationPrefillPostDonationFormNotification:)
                                                  name:@"FFPostDonationPrefillPostDonationFormNotification" object:nil];
+	
+	// NEW STUFF
+	self.chooseLocationViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDChooseLocationViewController"];
+	self.chooseLocationViewController.identifier = @"POSDChooseLocationViewController";
+	self.chooseTimeViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDChooseTimeViewController"];
+	self.chooseTimeViewController.identifier = @"POSDChooseTimeViewController";
+	self.chooseAmountViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDChooseAmountViewController"];
+	self.chooseAmountViewController.identifier = @"POSDChooseAmountViewController";
+	self.chooseTitleViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDTitleViewController"];
+	self.chooseTitleViewController.identifier = @"POSDTitleViewController";
+	
+	self.donationControllers = @[self.chooseTitleViewController, self.chooseTimeViewController, self.chooseLocationViewController, self.chooseAmountViewController];
+	self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+	self.pageViewController.dataSource = self;
+	
+	self.viewControllers = @[@"POSDTitleViewController", @"POSDChooseLocationViewController", @"POSDChooseTimeViewController", @"POSDChooseAmountViewController"];
+	self.currentIndex = 0;
+	[self.pageViewController setViewControllers:@[self.chooseTitleViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+	
+	self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
+
+	[self addChildViewController:_pageViewController];
+	[self.view addSubview:_pageViewController.view];
+	[self.pageViewController didMoveToParentViewController:self];
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-
-    DebugLog(@"viewWillAppear");
-    
-    //
-    // Configure buttons appearance
-    //
-    
-    if (self.isPostDonationInProcess) {
-        // Do nothing if a donation is already in process
-        return;
-    }
-
-    // Where?
-    NSString *addressWithoutStreetAddressOne = [[self.donation.location formattedAddress]
-                                                substringFromIndex:self.donation.location.streetAddressOne.length];
-    addressWithoutStreetAddressOne = [addressWithoutStreetAddressOne
-                                      stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@", "]];
-    if (self.donation.location.streetAddressOne)
-    {
-        [self setTextOnButton:self.buttonWhere
-                        title:self.donation.location.streetAddressOne
-                titleFontSize:18.0
-                  description:addressWithoutStreetAddressOne
-          descriptionFontSize:13.0];
-    }
-    // How Much?
-    if (self.donation.totalLBS)
-    {
-        NSString *vehicleTypeDescription = nil;
-        switch (self.donation.vehicleType) {
-            case 0:
-                vehicleTypeDescription = @"can be carried";
-                break;
-            case 1:
-                vehicleTypeDescription = @"will fit in small vehicle";
-                break;
-            case 2:
-                vehicleTypeDescription = @"will fit in medium vehicle";
-                break;
-            case 3:
-                vehicleTypeDescription = @"will fit in large vehicle";
-                break;
-            default:
-                vehicleTypeDescription = @"";
-                
-                DebugLog(@"Invalid vehicle type.");
-                break;
-        }
-        [self setTextOnButton:self.buttonHowMuch
-                        title:[NSString stringWithFormat:@"%u pounds", self.donation.totalLBS]
-                titleFontSize:18.0
-                  description:[NSString stringWithFormat:@"that %@", vehicleTypeDescription]
-          descriptionFontSize:13.0];
-    }
-    // When?
-    if (self.donation.availableStart && self.donation.availableEnd)
-    {
-        NSString *buttonTitle = nil;
-        
-        if ([self.donation.availableStart ff_isToday]) {
-            buttonTitle = @"Today";
-        }
-        else if ([self.donation.availableStart ff_isTomorrow]) {
-            buttonTitle = @"Tomorrow";
-        }
-        else {
-            buttonTitle = [self.donation.availableStart ff_stringWithFormat:@"EEE, LLL d"];
-        }
-
-        NSString *buttonDescription = [NSString stringWithFormat:@"from %@ \nto %@",
-                             [self.donation.availableStart ff_stringWithFormat:@"hh:mm a"],
-                             [self.donation.availableEnd ff_stringWithFormat:@"hh:mm a"]];
-
-        [self setTextOnButton:self.buttonWhen
-                        title:buttonTitle
-                titleFontSize:20.0
-                  description:buttonDescription
-          descriptionFontSize:13.0];
-    }
-    
-    [self configurePostDonationButtonStatus];
+//    [super viewWillAppear:animated];
+//
+//    DebugLog(@"viewWillAppear");
+//    
+//    //
+//    // Configure buttons appearance
+//    //
+//    
+//    if (self.isPostDonationInProcess) {
+//        // Do nothing if a donation is already in process
+//        return;
+//    }
+//
+//    // Where?
+//    NSString *addressWithoutStreetAddressOne = [[self.donation.location formattedAddress]
+//                                                substringFromIndex:self.donation.location.streetAddressOne.length];
+//    addressWithoutStreetAddressOne = [addressWithoutStreetAddressOne
+//                                      stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@", "]];
+//    if (self.donation.location.streetAddressOne)
+//    {
+//        [self setTextOnButton:self.buttonWhere
+//                        title:self.donation.location.streetAddressOne
+//                titleFontSize:18.0
+//                  description:addressWithoutStreetAddressOne
+//          descriptionFontSize:13.0];
+//    }
+//    // How Much?
+//    if (self.donation.totalLBS)
+//    {
+//        NSString *vehicleTypeDescription = nil;
+//        switch (self.donation.vehicleType) {
+//            case 0:
+//                vehicleTypeDescription = @"can be carried";
+//                break;
+//            case 1:
+//                vehicleTypeDescription = @"will fit in small vehicle";
+//                break;
+//            case 2:
+//                vehicleTypeDescription = @"will fit in medium vehicle";
+//                break;
+//            case 3:
+//                vehicleTypeDescription = @"will fit in large vehicle";
+//                break;
+//            default:
+//                vehicleTypeDescription = @"";
+//                
+//                DebugLog(@"Invalid vehicle type.");
+//                break;
+//        }
+//        [self setTextOnButton:self.buttonHowMuch
+//                        title:[NSString stringWithFormat:@"%u pounds", self.donation.totalLBS]
+//                titleFontSize:18.0
+//                  description:[NSString stringWithFormat:@"that %@", vehicleTypeDescription]
+//          descriptionFontSize:13.0];
+//    }
+//    // When?
+//    if (self.donation.availableStart && self.donation.availableEnd)
+//    {
+//        NSString *buttonTitle = nil;
+//        
+//        if ([self.donation.availableStart ff_isToday]) {
+//            buttonTitle = @"Today";
+//        }
+//        else if ([self.donation.availableStart ff_isTomorrow]) {
+//            buttonTitle = @"Tomorrow";
+//        }
+//        else {
+//            buttonTitle = [self.donation.availableStart ff_stringWithFormat:@"EEE, LLL d"];
+//        }
+//
+//        NSString *buttonDescription = [NSString stringWithFormat:@"from %@ \nto %@",
+//                             [self.donation.availableStart ff_stringWithFormat:@"hh:mm a"],
+//                             [self.donation.availableEnd ff_stringWithFormat:@"hh:mm a"]];
+//
+//        [self setTextOnButton:self.buttonWhen
+//                        title:buttonTitle
+//                titleFontSize:20.0
+//                  description:buttonDescription
+//          descriptionFontSize:13.0];
+//    }
+//    
+//    [self configurePostDonationButtonStatus];
 }
 
 - (void)configurePostDonationButtonStatus
@@ -696,6 +730,61 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
         // Hide clear button
         [self.buttonCross setHidden:YES];
     }
+}
+
+- (IBAction)startDonation:(id)sender {
+}
+
+#pragma mark - Page View Controller Data Source
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+	NSUInteger index = [self indexOfViewController:viewController];
+	
+	if ((index <= 0) || (index == NSNotFound)) {
+		return nil;
+	}
+	index--;
+	return [self viewControllerAtIndex:index];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+	NSUInteger index = [self indexOfViewController:viewController];
+	if (index >= [self.donationControllers count] - 1) {
+		return nil;
+	}
+	index++;
+	return [self viewControllerAtIndex:index];
+}
+
+- (UIViewController *)viewControllerAtIndex:(NSUInteger) index {
+	if (([self.viewControllers count] == 0) || (index >= [self.viewControllers count])) {
+		return nil;
+	}
+	
+	PostDonationBaseViewController *viewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:self.viewControllers[index]];
+	viewController.identifier = self.viewControllers[index];
+	return viewController;
+//	return self.donationControllers[index];
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+{
+	return [self.donationControllers count];
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+	return 0;
+}
+
+- (NSUInteger)indexOfViewController:(UIViewController *)viewController
+{
+//	NSLog(@"Name of view controller: %@", ((PostDonationBaseViewController *)viewController).identifier);
+//	NSLog(@"Index of view controller: %i", [self.viewControllers indexOfObject:((PostDonationBaseViewController *)viewController).identifier]);
+	return [self.viewControllers indexOfObject:((PostDonationBaseViewController *)viewController).identifier];
+
 }
 
 @end

@@ -13,5 +13,6 @@
 @interface PostDonationBaseViewController : UIViewController
 
 @property (strong, nonatomic) PostDonationModuleController *moduleController;
+@property (strong, nonatomic) NSString *identifier;
 
 @end

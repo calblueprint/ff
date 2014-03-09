@@ -10,8 +10,8 @@
 
 @class FFDataDonation;
 
-@class FFDataDonation, FFImageStore, AppDelegate, POSDChooseLocationViewController, POSDChooseAmountViewController, POSDChooseTimeViewController;
+@class FFDataDonation, FFImageStore, AppDelegate, POSDChooseLocationViewController, POSDChooseAmountViewController, POSDChooseTimeViewController, POSDTitleViewController;
 
-@interface POSDPostDonationViewController : PostDonationBaseViewController <UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface POSDPostDonationViewController : PostDonationBaseViewController <UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPageViewControllerDataSource>
 
 @end

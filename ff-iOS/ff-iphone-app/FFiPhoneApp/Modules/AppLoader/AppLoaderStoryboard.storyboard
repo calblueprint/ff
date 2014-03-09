@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9SJ-L6-mB1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9SJ-L6-mB1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Loader View Controller-->
         <scene sceneID="DF4-Mv-fNG">
             <objects>
                 <viewController storyboardIdentifier="APPLLoaderViewController" id="9SJ-L6-mB1" customClass="APPLLoaderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lSF-fh-ayC"/>
+                        <viewControllerLayoutGuide type="bottom" id="OBB-CV-fQU"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1Fs-1p-d9z">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="apploader_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ezv-SM-6Nw"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="apploader_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ezv-SM-6Nw">
+                                <rect key="frame" x="0.0" y="0.0" width="48" height="568"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="apploader_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="obF-tz-h1p">
+                                <rect key="frame" x="20" y="90" width="280" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="117" id="FYo-BK-TyX"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HRa-kV-jpf"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HRa-kV-jpf">
+                                <rect key="frame" x="142" y="408" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="HRa-kV-jpf" secondAttribute="bottom" constant="123" id="8xV-gV-JKa"/>
-                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="leading" secondItem="1Fs-1p-d9z" secondAttribute="leading" type="default" id="CdU-Oq-nIm"/>
-                            <constraint firstAttribute="trailing" secondItem="obF-tz-h1p" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Isv-g3-uxN"/>
-                            <constraint firstItem="obF-tz-h1p" firstAttribute="leading" secondItem="1Fs-1p-d9z" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="X7y-3S-Sng"/>
-                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="top" secondItem="1Fs-1p-d9z" secondAttribute="top" type="default" id="bNA-qF-ah3"/>
+                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="leading" secondItem="1Fs-1p-d9z" secondAttribute="leading" id="CdU-Oq-nIm"/>
+                            <constraint firstAttribute="trailing" secondItem="obF-tz-h1p" secondAttribute="trailing" constant="20" symbolic="YES" id="Isv-g3-uxN"/>
+                            <constraint firstItem="obF-tz-h1p" firstAttribute="leading" secondItem="1Fs-1p-d9z" secondAttribute="leading" constant="20" symbolic="YES" id="X7y-3S-Sng"/>
+                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="top" secondItem="1Fs-1p-d9z" secondAttribute="top" id="bNA-qF-ah3"/>
                             <constraint firstItem="obF-tz-h1p" firstAttribute="top" secondItem="1Fs-1p-d9z" secondAttribute="top" constant="90" id="m8R-a0-fcc"/>
-                            <constraint firstItem="HRa-kV-jpf" firstAttribute="centerX" secondItem="obF-tz-h1p" secondAttribute="centerX" type="default" id="rOA-W7-rm6"/>
-                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="bottom" secondItem="1Fs-1p-d9z" secondAttribute="bottom" type="default" id="wvw-31-Wbo"/>
+                            <constraint firstItem="HRa-kV-jpf" firstAttribute="centerX" secondItem="obF-tz-h1p" secondAttribute="centerX" id="rOA-W7-rm6"/>
+                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="bottom" secondItem="1Fs-1p-d9z" secondAttribute="bottom" id="wvw-31-Wbo"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atQ-jx-Ai2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,22 +50,8 @@
     </scenes>
     <resources>
         <image name="apploader_background.png" width="320" height="480"/>
-        <image name="apploader_logo.png" width="150" height="104"/>
+        <image name="apploader_logo.png" width="200" height="139"/>
     </resources>
-    <classes>
-        <class className="APPLLoaderViewController" superclassName="AppLoaderBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/APPLLoaderViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityIndicatorImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="AppLoaderBaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppLoaderBaseViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
