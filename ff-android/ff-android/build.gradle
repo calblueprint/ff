@@ -36,4 +36,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.+'
     compile 'com.google.android.gms:play-services:+'
     compile files('libs/volley.jar')
+    compile project(':libraries:facebook')
 }
