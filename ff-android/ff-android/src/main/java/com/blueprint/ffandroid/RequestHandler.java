@@ -16,17 +16,34 @@ import org.json.JSONObject;
 
 
 public class RequestHandler {
-
+    /**
+     * An object to handle API calls at the HTTP request level.
+     */
     private RequestQueue queue;
     private Context context;
 
+    /** Returns a RequestHandler by assigning CONTEXT, an applicaiton
+     *  context set by the caller, to a RequestQueue object, which
+     *  handles background threading of HTTP requests.
+     */
     public RequestHandler(Context context){
         this.context = context;
         this.queue = Volley.newRequestQueue(this.context);
     }
 
 
+    /** Returns a JSONArray object by taking in a URL.
+     *  The Volley API only allows GET requests to return
+     *  a JSON array, so no Method argument is necessary.
+     *  Similarly, the API does not accept parameters for a
+     *  JsonArrayRequest object.
+     */
     public JSONArray arrayRequest(String url) {
+
+        /**
+        * TODO: Consider overwriting volley source to allow other
+        * types of http requests.
+        */
 
         final JSONArray response[] = new JSONArray[1];
 
@@ -52,6 +69,10 @@ public class RequestHandler {
     }
 
 
+    /** Returns a JSONObject of the response at the given
+     *  URL with the given PARAMS and specified METHOD.
+     *  PARAMS is a JSONObject containing the POST or PUT data.
+     */
     public JSONObject objectRequest(int method, String url, JSONObject params) {
 
         final JSONObject response[] = new JSONObject[1];
