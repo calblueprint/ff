@@ -108,9 +108,10 @@
         self.authenticationModuleController = [[AuthenticationModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
         [self.authenticationModuleController setCompletion:self.authenticationCompletionBlock];
         self.authenticationOptionsViewController = [self.authenticationModuleController instantiateOptionsViewController];
-        self.tabBarController.viewControllers = @[self.postDonationViewController,
-                                                  self.authenticationOptionsViewController];
-        
+//        self.tabBarController.viewControllers = @[self.postDonationViewController,
+//                                                  self.authenticationOptionsViewController];
+			self.tabBarController.viewControllers = @[self.postDonationViewController];
+      
         // Clear user locations data stored in the post donation module
         [self.postDonationModuleController setUserLocations:nil];
 

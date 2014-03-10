@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Hxn-ai-f3c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YNz-8l-GeH">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -353,14 +353,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rn7-g3-szz">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="jio-BJ-eqA" id="rAg-XM-Dgh"/>
-                                </connections>
-                            </searchBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRv-LN-b0K">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRv-LN-b0K">
                                 <rect key="frame" x="0.0" y="466" width="335" height="44"/>
                                 <items>
                                     <barButtonItem title="Locate me" id="CAn-Cb-TNz">
@@ -377,20 +370,30 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KNI-ov-0cs">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KNI-ov-0cs">
                                 <rect key="frame" x="0.0" y="44" width="320" height="365"/>
                             </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="PL9-Eh-jKz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jio-BJ-eqA" id="39Q-K7-Qzs"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KNI-ov-0cs" firstAttribute="top" secondItem="rn7-g3-szz" secondAttribute="bottom" id="0I2-9J-hsm"/>
-                            <constraint firstItem="rn7-g3-szz" firstAttribute="top" secondItem="vXh-RR-KoK" secondAttribute="top" id="0Sw-IS-ZFp"/>
-                            <constraint firstItem="RRv-LN-b0K" firstAttribute="leading" secondItem="vXh-RR-KoK" secondAttribute="leading" id="4AP-Mv-jic"/>
-                            <constraint firstItem="rn7-g3-szz" firstAttribute="leading" secondItem="vXh-RR-KoK" secondAttribute="leading" id="U6K-zG-XHg"/>
-                            <constraint firstItem="RRv-LN-b0K" firstAttribute="trailing" secondItem="vXh-RR-KoK" secondAttribute="trailing" id="bAj-TF-00d"/>
-                            <constraint firstItem="KNI-ov-0cs" firstAttribute="leading" secondItem="vXh-RR-KoK" secondAttribute="leading" id="fR4-Td-fge"/>
-                            <constraint firstItem="rn7-g3-szz" firstAttribute="trailing" secondItem="vXh-RR-KoK" secondAttribute="trailing" id="gPz-2n-qYg"/>
-                            <constraint firstItem="KNI-ov-0cs" firstAttribute="trailing" secondItem="vXh-RR-KoK" secondAttribute="trailing" id="qWY-bp-4fm"/>
+                            <constraint firstAttribute="trailing" secondItem="RRv-LN-b0K" secondAttribute="trailing" constant="-15" id="074-2i-8HC"/>
+                            <constraint firstItem="PL9-Eh-jKz" firstAttribute="leading" secondItem="KNI-ov-0cs" secondAttribute="leading" id="AQz-Qb-M93"/>
+                            <constraint firstItem="PL9-Eh-jKz" firstAttribute="top" secondItem="vXh-RR-KoK" secondAttribute="top" id="HOo-oG-MoG"/>
+                            <constraint firstItem="PL9-Eh-jKz" firstAttribute="leading" secondItem="vXh-RR-KoK" secondAttribute="leading" id="O2f-Us-tdh"/>
+                            <constraint firstAttribute="trailing" secondItem="PL9-Eh-jKz" secondAttribute="trailing" id="OjK-5k-c5j"/>
+                            <constraint firstItem="L0k-PO-Kjo" firstAttribute="top" secondItem="RRv-LN-b0K" secondAttribute="bottom" constant="58" id="XIk-y4-Rtx"/>
+                            <constraint firstItem="KNI-ov-0cs" firstAttribute="top" secondItem="PL9-Eh-jKz" secondAttribute="bottom" id="bT6-3k-Uxr"/>
+                            <constraint firstItem="RRv-LN-b0K" firstAttribute="top" secondItem="KNI-ov-0cs" secondAttribute="bottom" constant="57" id="eer-tX-brJ"/>
+                            <constraint firstItem="PL9-Eh-jKz" firstAttribute="trailing" secondItem="KNI-ov-0cs" secondAttribute="trailing" id="nXv-ST-8pc"/>
+                            <constraint firstItem="KNI-ov-0cs" firstAttribute="leading" secondItem="RRv-LN-b0K" secondAttribute="leading" id="oji-l2-acf"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -415,17 +418,17 @@
                         <outlet property="buttonLocateMe" destination="CAn-Cb-TNz" id="uXC-MR-YLA"/>
                         <outlet property="buttonUseThisLocation" destination="RdX-qz-HMR" id="ix7-hH-kjF"/>
                         <outlet property="mapView" destination="KNI-ov-0cs" id="kkl-yx-Q5w"/>
-                        <outlet property="searchBar" destination="rn7-g3-szz" id="VmN-df-xdV"/>
-                        <outlet property="searchDisplayController" destination="wdJ-QT-wnJ" id="0iC-vE-LIb"/>
+                        <outlet property="searchDisplayController" destination="NF3-Gq-kiO" id="pPZ-M8-MMV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvQ-L7-beo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="wdJ-QT-wnJ">
+                <searchDisplayController id="NF3-Gq-kiO">
                     <connections>
-                        <outlet property="delegate" destination="jio-BJ-eqA" id="jaR-pJ-NI5"/>
-                        <outlet property="searchContentsController" destination="jio-BJ-eqA" id="MgB-Al-IdP"/>
-                        <outlet property="searchResultsDataSource" destination="jio-BJ-eqA" id="Nio-me-hei"/>
-                        <outlet property="searchResultsDelegate" destination="jio-BJ-eqA" id="LXO-lF-NDv"/>
+                        <outlet property="delegate" destination="jio-BJ-eqA" id="nV9-cy-IIX"/>
+                        <outlet property="searchBar" destination="PL9-Eh-jKz" id="EF7-MK-pBZ"/>
+                        <outlet property="searchContentsController" destination="jio-BJ-eqA" id="g7X-45-ZGT"/>
+                        <outlet property="searchResultsDataSource" destination="jio-BJ-eqA" id="TIE-ot-jOa"/>
+                        <outlet property="searchResultsDelegate" destination="jio-BJ-eqA" id="yES-eZ-Rik"/>
                     </connections>
                 </searchDisplayController>
             </objects>
@@ -479,6 +482,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhQ-15-2V7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

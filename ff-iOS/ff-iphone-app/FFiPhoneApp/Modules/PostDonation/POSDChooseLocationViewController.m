@@ -55,7 +55,8 @@
     [self.searchBarDisplayController setDelegate:self];
     [self.searchBarDisplayController setSearchResultsDataSource:(id)self];
     [self.searchBarDisplayController setSearchResultsDelegate:(id)self];
-    
+  
+		self.title = @"Choose Location";
     // Start locating the user immeidately
     if (!self.currentLocationAddressDictionary) {
         [self.locationManager startUpdatingLocation];

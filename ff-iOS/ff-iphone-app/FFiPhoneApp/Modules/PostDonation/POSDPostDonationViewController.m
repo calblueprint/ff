@@ -97,6 +97,7 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
                                                  name:@"FFPostDonationPrefillPostDonationFormNotification" object:nil];
 	
 	// NEW STUFF
+	self.title = @"Post Donation";
 	self.chooseLocationViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDChooseLocationViewController"];
 	self.chooseLocationViewController.identifier = @"POSDChooseLocationViewController";
 	self.chooseTimeViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDChooseTimeViewController"];
