@@ -2,10 +2,10 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/src/main/assets" />
+        <source path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/src/main/assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/src/debug/assets" />
+        <source path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/src/debug/assets" />
     </dataSet>
 
 </merger>

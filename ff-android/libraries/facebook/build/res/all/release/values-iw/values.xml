@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-iw/strings.xml -->
+    <!-- From: file:/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values-iw/strings.xml -->
     <eat-comment />
 
     <string name="com_facebook_choose_friends">בחר חברים</string>

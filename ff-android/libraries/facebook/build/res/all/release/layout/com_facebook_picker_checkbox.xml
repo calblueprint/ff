@@ -23,4 +23,4 @@
     android:focusable="false"
     android:clickable="false"
     android:button="@drawable/com_facebook_button_check" />
-<!-- From: file:/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_checkbox.xml -->
+<!-- From: file:/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_checkbox.xml -->

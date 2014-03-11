@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-mdpi/dimens.xml -->
+    <!-- From: file:/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values-mdpi/dimens.xml -->
     <eat-comment />
 
     <dimen name="com_facebook_picker_divider_width">1px</dimen>

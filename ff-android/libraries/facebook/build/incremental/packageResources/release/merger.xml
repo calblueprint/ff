@@ -2,364 +2,364 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res" >
+        <source path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res" >
             <file
                 name="com_facebook_button_blue"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_focused.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_focused.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_normal.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_normal.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_pressed.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_pressed.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_button_check"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_check.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_check.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_button_check_off"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_check_off.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_check_off.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_button_check_on"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_check_on.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_check_on.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_button_grey_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_focused.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_focused.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_button_grey_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_normal.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_normal.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_button_grey_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_pressed.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_pressed.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_close"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_close.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_close.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_inverse_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_inverse_icon.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_inverse_icon.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_list_divider"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_list_divider.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_list_divider.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_list_section_header_background"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_list_section_header_background.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_list_section_header_background.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_loginbutton_silver"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_loginbutton_silver.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_loginbutton_silver.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_logo"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_logo.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_logo.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_picker_item_background"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_item_background.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_item_background.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_picker_list_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_focused.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_focused.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_picker_list_longpressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_longpressed.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_longpressed.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_picker_list_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_pressed.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_pressed.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_picker_list_selector"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_picker_list_selector_background_transition"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector_background_transition.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector_background_transition.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_picker_list_selector_disabled"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector_disabled.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector_disabled.9.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_picker_top_button"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_top_button.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_top_button.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_place_default_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_place_default_icon.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_place_default_icon.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_profile_default_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_profile_default_icon.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_profile_default_icon.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_profile_picture_blank_portrait"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_profile_picture_blank_portrait.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_profile_picture_blank_portrait.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_profile_picture_blank_square"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_profile_picture_blank_square.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_profile_picture_blank_square.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_top_background"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_top_background.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_top_background.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_top_button"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_top_button.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_top_button.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_usersettingsfragment_background_gradient"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_usersettingsfragment_background_gradient.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_usersettingsfragment_background_gradient.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_focused.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_focused.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_normal.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_normal.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_pressed.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_pressed.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_grey_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_focused.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_focused.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_grey_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_normal.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_normal.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_grey_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_pressed.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_pressed.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_close"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_close.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_close.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_inverse_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_inverse_icon.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_inverse_icon.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_logo"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_logo.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_logo.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_picker_magnifier"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_picker_magnifier.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_picker_magnifier.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_close"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-ldpi/com_facebook_close.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-ldpi/com_facebook_close.png"
                 qualifiers="ldpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_focused.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_focused.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_normal.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_normal.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_pressed.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_pressed.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="com_facebook_inverse_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_inverse_icon.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_inverse_icon.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="com_facebook_picker_magnifier"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_picker_magnifier.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_picker_magnifier.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_focused.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_focused.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_normal.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_normal.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_pressed.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_pressed.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_grey_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_focused.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_focused.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_grey_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_normal.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_normal.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_grey_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_pressed.9.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_pressed.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="com_facebook_close"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_close.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_close.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="com_facebook_inverse_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_inverse_icon.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_inverse_icon.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="com_facebook_logo"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_logo.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_logo.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="com_facebook_picker_magnifier"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_picker_magnifier.png"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_picker_magnifier.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="com_facebook_friendpickerfragment"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_friendpickerfragment.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_friendpickerfragment.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_login_activity_layout"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_login_activity_layout.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_login_activity_layout.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_picker_activity_circle_row"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_activity_circle_row.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_activity_circle_row.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_picker_checkbox"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_checkbox.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_checkbox.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_picker_image"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_image.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_image.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_picker_list_row"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_list_row.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_list_row.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_picker_list_section_header"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_list_section_header.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_list_section_header.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_picker_search_box"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_search_box.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_search_box.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_picker_title_bar"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_title_bar.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_title_bar.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_picker_title_bar_stub"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_title_bar_stub.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_title_bar_stub.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_placepickerfragment"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_placepickerfragment.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_placepickerfragment.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_placepickerfragment_list_row"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_placepickerfragment_list_row.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_placepickerfragment_list_row.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_search_bar_layout"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_search_bar_layout.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_search_bar_layout.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_usersettingsfragment"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_usersettingsfragment.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_usersettingsfragment.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values/attrs.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values/attrs.xml"
                 qualifiers="" >
                 <declare-styleable name="com_facebook_profile_picture_view" >
                     <attr name="preset_size" >
@@ -437,7 +437,7 @@
                 </declare-styleable>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values/colors.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values/colors.xml"
                 qualifiers="" >
                 <color name="com_facebook_picker_search_bar_background" >#f5f5f7
                 </color>
@@ -448,14 +448,14 @@
                 </dimen>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values/drawables.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values/drawables.xml"
                 qualifiers="" >
                 <drawable name="com_facebook_picker_default_separator_color" >
 #33464c59
                 </drawable>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values/strings.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values/strings.xml"
                 qualifiers="" >
                 <string name="com_facebook_usersettingsfragment_logged_in" >Logged in
                 </string>
@@ -477,9 +477,9 @@
                 </string>
                 <string name="com_facebook_requesterror_web_login" >Your Facebook account is locked. Please log into www.facebook.com to continue.
                 </string>
-                <string name="com_facebook_requesterror_permissions" >This app doesn’t have permission to do this. To change permissions, try logging into the app again.
-                </string>
                 <string name="com_facebook_loginview_log_out_action" >Log out
+                </string>
+                <string name="com_facebook_requesterror_permissions" >This app doesn’t have permission to do this. To change permissions, try logging into the app again.
                 </string>
                 <string name="com_facebook_dialogloginactivity_ok_button" >OK
                 </string>
@@ -489,9 +489,9 @@
                 </string>
                 <string name="com_facebook_nearby" >Nearby
                 </string>
-                <string name="com_facebook_loginview_logged_in_as" >Logged in as: %1$s
-                </string>
                 <string name="com_facebook_placepicker_subtitle_catetory_only_format" >%1$s
+                </string>
+                <string name="com_facebook_loginview_logged_in_as" >Logged in as: %1$s
                 </string>
                 <string name="com_facebook_loading" >Loading...
                 </string>
@@ -509,7 +509,7 @@
                 </string>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values/styles.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values/styles.xml"
                 qualifiers="" >
                 <color name="com_facebook_usersettingsfragment_connected_text_color" >#FFFFFF
                 </color>
@@ -607,7 +607,7 @@ center
                 </dimen>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-es/strings.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values-es/strings.xml"
                 qualifiers="es" >
                 <string name="com_facebook_nearby" >Cercano
                 </string>
@@ -661,13 +661,13 @@ center
                 </string>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-hdpi/dimens.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values-hdpi/dimens.xml"
                 qualifiers="hdpi" >
                 <dimen name="com_facebook_picker_divider_width" >1px
                 </dimen>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-he/strings.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values-he/strings.xml"
                 qualifiers="he" >
                 <string name="com_facebook_requesterror_password_changed" >.הסיסמה שלך בפייסבוק השתנתה, אנא חבר מחדש את האפליקציה עם פייסבוק
                 </string>
@@ -713,15 +713,15 @@ center
                 </string>
                 <string name="com_facebook_loginview_logged_in_using_facebook" >מחובר באמצעות פייסבוק
                 </string>
-                <string name="com_facebook_dialogloginactivity_ok_button" >אישור
-                </string>
                 <string name="com_facebook_requesterror_permissions" >.חיבור האפליקציה עם פייסבוק נכשל בשל הרשאות לא מספקות, אנא הענק הרשאות לאפליקציה בכדי שהפעולה תוכל להתבצע
+                </string>
+                <string name="com_facebook_dialogloginactivity_ok_button" >אישור
                 </string>
                 <string name="com_facebook_loginview_log_out_action" >התנתק
                 </string>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-iw/strings.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values-iw/strings.xml"
                 qualifiers="iw" >
                 <string name="com_facebook_usersettingsfragment_log_in_button" >התחבר…
                 </string>
@@ -763,9 +763,9 @@ center
                 </string>
                 <string name="com_facebook_logo_content_description" >פייסבוק לוגו
                 </string>
-                <string name="com_facebook_dialogloginactivity_ok_button" >אישור
-                </string>
                 <string name="com_facebook_loading" >..מעלה
+                </string>
+                <string name="com_facebook_dialogloginactivity_ok_button" >אישור
                 </string>
                 <string name="com_facebook_loginview_log_in_button" >התחבר לפייסבוק
                 </string>
@@ -775,28 +775,28 @@ center
                 </string>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-ldpi/dimens.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values-ldpi/dimens.xml"
                 qualifiers="ldpi" >
                 <dimen name="com_facebook_picker_divider_width" >1px
                 </dimen>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-mdpi/dimens.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values-mdpi/dimens.xml"
                 qualifiers="mdpi" >
                 <dimen name="com_facebook_picker_divider_width" >1px
                 </dimen>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-xhdpi/dimens.xml"
+                path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/values-xhdpi/dimens.xml"
                 qualifiers="xhdpi" >
                 <dimen name="com_facebook_picker_divider_width" >2px
                 </dimen>
             </file>
         </source>
-        <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/build/res/rs/release" />
+        <source path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/build/res/rs/release" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/src/release/res" />
+        <source path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/src/release/res" />
     </dataSet>
 
 </merger>

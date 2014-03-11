@@ -25,4 +25,4 @@
     <item android:state_focused="true"                                                             android:drawable="@drawable/com_facebook_picker_list_focused" />
 
 </selector>
-<!-- From: file:/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector.xml -->
+<!-- From: file:/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector.xml -->
