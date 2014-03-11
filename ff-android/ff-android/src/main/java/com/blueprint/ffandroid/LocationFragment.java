@@ -20,11 +20,18 @@ import android.widget.Button;
  *
  */
 public class LocationFragment extends Fragment implements View.OnClickListener {
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+
+    private String mParam1;
+
+    private OnFragmentInteractionListener mListener;
+
+    MainActivity parent;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
      * @return A new instance of fragment LocationFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -50,6 +57,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
         View rootView =  inflater.inflate(R.layout.fragment_location, container, false);
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
         forward.setOnClickListener(this);
+        parent = (MainActivity)this.getActivity();
         return rootView;
     }
 
@@ -81,9 +89,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case (R.id.forward_button):
                 updateDonationModel();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, AmountFragment.newInstance())
-                        .commit();
+                parent.replaceFragment(parent.amountFragment);
                 break;
         }
     }

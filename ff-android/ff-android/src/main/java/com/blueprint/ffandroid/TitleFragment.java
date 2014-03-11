@@ -13,11 +13,6 @@ import android.widget.EditText;
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link TitleFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link TitleFragment#newInstance} factory method to
- * create an instance of this fragment.
  *
  */
 public class TitleFragment extends Fragment implements View.OnClickListener{
@@ -77,9 +72,7 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         switch(v.getId()){
             case (R.id.forward_button):
                 updateDonationModel();
-                parent.getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, PhotoFragment.newInstance())
-                        .commit();
+                parent.replaceFragment(parent.locationFragment);
                 break;
         }
     }

@@ -1,17 +1,13 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.view.*;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity
@@ -28,10 +24,18 @@ public class MainActivity extends ActionBarActivity
     private CharSequence mTitle;
     /** The donation object that is created and updated. */
     public Donation donation;
+    /**Fragment declarations**/
+    TitleFragment titleFragment;
+    AmountFragment amountFragment;
+    LocationFragment locationFragment;
+    PhotoFragment photoFragment;
+    AccountFragment accountFragment;
+    Fragment currentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initializeFragments();
         setContentView(R.layout.activity_donate);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -45,22 +49,39 @@ public class MainActivity extends ActionBarActivity
         donation = new Donation();
     }
 
+    private void initializeFragments(){
+        titleFragment = TitleFragment.newInstance();
+        amountFragment = AmountFragment.newInstance();
+        locationFragment = LocationFragment.newInstance();
+        photoFragment = PhotoFragment.newInstance();
+        accountFragment = AccountFragment.newInstance();
+        currentFragment = titleFragment;
+    }
+
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
+
         switch (position) {
             case 0:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, TitleFragment.newInstance())
-                        .commit();
+                replaceFragment(titleFragment);
                 break;
             case 2:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, AccountFragment.newInstance())
-                        .commit();
+                replaceFragment(accountFragment);
                 break;
         }
+    }
+
+    public void replaceFragment(Fragment newFragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        android.support.v4.app.FragmentTransaction ft = fragmentManager.beginTransaction();
+        if(!newFragment.isAdded()){
+            ft.add(R.id.container, newFragment);
+        }
+        ft.hide(currentFragment);
+        ft.show(newFragment);
+        ft.commit();
+        currentFragment = newFragment;
     }
 
     public void onSectionAttached(int number) {

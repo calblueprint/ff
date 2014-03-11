@@ -12,3 +12,4 @@ ff-iOS/ff-iphone-app/FFiPhoneApp.xcworkspace/xcuserdata/
 ff-android/.idea/*.xml
 ff-android/.idea/libraries/*
 ff-android/local.properties
+ff-android/libraries/facebook/*
