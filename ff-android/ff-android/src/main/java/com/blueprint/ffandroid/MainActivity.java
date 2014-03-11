@@ -32,6 +32,7 @@ public class MainActivity extends ActionBarActivity
     AccountFragment accountFragment;
     Fragment currentFragment;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

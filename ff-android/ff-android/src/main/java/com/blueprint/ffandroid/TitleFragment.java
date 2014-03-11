@@ -72,7 +72,7 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         switch(v.getId()){
             case (R.id.forward_button):
                 updateDonationModel();
-                parent.replaceFragment(parent.locationFragment);
+                parent.replaceFragment(parent.photoFragment);
                 break;
         }
     }

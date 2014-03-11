@@ -101,9 +101,7 @@ public class PhotoFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.forward_button:
                 updateDonationModel();
-                parent.getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, LocationFragment.newInstance())
-                        .commit();
+                parent.replaceFragment(parent.locationFragment);
                 break;
             case R.id.camera_button:
                 dispatchTakePictureIntent();
