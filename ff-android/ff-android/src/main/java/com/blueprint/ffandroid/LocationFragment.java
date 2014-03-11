@@ -20,13 +20,6 @@ import android.widget.Button;
  *
  */
 public class LocationFragment extends Fragment implements View.OnClickListener {
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-
-    private String mParam1;
-
-    private OnFragmentInteractionListener mListener;
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -35,10 +28,9 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
      * @return A new instance of fragment LocationFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LocationFragment newInstance(String param1) {
+    public static LocationFragment newInstance() {
         LocationFragment fragment = new LocationFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
         fragment.setArguments(args);
         return fragment;
     }
@@ -49,9 +41,6 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-        }
     }
 
     @Override
@@ -62,17 +51,6 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
         forward.setOnClickListener(this);
         return rootView;
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
     }
 
     /**
@@ -104,7 +82,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
             case (R.id.forward_button):
                 updateDonationModel();
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, AmountFragment.newInstance("Param 1"))
+                        .replace(R.id.container, AmountFragment.newInstance())
                         .commit();
                 break;
         }

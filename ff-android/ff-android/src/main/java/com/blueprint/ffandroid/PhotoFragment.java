@@ -27,7 +27,12 @@ public class PhotoFragment extends Fragment implements View.OnClickListener {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
+    /** The ImageView that appears on the screen */
     private ImageView mImageView;
+
+
+    /** The parent MainActivity. */
+    private MainActivity parent;
 
     /**
      * Use this factory method to create a new instance of
@@ -61,6 +66,7 @@ public class PhotoFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_photo, container, false);
         mImageView = (ImageView) rootView.findViewById(R.id.photo_imageview);
+        parent = (MainActivity) getActivity();
         setupClickListeners(rootView);
         return rootView;
     }
@@ -89,9 +95,17 @@ public class PhotoFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    public void updateDonationModel() {
+        return;
+    }
+
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.forward_button:
+                updateDonationModel();
+                parent.getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, LocationFragment.newInstance())
+                        .commit();
                 break;
             case R.id.camera_button:
                 dispatchTakePictureIntent();
