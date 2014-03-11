@@ -1,15 +1,14 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
-import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 
 /**
@@ -28,15 +27,20 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
 
     // TODO: Rename and change types of parameters
     private String mParam1;
+    /** The parent MainActivity. */
+    private MainActivity parent;
 
     private OnFragmentInteractionListener mListener;
+    /** The EditText that contains the title. */
+    private EditText title;
+    /** The EditText that contains the description. */
+    private EditText description;
 
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment TitleFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -65,7 +69,10 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_title, container, false);
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
+        title = (EditText) rootView.findViewById(R.id.donation_title);
+        description = (EditText) rootView.findViewById(R.id.donation_description);
         forward.setOnClickListener(this);
+        parent = (MainActivity)this.getActivity();
         return rootView;
     }
 
@@ -100,7 +107,8 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
      * screen before passing it along.
      */
     private void updateDonationModel() {
-        return;
+        parent.donation.setTitle(title.getText().toString());
+        parent.donation.setDescription(description.getText().toString());
     }
 
     @Override
@@ -108,7 +116,7 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         switch(v.getId()){
             case (R.id.forward_button):
                 updateDonationModel();
-                getActivity().getSupportFragmentManager().beginTransaction()
+                parent.getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, LocationFragment.newInstance("Param 1"))
                         .commit();
                 break;

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="donation_start">Make a donation!</string>
+    <string name="donation_start">Donate!</string>
+    <string name="account_information">Account</string>
+    <string name="donation_list">Donation List</string>
+    <string name="faq">FAQ</string>
+    <string name="logout">Logout</string>
+
+
     <string name="donation_start_title">Title</string>
     <string name="app_name">Feeding Forward</string>
     <string name="title_section1">Section 1</string>
@@ -14,12 +20,21 @@
     <string name="hello_world">Hello world!</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_field">Title</string>
+    <string name="forward_button">Forward!</string>
 
-    <string name="account_information">Account Information</string>
     <string name="name_header">Name</string>
     <string name="email_header">Email</string>
     <string name="organization_header">Organization</string>
     <string name="phone_header">Phone Number</string>
+    <string name="social_media">Share with social networks</string>
+
+    <!-- AmountFragment Strings -->
+    <string name="title">How many pounds can you donate?</string>
+    <string name="transportation_size">What is the smallest vehicle this donation will fit in?</string>
+    <string name="small_sedan">Small (Sedan)</string>
+    <string name="no_vehicle">Can be carried</string>
+    <string name="medium_vehicle">Medium (Van, SUV)</string>
+    <string name="large_vehicle">Large (Truck)</string>
 
     <string-array name="states">
         <item>Alabama</item>

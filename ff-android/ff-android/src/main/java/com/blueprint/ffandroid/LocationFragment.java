@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -57,7 +58,10 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_location, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_location, container, false);
+        Button forward = (Button) rootView.findViewById(R.id.forward_button);
+        forward.setOnClickListener(this);
+        return rootView;
     }
 
     @Override
@@ -97,8 +101,11 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            default:
+            case (R.id.forward_button):
                 updateDonationModel();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, AmountFragment.newInstance("Param 1"))
+                        .commit();
                 break;
         }
     }

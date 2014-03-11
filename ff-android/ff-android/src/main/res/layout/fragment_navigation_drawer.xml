@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:choiceMode="singleChoice"
-    android:divider="@android:color/transparent"
+    android:divider="@color/white"
     android:dividerHeight="0dp"
-    android:background="#cccc"
+    android:background="@color/darker_grey"
     tools:context="com.blueprint.ffandroid.NavigationDrawerFragment" />

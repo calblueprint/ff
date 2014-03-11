@@ -5,20 +5,16 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class DonateActivity extends ActionBarActivity
+public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
@@ -30,6 +26,8 @@ public class DonateActivity extends ActionBarActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+    /** The donation object that is created and updated. */
+    public Donation donation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +42,7 @@ public class DonateActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        donation = new Donation();
     }
 
     @Override
@@ -56,7 +55,7 @@ public class DonateActivity extends ActionBarActivity
                         .replace(R.id.container, PhotoFragment.newInstance())
                         .commit();
                 break;
-            case 1:
+            case 2:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, AccountFragment.newInstance())
                         .commit();
@@ -142,7 +141,7 @@ public class DonateActivity extends ActionBarActivity
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
-            ((DonateActivity) activity).onSectionAttached(
+            ((MainActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
