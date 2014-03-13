@@ -2,8 +2,8 @@ package com.blueprint.ffandroid;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.app.Activity;
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -27,7 +27,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class LoginActivity extends ActionBarActivity {
+public class LoginActivity extends Activity {
 
     public static final String PREFS = "LOGIN_PREFS";
     private RequestQueue queue = Volley.newRequestQueue(this);
@@ -41,11 +41,11 @@ public class LoginActivity extends ActionBarActivity {
         SharedPreferences prefs = getPreferences(0);
 
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
+//        if (savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .add(R.id.container, new PlaceholderFragment())
+//                    .commit();
+//        }
 
         if (prefs.getString("token", null) != null) {
             final Intent intent = new Intent(this, MainActivity.class);
@@ -100,7 +100,7 @@ public class LoginActivity extends ActionBarActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
-                        SharedPreferences prefs = LoginActivity.getPreferences(0);
+                        SharedPreferences prefs = getPreferences(0);
                         SharedPreferences.Editor editor = prefs.edit();
 
                         try {
@@ -110,7 +110,7 @@ public class LoginActivity extends ActionBarActivity {
                             editor.commit();
 
                             intent.putExtra("token", jsonObject.getString("token"));
-                            LoginActivity.startActivity(intent);
+                            startActivity(intent);
 
                         } catch (JSONException exp) {
                             Log.d("JSON Exception: ", exp.getMessage());
