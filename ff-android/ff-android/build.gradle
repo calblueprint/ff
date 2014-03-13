@@ -34,7 +34,10 @@ dependencies {
     compile 'com.android.support:support-v4:19.0.1'
     compile 'com.android.support:appcompat-v7:19.0.1'
     compile 'com.google.code.gson:gson:2.2.+'
-    compile 'com.google.android.gms:play-services:+'
+
+    // You must install or update the Google Repository through the SDK manager to use this dependency.
+    // The Google Repository (separate from the corresponding library) can be found in the Extras category.
+    // compile 'com.google.android.gms:play-services:+'
     compile files('libs/volley.jar')
     compile project(':libraries:facebook')
 }
