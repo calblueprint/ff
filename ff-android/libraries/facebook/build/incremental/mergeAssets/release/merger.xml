@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/src/main/assets" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/Users/varunrau/Documents/curr/feeding-forward/ff-android/libraries/facebook/src/release/assets" />
+    </dataSet>
+
+</merger>

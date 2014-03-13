@@ -27,18 +27,17 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
 
     private OnFragmentInteractionListener mListener;
 
+    MainActivity parent;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
      * @return A new instance of fragment LocationFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LocationFragment newInstance(String param1) {
+    public static LocationFragment newInstance() {
         LocationFragment fragment = new LocationFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
         fragment.setArguments(args);
         return fragment;
     }
@@ -49,9 +48,6 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-        }
     }
 
     @Override
@@ -61,18 +57,8 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
         View rootView =  inflater.inflate(R.layout.fragment_location, container, false);
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
         forward.setOnClickListener(this);
+        parent = (MainActivity)this.getActivity();
         return rootView;
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
     }
 
     /**
@@ -103,9 +89,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case (R.id.forward_button):
                 updateDonationModel();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, AmountFragment.newInstance("Param 1"))
-                        .commit();
+                parent.replaceFragment(parent.amountFragment);
                 break;
         }
     }

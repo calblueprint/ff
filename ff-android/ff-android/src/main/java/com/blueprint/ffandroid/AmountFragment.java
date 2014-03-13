@@ -25,12 +25,6 @@ import java.util.List;
  *
  */
 public class AmountFragment extends Fragment implements View.OnClickListener {
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-
-    private String mParam1;
-
-    private OnFragmentInteractionListener mListener;
 
     /** The parent activity of this fragment. */
     private MainActivity parent;
@@ -45,10 +39,9 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
      * @return A new instance of fragment AmountFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AmountFragment newInstance(String param1) {
+    public static AmountFragment newInstance() {
         AmountFragment fragment = new AmountFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
         fragment.setArguments(args);
         return fragment;
     }
@@ -59,10 +52,6 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-        }
-
     }
 
     @Override
@@ -78,25 +67,6 @@ public class AmountFragment extends Fragment implements View.OnClickListener {
         amount = (Spinner) rootView.findViewById(R.id.pounds_spinner);
         return rootView;
     }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

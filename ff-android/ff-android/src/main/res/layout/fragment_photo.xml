@@ -6,17 +6,15 @@
     android:background="@color/grey"
     tools:context="com.blueprint.ffandroid.PhotoFragment">
 
-
-    <ImageView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/camera_button"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/photo_imageview"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:layout_gravity="center_horizontal" />
-
+        android:layout_margin="@dimen/location_margin"
+        android:text="Take photo" />
 
     <ImageButton
-        android:id="@+id/camera_button"
+        android:id="@+id/camera_button_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -25,14 +23,37 @@
         android:src="@android:drawable/ic_menu_camera"
         android:text="Take photo" />
 
-
-
-    <Button
-        android:id="@+id/forward_button"
-        android:layout_width="fill_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/location_margin"
-        android:background="@drawable/green_button"
-        android:text="Forward!" />
+        android:id="@+id/photo_imageview"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/location_margin"
+            android:background="@drawable/blue_button"
+            android:text="Back!" />
+
+
+        <Button
+            android:id="@+id/forward_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/location_margin"
+            android:background="@drawable/green_button"
+            android:text="Forward!" />
+
+        </LinearLayout>
+
 
 </LinearLayout>
