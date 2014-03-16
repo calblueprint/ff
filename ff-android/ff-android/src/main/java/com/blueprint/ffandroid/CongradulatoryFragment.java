@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.Session;
+import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.widget.FacebookDialog;
 
@@ -19,7 +21,22 @@ import com.facebook.widget.FacebookDialog;
  */
 public class CongradulatoryFragment extends Fragment {
 
+    private static String TAG = "Congratulatory Fragment";
     private UiLifecycleHelper uiHelper;
+    private Session.StatusCallback callback = new Session.StatusCallback() {
+        @Override
+        public void call(Session session, SessionState state, Exception exception) {
+            onSessionStateChange(session, state, exception);
+        }
+    };
+
+    private void onSessionStateChange(Session session, SessionState state, Exception exception) {
+        if (state.isOpened()) {
+            Log.i(TAG, "Logged in...");
+        } else if (state.isClosed()) {
+            Log.i(TAG, "Logged out...");
+        }
+    }
 
     private OnFragmentInteractionListener mListener;
 
@@ -42,7 +59,7 @@ public class CongradulatoryFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        uiHelper = new UiLifecycleHelper(this, callback);
+        uiHelper = new UiLifecycleHelper(this.getActivity(), callback);
         uiHelper.onCreate(savedInstanceState);
     }
 
