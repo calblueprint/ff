@@ -1123,6 +1123,7 @@
 		9B98D260179D0E870032888C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A3C8AD8818D6306900F94542 /* Fonts */,
 				9B98D261179D0E870032888C /* Images */,
 			);
 			path = Assets;
@@ -1432,6 +1433,13 @@
 				9BFA588217A9D62B00908526 /* postdonation_button_where_normal.png */,
 			);
 			path = PostDonation;
+			sourceTree = "<group>";
+		};
+		A3C8AD8818D6306900F94542 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,3 +10,7 @@ NSString * const kAuthenticationStoryboardName = @"AuthenticationStoryboard";
 
 NSString * const kOAuthRequestPath = @"/facebook?role=donor&callback_url=feedingforward://@auth_token@";
 NSString * const kOAuthTokenPassingURLScheme = @"feedingforward";
+
+//REST API URLS
+NSString * const kRequestBaseURL = @"http://feedingforward.apiary.io";
+NSString * const kRequestAuthPath = @"/api/session";

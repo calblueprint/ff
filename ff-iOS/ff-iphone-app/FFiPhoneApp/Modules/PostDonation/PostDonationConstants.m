@@ -34,3 +34,7 @@ NSUInteger const kPickupPeriodMinimumLengthInHour = 1;
 
 NSUInteger const kMealPhotoResizeMaximumWidth = 640;
 NSUInteger const kMealPhotoResizeMaximumHeight = 640;
+
+//REST API URLS
+NSString * const kRequestBaseURL = @"http://feedingforward.apiary.io";
+NSString * const kRequestDonatePath = @"/api/pickups";
