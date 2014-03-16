@@ -36,5 +36,5 @@ NSUInteger const kMealPhotoResizeMaximumWidth = 640;
 NSUInteger const kMealPhotoResizeMaximumHeight = 640;
 
 //REST API URLS
-NSString * const kRequestBaseURL = @"http://feedingforward.apiary.io";
-NSString * const kRequestDonatePath = @"/api/pickups";
+NSString * const kPostDonateRequestBaseURL = @"http://feedingforward.apiary.io";
+NSString * const kPostDonateRequestDonatePath = @"/api/pickups";
