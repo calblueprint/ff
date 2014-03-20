@@ -19,3 +19,11 @@ NSString * const kStyleDonationTablePlaceholderImage = @"donation_table_placehol
 
 NSString * const kUserDefaultsAuthTokenKey = @"FFAuthToken";
 NSString * const kUserDefaultsShareDonationPopupKey = @"FFSettingShareDonationPopup";
+
+//font constants
+NSString * const kProximaNovaRegular = @"ProximaNovaA-Regular";
+NSString * const kProximaNovaLight = @"ProximaNovaA-Light";
+
+//REST API URLS
+NSString * const kRequestBaseURL = @"http://feedingforever.herokuapp.com";
+NSString * const kRequestDonatePath = @"/api/pickups";

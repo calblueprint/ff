@@ -283,7 +283,6 @@
 		9BFAE59F17AF36370058AFE9 /* POSDChooseTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */; };
 		9BFAE5A617B07D100058AFE9 /* navigationbar_top_left_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */; };
 		9BFAE5A717B07D100058AFE9 /* navigationbar_top_left_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */; };
-		A3C8AD8F18DA938900F94542 /* FFiPhoneApp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C8AD8E18DA938900F94542 /* FFiPhoneApp-Info.plist */; };
 		A3C8ADA318DA9CBC00F94542 /* Mark Simonson - Proxima Nova Alt Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3C8ADA218DA9CBC00F94542 /* Mark Simonson - Proxima Nova Alt Regular.ttf */; };
 		A3C8ADA518DA9E0100F94542 /* Mark Simonson - Proxima Nova Alt Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3C8ADA418DA9E0100F94542 /* Mark Simonson - Proxima Nova Alt Light.ttf */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
@@ -656,7 +655,6 @@
 		9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSDChooseTimeViewController.m; sourceTree = "<group>"; };
 		9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_top_left_icon.png; sourceTree = "<group>"; };
 		9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_top_left_icon@2x.png"; sourceTree = "<group>"; };
-		A3C8AD8E18DA938900F94542 /* FFiPhoneApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FFiPhoneApp-Info.plist"; sourceTree = "<group>"; };
 		A3C8ADA218DA9CBC00F94542 /* Mark Simonson - Proxima Nova Alt Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Regular.ttf"; sourceTree = "<group>"; };
 		A3C8ADA418DA9E0100F94542 /* Mark Simonson - Proxima Nova Alt Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Simonson - Proxima Nova Alt Light.ttf"; path = "Mark Simonson - Proxima Nova Alt Light/fonts/Mark Simonson - Proxima Nova Alt Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1077,7 +1075,6 @@
 			children = (
 				9B98D25E179D0E870032888C /* FFiPhoneApp-Prefix.pch */,
 				9B98D25F179D0E870032888C /* main.m */,
-				A3C8AD8E18DA938900F94542 /* FFiPhoneApp-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1649,7 +1646,6 @@
 				9BC778E217BC5D1D00ADFD9A /* tabbar_icon_account@2x.png in Resources */,
 				9BC778E317BC5D1D00ADFD9A /* tabbar_icon_currentdonation.png in Resources */,
 				9BC778E417BC5D1D00ADFD9A /* tabbar_icon_currentdonation@2x.png in Resources */,
-				A3C8AD8F18DA938900F94542 /* FFiPhoneApp-Info.plist in Resources */,
 				9BC778E517BC5D1D00ADFD9A /* tabbar_icon_pastdonation.png in Resources */,
 				9BC778E617BC5D1D00ADFD9A /* tabbar_icon_pastdonation@2x.png in Resources */,
 				9BC778E717BC5D1D00ADFD9A /* tabbar_icon_postdonation.png in Resources */,
@@ -1922,7 +1918,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFiPhoneApp/App/FFiPhoneApp-Prefix.pch";
-				INFOPLIST_FILE = "FFiPhoneApp/App/FFiPhoneApp-Info.plist";
+				INFOPLIST_FILE = "FFiPhoneApp/app/FFiPhoneApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1982,7 +1978,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFiPhoneApp/App/FFiPhoneApp-Prefix.pch";
-				INFOPLIST_FILE = "FFiPhoneApp/App/FFiPhoneApp-Info.plist";
+				INFOPLIST_FILE = "FFiPhoneApp/app/FFiPhoneApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

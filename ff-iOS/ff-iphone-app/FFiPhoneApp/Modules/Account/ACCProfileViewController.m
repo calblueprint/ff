@@ -41,6 +41,7 @@
     [self.labelEmail setText:self.user.email];
     [self.labelMobilePhoneNumber setText:self.user.mobilePhoneNumber];
     [self.labelOrganization setText:self.user.organization];
+    self.labelFullName.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:20];
 }
 
 - (void)didReceiveMemoryWarning
