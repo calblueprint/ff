@@ -283,6 +283,8 @@
 		9BFAE59F17AF36370058AFE9 /* POSDChooseTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */; };
 		9BFAE5A617B07D100058AFE9 /* navigationbar_top_left_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */; };
 		9BFAE5A717B07D100058AFE9 /* navigationbar_top_left_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */; };
+		A3C8AD8C18D6354000F94542 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3C8AD8A18D6354000F94542 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */; };
+		A3C8AD8D18D6354000F94542 /* Mark Simonson - Proxima Nova Alt Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3C8AD8B18D6354000F94542 /* Mark Simonson - Proxima Nova Alt Thin.otf */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -653,6 +655,8 @@
 		9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSDChooseTimeViewController.m; sourceTree = "<group>"; };
 		9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_top_left_icon.png; sourceTree = "<group>"; };
 		9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_top_left_icon@2x.png"; sourceTree = "<group>"; };
+		A3C8AD8A18D6354000F94542 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Regular Italic.otf"; sourceTree = "<group>"; };
+		A3C8AD8B18D6354000F94542 /* Mark Simonson - Proxima Nova Alt Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Thin.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1123,6 +1127,7 @@
 		9B98D260179D0E870032888C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A3C8AD8818D6306900F94542 /* Fonts */,
 				9B98D261179D0E870032888C /* Images */,
 			);
 			path = Assets;
@@ -1434,6 +1439,15 @@
 			path = PostDonation;
 			sourceTree = "<group>";
 		};
+		A3C8AD8818D6306900F94542 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A3C8AD8A18D6354000F94542 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */,
+				A3C8AD8B18D6354000F94542 /* Mark Simonson - Proxima Nova Alt Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1507,6 +1521,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C8AD8C18D6354000F94542 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf in Resources */,
+				A3C8AD8D18D6354000F94542 /* Mark Simonson - Proxima Nova Alt Thin.otf in Resources */,
 				9BBB110317A7CE9F00EA924D /* login_background.png in Resources */,
 				9BBB110417A7CE9F00EA924D /* login_background@2x.png in Resources */,
 				9BBB110517A7CE9F00EA924D /* login_logo.png in Resources */,
