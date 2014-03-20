@@ -63,6 +63,15 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 	// Do any additional setup after loading the view.
    
     DebugLog(@"viewDidLoad");
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
     
     [self configureAppearance];
     
