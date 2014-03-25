@@ -1,5 +1,6 @@
 package com.blueprint.ffandroid;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.app.Activity;
@@ -15,6 +16,7 @@ import android.content.SharedPreferences;
 
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -38,7 +40,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        SharedPreferences prefs = getPreferences(0);
+        SharedPreferences prefs = getSharedPreferences(PREFS, 0);
 
 
 //        if (savedInstanceState == null) {
@@ -100,7 +102,7 @@ public class LoginActivity extends Activity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
-                        SharedPreferences prefs = getPreferences(0);
+                        SharedPreferences prefs = getSharedPreferences(PREFS, 0);
                         SharedPreferences.Editor editor = prefs.edit();
 
                         try {
@@ -112,8 +114,17 @@ public class LoginActivity extends Activity {
                             intent.putExtra("token", jsonObject.getString("token"));
                             startActivity(intent);
 
-                        } catch (JSONException exp) {
-                            Log.d("JSON Exception: ", exp.getMessage());
+                        } catch (JSONException err) {
+                            Log.d("JSON Exception: ", err.getMessage());
+                            try {
+                                jsonObject.getString("message");
+                                Context context = getApplicationContext();
+                                Toast toast = Toast.makeText(context, "Incorrect uesername or password.", Toast.LENGTH_SHORT);
+                                toast.show();
+                            } catch (JSONException err2){
+                                Log.d("JSON Exception: ", err2.getMessage());
+                            }
+
                         }
                     }
                 },
@@ -121,10 +132,13 @@ public class LoginActivity extends Activity {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
                         Log.d("Volley Error", volleyError.getMessage());
+                        Context context = getApplicationContext();
+                        Toast toast = Toast.makeText(context, "Network error. Try again later.", Toast.LENGTH_SHORT);
+                        toast.show();
                 }
         });
 
-
+        queue.add(request);
 
     }
 
