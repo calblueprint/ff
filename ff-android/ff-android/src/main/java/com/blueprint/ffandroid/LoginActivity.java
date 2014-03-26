@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +19,7 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -28,17 +30,23 @@ import com.android.volley.Request;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 
 public class LoginActivity extends Activity {
 
     public static final String PREFS = "LOGIN_PREFS";
-    private RequestQueue queue = Volley.newRequestQueue(this);
-    private static final String url = "http://feedingforward.apiary.io/api/session";
+    private RequestQueue queue;
+    private static final String url = "http://feeding-forever.herokuapp.com/api/session";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        queue = Volley.newRequestQueue(this);
 
         SharedPreferences prefs = getSharedPreferences(PREFS, 0);
 
@@ -84,14 +92,14 @@ public class LoginActivity extends Activity {
         EditText user = (EditText) findViewById(R.id.username);
         EditText pass = (EditText) findViewById(R.id.pass);
 
-        String userString = user.toString();
-        String passString = pass.toString();
+        final String userString = user.getText().toString();
+        final String passString = pass.getText().toString();
 
         final JSONObject params = new JSONObject();
 
         try {
             params.put("email", userString);
-            params.put("pass", passString);
+            params.put("password", passString);
         } catch (JSONException exp) {
             Log.d("JSON Exception: ", exp.getMessage());
             return;
@@ -106,9 +114,10 @@ public class LoginActivity extends Activity {
                         SharedPreferences.Editor editor = prefs.edit();
 
                         try {
-                            editor.putString("email", params.getString("email"));
-                            editor.putString("pass", params.getString("pass"));
-                            editor.putString("token", jsonObject.getString("token"));
+                            String token = jsonObject.getString("token");
+                            editor.putString("email", userString);
+                            editor.putString("password", passString);
+                            editor.putString("token", token);
                             editor.commit();
 
                             intent.putExtra("token", jsonObject.getString("token"));
@@ -131,12 +140,21 @@ public class LoginActivity extends Activity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        Log.d("Volley Error", volleyError.getMessage());
+                        Log.d("Volley Error", new String(volleyError.networkResponse.data));
                         Context context = getApplicationContext();
                         Toast toast = Toast.makeText(context, "Network error. Try again later.", Toast.LENGTH_SHORT);
                         toast.show();
                 }
-        });
+        }){
+//            @Override
+//            public java.util.Map<java.lang.String,java.lang.String> getHeaders() throws com.android.volley.AuthFailureError
+//            {
+//                HashMap<String, String> map = new HashMap<String, String>();
+//                map.put("Content-type", "application/json\r\n");
+//                return map;
+//            }
+        };
+
 
         queue.add(request);
 
