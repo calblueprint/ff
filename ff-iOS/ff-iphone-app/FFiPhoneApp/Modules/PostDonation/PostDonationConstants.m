@@ -34,3 +34,5 @@ NSUInteger const kPickupPeriodMinimumLengthInHour = 1;
 
 NSUInteger const kMealPhotoResizeMaximumWidth = 640;
 NSUInteger const kMealPhotoResizeMaximumHeight = 640;
+
+
