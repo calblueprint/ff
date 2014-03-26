@@ -17,6 +17,7 @@ import android.os.Build;
 import android.content.SharedPreferences;
 
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -88,6 +89,8 @@ public class LoginActivity extends Activity {
 
         EditText email = (EditText) findViewById(R.id.username);
         EditText pass = (EditText) findViewById(R.id.pass);
+        final Button loginButton = (Button) findViewById(R.id.login_button);
+        loginButton.setEnabled(false);
 
 
         final String emailString = email.getText().toString();
@@ -139,6 +142,7 @@ public class LoginActivity extends Activity {
                         }
                         Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
                         toast.show();
+                        loginButton.setEnabled(true);
                 }
         });
 
