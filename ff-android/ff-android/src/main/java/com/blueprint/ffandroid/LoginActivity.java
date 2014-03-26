@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +21,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -50,16 +53,10 @@ public class LoginActivity extends Activity {
 
         SharedPreferences prefs = getSharedPreferences(PREFS, 0);
 
-
-//        if (savedInstanceState == null) {
-//            getSupportFragmentManager().beginTransaction()
-//                    .add(R.id.container, new PlaceholderFragment())
-//                    .commit();
-//        }
-
-        if (prefs.getString("token", null) != null) {
+        if (!prefs.getString("token", "none").equals("none")) {
             final Intent intent = new Intent(this, MainActivity.class);
             intent.putExtra("token", prefs.getString("token", null));
+            this.finish();
             startActivity(intent);
         }
     }
@@ -89,24 +86,19 @@ public class LoginActivity extends Activity {
 
         final Intent intent = new Intent(this, MainActivity.class);
 
-        EditText user = (EditText) findViewById(R.id.username);
+        EditText email = (EditText) findViewById(R.id.username);
         EditText pass = (EditText) findViewById(R.id.pass);
 
-        final String userString = user.getText().toString();
+
+        final String emailString = email.getText().toString();
         final String passString = pass.getText().toString();
 
-        final JSONObject params = new JSONObject();
-
-        try {
-            params.put("email", userString);
-            params.put("password", passString);
-        } catch (JSONException exp) {
-            Log.d("JSON Exception: ", exp.getMessage());
-            return;
-        }
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("email", emailString);
+        params.put("password", passString);
 
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, params,
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, new JSONObject(params),
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
@@ -115,25 +107,17 @@ public class LoginActivity extends Activity {
 
                         try {
                             String token = jsonObject.getString("token");
-                            editor.putString("email", userString);
+                            editor.putString("email", emailString);
                             editor.putString("password", passString);
                             editor.putString("token", token);
                             editor.commit();
 
                             intent.putExtra("token", jsonObject.getString("token"));
+                            LoginActivity.this.finish();
                             startActivity(intent);
 
                         } catch (JSONException err) {
                             Log.d("JSON Exception: ", err.getMessage());
-                            try {
-                                jsonObject.getString("message");
-                                Context context = getApplicationContext();
-                                Toast toast = Toast.makeText(context, "Incorrect uesername or password.", Toast.LENGTH_SHORT);
-                                toast.show();
-                            } catch (JSONException err2){
-                                Log.d("JSON Exception: ", err2.getMessage());
-                            }
-
                         }
                     }
                 },
@@ -142,18 +126,21 @@ public class LoginActivity extends Activity {
                     public void onErrorResponse(VolleyError volleyError) {
                         Log.d("Volley Error", new String(volleyError.networkResponse.data));
                         Context context = getApplicationContext();
-                        Toast toast = Toast.makeText(context, "Network error. Try again later.", Toast.LENGTH_SHORT);
+                        String message;
+                        if (volleyError instanceof NetworkError){
+                            message = "Network Error. Please try again later.";
+                        } else {
+                            try {
+                            JSONObject response = new JSONObject(new String(volleyError.networkResponse.data));
+                            message = (String) response.get("message");
+                            } catch (Exception e) {
+                                message = "Unknown Error";
+                            }
+                        }
+                        Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
                         toast.show();
                 }
-        }){
-//            @Override
-//            public java.util.Map<java.lang.String,java.lang.String> getHeaders() throws com.android.volley.AuthFailureError
-//            {
-//                HashMap<String, String> map = new HashMap<String, String>();
-//                map.put("Content-type", "application/json\r\n");
-//                return map;
-//            }
-        };
+        });
 
 
         queue.add(request);

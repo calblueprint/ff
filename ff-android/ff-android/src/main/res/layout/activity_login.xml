@@ -14,17 +14,19 @@
         android:id="@+id/username"
         android:hint="@string/user"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:inputType="textEmailAddress"
+        android:layout_height="40dp" />
 
     <EditText
         android:id="@+id/pass"
         android:hint="@string/pass"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="40dp" />
 
     <Button
         android:id="@+id/login_button"
-        android:hint="@string/login_button"
+        android:text="@string/login_button"
         android:onClick="attemptLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
