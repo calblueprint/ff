@@ -127,7 +127,6 @@ public class LoginActivity extends Activity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        Log.d("Volley Error", new String(volleyError.networkResponse.data));
                         Context context = getApplicationContext();
                         String message;
                         if (volleyError instanceof NetworkError){
