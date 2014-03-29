@@ -109,12 +109,13 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         map.animateCamera(zoom);
 
         getAddress(location);
+        parent.donation.setLocation(location);
     }
 
     private void getAddress(Location location) {
         String coordinates = location.getLatitude() + ","  + location.getLongitude();
         String url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ coordinates +"&sensor=true&key="+getString(R.string.GEOCODER_API_KEY);
-
+        System.out.println(url);
         AsyncHttpClient client = new AsyncHttpClient();
 
         client.get(url, new AsyncHttpResponseHandler() {
@@ -122,7 +123,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
             public void onSuccess(String response) {
                 try {
                     JSONArray results = new JSONObject(response).getJSONArray("results");
-                    String address = results.getJSONObject(1).getString("formatted_address");
+                    String address = results.getJSONObject(0).getString("formatted_address");
                     setAddress(address);
                 } catch (org.json.JSONException e) {
                     Toast.makeText(parent, "Error retrieving address", Toast.LENGTH_SHORT).show();
@@ -132,11 +133,11 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     }
 
     /**
-     * Sets the address of the text field
-     * @param address - the address
+     * Sets and saves the ADDRESS of the donation.
      */
     public void setAddress(String address) {
         address_field.setText(address);
+        parent.donation.setAddress(address);
     }
 
     /**
@@ -242,7 +243,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         switch (v.getId()) {
             case (R.id.forward_button):
                 updateDonationModel();
-                parent.replaceFragment(parent.amountFragment);
+                parent.replaceFragment(parent.formFragment);
                 break;
         }
     }
