@@ -20,7 +20,7 @@
         android:layout_alignParentBottom="true"
         android:textColor="@color/white"
         android:typeface="sans"
-        android:text="CONFIRM LOCATION"/>
+        android:text="@string/confirm_location"/>
 
     <EditText
         android:layout_width="fill_parent"
@@ -31,7 +31,7 @@
         android:typeface="sans"
         android:imeOptions="actionDone"
         android:singleLine="true"
-        android:hint="Address"
+        android:hint="@string/address"
         android:layout_above="@+id/forward_button" />
 
     <fragment

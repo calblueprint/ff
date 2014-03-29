@@ -23,6 +23,10 @@
 
     <string name="GEOCODER_API_KEY">AIzaSyCnJmnYV5n961YR8DYSOivhsPdx76Zp0lY</string>
 
+    <!-- Location Fragment -->
+    <string name="address">Address</string>
+    <string name="confirm_location">CONFIRM LOCATION</string>
+
     <string name="name_header">Name</string>
     <string name="email_header">Email</string>
     <string name="organization_header">Organization</string>
