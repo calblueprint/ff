@@ -10,10 +10,13 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/location_margin"
+        android:layout_marginTop="13dp"
         android:id="@+id/forward_button"
         android:background="@drawable/green_button"
         android:layout_alignParentBottom="true"
-        android:text="Confirm Location"/>
+        android:textColor="@color/white"
+        android:typeface="sans"
+        android:text="CONFIRM LOCATION"/>
 
     <EditText
         android:layout_width="fill_parent"
@@ -21,6 +24,10 @@
         android:layout_margin="@dimen/location_margin"
         android:id="@+id/address_field"
         android:gravity="center_horizontal"
+        android:typeface="sans"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:hint="Address"
         android:layout_above="@+id/forward_button" />
 
     <fragment
