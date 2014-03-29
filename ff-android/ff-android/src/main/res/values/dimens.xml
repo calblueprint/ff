@@ -3,7 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     
-    <dimen name="location_margin">32dp</dimen>
+    <dimen name="location_margin">28dp</dimen>
     <dimen name="location_title_font_size">32dp</dimen>
     <dimen name="location_form_height_separation">16dp</dimen>
 
@@ -16,6 +16,9 @@
     <!-- Amount Fragment -->
     <dimen name="location_text_size">24sp</dimen>
     <dimen name="location_padding">16dp</dimen>
+
+    <!-- Form Fragment -->
+    <dimen name="form_field_size">56dp</dimen>
 
 
     <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
