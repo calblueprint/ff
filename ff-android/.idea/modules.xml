@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/libraries/facebook/facebook.iml" filepath="$PROJECT_DIR$/libraries/facebook/facebook.iml" />
       <module fileurl="file://$PROJECT_DIR$/ff-android.iml" filepath="$PROJECT_DIR$/ff-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ff-android.iml" filepath="$PROJECT_DIR$/ff-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ff-android/ff-android-ff-android.iml" filepath="$PROJECT_DIR$/ff-android/ff-android-ff-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/ff-android/ff-android-ff-android.iml" filepath="$PROJECT_DIR$/ff-android/ff-android-ff-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
     </modules>
