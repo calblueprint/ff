@@ -23,7 +23,7 @@ import com.facebook.widget.WebDialog;
 /**
  * A fragment that congradulates the user when he or she completes a donation.
  */
-public class CongradulatoryFragment extends Fragment {
+public class CongratulatoryFragment extends Fragment {
 
     private static String TAG = "Congratulatory Fragment";
     private UiLifecycleHelper uiHelper;
@@ -50,13 +50,13 @@ public class CongradulatoryFragment extends Fragment {
      * @return A new instance of fragment CongradulatoryFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CongradulatoryFragment newInstance() {
-        CongradulatoryFragment fragment = new CongradulatoryFragment();
+    public static CongratulatoryFragment newInstance() {
+        CongratulatoryFragment fragment = new CongratulatoryFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }
-    public CongradulatoryFragment() {
+    public CongratulatoryFragment() {
         // Required empty public constructor
     }
 
@@ -73,7 +73,7 @@ public class CongradulatoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_congradulatory, container, false);
+        return inflater.inflate(R.layout.fragment_congratulatory, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -33,9 +33,10 @@ public class MainActivity extends ActionBarActivity
     PhotoFragment photoFragment;
     AccountFragment accountFragment;
     Fragment currentFragment;
+    CongratulatoryFragment congratulatoryFragment;
     /** Activity declarations. **/
     LoginActivity loginActivity;
-    CongradulatoryFragment congradulatoryFragment;
+
 
 
     @Override
@@ -46,6 +47,7 @@ public class MainActivity extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mTitle = getTitle();
         mTitle = getTitle();
 
         // Set up the drawer.
@@ -61,7 +63,7 @@ public class MainActivity extends ActionBarActivity
         locationFragment = LocationFragment.newInstance();
         photoFragment = PhotoFragment.newInstance();
         accountFragment = AccountFragment.newInstance();
-        congradulatoryFragment = CongradulatoryFragment.newInstance();
+        congratulatoryFragment = CongratulatoryFragment.newInstance();
         currentFragment = titleFragment;
     }
 
