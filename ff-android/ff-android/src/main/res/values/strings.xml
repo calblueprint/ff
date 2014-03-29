@@ -29,14 +29,6 @@
     <string name="phone_header">Phone Number</string>
     <string name="social_media">Share with social networks</string>
 
-    <!-- AmountFragment Strings -->
-    <string name="title">How many pounds can you donate?</string>
-    <string name="transportation_size">What is the smallest vehicle this donation will fit in?</string>
-    <string name="small_sedan">Small (Sedan)</string>
-    <string name="no_vehicle">Can be carried</string>
-    <string name="medium_vehicle">Medium (Van, SUV)</string>
-    <string name="large_vehicle">Large (Truck)</string>
-
     <string-array name="states">
         <item>Alabama</item>
         <item>Alaska</item>
