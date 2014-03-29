@@ -35,6 +35,7 @@ public class MainActivity extends ActionBarActivity
     Fragment currentFragment;
     /** Activity declarations. **/
     LoginActivity loginActivity;
+    CongradulatoryFragment congradulatoryFragment;
 
 
     @Override
@@ -60,6 +61,7 @@ public class MainActivity extends ActionBarActivity
         locationFragment = LocationFragment.newInstance();
         photoFragment = PhotoFragment.newInstance();
         accountFragment = AccountFragment.newInstance();
+        congradulatoryFragment = CongradulatoryFragment.newInstance();
         currentFragment = titleFragment;
     }
 
@@ -82,7 +84,6 @@ public class MainActivity extends ActionBarActivity
                 Intent intent = new Intent(this, LoginActivity.class);
                 this.finish();
                 startActivity(intent);
-
         }
     }
 
