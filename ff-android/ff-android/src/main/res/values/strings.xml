@@ -27,6 +27,13 @@
     <string name="address">Address</string>
     <string name="confirm_location">CONFIRM LOCATION</string>
 
+    <!-- Form Fragment -->
+    <string name="kind">Kind</string>
+    <string name="weight">Weight</string>
+    <string name="pickup_time">Pickup Time</string>
+    <string name="photo">Take Photo</string>
+    <string name="pickup_button">SCHEDULE PICKUP</string>
+
     <string name="name_header">Name</string>
     <string name="email_header">Email</string>
     <string name="organization_header">Organization</string>

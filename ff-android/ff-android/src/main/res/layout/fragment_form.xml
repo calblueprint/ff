@@ -11,14 +11,14 @@
         android:layout_height="@dimen/form_field_size"
         android:id="@+id/donation_kind"
         android:paddingLeft="@dimen/title_textview_horizontal"
-        android:hint="Kind" />
+        android:hint="@string/kind" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/form_field_size"
         android:id="@+id/donation_weight"
         android:paddingLeft="@dimen/title_textview_horizontal"
-        android:hint="Weight" />
+        android:hint="@string/weight" />
 
     <EditText
         android:layout_width="match_parent"
@@ -26,14 +26,14 @@
         android:id="@+id/pickup_time"
         android:paddingLeft="@dimen/title_textview_horizontal"
         android:focusable="false"
-        android:hint="Pickup Time" />
+        android:hint="@string/pickup_time" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/form_field_size"
         android:id="@+id/address_field"
         android:paddingLeft="@dimen/title_textview_horizontal"
-        android:hint="Address" />
+        android:hint="@string/address" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
         android:layout_margin="@dimen/location_margin"
         android:background="@drawable/green_button"
         android:src="@android:drawable/ic_menu_camera"
-        android:text="Take photo" />
+        android:text="@string/photo" />
 
     <Button
         android:id="@+id/pickup_button"
@@ -59,6 +59,6 @@
         android:layout_margin="@dimen/location_margin"
         android:background="@drawable/green_button"
         android:textColor="@color/white"
-        android:text="SCHEDULE PICKUP" />
+        android:text="@string/pickup_button" />
 
 </LinearLayout>
