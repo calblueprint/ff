@@ -37,4 +37,5 @@ dependencies {
     compile 'com.google.android.gms:play-services:+'
     compile files('libs/volley.jar')
     compile project(':libraries:facebook')
+    compile files('libs/android-async-http-1.4.4.jar')
 }
