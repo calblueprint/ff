@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="donation_start">Donate!</string>
     <string name="account_information">Account</string>
     <string name="donation_list">Donation List</string>
     <string name="faq">FAQ</string>
     <string name="logout">Logout</string>
-
-
     <string name="donation_start_title">Title</string>
     <string name="app_name">Feeding Forward</string>
     <string name="title_section1">Section 1</string>
@@ -21,6 +20,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_field">Title</string>
     <string name="forward_button">Forward!</string>
+
     <string name="GEOCODER_API_KEY">AIzaSyCnJmnYV5n961YR8DYSOivhsPdx76Zp0lY</string>
 
     <string name="name_header">Name</string>
@@ -95,4 +95,10 @@
         <item>Wisconsin</item>
         <item>Wyoming</item>
     </string-array>
+
+    <string name="title_activity_login">Login</string>
+    <string name="user">Email</string>
+    <string name="pass">Password</string>
+    <string name="login_button">Log In</string>
+
 </resources>

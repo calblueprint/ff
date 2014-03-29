@@ -1,11 +1,14 @@
 package com.blueprint.ffandroid;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -71,6 +74,14 @@ public class MainActivity extends ActionBarActivity
             case 2:
                 replaceFragment(accountFragment);
                 break;
+            case 4:
+                SharedPreferences prefs = getSharedPreferences(LoginActivity.PREFS, 0);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.clear();
+                editor.commit();
+                Intent intent = new Intent(this, LoginActivity.class);
+                this.finish();
+                startActivity(intent);
         }
     }
 
