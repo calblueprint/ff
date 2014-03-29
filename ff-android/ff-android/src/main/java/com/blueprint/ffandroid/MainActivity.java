@@ -29,6 +29,7 @@ public class MainActivity extends ActionBarActivity
     LocationFragment locationFragment;
     PhotoFragment photoFragment;
     AccountFragment accountFragment;
+    FormFragment formFragment;
     Fragment currentFragment;
 
 
@@ -55,6 +56,7 @@ public class MainActivity extends ActionBarActivity
         locationFragment = LocationFragment.newInstance();
         photoFragment = PhotoFragment.newInstance();
         accountFragment = AccountFragment.newInstance();
+        formFragment = FormFragment.newInstance();
         currentFragment = locationFragment;
     }
 
