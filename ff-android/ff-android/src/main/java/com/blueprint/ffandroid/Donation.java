@@ -20,6 +20,8 @@ public class Donation {
     private Picture _picture;
     /** A location associated with the donation. */
     private Location _location;
+    /** A human-readable representation of the location */
+    private String _address;
     /** The weight of the donation */
     private double _weight;
     /** The type of vehicle that the donation asks for. */
@@ -34,12 +36,13 @@ public class Donation {
      *  date of a donation.
      */
     public Donation(String title, String description, Picture picture,
-                    Location location, double weight, String vehicle,
+                    Location location, String address, double weight, String vehicle,
                     Date start, Date end) {
         _title = title;
         _description = description;
         _picture = picture;
         _location = location;
+        _address = address;
         _weight = weight;
         _vehicle = vehicle;
         _startDate = start;
@@ -53,6 +56,7 @@ public class Donation {
         _description = "";
         _picture = new Picture();
         _location = null;
+        _address = "";
         _weight = 0.0;
         _vehicle = "";
         _startDate = new Date();
@@ -78,6 +82,9 @@ public class Donation {
     public Location getLocation(){
         return _location;
     }
+
+    /** Returns the address of the donation. */
+    public String getAddress() { return _address; }
 
     /** Returns the weight of the donation. */
     public double getWeight() {
@@ -118,6 +125,9 @@ public class Donation {
     public void setLocation(Location location){
         _location = location;
     }
+
+    /** Sets the ADDRESS */
+    public void setAddress(String address) { _address = address; }
 
     /** Sets the Weight. */
     public void setWeight(double weight) {
