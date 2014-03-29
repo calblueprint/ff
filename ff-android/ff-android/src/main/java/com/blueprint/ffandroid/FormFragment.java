@@ -174,9 +174,6 @@ public class FormFragment extends Fragment implements View.OnClickListener,
             case R.id.camera_button:
                 dispatchTakePictureIntent();
                 break;
-            case R.id.camera_button_image:
-                dispatchTakePictureIntent();
-                break;
         }
     }
 }
