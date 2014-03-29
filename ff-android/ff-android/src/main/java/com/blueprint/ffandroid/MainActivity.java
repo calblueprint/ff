@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity
         locationFragment = LocationFragment.newInstance();
         photoFragment = PhotoFragment.newInstance();
         accountFragment = AccountFragment.newInstance();
-        currentFragment = titleFragment;
+        currentFragment = locationFragment;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class MainActivity extends ActionBarActivity
 
         switch (position) {
             case 0:
-                replaceFragment(titleFragment);
+                replaceFragment(locationFragment);
                 break;
             case 2:
                 replaceFragment(accountFragment);
