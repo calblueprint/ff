@@ -26,13 +26,15 @@ public class MainActivity extends ActionBarActivity
     private CharSequence mTitle;
     /** The donation object that is created and updated. */
     public Donation donation;
-    /**Fragment declarations**/
+    /** Fragment declarations**/
     TitleFragment titleFragment;
     AmountFragment amountFragment;
     LocationFragment locationFragment;
     PhotoFragment photoFragment;
     AccountFragment accountFragment;
     Fragment currentFragment;
+    /** Activity declarations. **/
+    LoginActivity loginActivity;
 
 
     @Override
@@ -80,6 +82,7 @@ public class MainActivity extends ActionBarActivity
                 Intent intent = new Intent(this, LoginActivity.class);
                 this.finish();
                 startActivity(intent);
+
         }
     }
 
