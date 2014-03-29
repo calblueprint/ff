@@ -48,6 +48,7 @@ public class LoginActivity extends Activity {
     private static final String url = "http://feeding-forever.herokuapp.com/api/session";
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

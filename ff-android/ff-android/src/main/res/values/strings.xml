@@ -5,6 +5,7 @@
     <string name="account_information">Account</string>
     <string name="donation_list">Donation List</string>
     <string name="faq">FAQ</string>
+    <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="donation_start_title">Title</string>
     <string name="app_name">Feeding Forward</string>

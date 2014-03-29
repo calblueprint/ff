@@ -794,7 +794,10 @@ center
             </file>
         </source>
         <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/build/res/rs/release" />
+<<<<<<< HEAD
         <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/build/res/generated/release" />
+=======
+>>>>>>> Login is on the navbar
     </dataSet>
     <dataSet config="release" >
         <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/src/release/res" />
