@@ -67,11 +67,7 @@ public class CongratulatoryFragment extends Fragment {
         uiHelper = new UiLifecycleHelper(this.getActivity(), callback);
         if (savedInstanceState != null) {
             uiHelper.onCreate(savedInstanceState);
-            Log.d(TAG,"Creation");
-        } else if (savedInstanceState == null) {
-            Log.d(TAG, "null");
         }
-        Log.d(TAG,"Crap");
     }
 
     @Override
