@@ -34,8 +34,7 @@ public class MainActivity extends ActionBarActivity
     AccountFragment accountFragment;
     Fragment currentFragment;
     CongratulatoryFragment congratulatoryFragment;
-    /** Activity declarations. **/
-    LoginActivity loginActivity;
+
 
 
 
@@ -86,6 +85,10 @@ public class MainActivity extends ActionBarActivity
                 Intent intent = new Intent(this, LoginActivity.class);
                 this.finish();
                 startActivity(intent);
+                break;
+            case 6:
+                replaceFragment(congratulatoryFragment);
+                break;
         }
     }
 
