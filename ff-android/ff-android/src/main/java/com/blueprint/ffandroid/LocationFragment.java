@@ -6,11 +6,14 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.*;
@@ -25,6 +28,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 
@@ -39,7 +43,9 @@ import org.json.JSONObject;
  */
 public class LocationFragment extends Fragment implements View.OnClickListener, LocationListener,
         GooglePlayServicesClient.ConnectionCallbacks,
-        GooglePlayServicesClient.OnConnectionFailedListener {
+        GooglePlayServicesClient.OnConnectionFailedListener,
+        View.OnFocusChangeListener,
+        TextView.OnEditorActionListener {
 
 
     /** A request code to send to Google Play services */
@@ -89,6 +95,8 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         parent = (MainActivity)this.getActivity();
 
         address_field = (EditText) rootView.findViewById(R.id.address_field);
+        address_field.setOnFocusChangeListener(this);
+        address_field.setOnEditorActionListener(this);
 
         map = ((SupportMapFragment) parent.getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
         map.setMyLocationEnabled(true);
@@ -99,6 +107,13 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
 
     @Override
     public void onLocationChanged(Location location) {
+        updateMap(location);
+
+        getAddress(location);
+        parent.donation.setLocation(location);
+    }
+
+    private void updateMap(Location location) {
         double lat = location.getLatitude();
         double lng = location.getLongitude();
 
@@ -107,17 +122,38 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
 
         map.moveCamera(center);
         map.animateCamera(zoom);
+    }
 
-        getAddress(location);
-        parent.donation.setLocation(location);
+    private void updateMap(String address) {
+        String address_url = address.replace(" ", "+");
+        String url = "https://maps.googleapis.com/maps/api/geocode/json?address="+ address_url +"&sensor=true&key="+getString(R.string.GEOCODER_API_KEY);
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(String response) {
+                try {
+                    JSONArray results = new JSONObject(response).getJSONArray("results");
+                    JSONObject locationJson = results.getJSONObject(0).getJSONObject("geometry").getJSONObject("location");
+                    double lat = locationJson.getDouble("lat");
+                    double lng = locationJson.getDouble("lng");
+                    Location loc = new Location("Google Geocoder API");
+                    loc.setLatitude(lat);
+                    loc.setLongitude(lng);
+                    updateMap(loc);
+                } catch (JSONException e) {
+                    Toast.makeText(parent, "Error updating map", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
     }
 
     private void getAddress(Location location) {
         String coordinates = location.getLatitude() + ","  + location.getLongitude();
         String url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ coordinates +"&sensor=true&key="+getString(R.string.GEOCODER_API_KEY);
-        System.out.println(url);
-        AsyncHttpClient client = new AsyncHttpClient();
 
+        AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(String response) {
@@ -125,7 +161,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                     JSONArray results = new JSONObject(response).getJSONArray("results");
                     String address = results.getJSONObject(0).getString("formatted_address");
                     setAddress(address);
-                } catch (org.json.JSONException e) {
+                } catch (JSONException e) {
                     Toast.makeText(parent, "Error retrieving address", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -230,12 +266,26 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     }
 
 
-    /**
-     * Update the donation model with the current info on the
-     * screen before passing it along.
+    /** Called whenever the address field's focus has been changed.
+     * @param v -- will always be this.address_field
+     * @param hasFocus -- whether the object has focus or not
      */
-    private void updateDonationModel() {
-        return;
+    @Override
+    public void onFocusChange(View v, boolean hasFocus) {
+        if (!hasFocus) {
+            EditText address = (EditText) v;
+            updateMap(address.getText().toString());
+            setAddress(address.getText().toString());
+        }
+    }
+
+    @Override
+    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        EditText address = (EditText) v;
+        if (actionId == EditorInfo.IME_ACTION_DONE) {
+            address.clearFocus();
+        }
+        return true;
     }
 
     @Override
