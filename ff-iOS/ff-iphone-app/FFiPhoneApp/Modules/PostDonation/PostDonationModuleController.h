@@ -10,7 +10,7 @@
 
 #import "ModuleControllerProtocol.h"
 
-@class AppDelegate, FFDataDonation, FFError, FFDataImage, FFDataLocation;
+@class AppDelegate, FFDataDonation, FFError, FFDataImage, FFDataLocation, POSDPostDonationViewController;
 
 @protocol PostDonationModuleControllerDelegate <NSObject>
 
@@ -30,6 +30,8 @@ andDidRetrievePersistedDonation:(FFDataDonation *)persistedDonation
 @property (weak, nonatomic) id <PostDonationModuleControllerDelegate> delegate;
 @property (strong, nonatomic) UIStoryboard *storyboard;
 @property (strong, nonatomic) NSArray *userLocations;
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) POSDPostDonationViewController *postDonationViewController;
 
 - (UINavigationController *)instantiatePostDonationNavigationViewController;
 - (void)    postDonation:(FFDataDonation *)donation

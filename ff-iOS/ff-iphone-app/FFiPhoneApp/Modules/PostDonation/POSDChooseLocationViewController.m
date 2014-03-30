@@ -56,11 +56,11 @@
     [self.searchBarDisplayController setSearchResultsDataSource:(id)self];
     [self.searchBarDisplayController setSearchResultsDelegate:(id)self];
   
-		self.title = @"Choose Location";
     // Start locating the user immeidately
     if (!self.currentLocationAddressDictionary) {
         [self.locationManager startUpdatingLocation];
     }
+	
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,12 +83,13 @@
     }
     
     [self setLocationWithAddressDictionary:self.currentLocationAddressDictionary];
+		[self.delegate chooseLocationViewController:self didSelectLocation:self.location];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)buttonBack_onTouchUpInside:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 //

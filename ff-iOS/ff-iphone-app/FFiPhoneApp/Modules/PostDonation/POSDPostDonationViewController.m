@@ -10,7 +10,6 @@
 #import "POSDChooseLocationViewController.h"
 #import "POSDChooseAmountViewController.h"
 #import "POSDChooseTimeViewController.h"
-#import "POSDTitleViewController.h"
 
 #import "PostDonationConstants.h"
 #import "PostDonationModuleController.h"
@@ -56,8 +55,19 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 - (IBAction)donationTitle_onEditingChanged:(id)sender;
 
 // NEW STUFF
-- (IBAction)startDonation:(id)sender;
-@property	(strong, nonatomic) UIPageViewController *pageViewController;
+- (IBAction)selectAddress:(id)sender;
+- (IBAction)selectPickupBy:(id)sender;
+- (IBAction)selectWeight:(id)sender;
+- (IBAction)selectKind:(id)sender;
+- (IBAction)buttonDone:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *selectKindButton;
+@property (weak, nonatomic) IBOutlet UIButton *selectWeightButton;
+@property (weak, nonatomic) IBOutlet UIButton *selectPickupByButton;
+@property (weak, nonatomic) IBOutlet UIButton *selectAddressButton;
+@property (weak, nonatomic) IBOutlet UITextField *selectKindField;
+@property (weak, nonatomic) IBOutlet UITextField *selectDonationAmountField;
+
 @property (strong, nonatomic) NSArray *donationControllers;
 @property (strong, nonatomic) NSArray *viewControllers;
 @property int currentIndex;
@@ -79,7 +89,6 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
     [self setAppDelegate:[[UIApplication sharedApplication] delegate]];
     [self setDonation:[FFDataDonation new]];
     [self.donation setLocation:[FFDataLocation new]];
-    
     // Meta data for configuring buttons' appearance
     [self.buttonPicture setTag:0];
     [self.buttonWhere setTag:1];
@@ -90,42 +99,22 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
     [self setPlaceholderWithTextView:self.textViewDonationDescription text:kDonationDescriptionPlaceholder];
     // Hide description field's cross button
     [self.buttonCross setHidden:YES];
-    
+  
+	
+		self.selectKindField.delegate = self;
+		self.selectDonationAmountField.delegate = self;
+		self.selectDonationAmountField.keyboardType = UIKeyboardTypeDecimalPad;
     // Register to receive notification for prefilling the post donation form
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveFFPostDonationPrefillPostDonationFormNotification:)
                                                  name:@"FFPostDonationPrefillPostDonationFormNotification" object:nil];
 	
-	// NEW STUFF
-	self.title = @"Post Donation";
-	self.chooseLocationViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDChooseLocationViewController"];
-	self.chooseLocationViewController.identifier = @"POSDChooseLocationViewController";
-	self.chooseTimeViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDChooseTimeViewController"];
-	self.chooseTimeViewController.identifier = @"POSDChooseTimeViewController";
-	self.chooseAmountViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDChooseAmountViewController"];
-	self.chooseAmountViewController.identifier = @"POSDChooseAmountViewController";
-	self.chooseTitleViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDTitleViewController"];
-	self.chooseTitleViewController.identifier = @"POSDTitleViewController";
-	
-	self.donationControllers = @[self.chooseTitleViewController, self.chooseTimeViewController, self.chooseLocationViewController, self.chooseAmountViewController];
-	self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
-	self.pageViewController.dataSource = self;
-	
-	self.viewControllers = @[@"POSDTitleViewController", @"POSDChooseLocationViewController", @"POSDChooseTimeViewController", @"POSDChooseAmountViewController"];
-	self.currentIndex = 0;
-	[self.pageViewController setViewControllers:@[self.chooseTitleViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-	
-	self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
-
-	[self addChildViewController:_pageViewController];
-	[self.view addSubview:_pageViewController.view];
-	[self.pageViewController didMoveToParentViewController:self];
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
-//    [super viewWillAppear:animated];
+    [super viewWillAppear:animated];
 //
 //    DebugLog(@"viewWillAppear");
 //    
@@ -138,19 +127,20 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 //        return;
 //    }
 //
-//    // Where?
-//    NSString *addressWithoutStreetAddressOne = [[self.donation.location formattedAddress]
-//                                                substringFromIndex:self.donation.location.streetAddressOne.length];
-//    addressWithoutStreetAddressOne = [addressWithoutStreetAddressOne
-//                                      stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@", "]];
-//    if (self.donation.location.streetAddressOne)
-//    {
-//        [self setTextOnButton:self.buttonWhere
-//                        title:self.donation.location.streetAddressOne
-//                titleFontSize:18.0
-//                  description:addressWithoutStreetAddressOne
-//          descriptionFontSize:13.0];
-//    }
+    // Where?
+    NSString *addressWithoutStreetAddressOne = [[self.donation.location formattedAddress]
+                                                substringFromIndex:self.donation.location.streetAddressOne.length];
+    addressWithoutStreetAddressOne = [addressWithoutStreetAddressOne
+                                      stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@", "]];
+    if (self.donation.location.streetAddressOne)
+    {
+        [self setTextOnButton:self.selectAddressButton
+                        title:self.donation.location.streetAddressOne
+                titleFontSize:18.0
+                  description:addressWithoutStreetAddressOne
+          descriptionFontSize:13.0];
+//			self.selectAddressButton.titleLabel.text = self.donation.location.streetAddressOne;
+    }
 //    // How Much?
 //    if (self.donation.totalLBS)
 //    {
@@ -223,26 +213,78 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
     }
 }
 
+// Add attributed text to target button
+//
+// @param button Target button
+// @param title Text with bold style, and black color
+// @param titleFontSize Text font size for title
+// @param description Gray colored text that appears right below the title text
+// @param descriptionFontSize Text font size for description
+//
+- (void)setTextOnButton:(UIButton *)button title:(NSString *)title titleFontSize:(float)titleFontSize description:(NSString *)description descriptionFontSize:(float)descriptionFontSize
+{
+	UIFont *titleFont = [UIFont fontWithName:@"HelveticaNeue" size:titleFontSize];
+	UIFont *descriptionFont = [UIFont fontWithName:@"HelveticaNeue" size:descriptionFontSize];
+	
+	// Create attributed string for title
+	NSMutableAttributedString *buttonTitleText = [[NSMutableAttributedString alloc] initWithString:title attributes:@{NSFontAttributeName: titleFont}];
+	
+	// Set title's text color
+	[buttonTitleText addAttribute:NSForegroundColorAttributeName
+													value:[UIColor colorWithRed:35.0/255 green:135.0/255 blue:162.0/255 alpha:1.0]
+													range:NSMakeRange(0, buttonTitleText.length)];
+	
+	// Create attributed string for description
+	NSMutableAttributedString *buttonDescriptionText = [[NSMutableAttributedString alloc] initWithString:description attributes:@{NSFontAttributeName: descriptionFont}];
+	
+	// Set description's text color
+	[buttonDescriptionText addAttribute:NSForegroundColorAttributeName
+																value:[UIColor darkGrayColor]
+																range:NSMakeRange(0, buttonDescriptionText.length)];
+	//
+	// Create a label containing the stylized title and description
+	//
+	
+	if (!self.buttonLabelCollection) {
+		self.buttonLabelCollection = [NSMutableDictionary dictionary];
+	}
+	
+	NSString *buttonTag = [NSString stringWithFormat:@"%d", button.tag];
+	UILabel *label = [self.buttonLabelCollection objectForKey:buttonTag];
+	
+	if (!label) {
+		label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,
+																											CGRectGetWidth(button.bounds),
+																											CGRectGetHeight(button.bounds))];
+		label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+		
+		[self.buttonLabelCollection setObject:label forKey:buttonTag];
+		
+		// Put the label on top of target button
+		[button addSubview:label];
+	}
+	
+	NSMutableAttributedString *buttonWholeText = [[NSMutableAttributedString alloc] init];
+	
+	[buttonWholeText appendAttributedString:buttonTitleText];
+	[buttonWholeText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
+	[buttonWholeText appendAttributedString:buttonDescriptionText];
+	
+	[label setBackgroundColor:[UIColor clearColor]];
+	[label setTextAlignment:NSTextAlignmentRight];
+	[label setAttributedText:buttonWholeText];
+	[label setNumberOfLines:0];
+	[label setUserInteractionEnabled:NO];
+	
+	// Change target button's images to reflect its new state
+	[button setImage:[button imageForState:UIControlStateSelected] forState:UIControlStateHighlighted];
+	[button setImage:[button imageForState:UIControlStateSelected] forState:UIControlStateNormal];
+}
+
 - (void)configureAppearance
 {
-    [self.buttonPicture setImage:[UIImage ff_imageNamed:kPostDonationButtonPictureForStateNormal] forState:UIControlStateNormal];
-    [self.buttonPicture setImage:[UIImage ff_imageNamed:kPostDonationButtonPictureForStateHighlighted] forState:UIControlStateHighlighted];
-    [self.buttonPicture setImage:[UIImage ff_imageNamed:kPostDonationButtonPictureForStateSelected] forState:UIControlStateSelected];
-    
-    [self.buttonWhere setImage:[UIImage ff_imageNamed:kPostDonationButtonWhereForStateNormal] forState:UIControlStateNormal];
-    [self.buttonWhere setImage:[UIImage ff_imageNamed:kPostDonationButtonWhereForStateHighlighted] forState:UIControlStateHighlighted];
-    [self.buttonWhere setImage:[UIImage ff_imageNamed:kPostDonationButtonWhereForStateSelected] forState:UIControlStateSelected];
-    
-    [self.buttonHowMuch setImage:[UIImage ff_imageNamed:kPostDonationButtonHowMuchForStateNormal] forState:UIControlStateNormal];
-    [self.buttonHowMuch setImage:[UIImage ff_imageNamed:kPostDonationButtonHowMuchForStateHighlighted] forState:UIControlStateHighlighted];
-    [self.buttonHowMuch setImage:[UIImage ff_imageNamed:kPostDonationButtonHowMuchForStateSelected] forState:UIControlStateSelected];
-    
-    [self.buttonWhen setImage:[UIImage ff_imageNamed:kPostDonationButtonWhenForStateNormal] forState:UIControlStateNormal];
-    [self.buttonWhen setImage:[UIImage ff_imageNamed:kPostDonationButtonWhenForStateHighlighted] forState:UIControlStateHighlighted];
-    [self.buttonWhen setImage:[UIImage ff_imageNamed:kPostDonationButtonWhenForStateSelected] forState:UIControlStateSelected];
-
-    [self.textFieldDonationTitle ff_styleWithPadding];
-    [self.viewButtonsBackground ff_styleWithShadow];
+	self.selectPickupByButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+	self.selectPickupByButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20);
 }
 
 - (void)didReceiveMemoryWarning
@@ -289,75 +331,6 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 - (void)animateView:(UIView *)view up:(BOOL)up
 {
     [FFUI scrollUpView:self.view withDirectionUp:up distance:165];
-}
-
-//
-// Add attributed text to target button
-//
-// @param button Target button
-// @param title Text with bold style, and black color
-// @param titleFontSize Text font size for title
-// @param description Gray colored text that appears right below the title text
-// @param descriptionFontSize Text font size for description
-//
-- (void)setTextOnButton:(UIButton *)button title:(NSString *)title titleFontSize:(float)titleFontSize description:(NSString *)description descriptionFontSize:(float)descriptionFontSize
-{
-    UIFont *titleFont = [UIFont fontWithName:@"Verdana-Bold" size:titleFontSize];
-    UIFont *descriptionFont = [UIFont fontWithName:@"Verdana" size:descriptionFontSize];
-
-    // Create attributed string for title
-    NSMutableAttributedString *buttonTitleText = [[NSMutableAttributedString alloc] initWithString:title attributes:@{NSFontAttributeName: titleFont}];
-    
-    // Set title's text color
-    [buttonTitleText addAttribute:NSForegroundColorAttributeName
-                      value:[UIColor blackColor]
-                      range:NSMakeRange(0, buttonTitleText.length)];
-    
-    // Create attributed string for description
-    NSMutableAttributedString *buttonDescriptionText = [[NSMutableAttributedString alloc] initWithString:description attributes:@{NSFontAttributeName: descriptionFont}];
-    
-    // Set description's text color
-    [buttonDescriptionText addAttribute:NSForegroundColorAttributeName
-                            value:[UIColor darkGrayColor]
-                            range:NSMakeRange(0, buttonDescriptionText.length)];
-    //
-    // Create a label containing the stylized title and description
-    //
-    
-    if (!self.buttonLabelCollection) {
-        self.buttonLabelCollection = [NSMutableDictionary dictionary];
-    }
-    
-    NSString *buttonTag = [NSString stringWithFormat:@"%d", button.tag];
-    UILabel *label = [self.buttonLabelCollection objectForKey:buttonTag];
-    
-    if (!label) {
-        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,
-                                                          CGRectGetWidth(button.bounds),
-                                                          CGRectGetHeight(button.bounds))];
-        label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-        [self.buttonLabelCollection setObject:label forKey:buttonTag];
-
-        // Put the label on top of target button
-        [button addSubview:label];
-    }
-
-    NSMutableAttributedString *buttonWholeText = [[NSMutableAttributedString alloc] init];
-    
-    [buttonWholeText appendAttributedString:buttonTitleText];
-    [buttonWholeText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
-    [buttonWholeText appendAttributedString:buttonDescriptionText];
-    
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setTextAlignment:NSTextAlignmentCenter];
-    [label setAttributedText:buttonWholeText];
-    [label setNumberOfLines:0];
-    [label setUserInteractionEnabled:NO];
-
-    // Change target button's images to reflect its new state
-    [button setImage:[button imageForState:UIControlStateSelected] forState:UIControlStateHighlighted];
-    [button setImage:[button imageForState:UIControlStateSelected] forState:UIControlStateNormal];
 }
 
 - (void)setImageOnButton:(UIButton *)button image:(UIImage *)image
@@ -655,137 +628,111 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [self animateView:textField up: YES];
-    
+//    [self animateView:textField up: YES];
+  
     // Disable user interaction on all buttons
     [self.viewButtonsBackground setUserInteractionEnabled:NO];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    [self animateView:textField up: NO];
-    
     // Enable user interaction on all buttons
     [self.viewButtonsBackground setUserInteractionEnabled:YES];
 
-    if (textField == self.textFieldDonationTitle) {
-        [self.donation setDonationTitle:textField.text];
-        [self configurePostDonationButtonStatus];
+    if (textField == self.selectKindField) {
+//        [self.donation setDonationTitle:textField.text];
+//        [self configurePostDonationButtonStatus];
     }
+	[textField resignFirstResponder];
 }
 
-#pragma mark - UITextView delegate
+//#pragma mark - UITextView delegate
+//
+//- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+//{
+//    if ([text isEqualToString:@"\n"]) {
+//        [textView resignFirstResponder];
+//    }
+//    return YES;
+//}
+//
+//- (void)textViewDidChange:(UITextView *)textView
+//{
+//    if (textView == self.textViewDonationDescription)
+//    {
+//        [self configureCrossButtonStatus];
+//    }
+//}
+//
+//- (void)textViewDidBeginEditing:(UITextView *)textView
+//{
+//    [self animateView:textView up:YES];
+//    
+//    // Disable user interaction on all buttons
+//    [self.viewButtonsBackground setUserInteractionEnabled:NO];
+//    
+//    if (textView == self.textViewDonationDescription)
+//    {
+//        // textViewDonationDescription is containing placeholder text
+//        if (textView.tag) {
+//            [self clearPlaceholderWithTextView:textView];
+//        }
+//        else {
+//            [self configureCrossButtonStatus];
+//        }
+//    }
+//}
+//
+//- (void)textViewDidEndEditing:(UITextView *)textView
+//{
+//    [self animateView:textView up:NO];
+//    
+//    // Enable user interaction on all buttons
+//    [self.viewButtonsBackground setUserInteractionEnabled:YES];
+//    
+//    if (textView == self.textViewDonationDescription)
+//    {
+//        if ([textView.text length] == 0) {
+//            [self setPlaceholderWithTextView:textView text:kDonationDescriptionPlaceholder];
+//            [self.donation setDonationDescription:@""];
+//        }
+//        else {
+//            [self.donation setDonationDescription:textView.text];
+//        }
+//        
+//        // Hide clear button
+//        [self.buttonCross setHidden:YES];
+//    }
+//}
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-    if ([text isEqualToString:@"\n"]) {
-        [textView resignFirstResponder];
-    }
-    return YES;
+
+- (IBAction)selectAddress:(id)sender {
+	NSLog(@"selecting location");
+	self.chooseLocationViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDChooseLocationViewController"];
+	self.chooseLocationViewController.delegate = self;
+	self.chooseLocationViewController.location = self.donation.location;
+	[self.navigationController pushViewController:self.chooseLocationViewController animated:YES];	
 }
 
-- (void)textViewDidChange:(UITextView *)textView
-{
-    if (textView == self.textViewDonationDescription)
-    {
-        [self configureCrossButtonStatus];
-    }
+- (IBAction)selectPickupBy:(id)sender {
 }
 
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
-    [self animateView:textView up:YES];
-    
-    // Disable user interaction on all buttons
-    [self.viewButtonsBackground setUserInteractionEnabled:NO];
-    
-    if (textView == self.textViewDonationDescription)
-    {
-        // textViewDonationDescription is containing placeholder text
-        if (textView.tag) {
-            [self clearPlaceholderWithTextView:textView];
-        }
-        else {
-            [self configureCrossButtonStatus];
-        }
-    }
+- (IBAction)selectWeight:(id)sender {
 }
 
-- (void)textViewDidEndEditing:(UITextView *)textView
-{
-    [self animateView:textView up:NO];
-    
-    // Enable user interaction on all buttons
-    [self.viewButtonsBackground setUserInteractionEnabled:YES];
-    
-    if (textView == self.textViewDonationDescription)
-    {
-        if ([textView.text length] == 0) {
-            [self setPlaceholderWithTextView:textView text:kDonationDescriptionPlaceholder];
-            [self.donation setDonationDescription:@""];
-        }
-        else {
-            [self.donation setDonationDescription:textView.text];
-        }
-        
-        // Hide clear button
-        [self.buttonCross setHidden:YES];
-    }
-}
-
-- (IBAction)startDonation:(id)sender {
-}
-
-#pragma mark - Page View Controller Data Source
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
-{
-	NSUInteger index = [self indexOfViewController:viewController];
+- (IBAction)selectKind:(id)sender {
 	
-	if ((index <= 0) || (index == NSNotFound)) {
-		return nil;
-	}
-	index--;
-	return [self viewControllerAtIndex:index];
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
-{
-	NSUInteger index = [self indexOfViewController:viewController];
-	if (index >= [self.donationControllers count] - 1) {
-		return nil;
-	}
-	index++;
-	return [self viewControllerAtIndex:index];
+- (IBAction)buttonDone:(id)sender {
+	NSLog(@"Submit button clicked.");
 }
 
-- (UIViewController *)viewControllerAtIndex:(NSUInteger) index {
-	if (([self.viewControllers count] == 0) || (index >= [self.viewControllers count])) {
-		return nil;
-	}
-	
-	PostDonationBaseViewController *viewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:self.viewControllers[index]];
-	viewController.identifier = self.viewControllers[index];
-	return viewController;
-//	return self.donationControllers[index];
-}
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
-	return [self.donationControllers count];
-}
+#pragma mark - POSDChooseLocationViewController delegate
 
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
-	return 0;
-}
-
-- (NSUInteger)indexOfViewController:(UIViewController *)viewController
-{
-//	NSLog(@"Name of view controller: %@", ((PostDonationBaseViewController *)viewController).identifier);
-//	NSLog(@"Index of view controller: %i", [self.viewControllers indexOfObject:((PostDonationBaseViewController *)viewController).identifier]);
-	return [self.viewControllers indexOfObject:((PostDonationBaseViewController *)viewController).identifier];
-
+- (void)chooseLocationViewController:(POSDChooseLocationViewController *)controller didSelectLocation:(FFDataLocation *) location {
+	self.donation.location = location;
 }
 
 @end

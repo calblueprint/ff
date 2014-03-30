@@ -92,6 +92,9 @@
     self.postDonationModuleController = [[PostDonationModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
     [self.postDonationModuleController setDelegate:self.moduleCoordinator];
     self.postDonationViewController = [self.postDonationModuleController instantiatePostDonationNavigationViewController];
+//	self.postDonationViewController = [self.postDonationModuleController]
+//	[self.tabBarController.tabBar setHidden:YES];
+		
 
     return [self tabBarControllerWithUpdatedUser:user];
 }

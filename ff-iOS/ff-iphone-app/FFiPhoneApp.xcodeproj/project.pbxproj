@@ -283,8 +283,6 @@
 		9BFAE59F17AF36370058AFE9 /* POSDChooseTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */; };
 		9BFAE5A617B07D100058AFE9 /* navigationbar_top_left_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */; };
 		9BFAE5A717B07D100058AFE9 /* navigationbar_top_left_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */; };
-		E45F93A718CC0AFC002922A4 /* DonationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E45F93A618CC0AFC002922A4 /* DonationModel.m */; };
-		E45F93AD18CC1E1E002922A4 /* POSDTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45F93AC18CC1E1E002922A4 /* POSDTitleViewController.m */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -655,10 +653,6 @@
 		9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSDChooseTimeViewController.m; sourceTree = "<group>"; };
 		9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_top_left_icon.png; sourceTree = "<group>"; };
 		9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_top_left_icon@2x.png"; sourceTree = "<group>"; };
-		E45F93A518CC0AFC002922A4 /* DonationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonationModel.h; sourceTree = "<group>"; };
-		E45F93A618CC0AFC002922A4 /* DonationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonationModel.m; sourceTree = "<group>"; };
-		E45F93AB18CC1E1E002922A4 /* POSDTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSDTitleViewController.h; sourceTree = "<group>"; };
-		E45F93AC18CC1E1E002922A4 /* POSDTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSDTitleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1001,16 +995,12 @@
 				9B6B30CD17AC53C800A53738 /* POSDNavigationController.m */,
 				9B6B30CF17AC53C800A53738 /* POSDPostDonationViewController.h */,
 				9B6B30D017AC53C800A53738 /* POSDPostDonationViewController.m */,
-				E45F93A518CC0AFC002922A4 /* DonationModel.h */,
-				E45F93A618CC0AFC002922A4 /* DonationModel.m */,
 				9B6B000017AD92CC000437A9 /* POSDChooseLocationViewController.h */,
 				9B6B000117AD92CC000437A9 /* POSDChooseLocationViewController.m */,
 				9B1ABD4017AE50D90041CA0F /* POSDChooseAmountViewController.h */,
 				9B1ABD4117AE50D90041CA0F /* POSDChooseAmountViewController.m */,
 				9BFAE59D17AF36370058AFE9 /* POSDChooseTimeViewController.h */,
 				9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */,
-				E45F93AB18CC1E1E002922A4 /* POSDTitleViewController.h */,
-				E45F93AC18CC1E1E002922A4 /* POSDTitleViewController.m */,
 			);
 			path = PostDonation;
 			sourceTree = "<group>";
@@ -1491,6 +1481,7 @@
 		9B98D175179CEE4C0032888C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Feeding Forward";
 			};
@@ -1736,7 +1727,6 @@
 				9BBB112617A7D07D00EA924D /* AUTSignupStepTwoViewController.m in Sources */,
 				9BBB112A17A7D0C600EA924D /* AppSettings.m in Sources */,
 				9BBB112B17A7D0D500EA924D /* FFRecordObject.m in Sources */,
-				E45F93AD18CC1E1E002922A4 /* POSDTitleViewController.m in Sources */,
 				9BBB112C17A8307100EA924D /* FFRecordLocation.m in Sources */,
 				9BBB112D17A8307900EA924D /* FFRecordDonation.m in Sources */,
 				9BBB112E17A8307D00EA924D /* FFRecordUser.m in Sources */,
@@ -1766,7 +1756,6 @@
 				9B6B307617AA206500A53738 /* UIView+FFStyles.m in Sources */,
 				9B6B307917AA4CE500A53738 /* UIImage+FFImage.m in Sources */,
 				9B6B30C417AC515F00A53738 /* AppLoaderConstants.m in Sources */,
-				E45F93A718CC0AFC002922A4 /* DonationModel.m in Sources */,
 				9B6B30D117AC53C800A53738 /* PostDonationBaseViewController.m in Sources */,
 				9B6B30D217AC53C800A53738 /* PostDonationConstants.m in Sources */,
 				9B6B30D317AC53C800A53738 /* PostDonationModuleController.m in Sources */,
@@ -1882,7 +1871,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1902,7 +1890,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1943,7 +1931,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1965,7 +1952,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D374F755-D54C-4457-A07C-00974DE0654D";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};

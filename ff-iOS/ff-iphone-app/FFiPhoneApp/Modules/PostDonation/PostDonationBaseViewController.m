@@ -20,8 +20,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    [self setModuleController:((POSDNavigationController *)self.navigationController).moduleController];
+  
+	if (!_moduleController) {
+		   [self setModuleController:((POSDNavigationController *)self.navigationController).moduleController];
+	}
+
+	
 }
 
 - (void)didReceiveMemoryWarning
