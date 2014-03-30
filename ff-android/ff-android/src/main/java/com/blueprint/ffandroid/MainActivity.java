@@ -26,13 +26,16 @@ public class MainActivity extends ActionBarActivity
     private CharSequence mTitle;
     /** The donation object that is created and updated. */
     public Donation donation;
-    /**Fragment declarations**/
+    /** Fragment declarations**/
     TitleFragment titleFragment;
     AmountFragment amountFragment;
     LocationFragment locationFragment;
     PhotoFragment photoFragment;
     AccountFragment accountFragment;
     Fragment currentFragment;
+    CongratulatoryFragment congratulatoryFragment;
+
+
 
 
     @Override
@@ -43,6 +46,7 @@ public class MainActivity extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mTitle = getTitle();
         mTitle = getTitle();
 
         // Set up the drawer.
@@ -58,6 +62,7 @@ public class MainActivity extends ActionBarActivity
         locationFragment = LocationFragment.newInstance();
         photoFragment = PhotoFragment.newInstance();
         accountFragment = AccountFragment.newInstance();
+        congratulatoryFragment = CongratulatoryFragment.newInstance();
         currentFragment = titleFragment;
     }
 
@@ -80,6 +85,10 @@ public class MainActivity extends ActionBarActivity
                 Intent intent = new Intent(this, LoginActivity.class);
                 this.finish();
                 startActivity(intent);
+                break;
+            case 6:
+                replaceFragment(congratulatoryFragment);
+                break;
         }
     }
 
