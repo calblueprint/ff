@@ -1,5 +1,6 @@
 package com.blueprint.ffandroid;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -46,10 +47,13 @@ public class LoginActivity extends Activity {
     private RequestQueue queue;
     private static final String url = "http://feeding-forever.herokuapp.com/api/session";
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         queue = Volley.newRequestQueue(this);
 
         SharedPreferences prefs = getSharedPreferences(PREFS, 0);
@@ -60,6 +64,7 @@ public class LoginActivity extends Activity {
             this.finish();
             startActivity(intent);
         }
+
     }
 
 
@@ -82,6 +87,7 @@ public class LoginActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     public void attemptLogin(View view){
 

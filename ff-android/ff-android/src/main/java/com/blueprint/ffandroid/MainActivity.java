@@ -31,6 +31,9 @@ public class MainActivity extends ActionBarActivity
     AccountFragment accountFragment;
     FormFragment formFragment;
     Fragment currentFragment;
+    CongratulatoryFragment congratulatoryFragment;
+
+
 
 
     @Override
@@ -41,6 +44,7 @@ public class MainActivity extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mTitle = getTitle();
         mTitle = getTitle();
 
         // Set up the drawer.
@@ -54,6 +58,7 @@ public class MainActivity extends ActionBarActivity
         locationFragment = LocationFragment.newInstance();
         accountFragment = AccountFragment.newInstance();
         formFragment = FormFragment.newInstance();
+        congratulatoryFragment = CongratulatoryFragment.newInstance();
         currentFragment = locationFragment;
     }
 
@@ -76,6 +81,10 @@ public class MainActivity extends ActionBarActivity
                 Intent intent = new Intent(this, LoginActivity.class);
                 this.finish();
                 startActivity(intent);
+                break;
+            case 6:
+                replaceFragment(congratulatoryFragment);
+                break;
         }
     }
 
@@ -105,7 +114,6 @@ public class MainActivity extends ActionBarActivity
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(mTitle);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
