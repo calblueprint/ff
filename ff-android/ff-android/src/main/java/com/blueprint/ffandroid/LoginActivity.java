@@ -5,17 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.app.Activity;
-import android.app.ActionBar;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.text.Editable;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
-import android.content.SharedPreferences;
 
 import android.util.Log;
 import android.widget.Button;
@@ -32,11 +25,12 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.android.volley.Request;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -116,9 +110,30 @@ public class LoginActivity extends Activity {
 
                         try {
                             String token = jsonObject.getString("token");
+                            JSONObject location = jsonObject.getJSONObject("location");
+                            String locationType = location.getString("type");
+                            JSONArray coords = location.getJSONArray("coordinates");
+                            String address = location.getString("text");
+                            String name = jsonObject.getString("name");
+                            String role = jsonObject.getString("role");
+                            JSONArray roleTags = jsonObject.getJSONArray("roleTags");
+
+
                             editor.putString("email", emailString);
                             editor.putString("password", passString);
                             editor.putString("token", token);
+                            editor.putString("name", name);
+                            editor.putString("address", address);
+                            editor.putLong("latitude", coords.getLong(0));
+                            editor.putLong("longitude", coords.getLong(1));
+                            editor.putString("locationType", locationType);
+                            editor.putString("role", role);
+                            HashSet<String> roleTagSet = new HashSet<String>();
+                            for (int i = 0; i < roleTags.length(); i++){
+                                roleTagSet.add(roleTags.getString(i));
+                            }
+                            editor.putStringSet("roleTags", roleTagSet);
+
                             editor.commit();
 
                             intent.putExtra("token", jsonObject.getString("token"));
