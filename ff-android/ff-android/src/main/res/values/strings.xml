@@ -8,6 +8,7 @@
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="congratulations">Congratulations!</string>
+    <string name="congratulations_small">You have successfully posted a donation!</string>
     <string name="share">Share on Facebook</string>
     <string name="congratulations_id">Share on Facebook</string>
     <string name="go_to_donation"> Go to Donation </string>

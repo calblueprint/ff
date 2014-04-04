@@ -24,7 +24,7 @@
         android:id="@+id/congratulations_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="You have successfully posted a donation!"
+        android:text="@string/congratulations_small"
         android:gravity="center"
         android:layout_below="@id/congratulations_title" />
 
