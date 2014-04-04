@@ -41,7 +41,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" Go to Donation "
+        android:text="@string/go_to_donation"
         android:id="@+id/go_to_donation"
         android:layout_centerInParent="true"
         android:background="@drawable/green_button"
