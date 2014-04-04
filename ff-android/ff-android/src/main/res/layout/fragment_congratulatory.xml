@@ -36,6 +36,7 @@
         android:text="@string/share"
         android:id="@+id/share"
         android:layout_centerInParent="true"
+        android:background="@drawable/facebook_button"
         android:layout_below="@id/congratulations_text"/>
     <Button
         android:layout_width="wrap_content"
