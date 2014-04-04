@@ -20,6 +20,15 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="center_vertical|top"
         android:gravity="center" />
+    <TextView
+        android:id="@+id/congratulations_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/congratulations"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_gravity="center_vertical|top"
+        android:gravity="center" />
 
     <Button
         android:layout_width="wrap_content"
@@ -27,7 +36,7 @@
         android:text="@string/share"
         android:id="@+id/share"
         android:layout_centerInParent="true"
-        android:layout_below="@id/congratulations_title"/>
+        android:layout_below="@id/congratulations_text"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
