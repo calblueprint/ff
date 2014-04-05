@@ -35,8 +35,11 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
 
     private OnFragmentInteractionListener mListener;
 
+    /** The TextView that holds the user's name. */
     private TextView nameText;
+    /** The TextView that holds the user's Email. */
     private TextView emailText;
+    /** The TextView that holds the user's organization. */
     private TextView organizationText;
     /**
      * Use this factory method to create a new instance of
