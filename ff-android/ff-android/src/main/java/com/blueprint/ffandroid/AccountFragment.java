@@ -1,6 +1,7 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.content.Context;
+import android.content.SharedPreferences;
+
 
 
 /**
@@ -26,9 +30,14 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     private String organization;
     /** The phone number of the account.*/
     private String phoneNumber;
+    /** The String for the Shared Preference. */
+    public static final String PREFS = "LOGIN_PREFS";
 
     private OnFragmentInteractionListener mListener;
 
+    private TextView nameText;
+    private TextView emailText;
+    private TextView organizationText;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -44,15 +53,15 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
      * Basic AccountFragment constructor.
      */
     public AccountFragment() {
-        name = "Yolo";
-        email = "swag@swag.com";
-        organization = "SwagTT";
-        phoneNumber = "911-911-9111";
 
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        SharedPreferences prefs = getActivity().getSharedPreferences(PREFS, 0);
+        name = prefs.getString("name","");
+        email = prefs.getString("email", "");
+        organization = prefs.getString("role", "");
         super.onCreate(savedInstanceState);
         System.out.println("Created account fragment!");
     }
@@ -61,15 +70,16 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
+
         View rootView = inflater.inflate(R.layout.fragment_account, container, false);
-        TextView editText = (TextView) rootView.findViewById(R.id.account_name);
-        editText.setText(name);
-        editText = (TextView) rootView.findViewById(R.id.account_email);
-        editText.setText(email);
-        editText = (TextView) rootView.findViewById(R.id.account_organization);
-        editText.setText(organization);
-        editText = (TextView) rootView.findViewById(R.id.account_number);
-        editText.setText(phoneNumber);
+        nameText = (TextView) rootView.findViewById(R.id.account_name);
+        nameText.setText(name);
+        emailText = (TextView) rootView.findViewById(R.id.account_email);
+        emailText.setText(email);
+        organizationText = (TextView) rootView.findViewById(R.id.account_organization);
+        organizationText.setText(organization);
         return rootView;
     }
 
