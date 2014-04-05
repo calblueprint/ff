@@ -99,7 +99,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         address_field.setOnEditorActionListener(this);
 
         map = ((SupportMapFragment) parent.getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-        map.setMyLocationEnabled(true);
+        //map.setMyLocationEnabled(true);
         mLocationClient = new LocationClient(parent, this, this);
 
         return rootView;

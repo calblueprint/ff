@@ -30,7 +30,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     private String organization;
     /** The phone number of the account.*/
     private String phoneNumber;
-    /** The String for the Shared Preference. *//
+    /** The String for the Shared Preference. */
     public static final String PREFS = "LOGIN_PREFS";
 
     private OnFragmentInteractionListener mListener;
@@ -60,6 +60,9 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         SharedPreferences prefs = getActivity().getSharedPreferences(PREFS, 0);
+        name = prefs.getString("name","");
+        email = prefs.getString("email", "");
+        organization = prefs.getString("role", "");
         super.onCreate(savedInstanceState);
         System.out.println("Created account fragment!");
     }
