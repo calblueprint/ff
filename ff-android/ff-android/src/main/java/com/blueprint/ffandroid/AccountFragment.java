@@ -50,10 +50,6 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
      * Basic AccountFragment constructor.
      */
     public AccountFragment() {
-        name = "Yolo";
-        email = "swag@swag.com";
-        organization = "SwagTT";
-        phoneNumber = "911-911-9111";
 
     }
 
@@ -81,8 +77,6 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
         editText.setText(email);
         editText = (TextView) rootView.findViewById(R.id.account_organization);
         editText.setText(organization);
-        editText = (TextView) rootView.findViewById(R.id.account_number);
-        editText.setText(phoneNumber);
         return rootView;
     }
 
