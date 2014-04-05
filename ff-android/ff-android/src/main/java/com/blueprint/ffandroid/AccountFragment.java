@@ -35,6 +35,9 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
 
     private OnFragmentInteractionListener mListener;
 
+    private TextView nameText;
+    private TextView emailText;
+    private TextView organizationText;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -71,12 +74,12 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
 
 
         View rootView = inflater.inflate(R.layout.fragment_account, container, false);
-        TextView editText = (TextView) rootView.findViewById(R.id.account_name);
-        editText.setText(name);
-        editText = (TextView) rootView.findViewById(R.id.account_email);
-        editText.setText(email);
-        editText = (TextView) rootView.findViewById(R.id.account_organization);
-        editText.setText(organization);
+        nameText = (TextView) rootView.findViewById(R.id.account_name);
+        nameText.setText(name);
+        emailText = (TextView) rootView.findViewById(R.id.account_email);
+        emailText.setText(email);
+        organizationText = (TextView) rootView.findViewById(R.id.account_organization);
+        organizationText.setText(organization);
         return rootView;
     }
 
