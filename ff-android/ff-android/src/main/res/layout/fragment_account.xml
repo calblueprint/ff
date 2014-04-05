@@ -65,25 +65,7 @@
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:layout_weight="1" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/phone_header"/>
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#cccccc"
-        android:layout_marginTop="5dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/account_number"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:layout_weight="1"/>
+    
     <CheckBox android:id="@+id/checkbox_cheese"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
