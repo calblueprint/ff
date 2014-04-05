@@ -1,6 +1,7 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.content.Context;
+import android.content.SharedPreferences;
+
 
 
 /**
@@ -26,6 +30,8 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     private String organization;
     /** The phone number of the account.*/
     private String phoneNumber;
+    /** The String for the Shared Preference. *//
+    public static final String PREFS = "LOGIN_PREFS";
 
     private OnFragmentInteractionListener mListener;
 
@@ -53,6 +59,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        SharedPreferences prefs = getActivity().getSharedPreferences(PREFS, 0);
         super.onCreate(savedInstanceState);
         System.out.println("Created account fragment!");
     }
@@ -61,6 +68,9 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
+
         View rootView = inflater.inflate(R.layout.fragment_account, container, false);
         TextView editText = (TextView) rootView.findViewById(R.id.account_name);
         editText.setText(name);
