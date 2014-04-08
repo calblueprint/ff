@@ -103,7 +103,6 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.donation_list),
                         getString(R.string.account_information),
                         getString(R.string.faq),
-                        getString(R.string.login),
                         getString(R.string.logout),
                         getString(R.string.congratulations)
                 }));
