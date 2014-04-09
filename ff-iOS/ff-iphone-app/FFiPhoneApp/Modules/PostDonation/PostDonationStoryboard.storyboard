@@ -413,7 +413,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7l9-Zp-pYj">
                                 <rect key="frame" x="10" y="114" width="293" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.14509804549999999" green="0.47450983520000001" blue="0.55294120309999995" alpha="0.059999999999999998" colorSpace="deviceRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle"/>
                                 </state>
@@ -422,7 +421,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pickup By:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="102" translatesAutoresizingMaskIntoConstraints="NO" id="tiX-Q3-9VB">
-                                <rect key="frame" x="20" y="115" width="102" height="39"/>
+                                <rect key="frame" x="20" y="114" width="102" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" white="0.3318886861" alpha="1" colorSpace="calibratedWhite"/>
@@ -469,10 +468,10 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
-                        <outlet property="selectAddressButton" destination="kro-Wp-HIF" id="dhk-fG-VIw"/>
+                        <outlet property="selectAddressButton" destination="kro-Wp-HIF" id="MNa-mS-HzM"/>
                         <outlet property="selectDonationAmountField" destination="2BE-KT-tXb" id="nmH-DF-3LH"/>
                         <outlet property="selectKindField" destination="nVj-0W-aVy" id="DAf-kA-Ydx"/>
-                        <outlet property="selectPickupByButton" destination="kro-Wp-HIF" id="7Qn-aR-eaz"/>
+                        <outlet property="selectPickupByButton" destination="7l9-Zp-pYj" id="qrh-TN-xOL"/>
                         <outlet property="selectWeightButton" destination="6Ox-hB-lFQ" id="6E3-Dw-Jzf"/>
                     </connections>
                 </viewController>

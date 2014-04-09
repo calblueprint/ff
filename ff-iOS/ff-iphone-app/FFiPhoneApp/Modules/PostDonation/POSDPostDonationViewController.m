@@ -14,7 +14,7 @@
 #import "PostDonationConstants.h"
 #import "PostDonationModuleController.h"
 #import "AppDelegate.h"
-
+#import "Dashboard.h"
 #import "FFKit.h"
 
 #import "UIImage+Resize.h"
@@ -47,7 +47,6 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 @property (strong, nonatomic) POSDTitleViewController *chooseTitleViewController;
 @property (strong, nonatomic) NSMutableDictionary *buttonLabelCollection;
 @property (strong, nonatomic) NSMutableDictionary *buttonImageViewCollection;
-
 @property (nonatomic) BOOL isPostDonationInProcess;
 
 - (IBAction)buttonPicture_onTouchUpInside:(id)sender;
@@ -61,12 +60,18 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 - (IBAction)selectKind:(id)sender;
 - (IBAction)buttonDone:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *selectPickupByButton;
 @property (weak, nonatomic) IBOutlet UIButton *selectKindButton;
 @property (weak, nonatomic) IBOutlet UIButton *selectWeightButton;
-@property (weak, nonatomic) IBOutlet UIButton *selectPickupByButton;
 @property (weak, nonatomic) IBOutlet UIButton *selectAddressButton;
+
 @property (weak, nonatomic) IBOutlet UITextField *selectKindField;
 @property (weak, nonatomic) IBOutlet UITextField *selectDonationAmountField;
+
+
+@property (strong, nonatomic) UIDatePicker *datePicker;
+@property (strong, nonatomic) UIView *datePickerContainer;
+@property (strong, nonatomic) UIButton *datePickerConfirm;
 
 @property (strong, nonatomic) NSArray *donationControllers;
 @property (strong, nonatomic) NSArray *viewControllers;
@@ -90,12 +95,11 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
     [self setDonation:[FFDataDonation new]];
     [self.donation setLocation:[FFDataLocation new]];
     // Meta data for configuring buttons' appearance
-    [self.buttonPicture setTag:0];
-    [self.buttonWhere setTag:1];
-    [self.buttonWhen setTag:2];
-    [self.buttonHowMuch setTag:3];
-    
-    // Set placehold for description field
+  
+		[self.selectPickupByButton setTag:0];
+		[self.selectAddressButton setTag:1];
+		
+		// Set placehold for description field
     [self setPlaceholderWithTextView:self.textViewDonationDescription text:kDonationDescriptionPlaceholder];
     // Hide description field's cross button
     [self.buttonCross setHidden:YES];
@@ -711,10 +715,68 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 	self.chooseLocationViewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"POSDChooseLocationViewController"];
 	self.chooseLocationViewController.delegate = self;
 	self.chooseLocationViewController.location = self.donation.location;
-	[self.navigationController pushViewController:self.chooseLocationViewController animated:YES];	
+	[self.navigationController pushViewController:self.chooseLocationViewController animated:YES];
 }
 
 - (IBAction)selectPickupBy:(id)sender {
+	NSInteger datePickerConfirmButtonHeight = 50;
+	if (!self.datePicker) {
+
+		self.datePickerContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+		UIGestureRecognizer *tapParent = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(closeDatePicker)];
+		[self.datePickerContainer	addGestureRecognizer:tapParent];
+
+		self.datePicker = [[UIDatePicker alloc] init];
+		[self.datePicker setBackgroundColor:[UIColor whiteColor]];
+		self.datePicker.frame = CGRectMake(0, self.view.frame.size.height, self.datePicker.frame.size.width, self.datePicker.frame.size.height);
+		
+		self.datePickerConfirm = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, datePickerConfirmButtonHeight)];
+		self.datePickerConfirm.backgroundColor = [UIColor colorWithRed:35.0/255 green:135.0/255 blue:162.0/255 alpha:1.0];
+		[self.datePickerConfirm setTitle:@"CONFIRM DATE" forState:UIControlStateNormal];
+		self.datePickerConfirm.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20];
+		[self.datePickerConfirm setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+		[self.datePickerConfirm setTitleColor:[UIColor colorWithWhite:0.8 alpha:1.0] forState:UIControlStateHighlighted];
+
+		[self.datePickerConfirm addTarget:self action:@selector(dateSelected) forControlEvents:UIControlEventTouchUpInside];
+		[self.view addSubview: self.datePickerContainer];
+		[self.view addSubview:self.datePicker];
+		[self.view addSubview:self.datePickerConfirm];
+	}
+	self.datePickerContainer.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+	NSInteger tabBarHeight = 50;
+	[UIView animateWithDuration:0.4 animations:^{
+		[self.datePickerContainer setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3]];
+		self.datePicker.frame = CGRectMake(0, self.view.frame.size.height - self.datePicker.frame.size.height - tabBarHeight, self.datePicker.frame.size.width, self.datePicker.frame.size.height);
+		self.datePickerConfirm.frame = CGRectMake(0, self.datePicker.frame.origin.y - datePickerConfirmButtonHeight, self.view.frame.size.width, datePickerConfirmButtonHeight);
+	} completion:^(BOOL finished) {
+	}];
+}
+
+- (void) dateSelected {
+	[self closeDatePicker];
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:@"EEE, hh:mm a"];
+	NSString *title = [formatter stringFromDate:self.datePicker.date];
+	[formatter setDateFormat:@"MMMM d"];
+	NSString *desc = [formatter stringFromDate:self.datePicker.date];
+
+	[self setTextOnButton:self.selectPickupByButton
+									title:title
+					titleFontSize:18.0
+						description:desc
+		descriptionFontSize:13.0];
+	[self.datePicker date];
+}
+
+- (void) closeDatePicker {
+	[UIView animateWithDuration:0.4 animations:^{
+		[self.datePickerContainer setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.0]];
+		self.datePicker.frame = CGRectMake(0, self.view.frame.size.height, self.datePicker.frame.size.width, self.datePicker.frame.size.height);
+		self.datePickerConfirm.frame = CGRectMake(0, self.view.frame.size.height, self.datePickerConfirm.frame.size.width, self.datePickerConfirm.frame.size.height);
+	} completion:^(BOOL finished) {
+		self.datePickerContainer.frame = CGRectMake(0, self.view.frame.size.height, self.datePickerConfirm.frame.size.width, self.datePickerConfirm.frame.size.height);
+
+	}];
 }
 
 - (IBAction)selectWeight:(id)sender {

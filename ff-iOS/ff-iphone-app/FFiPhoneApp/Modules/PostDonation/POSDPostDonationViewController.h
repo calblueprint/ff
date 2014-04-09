@@ -9,11 +9,10 @@
 #import "PostDonationBaseViewController.h"
 #import "POSDChooseLocationViewController.h"
 
-@class FFDataDonation;
-
-@class FFDataDonation, FFImageStore, AppDelegate, POSDChooseLocationViewController, POSDChooseAmountViewController, POSDChooseTimeViewController, POSDTitleViewController;
+@class FFDataDonation, FFImageStore, AppDelegate, POSDChooseLocationViewController, POSDChooseAmountViewController, POSDChooseTimeViewController, POSDTitleViewController,Dashboard;
 
 @interface POSDPostDonationViewController : PostDonationBaseViewController <UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, POSDChooseLocationViewControllerDelegate>
 
+@property (strong, nonatomic) Dashboard *dashboard;
 
 @end
