@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0987D96018F43B36001510F8 /* NavDrawer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0987D95F18F43B36001510F8 /* NavDrawer.storyboard */; };
+		0987D96318F43B98001510F8 /* NavDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0987D96218F43B98001510F8 /* NavDrawerController.m */; };
+		0987D9A818F4E1C0001510F8 /* Testing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9A718F4E1C0001510F8 /* Testing.storyboard */; };
 		9B1ABD4217AE50D90041CA0F /* POSDChooseAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1ABD4117AE50D90041CA0F /* POSDChooseAmountViewController.m */; };
 		9B28D32E17AC7105001D742D /* AuthenticationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B28D32D17AC7104001D742D /* AuthenticationConstants.m */; };
 		9B4F18EC17A59826005516A0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4F18EB17A59825005516A0 /* ImageIO.framework */; };
@@ -300,6 +303,10 @@
 
 /* Begin PBXFileReference section */
 		01AD18368F1B46E9A38A5085 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0987D95F18F43B36001510F8 /* NavDrawer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavDrawer.storyboard; sourceTree = "<group>"; };
+		0987D96118F43B98001510F8 /* NavDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavDrawerController.h; sourceTree = "<group>"; };
+		0987D96218F43B98001510F8 /* NavDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavDrawerController.m; sourceTree = "<group>"; };
+		0987D9A718F4E1C0001510F8 /* Testing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Testing.storyboard; sourceTree = "<group>"; };
 		1F46002C458C4125A3A1E6B5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		9B025A7B17A0EEC6004960C4 /* FFRecordAuthToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecordAuthToken.h; sourceTree = "<group>"; };
 		9B025A7C17A0EEC7004960C4 /* FFRecordAuthToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecordAuthToken.m; sourceTree = "<group>"; };
@@ -690,6 +697,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0987D95E18F43B1D001510F8 /* NavDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				0987D95F18F43B36001510F8 /* NavDrawer.storyboard */,
+				0987D96118F43B98001510F8 /* NavDrawerController.h */,
+				0987D96218F43B98001510F8 /* NavDrawerController.m */,
+			);
+			name = NavDrawer;
+			sourceTree = "<group>";
+		};
 		9B025A7F17A1E5B3004960C4 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -1117,9 +1134,11 @@
 				9B4F18F917A59FCC005516A0 /* AppSettings.m */,
 				9BDA8B1B17A5E7BF00F69001 /* ModuleCoordinator.h */,
 				9BDA8B1C17A5E7BF00F69001 /* ModuleCoordinator.m */,
+				0987D9A718F4E1C0001510F8 /* Testing.storyboard */,
 				9B28D32F17AC7569001D742D /* ModuleControllerProtocol.h */,
 				9BF0F09217B71F9600C19539 /* Dashboard.h */,
 				9BF0F09317B71F9700C19539 /* Dashboard.m */,
+				0987D95E18F43B1D001510F8 /* NavDrawer */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1590,6 +1609,7 @@
 				9B64E14A17B999000051E8F1 /* CurrentDonationsStoryboard.storyboard in Resources */,
 				9B64E14F17B9BD4E0051E8F1 /* PastDonationsStoryboard.storyboard in Resources */,
 				9B64E16517B9FE670051E8F1 /* pastdonations_default_mealphoto.png in Resources */,
+				0987D9A818F4E1C0001510F8 /* Testing.storyboard in Resources */,
 				9B64E16617B9FE670051E8F1 /* pastdonations_default_mealphoto@2x.png in Resources */,
 				9B64E16A17B9FE980051E8F1 /* currentdonations_default_mealphoto.png in Resources */,
 				9B64E16B17B9FE980051E8F1 /* currentdonations_default_mealphoto@2x.png in Resources */,
@@ -1638,6 +1658,7 @@
 				9BC778A717BB80E000ADFD9A /* SocialShareStoryboard.storyboard in Resources */,
 				9BC778B617BB8D0D00ADFD9A /* sharedonation_default_message_picture.png in Resources */,
 				9BC778C417BC421900ADFD9A /* app_icon.png in Resources */,
+				0987D96018F43B36001510F8 /* NavDrawer.storyboard in Resources */,
 				9BC778C517BC426100ADFD9A /* app_icon@2x.png in Resources */,
 				9BC778D317BC504200ADFD9A /* Default-568h@2x.png in Resources */,
 				9BC778D517BC504800ADFD9A /* Default@2x.png in Resources */,
@@ -1798,6 +1819,7 @@
 				9B64E14817B999000051E8F1 /* CurrentDonationsConstants.m in Sources */,
 				9B64E14917B999000051E8F1 /* CurrentDonationsModuleController.m in Sources */,
 				9B64E15217B9DC1C0051E8F1 /* PastDonationsConstants.m in Sources */,
+				0987D96318F43B98001510F8 /* NavDrawerController.m in Sources */,
 				9B64E15517B9DC300051E8F1 /* PastDonationsModuleController.m in Sources */,
 				9B64E15817B9DC4C0051E8F1 /* PastDonationsBaseViewController.m in Sources */,
 				9B64E15B17B9DCAF0051E8F1 /* PASDNavigationController.m in Sources */,

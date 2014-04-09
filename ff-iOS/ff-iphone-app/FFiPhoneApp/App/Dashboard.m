@@ -195,4 +195,118 @@
     return self.tabBarController;
 }
 
+#pragma mark replacing tab bar with nav drawer
+
+- (NavDrawerController *)instantiateNavDrawerControllerWithUser:(FFDataUser *)user
+{
+    self.navDrawerController = [[NavDrawerController alloc] init];
+    
+    // Post Donation
+    self.postDonationModuleController = [[PostDonationModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
+    [self.postDonationModuleController setDelegate:self.moduleCoordinator];
+    self.postDonationViewController = [self.postDonationModuleController instantiatePostDonationNavigationViewController];
+    
+    return [self navDrawerControllerWithUpdatedUser:user];
+}
+
+- (NavDrawerController *)navDrawerControllerWithUpdatedUser:(FFDataUser *)user
+{
+    if (!self.navDrawerController) { return nil; }
+    
+    if (!user)
+    {
+        /* Create guest dashboard */
+        
+        // Authentication Options
+        self.authenticationModuleController = [[AuthenticationModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
+        [self.authenticationModuleController setCompletion:self.authenticationCompletionBlock];
+        self.authenticationOptionsViewController = [self.authenticationModuleController instantiateOptionsViewController];
+        self.navDrawerController.viewControllers = @[self.postDonationViewController,
+                                                  self.authenticationOptionsViewController];
+        
+        // Clear user locations data stored in the post donation module
+        [self.postDonationModuleController setUserLocations:nil];
+        
+        // Release inactive modules
+        self.currentDonationsModuleController = nil;
+        self.pastDonationsModuleController = nil;
+        self.accountModuleController = nil;
+    }
+    else if ([user.role isEqualToString:@"donor"])
+    {
+        /* Create donor dashboard */
+        
+        // Current Donations
+        self.currentDonationsModuleController = [[CurrentDonationsModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
+        self.currentDonationsViewController = [self.currentDonationsModuleController instantiateCurrentDonationsNavigationViewController];
+        
+        // Past Donations
+        self.pastDonationsModuleController = [[PastDonationsModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
+        [self.pastDonationsModuleController setDelegate:self.moduleCoordinator];
+        self.pastDonationsViewController = [self.pastDonationsModuleController instantiatePastDonationsNavigationViewController];
+        
+        // Account
+        self.accountModuleController = [[AccountModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
+        [self.accountModuleController setDelegate:self.moduleCoordinator];
+        self.accountViewController = [self.accountModuleController instantiateProfileViewController];
+        
+        self.navDrawerController.viewControllers = @[self.postDonationViewController,
+                                                  self.currentDonationsViewController,
+                                                  self.pastDonationsViewController,
+                                                  self.accountViewController];
+        
+        // Release inactive modules
+        self.authenticationModuleController = nil;
+    }
+    
+    self.navDrawerController.selectedIndex = 0;
+    
+    return self.navDrawerController;
+}
+
+- (NavDrawerController *)navDrawerControllerWithReloadedPostDonationView
+{
+    // Post Donation
+    self.postDonationViewController = [self.postDonationModuleController instantiatePostDonationNavigationViewController];
+    
+    // Replace the existing Post Donation view with a new one
+    NSMutableArray *navDrawerViewControllers = [NSMutableArray array];
+    for (UIViewController *viewController in self.tabBarController.viewControllers) {
+        if ([viewController class] == [self.postDonationViewController class]) {
+            [navDrawerViewControllers addObject:self.postDonationViewController];
+        }
+        else {
+            [navDrawerViewControllers addObject:viewController];
+        }
+    }
+    
+    self.navDrawerController.viewControllers = navDrawerViewControllers;
+    
+    return self.navDrawerController;
+}
+
+- (NavDrawerController *)navDrawerControllerWithReloadedAuthenticationModule
+{
+    // Authentication Options
+    self.authenticationModuleController = [[AuthenticationModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
+    [self.authenticationModuleController setCompletion:self.authenticationCompletionBlock];
+    self.authenticationOptionsViewController = [self.authenticationModuleController instantiateOptionsViewController];
+    
+    // Replace the existing Authentication Options view with a new one
+    NSMutableArray *tabBarViewControllers = [NSMutableArray array];
+    for (UIViewController *viewController in self.tabBarController.viewControllers) {
+        if ([viewController class] == [self.authenticationOptionsViewController class]) {
+            [tabBarViewControllers addObject:self.authenticationOptionsViewController];
+        }
+        else {
+            [tabBarViewControllers addObject:viewController];
+        }
+    }
+    
+    self.navDrawerController.viewControllers = tabBarViewControllers;
+    
+    return self.navDrawerController;
+}
+
+
 @end

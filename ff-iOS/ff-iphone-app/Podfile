@@ -1,3 +1,4 @@
 platform :ios, '7.0'
 pod 'AFNetworking', {:git => 'https://github.com/AFNetworking/AFNetworking.git'}
 pod 'ECSlidingViewController', '~> 2.0.1'
+pod 'MMDrawerController', '~> 0.5.2'
