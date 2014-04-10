@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "ModuleCoordinator.h"
-#import "NavDrawerController.h"
 
 @implementation AppDelegate
 
@@ -16,31 +15,6 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
-    /*
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"NavDrawer" bundle:nil];
-    
-    ECSlidingViewController *slidingViewController = [storyboard instantiateInitialViewController];
-    
-    
-    self.window.rootViewController = slidingViewController;
-    [self.window makeKeyAndVisible];
-    */
-    
-    
-    /*
-    UIViewController * leftDrawer = [[NavDrawerController alloc] init];
-    UIViewController * center = [[UIViewController alloc] init];
-    UIViewController * rightDrawer = [[UIViewController alloc] init];
-    
-    MMDrawerController *drawerController = [[MMDrawerController alloc]
-                                             initWithCenterViewController:center
-                                             leftDrawerViewController:leftDrawer
-                                             rightDrawerViewController:rightDrawer];
-    self.window.rootViewController = drawerController;
-    [self.window makeKeyAndVisible];
-     
-     */
     
     [ModuleCoordinator initSharedCoordinator];
 
