@@ -392,8 +392,8 @@
                                 <color key="textColor" white="0.32253649635036497" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCe-cT-YgC" customClass="FFButtonWithStyleGreenH40">
-                                <rect key="frame" x="10" y="384" width="301" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCe-cT-YgC">
+                                <rect key="frame" x="10" y="393" width="301" height="50"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="HUh-n6-Sac"/>
@@ -420,6 +420,26 @@
                                     <action selector="selectPickupBy:" destination="4pf-ai-wTA" eventType="touchUpInside" id="NME-Lb-bQ2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ce-Bj-moa">
+                                <rect key="frame" x="11" y="13" width="293" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPickupBy:" destination="4pf-ai-wTA" eventType="touchUpInside" id="N5k-uv-r6O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="En9-QA-Afm">
+                                <rect key="frame" x="10" y="62" width="293" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPickupBy:" destination="4pf-ai-wTA" eventType="touchUpInside" id="Uoe-2X-Gxw"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pickup By:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="102" translatesAutoresizingMaskIntoConstraints="NO" id="tiX-Q3-9VB">
                                 <rect key="frame" x="20" y="114" width="102" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -444,18 +464,6 @@
                                     <action selector="selectAddress:" destination="4pf-ai-wTA" eventType="touchUpInside" id="6ps-dx-XA4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ox-hB-lFQ">
-                                <rect key="frame" x="11" y="313" width="293" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.14509804549999999" green="0.47450983520000001" blue="0.55294120309999995" alpha="0.059999999999999998" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="Test">
-                                    <color key="titleColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectWeight:" destination="4pf-ai-wTA" eventType="touchUpInside" id="1nQ-Q5-Udu"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2BE-KT-tXb">
                                 <rect key="frame" x="129" y="67" width="171" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -470,9 +478,10 @@
                     <connections>
                         <outlet property="selectAddressButton" destination="kro-Wp-HIF" id="MNa-mS-HzM"/>
                         <outlet property="selectDonationAmountField" destination="2BE-KT-tXb" id="nmH-DF-3LH"/>
+                        <outlet property="selectKindButton" destination="4ce-Bj-moa" id="WSX-Up-6As"/>
                         <outlet property="selectKindField" destination="nVj-0W-aVy" id="DAf-kA-Ydx"/>
                         <outlet property="selectPickupByButton" destination="7l9-Zp-pYj" id="qrh-TN-xOL"/>
-                        <outlet property="selectWeightButton" destination="6Ox-hB-lFQ" id="6E3-Dw-Jzf"/>
+                        <outlet property="selectWeightButton" destination="En9-QA-Afm" id="dy5-hS-csB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhQ-15-2V7" userLabel="First Responder" sceneMemberID="firstResponder"/>
