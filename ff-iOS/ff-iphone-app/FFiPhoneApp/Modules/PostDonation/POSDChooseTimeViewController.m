@@ -102,7 +102,6 @@
     
     // Select start date as Today by default
     [self.pickerViewStartDate.delegate pickerView:self.pickerViewStartDate didSelectRow:0 inComponent:1];
-	self.identifier = @"POSDChooseTimeViewController";
 }
 
 - (void)didReceiveMemoryWarning
