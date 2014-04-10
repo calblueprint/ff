@@ -8,6 +8,7 @@
 
 #import "POSDChooseTimeViewController.h"
 #import "PostDonationConstants.h"
+#import "PostDonationModuleController.h"
 #import "FFKit.h"
 
 @interface POSDChooseTimeViewController ()
@@ -125,8 +126,8 @@
         [self setDonationAvailableDates];
     }
     
-    [self.navigationController popViewControllerAnimated:YES];
-    
+//    [self.navigationController popViewControllerAnimated:YES];
+  
     DebugLog(@"availableStart: %@", self.donation.availableStart);
     DebugLog(@"availableEnd: %@", self.donation.availableEnd);
 }

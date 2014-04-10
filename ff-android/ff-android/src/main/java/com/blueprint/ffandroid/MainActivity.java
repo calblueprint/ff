@@ -1,11 +1,14 @@
 package com.blueprint.ffandroid;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -24,12 +27,13 @@ public class MainActivity extends ActionBarActivity
     /** The donation object that is created and updated. */
     public Donation donation;
     /**Fragment declarations**/
-    TitleFragment titleFragment;
-    AmountFragment amountFragment;
     LocationFragment locationFragment;
-    PhotoFragment photoFragment;
     AccountFragment accountFragment;
+    FormFragment formFragment;
     Fragment currentFragment;
+    CongratulatoryFragment congratulatoryFragment;
+
+
 
 
     @Override
@@ -41,6 +45,7 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
+        mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -50,12 +55,11 @@ public class MainActivity extends ActionBarActivity
     }
 
     private void initializeFragments(){
-        titleFragment = TitleFragment.newInstance();
-        amountFragment = AmountFragment.newInstance();
         locationFragment = LocationFragment.newInstance();
-        photoFragment = PhotoFragment.newInstance();
         accountFragment = AccountFragment.newInstance();
-        currentFragment = titleFragment;
+        formFragment = FormFragment.newInstance();
+        congratulatoryFragment = CongratulatoryFragment.newInstance();
+        currentFragment = locationFragment;
     }
 
     @Override
@@ -64,10 +68,22 @@ public class MainActivity extends ActionBarActivity
 
         switch (position) {
             case 0:
-                replaceFragment(titleFragment);
+                replaceFragment(locationFragment);
                 break;
             case 2:
                 replaceFragment(accountFragment);
+                break;
+            case 4:
+                SharedPreferences prefs = getSharedPreferences(LoginActivity.PREFS, 0);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.clear();
+                editor.commit();
+                Intent intent = new Intent(this, LoginActivity.class);
+                this.finish();
+                startActivity(intent);
+                break;
+            case 5:
+                replaceFragment(congratulatoryFragment);
                 break;
         }
     }
@@ -98,7 +114,6 @@ public class MainActivity extends ActionBarActivity
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(mTitle);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

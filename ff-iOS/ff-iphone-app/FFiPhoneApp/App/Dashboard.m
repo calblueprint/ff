@@ -15,6 +15,7 @@
 #import "CurrentDonationsModuleController.h"
 #import "PastDonationsModuleController.h"
 #import "AccountModuleController.h"
+#import "POSDPostDonationViewController.h"
 
 #import "FFKit.h"
 
@@ -91,7 +92,11 @@
     // Post Donation
     self.postDonationModuleController = [[PostDonationModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
     [self.postDonationModuleController setDelegate:self.moduleCoordinator];
-    self.postDonationViewController = [self.postDonationModuleController instantiatePostDonationNavigationViewController];
+    UINavigationController *navController = [self.postDonationModuleController instantiatePostDonationNavigationViewController];
+	self.postDonationViewController = navController;
+//	self.postDonationViewController = [self.postDonationModuleController]
+//	[self.tabBarController.tabBar setHidden:YES];
+		
 
     return [self tabBarControllerWithUpdatedUser:user];
 }
@@ -108,9 +113,10 @@
         self.authenticationModuleController = [[AuthenticationModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
         [self.authenticationModuleController setCompletion:self.authenticationCompletionBlock];
         self.authenticationOptionsViewController = [self.authenticationModuleController instantiateOptionsViewController];
-        self.tabBarController.viewControllers = @[self.postDonationViewController,
-                                                  self.authenticationOptionsViewController];
-        
+//        self.tabBarController.viewControllers = @[self.postDonationViewController,
+//                                                  self.authenticationOptionsViewController];
+			self.tabBarController.viewControllers = @[self.postDonationViewController];
+      
         // Clear user locations data stored in the post donation module
         [self.postDonationModuleController setUserLocations:nil];
 

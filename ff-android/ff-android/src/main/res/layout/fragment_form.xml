@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.blueprint.ffandroid.FormFragment">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_size"
+        android:id="@+id/donation_kind"
+        android:paddingLeft="@dimen/title_textview_horizontal"
+        android:hint="@string/kind" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_size"
+        android:id="@+id/donation_weight"
+        android:paddingLeft="@dimen/title_textview_horizontal"
+        android:hint="@string/weight" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_size"
+        android:id="@+id/pickup_time"
+        android:paddingLeft="@dimen/title_textview_horizontal"
+        android:focusable="false"
+        android:hint="@string/pickup_time" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_size"
+        android:id="@+id/address_field"
+        android:paddingLeft="@dimen/title_textview_horizontal"
+        android:hint="@string/address" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/photo_imageview"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center_horizontal" />
+
+    <ImageButton
+        android:id="@+id/camera_button"
+        android:layout_width="@dimen/form_field_size"
+        android:layout_height="@dimen/form_field_size"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/location_margin"
+        android:background="@drawable/green_button"
+        android:src="@android:drawable/ic_menu_camera"
+        android:text="@string/photo" />
+
+    <Button
+        android:id="@+id/pickup_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/location_margin"
+        android:background="@drawable/green_button"
+        android:textColor="@color/white"
+        android:text="@string/pickup_button" />
+
+</LinearLayout>

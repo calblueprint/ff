@@ -17,6 +17,7 @@
     [self.layer setShadowOpacity:0.5f];
     [self.layer setShadowRadius:1.0f];
     [self.layer setShadowOffset:CGSizeMake(0.0f, 0.0f)];
+		
 }
 
 @end

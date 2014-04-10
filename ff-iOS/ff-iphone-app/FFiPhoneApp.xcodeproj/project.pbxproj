@@ -284,8 +284,6 @@
 		9BFAE59F17AF36370058AFE9 /* POSDChooseTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */; };
 		9BFAE5A617B07D100058AFE9 /* navigationbar_top_left_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */; };
 		9BFAE5A717B07D100058AFE9 /* navigationbar_top_left_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */; };
-		A3C8ADA318DA9CBC00F94542 /* Mark Simonson - Proxima Nova Alt Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3C8ADA218DA9CBC00F94542 /* Mark Simonson - Proxima Nova Alt Regular.ttf */; };
-		A3C8ADA518DA9E0100F94542 /* Mark Simonson - Proxima Nova Alt Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3C8ADA418DA9E0100F94542 /* Mark Simonson - Proxima Nova Alt Light.ttf */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -658,8 +656,6 @@
 		9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSDChooseTimeViewController.m; sourceTree = "<group>"; };
 		9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_top_left_icon.png; sourceTree = "<group>"; };
 		9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_top_left_icon@2x.png"; sourceTree = "<group>"; };
-		A3C8ADA218DA9CBC00F94542 /* Mark Simonson - Proxima Nova Alt Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Regular.ttf"; sourceTree = "<group>"; };
-		A3C8ADA418DA9E0100F94542 /* Mark Simonson - Proxima Nova Alt Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Simonson - Proxima Nova Alt Light.ttf"; path = "Mark Simonson - Proxima Nova Alt Light/fonts/Mark Simonson - Proxima Nova Alt Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1508,7 +1504,8 @@
 		9B98D175179CEE4C0032888C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Feeding Forward";
 			};
 			buildConfigurationList = 9B98D178179CEE4C0032888C /* Build configuration list for PBXProject "FFiPhoneApp" */;
@@ -1920,7 +1917,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1982,7 +1979,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D374F755-D54C-4457-A07C-00974DE0654D";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};

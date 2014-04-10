@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,67 +10,35 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.blueprint.ffandroid.TitleFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/location_margin"
-        android:paddingTop="@dimen/location_margin"
-        android:paddingBottom="@dimen/location_margin"
-        android:textSize="@dimen/location_title_font_size"
-        android:text="Where is this donation?"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/address_line_1"
-        android:paddingLeft="@dimen/location_margin"
-        android:paddingRight="@dimen/location_margin"
-        android:layout_marginBottom="@dimen/location_form_height_separation"
-        android:hint="Address Line 1" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/address_line_2"
-        android:paddingLeft="@dimen/location_margin"
-        android:paddingRight="@dimen/location_margin"
-        android:layout_marginBottom="@dimen/location_form_height_separation"
-        android:hint="Address Line 2" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/city"
-        android:paddingLeft="@dimen/location_margin"
-        android:paddingRight="@dimen/location_margin"
-        android:layout_marginBottom="@dimen/location_form_height_separation"
-        android:hint="City" />
-
-    <LinearLayout
-        android:id="@+id/LinearLayout02"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent">
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:entries="@array/states"
-            android:id="@+id/state_spinner" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Zipcode"/>
-
-    </LinearLayout>
-
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/location_margin"
+        android:layout_marginTop="13dp"
         android:id="@+id/forward_button"
         android:background="@drawable/green_button"
-        android:text="Forward!"/>
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/white"
+        android:typeface="sans"
+        android:text="@string/confirm_location"/>
 
-</LinearLayout>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/location_margin"
+        android:id="@+id/address_field"
+        android:gravity="center_horizontal"
+        android:typeface="sans"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:hint="@string/address"
+        android:layout_above="@+id/forward_button" />
+
+    <fragment
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/address_field"/>
+
+</RelativeLayout>
