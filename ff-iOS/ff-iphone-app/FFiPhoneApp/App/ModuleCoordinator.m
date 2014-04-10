@@ -206,7 +206,7 @@
 - (void)configureAppearance
 {
     // Set Navigation bar background image
-    [[UINavigationBar appearance]  setBackgroundImage:[UIImage imageNamed:kStyleNavigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance]  setBackgroundImage:[UIImage imageNamed:kStyleNavigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)loadUserDataWithCompletion:(void (^)(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations))completion
