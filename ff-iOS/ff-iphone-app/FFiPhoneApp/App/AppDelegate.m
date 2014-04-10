@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "ModuleCoordinator.h"
 #import "NavDrawerController.h"
-#import "ECSlidingViewController.h"
 
 @implementation AppDelegate
 

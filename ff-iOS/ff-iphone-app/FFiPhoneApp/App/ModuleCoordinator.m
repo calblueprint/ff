@@ -197,7 +197,7 @@
                                                     leftDrawerViewController:self.navDrawerController];
             
             [drawerController setMaximumRightDrawerWidth:200.0];
-            [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeBezelPanningCenterView];
+            [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
             [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
             
             // Change rootViewController to dashbaord with animation

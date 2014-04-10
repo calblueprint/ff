@@ -15,6 +15,10 @@
 @implementation NavDrawerController
 @synthesize viewControllers;
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+}
 
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue { }
 

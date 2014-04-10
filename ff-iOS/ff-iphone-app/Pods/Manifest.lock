@@ -1,6 +1,5 @@
 PODS:
   - AFNetworking (1.3.1)
-  - ECSlidingViewController (2.0.1)
   - MMDrawerController (0.5.3):
     - MMDrawerController/Core
     - MMDrawerController/MMDrawerBarButtonItem
@@ -16,7 +15,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (from `https://github.com/AFNetworking/AFNetworking.git`)
-  - ECSlidingViewController (~> 2.0.1)
   - MMDrawerController (~> 0.5.2)
 
 EXTERNAL SOURCES:
@@ -25,7 +23,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7337ed638bf25ca2ab2bdec944b036e568e2b0e7
-  ECSlidingViewController: d7bb96ee5bbe261ed80ee16a513f94b9fd3c9767
   MMDrawerController: 4445e1927e8947b7e2382136c9b7109840efbfb9
 
 COCOAPODS: 0.29.0
