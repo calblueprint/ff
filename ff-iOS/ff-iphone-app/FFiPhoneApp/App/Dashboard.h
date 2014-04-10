@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NavDrawerController.h"
+
 
 @class FFDataUser, AuthenticationModuleController, CurrentDonationsModuleController, AccountModuleController, PostDonationModuleController, PastDonationsModuleController;
 
@@ -19,9 +21,15 @@
 @property (strong, nonatomic) PostDonationModuleController *postDonationModuleController;
 @property (strong, nonatomic) UITabBarController *tabBarController;
 
+@property (strong, nonatomic) NavDrawerController *navDrawerController;
+
 + (instancetype)sharedDashboard;
 - (UITabBarController *)instantiateTabBarControllerWithUser:(FFDataUser *)user;
 - (UITabBarController *)tabBarControllerWithUpdatedUser:(FFDataUser *)user;
 - (UITabBarController *)tabBarControllerWithReloadedPostDonationView;
+
+- (NavDrawerController *)instantiateNavDrawerControllerWithUser:(FFDataUser *)user;
+- (NavDrawerController *)navDrawerControllerWithUpdatedUser:(FFDataUser *)user;
+- (NavDrawerController *)navDrawerControllerWithReloadedPostDonationView;
 
 @end

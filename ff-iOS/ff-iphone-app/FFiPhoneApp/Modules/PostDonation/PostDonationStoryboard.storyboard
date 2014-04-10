@@ -246,7 +246,7 @@
                     <navigationItem key="navigationItem" title="Choose Amount" id="fmk-Uv-2Hr">
                         <barButtonItem key="leftBarButtonItem" id="fM3-4c-Eef">
                             <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j25-IC-wpS" customClass="FFButtonWithStyleGreenH30">
-                                <rect key="frame" x="5" y="7" width="40" height="30"/>
+                                <rect key="frame" x="16" y="7" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="25"/>
@@ -327,7 +327,7 @@
                     <navigationItem key="navigationItem" title="Choose Location" id="W5j-c3-Bmc">
                         <barButtonItem key="leftBarButtonItem" id="Gvo-N4-Vc0">
                             <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Toi-l3-lz3" customClass="FFButtonWithStyleGreenH30">
-                                <rect key="frame" x="5" y="7" width="40" height="30"/>
+                                <rect key="frame" x="16" y="7" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="25"/>
@@ -582,7 +582,7 @@
                     <navigationItem key="navigationItem" title="Choose Time" id="YPA-MM-8ia">
                         <barButtonItem key="leftBarButtonItem" id="DeU-sg-rvI">
                             <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qZG-B5-Ipk" customClass="FFButtonWithStyleGreenH30">
-                                <rect key="frame" x="5" y="7" width="40" height="30"/>
+                                <rect key="frame" x="16" y="7" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="25"/>
