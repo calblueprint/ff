@@ -188,17 +188,19 @@
         [self loadUserDataWithCompletion:^(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations) {
             
             // Configure dashbaord
-            self.tabBarController = [[Dashboard sharedDashboard] instantiateTabBarControllerWithUser:user];
+            //self.tabBarController = [[Dashboard sharedDashboard] instantiateTabBarControllerWithUser:user];
             self.navDrawerController = [[Dashboard sharedDashboard] instantiateNavDrawerControllerWithUser:user];
             UINavigationController *navigationController = [[UINavigationController alloc] init];
             [self.navDrawerController setNavigationController:navigationController];
             MMDrawerController *drawerController = [[MMDrawerController alloc]
                                                     initWithCenterViewController:navigationController
                                                     leftDrawerViewController:self.navDrawerController];
+            [self.navDrawerController setMmDrawerController:drawerController];
             
             [drawerController setMaximumRightDrawerWidth:200.0];
             [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
             [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+            [drawerController setCenterHiddenInteractionMode:MMDrawerOpenCenterInteractionModeNavigationBarOnly];
             
             // Change rootViewController to dashbaord with animation
             /*

@@ -51,10 +51,9 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger index = indexPath.row;
-    NSLog(@"Index selected: %d", index);
-    [self.navigationController pushViewController:[viewControllers objectAtIndex:indexPath.row] animated:YES];
+    NSLog(@"Nav Drawer index selected: %d", indexPath.row);
+    UIViewController *viewController = [viewControllers objectAtIndex:indexPath.row];
     
-    
+    [self.mmDrawerController setCenterViewController:viewController withCloseAnimation:YES completion:nil];
 }
 @end

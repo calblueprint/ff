@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMDrawerController.h"
 
 @interface NavDrawerController : UITableViewController
 
@@ -14,5 +15,5 @@
 @property (nonatomic) NSInteger *selectedIndex;
 @property (nonatomic) UINavigationController *navigationController;
 
-
+@property (nonatomic) MMDrawerController *mmDrawerController;
 @end
