@@ -14,6 +14,5 @@
 @property (nonatomic) NSInteger *selectedIndex;
 @property (nonatomic) UINavigationController *navigationController;
 
-- (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue;
 
 @end
