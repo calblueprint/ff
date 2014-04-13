@@ -29,8 +29,13 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
+import org.json.JSONObject;
+
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import javax.xml.transform.Result;
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -49,11 +54,9 @@ public class MainActivity extends ActionBarActivity
     public static final String EXTRA_MESSAGE = "message";
     public static final String PROPERTY_REG_ID = "registration_id";
     private static final String PROPERTY_APP_VERSION = "appVersion";
-    String SENDER_ID = "Your-Sender-ID";
+    String SENDER_ID = "699498087377";
 
 
-
-    TextView mDisplay;
     GoogleCloudMessaging gcm;
     AtomicInteger msgId = new AtomicInteger();
     SharedPreferences prefs;
@@ -80,6 +83,7 @@ public class MainActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         initializeFragments();
         setContentView(R.layout.activity_donate);
+        context = this;
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -95,7 +99,7 @@ public class MainActivity extends ActionBarActivity
         if (checkPlayServices()) {
             gcm = GoogleCloudMessaging.getInstance(this);
             regid = getRegistrationId(context);
-
+            Log.e(TAG, "REGISTRATION ID:" + regid+ "swag");
             if (regid.isEmpty()) {
                 registerInBackground();
             }
@@ -274,7 +278,8 @@ public class MainActivity extends ActionBarActivity
      */
     private void registerInBackground() {
         new AsyncTask() {
-            protected String doInBackground(Void... params) {
+            @Override
+            protected Object doInBackground(Object[] params) {
                 String msg = "";
                 try {
                     if (gcm == null) {
@@ -303,15 +308,6 @@ public class MainActivity extends ActionBarActivity
                 }
                 return msg;
             }
-
-            protected void onPostExecute(String msg) {
-                mDisplay.append(msg + "\n");
-            }
-
-            @Override
-            protected Object doInBackground(Object[] params) {
-                return null;
-            }
         }.execute(null, null, null);
     }
 
@@ -328,6 +324,7 @@ public class MainActivity extends ActionBarActivity
         Log.i(TAG, "Saving regId on app version " + appVersion);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(PROPERTY_REG_ID, regId);
+        Log.e(TAG, "REGISTRATION ID:" + regId+ "swag");
         editor.putInt(PROPERTY_APP_VERSION, appVersion);
         editor.commit();
     }
