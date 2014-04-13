@@ -6,11 +6,15 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+
+import android.os.Handler;
 
 /**
  * Created by howardchen on 4/12/14.
@@ -27,7 +31,7 @@ public class GcmIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        Bundle extras = intent.getExtras();
+        final Bundle extras = intent.getExtras();
         GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(this);
         // The getMessageType() intent parameter must be the intent you received
         // in your BroadcastReceiver.
@@ -63,6 +67,15 @@ public class GcmIntentService extends IntentService {
                 // Post notification of received message.
                 sendNotification("Received: " + extras.toString());
                 Log.i(TAG, "Received: " + extras.toString());
+                Handler h = new Handler(Looper.getMainLooper());
+                final Context c = this.getApplicationContext();
+                h.post(new Runnable() {
+
+                    public void run() {
+                        // TODO Auto-generated method stub
+                        Toast.makeText(c, extras.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
 //                extras.get("message");
             }
         }
