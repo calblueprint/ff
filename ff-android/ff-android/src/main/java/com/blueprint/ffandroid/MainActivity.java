@@ -79,7 +79,7 @@ public class MainActivity extends ActionBarActivity
                 this.finish();
                 startActivity(intent);
                 break;
-            case 6:
+            case 5:
                 replaceFragment(congratulatoryFragment);
                 break;
         }

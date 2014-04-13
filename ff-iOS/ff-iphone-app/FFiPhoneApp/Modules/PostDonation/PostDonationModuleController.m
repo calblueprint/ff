@@ -11,6 +11,7 @@
 #import "PostDonationBaseViewController.h"
 #import "POSDNavigationController.h"
 #import "AppDelegate.h"
+#import "POSDPostDonationViewController.h"
 
 #import "FFKit.h"
 
@@ -49,9 +50,13 @@
 {
     id viewController = [_storyboard instantiateViewControllerWithIdentifier:@"POSDNavigationController"];
     [viewController setModuleController:self];
-    
+		self.navigationController = viewController;
+	 self.postDonationViewController = [_storyboard instantiateViewControllerWithIdentifier:@"POSDPostDonationViewController"];
+	[self.navigationController pushViewController:self.postDonationViewController animated:NO];
     return viewController;
 }
+
+
 
 - (void)    postDonation:(FFDataDonation *)donation
       andUploadMealPhoto:(UIImage *)mealPhoto
