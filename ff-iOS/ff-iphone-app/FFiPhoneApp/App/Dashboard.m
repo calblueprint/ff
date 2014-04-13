@@ -205,7 +205,7 @@
 
 - (NavDrawerController *)instantiateNavDrawerControllerWithUser:(FFDataUser *)user
 {
-    self.navDrawerController = [[NavDrawerController alloc] init];
+    self.navDrawerController = [[NavDrawerController alloc] initWithStyle:UITableViewStyleGrouped];
     
     // Post Donation
     self.postDonationModuleController = [[PostDonationModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
@@ -229,6 +229,7 @@
         self.authenticationOptionsViewController = [self.authenticationModuleController instantiateOptionsViewController];
         self.navDrawerController.viewControllers = @[self.postDonationViewController,
                                                   self.authenticationOptionsViewController];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Login"];
         
         // Clear user locations data stored in the post donation module
         [self.postDonationModuleController setUserLocations:nil];
@@ -260,6 +261,7 @@
                                                   self.currentDonationsViewController,
                                                   self.pastDonationsViewController,
                                                   self.accountViewController];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Current Donation", @"Past Donations", @"Account"];
         
         // Release inactive modules
         self.authenticationModuleController = nil;

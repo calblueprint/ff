@@ -12,6 +12,7 @@
 @interface NavDrawerController : UITableViewController
 
 @property (nonatomic) NSArray *viewControllers;
+@property (nonatomic) NSArray *navCellNames;
 @property (nonatomic) NSInteger *selectedIndex;
 @property (nonatomic) UINavigationController *navigationController;
 

@@ -9,7 +9,7 @@
 #import "NavDrawerController.h"
 
 @interface NavDrawerController ()
-
+@property UIColor *backgroundGray;
 @end
 
 @implementation NavDrawerController
@@ -18,6 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+    [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    [self.tableView setSeparatorColor:[UIColor colorWithRed:31/255.0 green:31/255.0 blue:31/255.0 alpha:0.7]];
+    [self.tableView setBounces:NO];
+    
+    UIView* bview = [[UIView alloc] init];
+    self.backgroundGray = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1.0];
+
+    bview.backgroundColor = self.backgroundGray;
+    [self.tableView setBackgroundView:bview];
 }
 
 #pragma mark - Table view data source
@@ -34,6 +44,11 @@
     return [viewControllers count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -45,7 +60,11 @@
         
     }
     // Configure the cell...
-    cell.textLabel.text = NSStringFromClass([[viewControllers objectAtIndex:indexPath.row] class]);
+    //cell.textLabel.text = NSStringFromClass([[viewControllers objectAtIndex:indexPath.row] class]);
+    cell.textLabel.text = [self.navCellNames objectAtIndex:indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:@"second.png"];
+    cell.backgroundColor = self.backgroundGray;
+    [cell.textLabel setTextColor:[UIColor whiteColor]];
     
     return cell;
 }

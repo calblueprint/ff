@@ -193,7 +193,7 @@
             UINavigationController *navigationController = [[UINavigationController alloc] init];
             [self.navDrawerController setNavigationController:navigationController];
             MMDrawerController *drawerController = [[MMDrawerController alloc]
-                                                    initWithCenterViewController:navigationController
+                                                    initWithCenterViewController:[self.navDrawerController.viewControllers objectAtIndex:0]
                                                     leftDrawerViewController:self.navDrawerController];
             [self.navDrawerController setMmDrawerController:drawerController];
             
@@ -202,16 +202,8 @@
             [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
             [drawerController setCenterHiddenInteractionMode:MMDrawerOpenCenterInteractionModeNavigationBarOnly];
             
-            // Change rootViewController to dashbaord with animation
-            /*
-            [UIView transitionFromView:self.appDelegate.window.rootViewController.view
-                                toView:self.tabBarController.view
-                              duration:0.65
-                               options:UIViewAnimationOptionTransitionFlipFromRight
-                            completion:^(BOOL finished) {
-                                self.appDelegate.window.rootViewController = self.tabBarController;
-                            }];
-             */
+            //[drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+
             NSLog(@"Current NavDrawer view controllers: %@", self.navDrawerController.viewControllers);
             [UIView transitionFromView:self.appDelegate.window.rootViewController.view
                                 toView:drawerController.view
