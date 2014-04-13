@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -42,6 +43,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
     private EditText weight_field;
     private EditText pickup_time_field;
     private EditText address_field;
+    private Button pickup_button;
 
     /** The date the donation will be picked up */
     private Date pickup_date;
@@ -74,7 +76,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
         mImageView = (ImageView) rootView.findViewById(R.id.photo_imageview);
         parent = (MainActivity) getActivity();
-        setupViews(rootView);
+        setupFragment(rootView);
 
         loadDonation();
 
@@ -98,16 +100,21 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         }
     }
 
-    public void setupViews(View rootView) {
+    public void setupFragment(View rootView) {
         ImageButton photo = (ImageButton) rootView.findViewById(R.id.camera_button);
 
         kind_field = (EditText) rootView.findViewById(R.id.donation_kind);
         weight_field = (EditText) rootView.findViewById(R.id.donation_weight);
         pickup_time_field = (EditText) rootView.findViewById(R.id.pickup_time);
         address_field = (EditText) rootView.findViewById(R.id.address_field);
+        pickup_button = (Button) rootView.findViewById(R.id.pickup_button);
+
+        pickup_button.setOnClickListener(this);
 
         photo.setOnClickListener(this);
         pickup_time_field.setOnClickListener(this);
+
+        pickup_date = new Date();
     }
 
     private String dateString(Date date) {
@@ -163,6 +170,22 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         pickerFired = false;
     }
 
+    private void updateDonation() {
+        try {
+            parent.donation.setWeight(Double.parseDouble(weight_field.getText().toString()));
+        } catch (NumberFormatException e) {
+            System.out.println(e.toString());
+        }
+        parent.donation.setStartDate(pickup_date);
+        parent.donation.setAddress(address_field.getText().toString());
+        parent.donation.setKind(kind_field.getText().toString());
+    }
+
+    private boolean validateDonation() {
+        System.out.println(parent.donation.isValid());
+        return parent.donation.isValid();
+    }
+
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.pickup_time:
@@ -170,6 +193,10 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                 showPickupDateDialog();
                 break;
             case R.id.pickup_button:
+                updateDonation();
+                if (validateDonation()) {
+                    parent.replaceFragment(parent.congratulatoryFragment);
+                }
                 break;
             case R.id.camera_button:
                 dispatchTakePictureIntent();
