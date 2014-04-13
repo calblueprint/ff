@@ -7,15 +7,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Date;
+import java.util.List;
+
 /**
  * An object to represent a donation in the Feeding Forward application.
  */
 public class Donation {
 
-    /** The title of the donation. */
-    private String _title;
-    /** A description of the donation. */
-    private String _description;
+    /** The kind of  donation. */
+    private String _kind;
     /** A picture associated with the donation. */
     private Picture _picture;
     /** A location associated with the donation. */
@@ -35,11 +35,10 @@ public class Donation {
      *  LOCATION, the WEIGHT, a type of VEHICLE, and a START date and END
      *  date of a donation.
      */
-    public Donation(String title, String description, Picture picture,
+    public Donation(String kind, Picture picture,
                     Location location, String address, double weight, String vehicle,
                     Date start, Date end) {
-        _title = title;
-        _description = description;
+        _kind = kind;
         _picture = picture;
         _location = location;
         _address = address;
@@ -52,8 +51,7 @@ public class Donation {
     /** Returns an empty donation.
      */
     public Donation() {
-        _title = "";
-        _description = "";
+        _kind = "";
         _picture = new Picture();
         _location = null;
         _address = "";
@@ -63,14 +61,9 @@ public class Donation {
         _endDate = new Date();
     }
 
-    /** Returns the title of the donation.*/
-    public String getTitle(){
-        return _title;
-    }
-
     /** Returns the description of the donation. */
-    public String getDescription(){
-        return _description;
+    public String getKind(){
+        return _kind;
     }
 
     /** Returns the picture of the donation. */
@@ -106,14 +99,9 @@ public class Donation {
         return _endDate;
     }
 
-    /** Sets the TITLE. */
-    public void setTitle(String title){
-        _title = title;
-    }
-
     /** Sets the DESCRIPTION. */
-    public void setDescription(String description){
-        _description = description;
+    public void setKind(String kind){
+        _kind = kind;
     }
 
     /** Sets the PICTURE. */
@@ -149,12 +137,50 @@ public class Donation {
         _endDate = end;
     }
 
+    /** Checks if donation object is valid.
+     * A donation is valid iff it satisfies all the following requirements:
+     * 1. The location is in the United States.
+     * 2. The weight is a number between 1 and 500.
+     * 3. The start date is later than the current time.
+     * 4. The kind field is not empty.
+     * */
+    public boolean isValid() {
+        System.out.println(_address);
+
+        // Requirement 1
+        String[] address_fields = _address.split(" ");
+        System.out.println(address_fields[address_fields.length - 1]);
+        String country = address_fields[address_fields.length - 1];
+        if (!country.equals("USA")) {
+            System.out.println("address");
+            return false;
+        }
+
+        // Requirement 2
+        if (_weight < 1 || _weight > 500) {
+            System.out.println("weight");
+            return false;
+        }
+
+        // Requirement 3
+        if (_startDate == null || _startDate.after(new Date())) {
+            System.out.println("date");
+            return false;
+        }
+
+        // Requirement 4
+        if (_kind.length() == 0) {
+            return false;
+        }
+
+        return true;
+    }
+
     /** Returns a String that is in JSON format. */
     public String toJSON() {
         try {
             JSONObject jsonObj = new JSONObject();
-            jsonObj.put("title", getTitle());
-            jsonObj.put("description", getDescription());
+            jsonObj.put("kind", getKind().toString());
             jsonObj.put("location", getLocation().toString());
             jsonObj.put("weight", Double.toString(getWeight()));
             jsonObj.put("vehicle", getVehicle());
