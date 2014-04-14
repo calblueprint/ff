@@ -7,11 +7,13 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +25,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -30,9 +33,9 @@ import org.json.JSONObject;
  */
 public class DonationListFragment extends ListFragment{
 
-    private String url;
     private static RequestQueue queue;
     private static String BASE_URL = "http://feeding_forever.herokuapp.com/api/pickups/auth_token=";
+    private String token;
 
     public static DonationListFragment newInstance(){
        return new DonationListFragment();
@@ -40,9 +43,6 @@ public class DonationListFragment extends ListFragment{
 
     public DonationListFragment() {
         super();
-        SharedPreferences prefs = getActivity().getSharedPreferences(LoginActivity.PREFS, 0);
-        String token = prefs.getString("token", "None");
-        this.url = BASE_URL + token;
     }
 
     @Override
@@ -55,15 +55,26 @@ public class DonationListFragment extends ListFragment{
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
 
+        SharedPreferences prefs = getActivity().getSharedPreferences(LoginActivity.PREFS, 0);
+        this.token = prefs.getString("token", "None");
         this.queue = Volley.newRequestQueue(getActivity());
 
-        JsonArrayRequest request = new JsonArrayRequest(this.url,
+        JsonArrayRequest request = new JsonArrayRequest(BASE_URL + token,
             new Response.Listener<JSONArray>() {
                 @Override
                 public void onResponse(JSONArray jsonArray) {
-                    Donation data[];
-                    //TODO: parse JSONArray and make array of Donaiton objects.
-                    DonationAdapter adapter = new DonationAdapter(DonationListFragment.this, data);
+                    Donation data[] = new Donation[jsonArray.length()];
+                    try{
+                        for (int i=0; i<jsonArray.length(); i++) {
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            //TODO: parse JSONArray and make array of Donaiton objects.
+                        }
+                    } catch (JSONException e) {
+                        Log.e("JSON List Error", e.toString());
+                        return;
+                    }
+
+                    DonationAdapter adapter = new DonationAdapter(DonationListFragment.this.getActivity(), data);
                     DonationListFragment.this.setListAdapter(adapter);
 
                 }
@@ -91,6 +102,13 @@ public class DonationListFragment extends ListFragment{
         );
 
         queue.add(request);
+
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+
+        //TODO: launch detail view for selected item
 
     }
 
