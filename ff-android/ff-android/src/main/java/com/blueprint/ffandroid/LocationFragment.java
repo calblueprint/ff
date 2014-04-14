@@ -154,7 +154,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         String url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ coordinates +"&sensor=true&key="+getString(R.string.GEOCODER_API_KEY);
 
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get(url, new AsyncHttpResponseHandler() {
+       /** client.get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(String response) {
                 try {
@@ -165,7 +165,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                     Toast.makeText(parent, "Error retrieving address", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        }); */
     }
 
     /**

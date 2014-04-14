@@ -107,9 +107,6 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case(R.id.checkbox_cheese):
-                //Do whatever is supposed to be done when the checkbox is toggled.
-                break;
             default:
                 break;
         }
