@@ -21,10 +21,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     UIBarButtonItem *navDrawerButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Test"
-                                   style:UIBarButtonItemStyleBordered
-                                   target:self
-                                   action:@selector(menuButtonPressed:)];
+                                        initWithImage:[UIImage imageNamed:@"menu.png"]
+                                        style:UIBarButtonItemStyleBordered
+                                        target:self
+                                        action:@selector(menuButtonPressed:)];
     self.navigationItem.leftBarButtonItem = navDrawerButton;
     
 	if (!_moduleController) {

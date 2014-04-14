@@ -13,6 +13,7 @@
 		0987D9B718FC7CE7001510F8 /* donatelist.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B218FC7CE7001510F8 /* donatelist.png */; };
 		0987D9B818FC7CE7001510F8 /* donate.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B318FC7CE7001510F8 /* donate.png */; };
 		0987D9B918FC7CE7001510F8 /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B418FC7CE7001510F8 /* account.png */; };
+		0987D9BB18FC8680001510F8 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9BA18FC8680001510F8 /* menu.png */; };
 		9B1ABD4217AE50D90041CA0F /* POSDChooseAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1ABD4117AE50D90041CA0F /* POSDChooseAmountViewController.m */; };
 		9B28D32E17AC7105001D742D /* AuthenticationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B28D32D17AC7104001D742D /* AuthenticationConstants.m */; };
 		9B4F18EC17A59826005516A0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4F18EB17A59825005516A0 /* ImageIO.framework */; };
@@ -311,6 +312,7 @@
 		0987D9B218FC7CE7001510F8 /* donatelist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donatelist.png; sourceTree = "<group>"; };
 		0987D9B318FC7CE7001510F8 /* donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donate.png; sourceTree = "<group>"; };
 		0987D9B418FC7CE7001510F8 /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account.png; sourceTree = "<group>"; };
+		0987D9BA18FC8680001510F8 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = Theme/menu.png; sourceTree = "<group>"; };
 		1F46002C458C4125A3A1E6B5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		9B025A7B17A0EEC6004960C4 /* FFRecordAuthToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecordAuthToken.h; sourceTree = "<group>"; };
 		9B025A7C17A0EEC7004960C4 /* FFRecordAuthToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecordAuthToken.m; sourceTree = "<group>"; };
@@ -1179,6 +1181,7 @@
 				9B98D266179D0E870032888C /* first@2x.png */,
 				9B98D267179D0E870032888C /* second.png */,
 				9B98D268179D0E870032888C /* second@2x.png */,
+				0987D9BA18FC8680001510F8 /* menu.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1595,6 +1598,7 @@
 				9BFA58D317A9E12600908526 /* postdonation_button_where_highlighted@2x.png in Resources */,
 				9B6B308717AA52EF00A53738 /* postdonation_button_howmuch_highlighted-568h@2x.png in Resources */,
 				9B6B308917AA52EF00A53738 /* postdonation_button_howmuch_normal-568h@2x.png in Resources */,
+				0987D9BB18FC8680001510F8 /* menu.png in Resources */,
 				9B6B308B17AA52EF00A53738 /* postdonation_button_howmuch_selected-568h@2x.png in Resources */,
 				9B6B308D17AA52EF00A53738 /* postdonation_button_picture_highlighted-568h@2x.png in Resources */,
 				9B6B308F17AA52EF00A53738 /* postdonation_button_picture_normal-568h@2x.png in Resources */,
