@@ -13,8 +13,12 @@
 
 @property (nonatomic) NSArray *viewControllers;
 @property (nonatomic) NSArray *navCellNames;
+@property (nonatomic) NSArray *drawerIcons;
 @property (nonatomic) NSInteger *selectedIndex;
 @property (nonatomic) UINavigationController *navigationController;
 
 @property (nonatomic) MMDrawerController *mmDrawerController;
+
++ (UIImage*)resizeImage:(UIImage*)image withWidth:(int)width withHeight:(int)height;
+
 @end

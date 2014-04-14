@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0987D96318F43B98001510F8 /* NavDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0987D96218F43B98001510F8 /* NavDrawerController.m */; };
+		0987D9B518FC7CE7001510F8 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B018FC7CE7001510F8 /* logout.png */; };
+		0987D9B618FC7CE7001510F8 /* faq.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B118FC7CE7001510F8 /* faq.png */; };
+		0987D9B718FC7CE7001510F8 /* donatelist.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B218FC7CE7001510F8 /* donatelist.png */; };
+		0987D9B818FC7CE7001510F8 /* donate.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B318FC7CE7001510F8 /* donate.png */; };
+		0987D9B918FC7CE7001510F8 /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B418FC7CE7001510F8 /* account.png */; };
 		9B1ABD4217AE50D90041CA0F /* POSDChooseAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1ABD4117AE50D90041CA0F /* POSDChooseAmountViewController.m */; };
 		9B28D32E17AC7105001D742D /* AuthenticationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B28D32D17AC7104001D742D /* AuthenticationConstants.m */; };
 		9B4F18EC17A59826005516A0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4F18EB17A59825005516A0 /* ImageIO.framework */; };
@@ -301,6 +306,11 @@
 		01AD18368F1B46E9A38A5085 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0987D96118F43B98001510F8 /* NavDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavDrawerController.h; sourceTree = "<group>"; };
 		0987D96218F43B98001510F8 /* NavDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavDrawerController.m; sourceTree = "<group>"; };
+		0987D9B018FC7CE7001510F8 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
+		0987D9B118FC7CE7001510F8 /* faq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq.png; sourceTree = "<group>"; };
+		0987D9B218FC7CE7001510F8 /* donatelist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donatelist.png; sourceTree = "<group>"; };
+		0987D9B318FC7CE7001510F8 /* donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donate.png; sourceTree = "<group>"; };
+		0987D9B418FC7CE7001510F8 /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account.png; sourceTree = "<group>"; };
 		1F46002C458C4125A3A1E6B5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		9B025A7B17A0EEC6004960C4 /* FFRecordAuthToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecordAuthToken.h; sourceTree = "<group>"; };
 		9B025A7C17A0EEC7004960C4 /* FFRecordAuthToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecordAuthToken.m; sourceTree = "<group>"; };
@@ -698,6 +708,18 @@
 			name = NavDrawer;
 			sourceTree = "<group>";
 		};
+		0987D9AF18FC7BF6001510F8 /* NavigationDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				0987D9B018FC7CE7001510F8 /* logout.png */,
+				0987D9B118FC7CE7001510F8 /* faq.png */,
+				0987D9B218FC7CE7001510F8 /* donatelist.png */,
+				0987D9B318FC7CE7001510F8 /* donate.png */,
+				0987D9B418FC7CE7001510F8 /* account.png */,
+			);
+			name = NavigationDrawer;
+			sourceTree = "<group>";
+		};
 		9B025A7F17A1E5B3004960C4 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,6 +793,7 @@
 		9B4F18ED17A59849005516A0 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				0987D9AF18FC7BF6001510F8 /* NavigationDrawer */,
 				9BC778D817BC5D1D00ADFD9A /* TabBar */,
 				9BC778B417BB8D0D00ADFD9A /* ShareDonation */,
 				9B64E16717B9FE980051E8F1 /* CurrentDonations */,
@@ -1451,8 +1474,6 @@
 		A3C8AD8818D6306900F94542 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				A3C8ADA418DA9E0100F94542 /* Mark Simonson - Proxima Nova Alt Light.ttf */,
-				A3C8ADA218DA9CBC00F94542 /* Mark Simonson - Proxima Nova Alt Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1544,7 +1565,6 @@
 				9BBB111D17A7CEAF00EA924D /* first@2x.png in Resources */,
 				9BBB111E17A7CEAF00EA924D /* second.png in Resources */,
 				9BBB111F17A7CEAF00EA924D /* second@2x.png in Resources */,
-				A3C8ADA518DA9E0100F94542 /* Mark Simonson - Proxima Nova Alt Light.ttf in Resources */,
 				9B5B223017A851B10003B1CD /* AuthenticationStoryboard.storyboard in Resources */,
 				9B5B223117A851EC0003B1CD /* AppLoaderStoryboard.storyboard in Resources */,
 				9B5B233117A8D9A30003B1CD /* navigationbar_background@2x.png in Resources */,
@@ -1566,6 +1586,7 @@
 				9BFA58C217A9E08200908526 /* postdonation_button_picture_normal@2x.png in Resources */,
 				9BFA58C317A9E08200908526 /* postdonation_button_picture_selected@2x.png in Resources */,
 				9BFA58C417A9E08200908526 /* postdonation_button_when_normal@2x.png in Resources */,
+				0987D9B818FC7CE7001510F8 /* donate.png in Resources */,
 				9BFA58C517A9E08200908526 /* postdonation_button_when_selected@2x.png in Resources */,
 				9BFA58C617A9E08200908526 /* postdonation_button_where_normal@2x.png in Resources */,
 				9BFA58C717A9E08200908526 /* postdonation_button_where_selected@2x.png in Resources */,
@@ -1598,6 +1619,7 @@
 				9BB52FD317B23F7B00813AF6 /* divider_230x1.png in Resources */,
 				9BE4789517B4F51900B83CC6 /* AccountStoryboard.storyboard in Resources */,
 				9B64E14A17B999000051E8F1 /* CurrentDonationsStoryboard.storyboard in Resources */,
+				0987D9B918FC7CE7001510F8 /* account.png in Resources */,
 				9B64E14F17B9BD4E0051E8F1 /* PastDonationsStoryboard.storyboard in Resources */,
 				9B64E16517B9FE670051E8F1 /* pastdonations_default_mealphoto.png in Resources */,
 				9B64E16617B9FE670051E8F1 /* pastdonations_default_mealphoto@2x.png in Resources */,
@@ -1610,11 +1632,11 @@
 				9B64E19817BAF7F40051E8F1 /* button_green_20x20_disabled@2x.png in Resources */,
 				9B64E19917BAF7F40051E8F1 /* button_green_20x20_highlighted.png in Resources */,
 				9B64E19A17BAF7F40051E8F1 /* button_green_20x20_highlighted@2x.png in Resources */,
+				0987D9B718FC7CE7001510F8 /* donatelist.png in Resources */,
 				9B64E19B17BAF7F40051E8F1 /* button_green_20x20_normal.png in Resources */,
 				9B64E19C17BAF7F40051E8F1 /* button_green_20x20_normal@2x.png in Resources */,
 				9B64E19D17BAF7F40051E8F1 /* button_green_30x30_disabled.png in Resources */,
 				9B64E19E17BAF7F40051E8F1 /* button_green_30x30_disabled@2x.png in Resources */,
-				A3C8ADA318DA9CBC00F94542 /* Mark Simonson - Proxima Nova Alt Regular.ttf in Resources */,
 				9B64E19F17BAF7F40051E8F1 /* button_green_30x30_highlighted.png in Resources */,
 				9B64E1A017BAF7F40051E8F1 /* button_green_30x30_highlighted@2x.png in Resources */,
 				9B64E1A117BAF7F40051E8F1 /* button_green_30x30_normal.png in Resources */,
@@ -1628,6 +1650,7 @@
 				9B64E1CA17BB0A790051E8F1 /* button_red_20x20_disabled.png in Resources */,
 				9B64E1CB17BB0A790051E8F1 /* button_red_20x20_disabled@2x.png in Resources */,
 				9B64E1CC17BB0A790051E8F1 /* button_red_20x20_highlighted.png in Resources */,
+				0987D9B518FC7CE7001510F8 /* logout.png in Resources */,
 				9B64E1CD17BB0A790051E8F1 /* button_red_20x20_highlighted@2x.png in Resources */,
 				9B64E1CE17BB0A790051E8F1 /* button_red_20x20_normal.png in Resources */,
 				9B64E1CF17BB0A790051E8F1 /* button_red_20x20_normal@2x.png in Resources */,
@@ -1654,6 +1677,7 @@
 				9BC778D717BC504E00ADFD9A /* Default.png in Resources */,
 				9BC778E117BC5D1D00ADFD9A /* tabbar_icon_account.png in Resources */,
 				9BC778E217BC5D1D00ADFD9A /* tabbar_icon_account@2x.png in Resources */,
+				0987D9B618FC7CE7001510F8 /* faq.png in Resources */,
 				9BC778E317BC5D1D00ADFD9A /* tabbar_icon_currentdonation.png in Resources */,
 				9BC778E417BC5D1D00ADFD9A /* tabbar_icon_currentdonation@2x.png in Resources */,
 				9BC778E517BC5D1D00ADFD9A /* tabbar_icon_pastdonation.png in Resources */,

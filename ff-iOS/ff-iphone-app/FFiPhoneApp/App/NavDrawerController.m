@@ -14,6 +14,7 @@
 
 @implementation NavDrawerController
 @synthesize viewControllers;
+@synthesize drawerIcons;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +26,7 @@
     
     UIView* bview = [[UIView alloc] init];
     self.backgroundGray = [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:1.0];
+    
 
     bview.backgroundColor = self.backgroundGray;
     [self.tableView setBackgroundView:bview];
@@ -60,9 +62,11 @@
         
     }
     // Configure the cell...
-    //cell.textLabel.text = NSStringFromClass([[viewControllers objectAtIndex:indexPath.row] class]);
     cell.textLabel.text = [self.navCellNames objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:@"second.png"];
+    UIImage *icon = [UIImage imageNamed:[self.drawerIcons objectAtIndex:indexPath.row]];
+    icon = [self.class resizeImage:icon withWidth:30 withHeight:30];
+    
+    cell.imageView.image = icon;
     cell.backgroundColor = self.backgroundGray;
     [cell.textLabel setTextColor:[UIColor whiteColor]];
     
@@ -75,4 +79,29 @@
     
     [self.mmDrawerController setCenterViewController:viewController withCloseAnimation:YES completion:nil];
 }
+
++ (UIImage*)resizeImage:(UIImage*)image withWidth:(int)width withHeight:(int)height
+{
+    CGSize newSize = CGSizeMake(width, height);
+    float widthRatio = newSize.width/image.size.width;
+    float heightRatio = newSize.height/image.size.height;
+    
+    if(widthRatio > heightRatio)
+    {
+        newSize=CGSizeMake(image.size.width*heightRatio,image.size.height*heightRatio);
+    }
+    else
+    {
+        newSize=CGSizeMake(image.size.width*widthRatio,image.size.height*widthRatio);
+    }
+    
+    
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 @end
