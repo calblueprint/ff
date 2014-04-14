@@ -76,7 +76,6 @@ public class GcmIntentService extends IntentService {
                         Toast.makeText(c, extras.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
-//                extras.get("message");
             }
         }
         // Release the wake lock provided by the WakefulBroadcastReceiver.
