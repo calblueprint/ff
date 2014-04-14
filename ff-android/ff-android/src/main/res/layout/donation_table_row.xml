@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="75dp"
+    android:padding="6dip" >
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="6dip"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/Date"
+        android:layout_width="wrap_content"
+        android:layout_height="26dip"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/icon"
+        android:text="Date"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:text=" | "
+        android:textSize="16sp"
+        android:layout_toRightOf="@id/Date"
+        android:layout_below="@id/Description"/>
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:text="Address"
+        android:textSize="16sp"
+        android:layout_toRightOf="@id/separator"
+        android:layout_below="@id/Description"
+        android:layout_toLeftOf="@id/status"/>
+
+
+    <TextView
+        android:id="@+id/Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/Date"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toRightOf="@id/icon"
+        android:layout_toLeftOf="@+id/status"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="Description"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:text="STATUS"
+        android:textSize="25sp"
+        android:gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="5dp"
+        android:layout_marginRight="6dip"/>
+
+
+</RelativeLayout>
