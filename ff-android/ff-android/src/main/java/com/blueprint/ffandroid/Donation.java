@@ -6,6 +6,8 @@ import android.location.Location;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -30,6 +32,8 @@ public class Donation {
     private Date _startDate;
     /** The end date of the donation. */
     private Date _endDate;
+    /** The phone number of the user who created the donation. */
+    private String _phoneNumber;
 
     /** Returns a donation by taking in a TITLE, DESCRIPTION, a PICTURE, a
      *  LOCATION, the WEIGHT, a type of VEHICLE, and a START date and END
@@ -37,7 +41,7 @@ public class Donation {
      */
     public Donation(String kind, Picture picture,
                     Location location, String address, double weight, String vehicle,
-                    Date start, Date end) {
+                    Date start, Date end, String phoneNumber) {
         _kind = kind;
         _picture = picture;
         _location = location;
@@ -46,6 +50,7 @@ public class Donation {
         _vehicle = vehicle;
         _startDate = start;
         _endDate = end;
+        _phoneNumber = phoneNumber;
     }
 
     /** Returns an empty donation.
@@ -59,6 +64,7 @@ public class Donation {
         _vehicle = "";
         _startDate = new Date();
         _endDate = new Date();
+        _phoneNumber = "";
     }
 
     /** Returns the description of the donation. */
@@ -99,6 +105,9 @@ public class Donation {
         return _endDate;
     }
 
+    /** Returns the phone of the user who created the donation. */
+    public String getPhoneNumber() { return _phoneNumber; }
+
     /** Sets the DESCRIPTION. */
     public void setKind(String kind){
         _kind = kind;
@@ -137,6 +146,18 @@ public class Donation {
         _endDate = end;
     }
 
+    /** Sets the PHONENUMBER of the donation. */
+    public void setPhoneNumber(String phoneNumber) { _phoneNumber = phoneNumber; }
+
+    /** Checks if donation object is valid.
+     * A donation is valid iff none of its fields violate a requirement.
+     * */
+    public boolean isValid() {
+        int numErrors = 0;
+        for (int i : getErrors()) numErrors += i;
+        return numErrors == 0;
+    }
+
     /** Checks if donation object is valid.
      * A donation is valid iff it satisfies all the following requirements:
      * 1. The location is in the United States.
@@ -144,54 +165,59 @@ public class Donation {
      * 3. The start date is later than the current time.
      * 4. The kind field is not empty.
      * */
-    public boolean isValid() {
-        System.out.println(_address);
+    public int[] getErrors() {
+
+        int[] errors = new int[4];
+        for (int i = 0; i < errors.length; i++) errors[i] = 0;
 
         // Requirement 1
         String[] address_fields = _address.split(" ");
         System.out.println(address_fields[address_fields.length - 1]);
         String country = address_fields[address_fields.length - 1];
         if (!country.equals("USA")) {
-            System.out.println("address");
-            return false;
+            errors[0] = 1;
         }
 
         // Requirement 2
         if (_weight < 1 || _weight > 500) {
-            System.out.println("weight");
-            return false;
+            errors[1] = 1;
         }
 
         // Requirement 3
         if (_startDate == null || _startDate.after(new Date())) {
-            System.out.println("date");
-            return false;
+            errors[1] = 1;
         }
 
         // Requirement 4
         if (_kind.length() == 0) {
-            return false;
+            errors[1] = 1;
         }
 
-        return true;
+        return errors;
     }
 
     /** Returns a String that is in JSON format. */
     public String toJSON() {
+        return toJSONObj().toString();
+    }
+
+    /** Returns a JSONObject */
+    public JSONObject toJSONObj() {
         try {
             JSONObject jsonObj = new JSONObject();
-            jsonObj.put("kind", getKind().toString());
-            jsonObj.put("location", getLocation().toString());
+            jsonObj.put("pickupAt", null);
+            jsonObj.put("pickupTime", getStartDate().toString());
             jsonObj.put("weight", Double.toString(getWeight()));
-            jsonObj.put("vehicle", getVehicle());
-            jsonObj.put("start", getStartDate().toString());
-            jsonObj.put("end", getEndDate().toString());
-            return jsonObj.toString();
+            jsonObj.put("city", getCity().toString());
+            jsonObj.put("state", getState().toString());
+            jsonObj.put("kind", getKind().toString());
+            jsonObj.put("address", getAddress());
+            jsonObj.put("phone", getPhoneNumber().toString());
+            return jsonObj;
         }
         catch(JSONException e) {
             e.printStackTrace();
         }
         return null;
-
     }
 }
