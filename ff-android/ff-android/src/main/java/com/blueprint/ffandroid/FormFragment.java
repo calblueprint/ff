@@ -1,12 +1,15 @@
 package com.blueprint.ffandroid;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +18,17 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -31,7 +44,8 @@ import java.util.Date;
  *
  */
 public class FormFragment extends Fragment implements View.OnClickListener,
-        DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
+        DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener,
+        View.OnFocusChangeListener {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -44,6 +58,8 @@ public class FormFragment extends Fragment implements View.OnClickListener,
     private EditText pickup_time_field;
     private EditText address_field;
     private Button pickup_button;
+
+    private static final String url = "http://feeding-forever.herokuapp.com/api/session";
 
     /** The date the donation will be picked up */
     private Date pickup_date;
@@ -170,6 +186,46 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         pickerFired = false;
     }
 
+    private void displayInvalidDialog() {
+        int[] errors = parent.donation.getErrors();
+
+        AlertDialog alertDialog = new AlertDialog.Builder(parent).create();
+        alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+
+        if (errors[0] == 1) { // Invalid Address
+            alertDialog.setTitle("Invalid Address");
+            alertDialog.setMessage("The address must be in the United States.");
+            alertDialog.show();
+        } else if (errors[1] == 1) { // Invalid weight
+            alertDialog.setTitle("Invalid Weight");
+            alertDialog.setMessage("The weight must be a number between 1 and 500.");
+            alertDialog.show();
+        } else if (errors[2] == 1) { // Invalid Start Date
+            alertDialog.setTitle("Invalid Time");
+            alertDialog.setMessage("The pickup time must be later than the current time.");
+            alertDialog.show();
+        } else if (errors[3] == 1) { // Invalid Kind
+            alertDialog.setTitle("Invalid Kind");
+            alertDialog.setMessage("The kind field cannot be blank.");
+            alertDialog.show();
+        }
+    }
+
+    @Override
+    public void onFocusChange(View v, boolean hasFocus) {
+        if (!hasFocus) {
+            if (kind_field.getId() == v.getId()) {
+                parent.donation.setKind(kind_field.getText().toString());
+            }
+            if (address_field.getId() == v.getId()) {
+                parent.donation.setAddress(address_field.getText().toString());
+            }
+        }
+    }
+
     private void updateDonation() {
         try {
             parent.donation.setWeight(Double.parseDouble(weight_field.getText().toString()));
@@ -186,6 +242,27 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         return parent.donation.isValid();
     }
 
+    private void postDonation() {
+        RequestQueue queue = Volley.newRequestQueue(parent);
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, parent.donation.toJSONObj(),
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject jsonObject) {
+                        // Got response
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        // Error
+                    }
+                }
+        );
+
+        queue.add(request);
+    }
+
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.pickup_time:
@@ -195,7 +272,10 @@ public class FormFragment extends Fragment implements View.OnClickListener,
             case R.id.pickup_button:
                 updateDonation();
                 if (validateDonation()) {
+                    postDonation();
                     parent.replaceFragment(parent.congratulatoryFragment);
+                } else {
+                    displayInvalidDialog();
                 }
                 break;
             case R.id.camera_button:
