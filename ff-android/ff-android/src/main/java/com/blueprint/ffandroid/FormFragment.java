@@ -59,7 +59,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
     private EditText address_field;
     private Button pickup_button;
 
-    private static final String url = "http://feeding-forever.herokuapp.com/api/session";
+    private static final String url = "http://feeding-forever.herokuapp.com/api/pickups";
 
     /** The date the donation will be picked up */
     private Date pickup_date;
