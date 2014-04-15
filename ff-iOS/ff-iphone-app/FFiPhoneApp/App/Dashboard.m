@@ -230,7 +230,7 @@
         self.authenticationOptionsViewController = [self.authenticationModuleController instantiateOptionsViewController];
         self.navDrawerController.viewControllers = @[self.postDonationViewController,
                                                   self.authenticationOptionsViewController];
-        self.navDrawerController.navCellNames = @[@"Donate", @"Login"];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Account"];
         self.navDrawerController.drawerIcons = @[@"donate.png", @"account.png"];
         
         // Clear user locations data stored in the post donation module

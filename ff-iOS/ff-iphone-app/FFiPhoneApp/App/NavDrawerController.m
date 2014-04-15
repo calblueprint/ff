@@ -69,6 +69,7 @@
     cell.imageView.image = icon;
     cell.backgroundColor = self.backgroundGray;
     [cell.textLabel setTextColor:[UIColor whiteColor]];
+    [cell.textLabel setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:20]];
     
     return cell;
 }
