@@ -24,6 +24,10 @@ public class Donation {
     private Location _location;
     /** A human-readable representation of the location */
     private String _address;
+    /** The state tbe donation was made in. */
+    private String _state;
+    /** The city the donation was made in. */
+    private String _city;
     /** The weight of the donation */
     private double _weight;
     /** The type of vehicle that the donation asks for. */
@@ -41,7 +45,7 @@ public class Donation {
      */
     public Donation(String kind, Picture picture,
                     Location location, String address, double weight, String vehicle,
-                    Date start, Date end, String phoneNumber) {
+                    Date start, Date end, String phoneNumber, String city, String state) {
         _kind = kind;
         _picture = picture;
         _location = location;
@@ -51,6 +55,8 @@ public class Donation {
         _startDate = start;
         _endDate = end;
         _phoneNumber = phoneNumber;
+        _city = city;
+        _state = state;
     }
 
     /** Returns an empty donation.
@@ -108,6 +114,12 @@ public class Donation {
     /** Returns the phone of the user who created the donation. */
     public String getPhoneNumber() { return _phoneNumber; }
 
+    /** Returns the city the donation was made in. */
+    public String getCity() { return _city; }
+
+    /** Returns the state the donation was made in. */
+    public String getState() { return _state; }
+
     /** Sets the DESCRIPTION. */
     public void setKind(String kind){
         _kind = kind;
@@ -125,6 +137,13 @@ public class Donation {
 
     /** Sets the ADDRESS */
     public void setAddress(String address) { _address = address; }
+
+    /** Sets the ADDRESS, CITY, and STATE */
+    public void setAddress(String address, String city, String state) {
+        _address = address;
+        _city = city;
+        _state = state;
+    }
 
     /** Sets the Weight. */
     public void setWeight(double weight) {
@@ -208,11 +227,11 @@ public class Donation {
             jsonObj.put("pickupAt", null);
             jsonObj.put("pickupTime", getStartDate().toString());
             jsonObj.put("weight", Double.toString(getWeight()));
-            jsonObj.put("city", getCity().toString());
-            jsonObj.put("state", getState().toString());
-            jsonObj.put("kind", getKind().toString());
+            jsonObj.put("city", getCity());
+            jsonObj.put("state", getState());
+            jsonObj.put("kind", getKind());
             jsonObj.put("address", getAddress());
-            jsonObj.put("phone", getPhoneNumber().toString());
+            jsonObj.put("phone", getPhoneNumber());
             return jsonObj;
         }
         catch(JSONException e) {
