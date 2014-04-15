@@ -19,6 +19,7 @@
 {
     __weak ModuleCoordinator *_moduleCoordinator;
 }
+@synthesize mmDrawerController;
 
 //
 // Module protocol methods

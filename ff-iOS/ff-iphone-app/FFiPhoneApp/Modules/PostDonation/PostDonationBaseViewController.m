@@ -20,7 +20,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-  
+    UIBarButtonItem *navDrawerButton = [[UIBarButtonItem alloc]
+                                        initWithImage:[UIImage imageNamed:@"menu.png"]
+                                        style:UIBarButtonItemStyleBordered
+                                        target:self
+                                        action:@selector(menuButtonPressed:)];
+    self.navigationItem.leftBarButtonItem = navDrawerButton;
+    
 	if (!_moduleController) {
 		   [self setModuleController:((POSDNavigationController *)self.navigationController).moduleController];
 	}
@@ -39,6 +45,11 @@
     [super viewWillDisappear:animated];
     
     [self.view endEditing:YES];
+}
+
+- (void)menuButtonPressed: (id)selector {
+    NSLog(@"MENU BUTTON PRESSEd: %@", self.moduleController);
+    //open up left drawer of MMDrawerController
 }
 
 @end
