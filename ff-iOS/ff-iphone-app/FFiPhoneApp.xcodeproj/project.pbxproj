@@ -290,6 +290,19 @@
 		9BFAE59F17AF36370058AFE9 /* POSDChooseTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */; };
 		9BFAE5A617B07D100058AFE9 /* navigationbar_top_left_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */; };
 		9BFAE5A717B07D100058AFE9 /* navigationbar_top_left_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */; };
+		A39AA7F218FCC3B00052D1DE /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E157179E792D001618E1 /* AFHTTPClient.m */; };
+		A39AA7F318FCC3B00052D1DE /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E159179E792D001618E1 /* AFHTTPRequestOperation.m */; };
+		A39AA7F418FCC3B00052D1DE /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E15B179E792D001618E1 /* AFImageRequestOperation.m */; };
+		A39AA7F518FCC3B00052D1DE /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E15D179E792D001618E1 /* AFJSONRequestOperation.m */; };
+		A39AA7F618FCC3B00052D1DE /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E15F179E792D001618E1 /* AFNetworkActivityIndicatorManager.m */; };
+		A39AA7F718FCC3B00052D1DE /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E162179E792D001618E1 /* AFPropertyListRequestOperation.m */; };
+		A39AA7F818FCC3B00052D1DE /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E164179E792D001618E1 /* AFURLConnectionOperation.m */; };
+		A39AA7F918FCC3B00052D1DE /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E166179E792D001618E1 /* AFXMLRequestOperation.m */; };
+		A39AA7FA18FCC3B00052D1DE /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E168179E792D001618E1 /* UIImageView+AFNetworking.m */; };
+		A39AA7FF18FCC4020052D1DE /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FB18FCC4020052D1DE /* MMDrawerBarButtonItem.m */; };
+		A39AA80018FCC4020052D1DE /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */; };
+		A39AA80118FCC4020052D1DE /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */; };
+		A39AA80218FCC4020052D1DE /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -668,6 +681,10 @@
 		9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSDChooseTimeViewController.m; sourceTree = "<group>"; };
 		9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_top_left_icon.png; sourceTree = "<group>"; };
 		9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_top_left_icon@2x.png"; sourceTree = "<group>"; };
+		A39AA7FB18FCC4020052D1DE /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
+		A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1056,6 +1073,10 @@
 		9B98D174179CEE4C0032888C = {
 			isa = PBXGroup;
 			children = (
+				A39AA7FB18FCC4020052D1DE /* MMDrawerBarButtonItem.m */,
+				A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */,
+				A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */,
+				A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */,
 				9BC778B717BBFB0D00ADFD9A /* Social.framework */,
 				9B6B000517ADC0BE000437A9 /* CoreLocation.framework */,
 				9B6B000317AD95D1000437A9 /* MapKit.framework */,
@@ -1770,6 +1791,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39AA7FF18FCC4020052D1DE /* MMDrawerBarButtonItem.m in Sources */,
+				A39AA80018FCC4020052D1DE /* MMDrawerController.m in Sources */,
+				A39AA80118FCC4020052D1DE /* MMDrawerVisualState.m in Sources */,
+				A39AA80218FCC4020052D1DE /* UIViewController+MMDrawerController.m in Sources */,
+				A39AA7F218FCC3B00052D1DE /* AFHTTPClient.m in Sources */,
+				A39AA7F318FCC3B00052D1DE /* AFHTTPRequestOperation.m in Sources */,
+				A39AA7F418FCC3B00052D1DE /* AFImageRequestOperation.m in Sources */,
+				A39AA7F518FCC3B00052D1DE /* AFJSONRequestOperation.m in Sources */,
+				A39AA7F618FCC3B00052D1DE /* AFNetworkActivityIndicatorManager.m in Sources */,
+				A39AA7F718FCC3B00052D1DE /* AFPropertyListRequestOperation.m in Sources */,
+				A39AA7F818FCC3B00052D1DE /* AFURLConnectionOperation.m in Sources */,
+				A39AA7F918FCC3B00052D1DE /* AFXMLRequestOperation.m in Sources */,
+				A39AA7FA18FCC3B00052D1DE /* UIImageView+AFNetworking.m in Sources */,
 				9BBB110217A7CE6A00EA924D /* main.m in Sources */,
 				9BBB112017A7CEC600EA924D /* AppDelegate.m in Sources */,
 				9BBB112117A7CFC400EA924D /* ModuleCoordinator.m in Sources */,
@@ -1941,7 +1975,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
