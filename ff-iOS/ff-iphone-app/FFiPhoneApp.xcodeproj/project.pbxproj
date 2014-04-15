@@ -303,6 +303,7 @@
 		A39AA80018FCC4020052D1DE /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */; };
 		A39AA80118FCC4020052D1DE /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */; };
 		A39AA80218FCC4020052D1DE /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */; };
+		E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4EF65E018FDCD56007E76BF /* photodefault.jpg */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -685,6 +686,7 @@
 		A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
 		A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
 		A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		E4EF65E018FDCD56007E76BF /* photodefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photodefault.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1200,6 +1202,7 @@
 				9BC778BB17BC3AD900ADFD9A /* app_icon@2x.png */,
 				9B98D265179D0E870032888C /* first.png */,
 				9B98D266179D0E870032888C /* first@2x.png */,
+				E4EF65E018FDCD56007E76BF /* photodefault.jpg */,
 				9B98D267179D0E870032888C /* second.png */,
 				9B98D268179D0E870032888C /* second@2x.png */,
 				0987D9BA18FC8680001510F8 /* menu.png */,
@@ -1604,6 +1607,7 @@
 				9BFA58A017A9D7DD00908526 /* postdonation_button_when_selected.png in Resources */,
 				9BFA58A117A9D7DD00908526 /* postdonation_button_where_highlighted.png in Resources */,
 				9BFA58A217A9D7DD00908526 /* postdonation_button_where_selected.png in Resources */,
+				E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */,
 				9BFA58BF17A9E08200908526 /* postdonation_button_howmuch_normal@2x.png in Resources */,
 				9BFA58C017A9E08200908526 /* postdonation_button_howmuch_selected@2x.png in Resources */,
 				9BFA58C117A9E08200908526 /* postdonation_button_picture_highlighted@2x.png in Resources */,

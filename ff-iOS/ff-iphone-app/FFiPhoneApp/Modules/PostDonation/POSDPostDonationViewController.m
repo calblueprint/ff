@@ -53,6 +53,9 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 @property (weak, nonatomic) IBOutlet UIButton *selectWeightButton;
 @property (weak, nonatomic) IBOutlet UITextField *selectDonationAmountField;
 
+@property (weak, nonatomic) IBOutlet UIImageView *photoView;
+
+
 
 @property (strong, nonatomic) UIDatePicker *datePicker;
 @property (strong, nonatomic) UIView *datePickerContainer;
@@ -100,6 +103,9 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 		self.selectDonationAmountField.delegate = self;
 		self.selectDonationAmountField.keyboardType = UIKeyboardTypeDecimalPad;
     // Register to receive notification for prefilling the post donation form
+		
+		UIImage *image = [UIImage imageNamed: @"photodefault.jpg"];
+	[self.photoView setImage:image];
 	
 }
 
@@ -133,6 +139,10 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 //			self.selectAddressButton.titleLabel.text = self.donation.location.streetAddressOne;
     }
 	[self configurePostDonationButtonStatus];
+	
+	UIGestureRecognizer *tapPhoto = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(takePhoto)];
+	[self.photoView	addGestureRecognizer:tapPhoto];
+	self.photoView.userInteractionEnabled = YES;
 }
 
 - (void)configurePostDonationButtonStatus
@@ -335,7 +345,7 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 // UIImagePickerController delegate method
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [self setImageMealPhoto:[info objectForKey:UIImagePickerControllerEditedImage]];
+	[self.photoView setImage:[info objectForKey:UIImagePickerControllerEditedImage]];
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
@@ -417,7 +427,7 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 		[self.view addSubview:self.datePickerConfirm];
 	}
 	self.datePickerContainer.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-	NSInteger tabBarHeight = 50;
+	NSInteger tabBarHeight = 0;
 	[UIView animateWithDuration:0.4 animations:^{
 		[self.datePickerContainer setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3]];
 		self.datePicker.frame = CGRectMake(0, self.view.frame.size.height - self.datePicker.frame.size.height - tabBarHeight, self.datePicker.frame.size.width, self.datePicker.frame.size.height);
@@ -464,6 +474,10 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 	NSLog(@"Submit button clicked.");
 }
 
+- (void) takePhoto {
+	NSLog(@"take poto");
+	[self presentPictureSourceOptions];
+}
 
 #pragma mark - POSDChooseLocationViewController delegate
 
