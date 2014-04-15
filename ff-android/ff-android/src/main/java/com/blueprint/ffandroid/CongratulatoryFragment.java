@@ -80,7 +80,6 @@ public class CongratulatoryFragment extends Fragment {
         Button button = (Button) rootView.findViewById(R.id.share);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.d(TAG,"SWAAG");
                 publishShareDialog();
             }
         });
