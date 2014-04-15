@@ -205,11 +205,12 @@
 
 - (NavDrawerController *)instantiateNavDrawerControllerWithUser:(FFDataUser *)user
 {
-    self.navDrawerController = [[NavDrawerController alloc] init];
+    self.navDrawerController = [[NavDrawerController alloc] initWithStyle:UITableViewStyleGrouped];
     
     // Post Donation
     self.postDonationModuleController = [[PostDonationModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
     [self.postDonationModuleController setDelegate:self.moduleCoordinator];
+    [self.postDonationModuleController setMmDrawerController:self.navDrawerController.mmDrawerController];
     self.postDonationViewController = [self.postDonationModuleController instantiatePostDonationNavigationViewController];
     
     return [self navDrawerControllerWithUpdatedUser:user];
@@ -229,6 +230,8 @@
         self.authenticationOptionsViewController = [self.authenticationModuleController instantiateOptionsViewController];
         self.navDrawerController.viewControllers = @[self.postDonationViewController,
                                                   self.authenticationOptionsViewController];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Account"];
+        self.navDrawerController.drawerIcons = @[@"donate.png", @"account.png"];
         
         // Clear user locations data stored in the post donation module
         [self.postDonationModuleController setUserLocations:nil];
@@ -260,6 +263,8 @@
                                                   self.currentDonationsViewController,
                                                   self.pastDonationsViewController,
                                                   self.accountViewController];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Current Donation", @"Past Donations", @"Account"];
+        self.navDrawerController.drawerIcons = @[@"donate.png", @"donatelist.png", @"donatelist.png", @"account.png"];
         
         // Release inactive modules
         self.authenticationModuleController = nil;
@@ -299,17 +304,17 @@
     self.authenticationOptionsViewController = [self.authenticationModuleController instantiateOptionsViewController];
     
     // Replace the existing Authentication Options view with a new one
-    NSMutableArray *tabBarViewControllers = [NSMutableArray array];
+    NSMutableArray *navDrawerViewControllers = [NSMutableArray array];
     for (UIViewController *viewController in self.tabBarController.viewControllers) {
         if ([viewController class] == [self.authenticationOptionsViewController class]) {
-            [tabBarViewControllers addObject:self.authenticationOptionsViewController];
+            [navDrawerViewControllers addObject:self.authenticationOptionsViewController];
         }
         else {
-            [tabBarViewControllers addObject:viewController];
+            [navDrawerViewControllers addObject:viewController];
         }
     }
     
-    self.navDrawerController.viewControllers = tabBarViewControllers;
+    self.navDrawerController.viewControllers = navDrawerViewControllers;
     
     return self.navDrawerController;
 }
