@@ -160,6 +160,12 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                 try {
                     JSONArray results = new JSONObject(response).getJSONArray("results");
                     String address = results.getJSONObject(0).getString("formatted_address");
+                    JSONArray address_components = results.getJSONObject(0).getJSONArray("address_components");
+                    String number = address_components.getJSONObject(0).getString("long_name");
+                    String street = address_components.getJSONObject(1).getString("long_name");
+                    String city = address_components.getJSONObject(2).getString("long_name");
+                    String state = address_components.getJSONObject(4).getString("short_name");
+                    setAddress(number+" "+street, city, state);
                     setAddress(address);
                 } catch (JSONException e) {
                     Toast.makeText(parent, "Error retrieving address", Toast.LENGTH_SHORT).show();
@@ -169,11 +175,15 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     }
 
     /**
-     * Sets and saves the ADDRESS of the donation.
+     * Sets the address of the donation.
      */
     public void setAddress(String address) {
         address_field.setText(address);
-        parent.donation.setAddress(address);
+    }
+
+    /** Sets the and saves the ADDRESS, CITY, and STATE of the donation. */
+    public void setAddress(String address, String city, String state) {
+        parent.donation.setAddress(address, city, state);
     }
 
     /**
