@@ -25,6 +25,7 @@
                                         style:UIBarButtonItemStyleBordered
                                         target:self
                                         action:@selector(menuButtonPressed:)];
+    [navDrawerButton setTintColor:[UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:0.65]];
     self.navigationItem.leftBarButtonItem = navDrawerButton;
     
 	if (!_moduleController) {
