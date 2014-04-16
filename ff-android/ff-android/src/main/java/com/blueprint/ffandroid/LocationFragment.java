@@ -179,6 +179,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
      */
     public void setAddress(String address) {
         address_field.setText(address);
+        parent.donation.setFullAddress(address);
     }
 
     /** Sets the and saves the ADDRESS, CITY, and STATE of the donation. */
