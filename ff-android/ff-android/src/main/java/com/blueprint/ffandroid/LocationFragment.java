@@ -1,5 +1,6 @@
 package com.blueprint.ffandroid;
 
+import android.app.ActionBar;
 import android.content.IntentSender;
 import android.location.Location;
 import android.location.LocationListener;
@@ -195,6 +196,13 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         super.onStop();
     }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        if (!hidden){
+            setActionBartitle();
+        }
+    }
+
     /**
          * Called by Location Services when the request to connect the
          * client finishes successfully. At this point, you can
@@ -294,5 +302,10 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                 parent.replaceFragment(parent.formFragment);
                 break;
         }
+    }
+
+    private void setActionBartitle(){
+        ActionBar actionBar = parent.getActionBar();
+        actionBar.setTitle("Where Is The Pickup?");
     }
 }

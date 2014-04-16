@@ -5,18 +5,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.app.ActionBar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
-
-import com.facebook.FacebookException;
-import com.facebook.FacebookOperationCanceledException;
-import com.facebook.Session;
-import com.facebook.SessionState;
-import com.facebook.UiLifecycleHelper;
+import com.facebook.*;
 import com.facebook.widget.FacebookDialog;
 import com.facebook.widget.WebDialog;
 import com.facebook.widget.WebDialog.OnCompleteListener;
@@ -29,6 +25,7 @@ import com.facebook.widget.WebDialog.OnCompleteListener;
 public class CongratulatoryFragment extends Fragment {
 
     private static String TAG = "Congratulatory Fragment";
+    private Activity parent;
     private UiLifecycleHelper uiHelper;
     private Session.StatusCallback callback = new Session.StatusCallback() {
         @Override
@@ -70,6 +67,7 @@ public class CongratulatoryFragment extends Fragment {
         if (savedInstanceState != null) {
             uiHelper.onCreate(savedInstanceState);
         }
+        parent = this.getActivity();
     }
 
     @Override
@@ -134,6 +132,13 @@ public class CongratulatoryFragment extends Fragment {
     public void onResume() {
         super.onResume();
         uiHelper.onResume();
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        if (!hidden){
+            setActionBartitle();
+        }
     }
 
     @Override
@@ -215,6 +220,11 @@ public class CongratulatoryFragment extends Fragment {
                 })
                 .build();
         feedDialog.show();
+    }
+
+    private void setActionBartitle(){
+        ActionBar actionBar = parent.getActionBar();
+        actionBar.setTitle("Congratulations");
     }
 
 }

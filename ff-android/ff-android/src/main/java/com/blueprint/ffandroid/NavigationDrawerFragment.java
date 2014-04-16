@@ -220,6 +220,13 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     @Override
+    public void onHiddenChanged(boolean hidden) {
+        if (!hidden){
+            setActionBartitle();
+        }
+    }
+
+    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(STATE_SELECTED_POSITION, mCurrentSelectedPosition);
@@ -263,6 +270,11 @@ public class NavigationDrawerFragment extends Fragment {
          * Called when an item in the navigation drawer is selected.
          */
         void onNavigationDrawerItemSelected(int position);
+    }
+
+    private void setActionBartitle(){
+        android.app.ActionBar actionBar = getActivity().getActionBar();
+        actionBar.setTitle("Feeding Forward");
     }
 }
 

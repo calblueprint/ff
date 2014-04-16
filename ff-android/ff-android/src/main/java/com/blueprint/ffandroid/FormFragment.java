@@ -1,5 +1,6 @@
 package com.blueprint.ffandroid;
 
+import android.app.ActionBar;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -79,6 +80,13 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         loadDonation();
 
         return rootView;
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        if (!hidden){
+            setActionBartitle();
+        }
     }
 
     private void loadDonation() {
@@ -175,5 +183,10 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                 dispatchTakePictureIntent();
                 break;
         }
+    }
+
+    private void setActionBartitle(){
+        ActionBar actionBar = parent.getActionBar();
+        actionBar.setTitle("Fill Out Your Donation");
     }
 }
