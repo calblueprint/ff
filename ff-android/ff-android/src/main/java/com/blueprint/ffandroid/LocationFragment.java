@@ -114,14 +114,13 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     }
 
     private void updateMap(Location location) {
-        double lat = location.getLatitude();
-        double lng = location.getLongitude();
+        if (location != null) {
+            double lat = location.getLatitude();
+            double lng = location.getLongitude();
 
-        CameraUpdate center = CameraUpdateFactory.newLatLng(new LatLng(lat, lng));
-        CameraUpdate zoom = CameraUpdateFactory.zoomTo(15);
-
-        map.moveCamera(center);
-        map.animateCamera(zoom);
+            LatLng myLocation = new LatLng(lat, lng);
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 16));
+        }
     }
 
     private void updateMap(String address) {
@@ -154,7 +153,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         String url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ coordinates +"&sensor=true&key="+getString(R.string.GEOCODER_API_KEY);
 
         AsyncHttpClient client = new AsyncHttpClient();
-       /** client.get(url, new AsyncHttpResponseHandler() {
+        client.get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(String response) {
                 try {
@@ -165,7 +164,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                     Toast.makeText(parent, "Error retrieving address", Toast.LENGTH_SHORT).show();
                 }
             }
-        }); */
+        });
     }
 
     /**
