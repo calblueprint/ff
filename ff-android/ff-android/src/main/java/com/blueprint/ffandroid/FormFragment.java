@@ -112,7 +112,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
             pickup_time_field.setText(dateString(donation.getStartDate()));
         }
         if (donation.getLocation() != null) {
-            address_field.setText(donation.getAddress());
+            address_field.setText(donation.getFullAddress());
         }
     }
 
@@ -250,12 +250,14 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         // Got response
+                        System.out.println("Got Response");
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
                         // Error
+                        System.out.println(volleyError.toString());
                     }
                 }
         );
