@@ -137,7 +137,7 @@ public class MainActivity extends ActionBarActivity
                 mTitle = "Account Details";
                 break;
             case 3:
-                mTitle = "FAQ's";
+                mTitle = "FAQ";
                 break;
             case 4:
                 mTitle = "Logout";
