@@ -292,6 +292,8 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     public void onClick(View v) {
         switch (v.getId()) {
             case (R.id.forward_button):
+                parent.mTitle = "Fill Out Donation Details";
+                parent.getActionBar().setTitle(parent.mTitle);
                 parent.replaceFragment(parent.formFragment);
                 break;
         }
