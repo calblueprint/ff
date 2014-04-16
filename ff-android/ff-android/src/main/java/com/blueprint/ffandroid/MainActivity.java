@@ -33,6 +33,10 @@ public class MainActivity extends ActionBarActivity
     Fragment currentFragment;
     CongratulatoryFragment congratulatoryFragment;
 
+    /** The logged in user's access token for authentication. */
+    public String accessToken;
+    public static final String PREFS = "LOGIN_PREFS";
+
 
 
 
@@ -52,6 +56,9 @@ public class MainActivity extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         donation = new Donation();
+
+        SharedPreferences prefs = getSharedPreferences(PREFS, 0);
+        accessToken = prefs.getString("token", "NONE");
     }
 
     private void initializeFragments(){
