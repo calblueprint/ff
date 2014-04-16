@@ -28,6 +28,8 @@ public class Donation {
     private String _state;
     /** The city the donation was made in. */
     private String _city;
+    /** The full address the donation was made in. */
+    private String _fullAddress;
     /** The weight of the donation */
     private double _weight;
     /** The type of vehicle that the donation asks for. */
@@ -91,6 +93,9 @@ public class Donation {
     /** Returns the address of the donation. */
     public String getAddress() { return _address; }
 
+    /** Returns the address including the state, city, and country. */
+    public String getFullAddress() { return _fullAddress; }
+
     /** Returns the weight of the donation. */
     public double getWeight() {
         return _weight;
@@ -135,8 +140,11 @@ public class Donation {
         _location = location;
     }
 
-    /** Sets the ADDRESS */
+    /** Sets the ADDRESS. */
     public void setAddress(String address) { _address = address; }
+
+    /** Sets the FULLADDRESS of the donation. */
+    public void setFullAddress(String fullAddress) { _fullAddress = fullAddress; }
 
     /** Sets the ADDRESS, CITY, and STATE */
     public void setAddress(String address, String city, String state) {
@@ -191,7 +199,6 @@ public class Donation {
 
         // Requirement 1
         String[] address_fields = _address.split(" ");
-        System.out.println(address_fields[address_fields.length - 1]);
         String country = address_fields[address_fields.length - 1];
         if (!country.equals("USA")) {
             errors[0] = 1;
@@ -223,15 +230,20 @@ public class Donation {
     /** Returns a JSONObject */
     public JSONObject toJSONObj() {
         try {
+            // Pickup date
+            // Pickup At
+            // input weight
             JSONObject jsonObj = new JSONObject();
-            jsonObj.put("pickupAt", null);
+            jsonObj.put("pickupAt", JSONObject.NULL);
             jsonObj.put("pickupTime", getStartDate().toString());
+            jsonObj.put("pickupDate", getStartDate().toString());
             jsonObj.put("weight", Double.toString(getWeight()));
             jsonObj.put("city", getCity());
             jsonObj.put("state", getState());
             jsonObj.put("kind", getKind());
             jsonObj.put("address", getAddress());
             jsonObj.put("phone", getPhoneNumber());
+            jsonObj.put("inputWeight", Double.toString(getWeight()));
             return jsonObj;
         }
         catch(JSONException e) {
