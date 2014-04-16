@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -57,6 +58,9 @@ public class MainActivity extends ActionBarActivity
     FormFragment formFragment;
     Fragment currentFragment;
     CongratulatoryFragment congratulatoryFragment;
+    /** Font Declaration **/
+    public Typeface myTypeface;
+
 
 
 
@@ -88,6 +92,8 @@ public class MainActivity extends ActionBarActivity
         } else {
             Log.i(TAG, "No valid Google Play Services APK found.");
         }
+        myTypeface = Typeface.createFromAsset(getAssets(), "fonts/proxima_nova_regular.otf");
+
     }
 
     private void initializeFragments(){
