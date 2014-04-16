@@ -135,13 +135,6 @@ public class CongratulatoryFragment extends Fragment {
     }
 
     @Override
-    public void onHiddenChanged(boolean hidden) {
-        if (!hidden){
-            setActionBartitle();
-        }
-    }
-
-    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         uiHelper.onSaveInstanceState(outState);
@@ -221,10 +214,4 @@ public class CongratulatoryFragment extends Fragment {
                 .build();
         feedDialog.show();
     }
-
-    private void setActionBartitle(){
-        ActionBar actionBar = parent.getActionBar();
-        actionBar.setTitle("Congratulations");
-    }
-
 }

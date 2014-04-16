@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
-    private CharSequence mTitle;
+    public CharSequence mTitle;
     /** The donation object that is created and updated. */
     public Donation donation;
     public static final String EXTRA_MESSAGE = "message";
@@ -71,7 +71,6 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
-        mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -102,7 +101,7 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-
+        setActionBar(position);
         switch (position) {
             case 0:
                 replaceFragment(locationFragment);
@@ -125,6 +124,31 @@ public class MainActivity extends ActionBarActivity
         }
     }
 
+    private void setActionBar(int position){
+        ActionBar actionBar = getSupportActionBar();
+        switch (position) {
+            case 0:
+                mTitle = "Where Is The Pickup?";
+                break;
+            case 1:
+                mTitle = "Donation List";
+                break;
+            case 2:
+                mTitle = "Account Details";
+                break;
+            case 3:
+                mTitle = "FAQ's";
+                break;
+            case 4:
+                mTitle = "Logout";
+                break;
+            case 5:
+                mTitle = "Congratulations";
+                break;
+        }
+        actionBar.setTitle(mTitle);
+    }
+
     public void replaceFragment(Fragment newFragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction ft = fragmentManager.beginTransaction();
@@ -135,14 +159,6 @@ public class MainActivity extends ActionBarActivity
         ft.show(newFragment);
         ft.commit();
         currentFragment = newFragment;
-    }
-
-    public void onSectionAttached(int number) {
-        switch (number) {
-            case 1:
-                mTitle = getString(R.string.donation_start_title);
-                break;
-        }
     }
 
     public void restoreActionBar() {

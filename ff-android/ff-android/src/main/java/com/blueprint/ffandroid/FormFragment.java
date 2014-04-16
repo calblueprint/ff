@@ -82,13 +82,6 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         return rootView;
     }
 
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        if (!hidden){
-            setActionBartitle();
-        }
-    }
-
     private void loadDonation() {
         Donation donation = parent.donation;
 
@@ -183,10 +176,5 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                 dispatchTakePictureIntent();
                 break;
         }
-    }
-
-    private void setActionBartitle(){
-        ActionBar actionBar = parent.getActionBar();
-        actionBar.setTitle("Fill Out Your Donation");
     }
 }

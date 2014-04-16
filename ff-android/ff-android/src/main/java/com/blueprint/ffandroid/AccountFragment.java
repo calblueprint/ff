@@ -114,14 +114,6 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
         }
     }
 
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        if (!hidden){
-            setActionBartitle();
-        }
-    }
-
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -135,11 +127,6 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
-    }
-
-    private void setActionBartitle(){
-        ActionBar actionBar = parent.getActionBar();
-        actionBar.setTitle("Account Details");
     }
 
 }
