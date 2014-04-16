@@ -15,7 +15,6 @@
 @property (nonatomic) NSArray *navCellNames;
 @property (nonatomic) NSArray *drawerIcons;
 @property (nonatomic) NSInteger *selectedIndex;
-@property (nonatomic) UINavigationController *navigationController;
 
 @property (nonatomic) MMDrawerController *mmDrawerController;
 

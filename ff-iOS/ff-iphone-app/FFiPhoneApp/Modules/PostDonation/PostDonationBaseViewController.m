@@ -48,8 +48,10 @@
 }
 
 - (void)menuButtonPressed: (id)selector {
-    NSLog(@"MENU BUTTON PRESSEd: %@", self.moduleController);
+    NSLog(@"MENU BUTTON PRESSEd: %@", self.moduleController.mmDrawerController);
     //open up left drawer of MMDrawerController
+    [self.moduleController.mmDrawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    
 }
 
 @end
