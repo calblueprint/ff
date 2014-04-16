@@ -28,12 +28,15 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -61,7 +64,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
     private static final String url = "http://feeding-forever.herokuapp.com/api/pickups";
 
-    /** The date the donation will be picked up */
+    /** The date the donation will be picked up. */
     private Date pickup_date;
 
     /** Checks if date picker has been fired.
@@ -244,8 +247,15 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
     private void postDonation() {
         RequestQueue queue = Volley.newRequestQueue(parent);
+        JSONObject donationJson = parent.donation.toJSONObj();
+//        try {
+//            donationJson.put("access_token", parent.accessToken);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, parent.donation.toJSONObj(),
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, donationJson,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
@@ -260,7 +270,14 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                         System.out.println(volleyError.toString());
                     }
                 }
-        );
+        ){
+            @Override
+            public Map<String,String> getHeaders(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("access_token", parent.accessToken);
+                return params;
+            }
+        };
 
         queue.add(request);
     }
