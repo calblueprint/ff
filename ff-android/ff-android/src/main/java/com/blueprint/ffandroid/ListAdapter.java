@@ -54,6 +54,7 @@ public class ListAdapter extends BaseAdapter{
             convertView = this.inflater.inflate(R.layout.navdrawer_row, null);
         }
         ((TextView) convertView.findViewById(R.id.list_item)).setText(myText);
+        ((ImageView)convertView.findViewById(R.id.list_image)).setImageResource(R.drawable.ic_launcher);
         return convertView;
     }
 }
