@@ -22,11 +22,11 @@
         android:text="@string/faq_description"
         android:layout_gravity="left"/>
     <Button
+        android:id="@+id/ff_link"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/faq_link"
         android:textColor="@color/white"
-        android:id="@+id/share"
         android:layout_gravity="center"
         android:background="@drawable/green_button"
         android:layout_marginTop="20dp" />
