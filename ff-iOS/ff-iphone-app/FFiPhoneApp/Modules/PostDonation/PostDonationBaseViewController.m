@@ -25,6 +25,7 @@
                                         style:UIBarButtonItemStyleBordered
                                         target:self
                                         action:@selector(menuButtonPressed:)];
+    [navDrawerButton setTintColor:[UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:0.65]];
     self.navigationItem.leftBarButtonItem = navDrawerButton;
     
 	if (!_moduleController) {
@@ -48,8 +49,10 @@
 }
 
 - (void)menuButtonPressed: (id)selector {
-    NSLog(@"MENU BUTTON PRESSEd: %@", self.moduleController);
+    NSLog(@"MENU BUTTON PRESSEd: %@", self.moduleController.mmDrawerController);
     //open up left drawer of MMDrawerController
+    [self.moduleController.mmDrawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    
 }
 
 @end

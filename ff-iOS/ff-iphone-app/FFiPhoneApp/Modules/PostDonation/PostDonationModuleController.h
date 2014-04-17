@@ -33,7 +33,7 @@ andDidRetrievePersistedDonation:(FFDataDonation *)persistedDonation
 @property (strong, nonatomic) NSArray *userLocations;
 @property (strong, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) POSDPostDonationViewController *postDonationViewController;
-@property (strong, nonatomic) MMDrawerController *mmDrawerController;
+@property (nonatomic) MMDrawerController *mmDrawerController;
 
 
 - (UINavigationController *)instantiatePostDonationNavigationViewController;

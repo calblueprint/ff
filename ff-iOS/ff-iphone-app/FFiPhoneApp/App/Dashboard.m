@@ -210,7 +210,6 @@
     // Post Donation
     self.postDonationModuleController = [[PostDonationModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
     [self.postDonationModuleController setDelegate:self.moduleCoordinator];
-    [self.postDonationModuleController setMmDrawerController:self.navDrawerController.mmDrawerController];
     self.postDonationViewController = [self.postDonationModuleController instantiatePostDonationNavigationViewController];
     
     return [self navDrawerControllerWithUpdatedUser:user];
