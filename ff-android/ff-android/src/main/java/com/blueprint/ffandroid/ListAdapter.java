@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +18,9 @@ import android.widget.TextView;
  */
 public class ListAdapter extends BaseAdapter{
     private LayoutInflater inflater;
-    private ArrayList<String> data;
+    private String[] data;
 
-    public ListAdapter(Context context, ArrayList<String> data){
+    public ListAdapter(Context context, String[] data){
         // Caches the LayoutInflater for quicker use
         this.inflater = LayoutInflater.from(context);
         // Sets the events data
@@ -27,11 +28,11 @@ public class ListAdapter extends BaseAdapter{
     }
 
     public int getCount() {
-        return this.data.size();
+        return this.data.length;
     }
 
     public String getItem(int position) throws IndexOutOfBoundsException{
-        return this.data.get(position);
+        return this.data[position];
     }
 
     public long getItemId(int position) throws IndexOutOfBoundsException{
@@ -50,16 +51,9 @@ public class ListAdapter extends BaseAdapter{
 
         if(convertView == null){ // If the View is not cached
             // Inflates the Common View from XML file
-            convertView = this.inflater.inflate(R.id.navdrawer_row, null);
+            convertView = this.inflater.inflate(R.layout.navdrawer_row, null);
         }
-
-        // Select your color and apply it to your textview
-        int myColor;
-        if(myText.substring(0, 1) == "a"){
-        }else{
-        }
-        // Of course you will need to set the same ID in your item list XML layout.
-
+        ((TextView) convertView.findViewById(R.id.list_item)).setText(myText);
         return convertView;
     }
 }
