@@ -307,6 +307,7 @@
 		A3B9821A18FF611A005E443A /* FAQConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821918FF611A005E443A /* FAQConstants.m */; };
 		A3B9821D18FF615B005E443A /* FAQModuleController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821C18FF615B005E443A /* FAQModuleController.m */; };
 		A3B9822018FF660B005E443A /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821F18FF660B005E443A /* FAQViewController.m */; };
+		A3B9822318FF752D005E443A /* FAQBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9822218FF752D005E443A /* FAQBaseViewController.m */; };
 		E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4EF65E018FDCD56007E76BF /* photodefault.jpg */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -697,6 +698,8 @@
 		A3B9821C18FF615B005E443A /* FAQModuleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQModuleController.m; sourceTree = "<group>"; };
 		A3B9821E18FF660B005E443A /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		A3B9821F18FF660B005E443A /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
+		A3B9822118FF752D005E443A /* FAQBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQBaseViewController.h; sourceTree = "<group>"; };
+		A3B9822218FF752D005E443A /* FAQBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQBaseViewController.m; sourceTree = "<group>"; };
 		E4EF65E018FDCD56007E76BF /* photodefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photodefault.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1520,6 +1523,8 @@
 				A3B9821C18FF615B005E443A /* FAQModuleController.m */,
 				A3B9821E18FF660B005E443A /* FAQViewController.h */,
 				A3B9821F18FF660B005E443A /* FAQViewController.m */,
+				A3B9822118FF752D005E443A /* FAQBaseViewController.h */,
+				A3B9822218FF752D005E443A /* FAQBaseViewController.m */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -1870,6 +1875,7 @@
 				9B5B222317A83D730003B1CD /* NSArray+FFNull.m in Sources */,
 				9B5B222417A83D730003B1CD /* UIButton+FFStyles.m in Sources */,
 				9B5B222517A83D730003B1CD /* UITextField+FFStyles.m in Sources */,
+				A3B9822318FF752D005E443A /* FAQBaseViewController.m in Sources */,
 				9B5B224117A89BF10003B1CD /* AUTFacebookLoginViewController.m in Sources */,
 				9B5B224417A8B6F40003B1CD /* FFUI.m in Sources */,
 				9B5B232617A8CFEB0003B1CD /* AUTOptionsViewController.m in Sources */,

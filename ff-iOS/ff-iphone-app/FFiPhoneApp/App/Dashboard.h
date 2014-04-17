@@ -10,7 +10,7 @@
 #import "NavDrawerController.h"
 
 
-@class FFDataUser, AuthenticationModuleController, CurrentDonationsModuleController, AccountModuleController, PostDonationModuleController, PastDonationsModuleController;
+@class FFDataUser, AuthenticationModuleController, CurrentDonationsModuleController, AccountModuleController, PostDonationModuleController, PastDonationsModuleController, FAQModuleController;
 
 @interface Dashboard : NSObject
 
@@ -19,6 +19,7 @@
 @property (strong, nonatomic) PastDonationsModuleController *pastDonationsModuleController;
 @property (strong, nonatomic) AccountModuleController *accountModuleController;
 @property (strong, nonatomic) PostDonationModuleController *postDonationModuleController;
+@property (strong, nonatomic) FAQModuleController *FAQModuleController;
 @property (strong, nonatomic) UITabBarController *tabBarController;
 
 @property (strong, nonatomic) NavDrawerController *navDrawerController;
