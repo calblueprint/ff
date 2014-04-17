@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelMobilePhoneNumber;
 @property (strong, nonatomic) IBOutlet UILabel *labelOrganization;
 @property (strong, nonatomic) IBOutlet UISwitch *switchSettingShareDonationPopup;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 
 - (IBAction)switchShareDonationPopupSetting_onValueChanged:(id)sender;
 - (IBAction)buttonLogout_onTouchUpInside:(id)sender;
@@ -42,6 +43,9 @@
     [self.labelMobilePhoneNumber setText:self.user.mobilePhoneNumber];
     [self.labelOrganization setText:self.user.organization];
     self.labelFullName.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:20];
+    
+    [self.menuButton setImage:[UIImage imageNamed:@"menu.png"]];
+    [self.menuButton setTintColor:[UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:0.65]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,4 +66,9 @@
     [self.moduleController logoutUser];
 }
 
+- (IBAction)menuButtonPressed:(id)sender
+{
+    [self.moduleController.mmDrawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    
+}
 @end

@@ -202,6 +202,7 @@
             //[drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
             [self.navDrawerController setMmDrawerController:drawerController];
             [[Dashboard sharedDashboard].postDonationModuleController setMmDrawerController:drawerController];
+            [[Dashboard sharedDashboard].accountModuleController setMmDrawerController:drawerController];
             // TODO: Set MmDrawerController pointer for all module coordinators
 
             [UIView transitionFromView:self.appDelegate.window.rootViewController.view
