@@ -235,15 +235,15 @@ public class Donation {
             // input weight
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("pickupAt", JSONObject.NULL);
-            jsonObj.put("pickupTime", getStartDate().toString());
-            jsonObj.put("pickupDate", getStartDate().toString());
-            jsonObj.put("weight", Double.toString(getWeight()));
-            jsonObj.put("city", getCity());
-            jsonObj.put("state", getState());
-            jsonObj.put("kind", getKind());
-            jsonObj.put("address", getAddress());
-            jsonObj.put("phone", getPhoneNumber());
-            jsonObj.put("inputWeight", Double.toString(getWeight()));
+            jsonObj.put("pickupTime", "5pm"); //getStartDate().toString());
+            jsonObj.put("pickupDate", "02/14/14/");//getStartDate().toString());
+            jsonObj.put("weight", "1");//Double.toString(getWeight()));
+            jsonObj.put("city", "San Francisco");//getCity());
+            jsonObj.put("state", "CA");//getState());
+            jsonObj.put("kind", "20 Breakfast Burritos");//getKind());
+            jsonObj.put("address", "434 Ellis St.");//getAddress());
+            jsonObj.put("phone", "858-952-4845");//getPhoneNumber());
+            jsonObj.put("inputWeight", "1");//Double.toString(getWeight()));
             return jsonObj;
         }
         catch(JSONException e) {
