@@ -255,7 +255,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 //        }
 
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, donationJson,
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url+"?access_token="+parent.accessToken, donationJson,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
@@ -268,17 +268,10 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                     public void onErrorResponse(VolleyError volleyError) {
                         // Error
                         System.out.println(volleyError.toString());
+                        volleyError.printStackTrace();
                     }
                 }
-        ){
-            @Override
-            public Map<String,String> getHeaders(){
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("access_token", parent.accessToken);
-                return params;
-            }
-        };
-
+        );
         queue.add(request);
     }
 
