@@ -58,6 +58,7 @@ public class MainActivity extends ActionBarActivity
     FormFragment formFragment;
     Fragment currentFragment;
     CongratulatoryFragment congratulatoryFragment;
+    DonationListFragment donationListFragment;
     /** Font Declaration **/
     public Typeface myTypeface;
 
@@ -108,6 +109,7 @@ public class MainActivity extends ActionBarActivity
         accountFragment = AccountFragment.newInstance();
         formFragment = FormFragment.newInstance();
         congratulatoryFragment = CongratulatoryFragment.newInstance();
+        donationListFragment = DonationListFragment.newInstance();
         currentFragment = locationFragment;
     }
 
@@ -118,6 +120,9 @@ public class MainActivity extends ActionBarActivity
         switch (position) {
             case 0:
                 replaceFragment(locationFragment);
+                break;
+            case 1:
+                replaceFragment(donationListFragment);
                 break;
             case 2:
                 replaceFragment(accountFragment);
@@ -158,6 +163,7 @@ public class MainActivity extends ActionBarActivity
             case 5:
                 mTitle = "Congratulations";
                 break;
+
         }
         actionBar.setTitle(mTitle);
     }
