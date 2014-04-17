@@ -26,6 +26,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_field">Title</string>
     <string name="forward_button">Forward!</string>
+    <string name="faq_description">About Feeding Forward</string>
 
     <string name="GEOCODER_API_KEY">AIzaSyCnJmnYV5n961YR8DYSOivhsPdx76Zp0lY</string>
 
