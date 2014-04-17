@@ -303,6 +303,10 @@
 		A39AA80018FCC4020052D1DE /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */; };
 		A39AA80118FCC4020052D1DE /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */; };
 		A39AA80218FCC4020052D1DE /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */; };
+		A3B9821718FF6085005E443A /* FAQStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B9821618FF6085005E443A /* FAQStoryboard.storyboard */; };
+		A3B9821A18FF611A005E443A /* FAQConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821918FF611A005E443A /* FAQConstants.m */; };
+		A3B9821D18FF615B005E443A /* FAQModuleController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821C18FF615B005E443A /* FAQModuleController.m */; };
+		A3B9822018FF660B005E443A /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821F18FF660B005E443A /* FAQViewController.m */; };
 		E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4EF65E018FDCD56007E76BF /* photodefault.jpg */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -686,6 +690,13 @@
 		A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
 		A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
 		A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		A3B9821618FF6085005E443A /* FAQStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FAQStoryboard.storyboard; sourceTree = "<group>"; };
+		A3B9821818FF60AE005E443A /* FAQConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQConstants.h; sourceTree = "<group>"; };
+		A3B9821918FF611A005E443A /* FAQConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQConstants.m; sourceTree = "<group>"; };
+		A3B9821B18FF615B005E443A /* FAQModuleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQModuleController.h; sourceTree = "<group>"; };
+		A3B9821C18FF615B005E443A /* FAQModuleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQModuleController.m; sourceTree = "<group>"; };
+		A3B9821E18FF660B005E443A /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
+		A3B9821F18FF660B005E443A /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		E4EF65E018FDCD56007E76BF /* photodefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photodefault.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -844,6 +855,7 @@
 		9B4F191517A5D881005516A0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A3B9821518FF6067005E443A /* FAQ */,
 				9BDA8BC617A5EE5B00F69001 /* AppLoader */,
 				9BDA8C8617A766E300F69001 /* Authentication */,
 				9B4F191617A5D882005516A0 /* Account */,
@@ -1498,6 +1510,20 @@
 			path = PostDonation;
 			sourceTree = "<group>";
 		};
+		A3B9821518FF6067005E443A /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				A3B9821618FF6085005E443A /* FAQStoryboard.storyboard */,
+				A3B9821818FF60AE005E443A /* FAQConstants.h */,
+				A3B9821918FF611A005E443A /* FAQConstants.m */,
+				A3B9821B18FF615B005E443A /* FAQModuleController.h */,
+				A3B9821C18FF615B005E443A /* FAQModuleController.m */,
+				A3B9821E18FF660B005E443A /* FAQViewController.h */,
+				A3B9821F18FF660B005E443A /* FAQViewController.m */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
 		A3C8AD8818D6306900F94542 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1706,6 +1732,7 @@
 				9BC778D717BC504E00ADFD9A /* Default.png in Resources */,
 				9BC778E117BC5D1D00ADFD9A /* tabbar_icon_account.png in Resources */,
 				9BC778E217BC5D1D00ADFD9A /* tabbar_icon_account@2x.png in Resources */,
+				A3B9821718FF6085005E443A /* FAQStoryboard.storyboard in Resources */,
 				0987D9B618FC7CE7001510F8 /* faq.png in Resources */,
 				9BC778E317BC5D1D00ADFD9A /* tabbar_icon_currentdonation.png in Resources */,
 				9BC778E417BC5D1D00ADFD9A /* tabbar_icon_currentdonation@2x.png in Resources */,
@@ -1820,11 +1847,13 @@
 				9BBB112B17A7D0D500EA924D /* FFRecordObject.m in Sources */,
 				9BBB112C17A8307100EA924D /* FFRecordLocation.m in Sources */,
 				9BBB112D17A8307900EA924D /* FFRecordDonation.m in Sources */,
+				A3B9822018FF660B005E443A /* FAQViewController.m in Sources */,
 				9BBB112E17A8307D00EA924D /* FFRecordUser.m in Sources */,
 				9BBB112F17A8308000EA924D /* FFRecordMealPhoto.m in Sources */,
 				9BBB113017A8308300EA924D /* FFRecordImage.m in Sources */,
 				9BBB113117A8308600EA924D /* FFRecordAuthToken.m in Sources */,
 				9BBB113217A831A500EA924D /* FFDataObject.m in Sources */,
+				A3B9821A18FF611A005E443A /* FAQConstants.m in Sources */,
 				9BBB113317A831A500EA924D /* FFDataDonation.m in Sources */,
 				9BBB113417A831A500EA924D /* FFDataImage.m in Sources */,
 				9BBB113517A831A500EA924D /* FFDataLocation.m in Sources */,
@@ -1846,6 +1875,7 @@
 				9B5B232617A8CFEB0003B1CD /* AUTOptionsViewController.m in Sources */,
 				9B6B307617AA206500A53738 /* UIView+FFStyles.m in Sources */,
 				9B6B307917AA4CE500A53738 /* UIImage+FFImage.m in Sources */,
+				A3B9821D18FF615B005E443A /* FAQModuleController.m in Sources */,
 				9B6B30C417AC515F00A53738 /* AppLoaderConstants.m in Sources */,
 				9B6B30D117AC53C800A53738 /* PostDonationBaseViewController.m in Sources */,
 				9B6B30D217AC53C800A53738 /* PostDonationConstants.m in Sources */,
