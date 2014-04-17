@@ -404,6 +404,15 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 	}
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+	NSUInteger newLength = [textField.text length] + [string length] - range.length;
+	if (textField == self.selectDonationAmountField) {
+		return (newLength > 10) ? NO : YES;
+	} else {
+		return (newLength > 30) ? NO : YES;
+	}
+}
+
 -(void)cancelNumberPad{
 	[self.selectDonationAmountField resignFirstResponder];
 	self.selectDonationAmountField.text = @"";
