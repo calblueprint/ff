@@ -1,11 +1,6 @@
 package com.blueprint.ffandroid;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +61,6 @@ public class ListAdapter extends BaseAdapter{
             case 4: ((ImageView)convertView.findViewById(R.id.list_image)).setImageResource(R.drawable.logout);
                 break;
         }
-        //((ImageView)convertView.findViewById(R.id.list_image)).setImageResource(R.drawable.ic_launcher);
         return convertView;
     }
 }
