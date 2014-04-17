@@ -15,5 +15,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/faq_description"
         android:layout_gravity="left"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/faq_description"
+        android:layout_gravity="left"/>
 
 </LinearLayout>
