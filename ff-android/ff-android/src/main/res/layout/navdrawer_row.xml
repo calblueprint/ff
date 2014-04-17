@@ -29,7 +29,7 @@
         android:layout_toRightOf="@+id/thumbnail"
         android:layout_centerVertical="true"
         android:text="List Item"
-        android:textColor="#040404"
+        android:textColor="#FFFFFF"
         android:typeface="sans"
         android:textSize="15dip"
         android:textStyle="bold"/>
