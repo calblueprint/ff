@@ -54,7 +54,19 @@ public class ListAdapter extends BaseAdapter{
             convertView = this.inflater.inflate(R.layout.navdrawer_row, null);
         }
         ((TextView) convertView.findViewById(R.id.list_item)).setText(myText);
-        ((ImageView)convertView.findViewById(R.id.list_image)).setImageResource(R.drawable.ic_launcher);
+        switch (position) {
+            case 0: ((ImageView)convertView.findViewById(R.id.list_image)).setImageResource(R.drawable.donate);
+                break;
+            case 1: ((ImageView)convertView.findViewById(R.id.list_image)).setImageResource(R.drawable.donatelist);
+                break;
+            case 2: ((ImageView)convertView.findViewById(R.id.list_image)).setImageResource(R.drawable.account);
+                break;
+            case 3: ((ImageView)convertView.findViewById(R.id.list_image)).setImageResource(R.drawable.faq);
+                break;
+            case 4: ((ImageView)convertView.findViewById(R.id.list_image)).setImageResource(R.drawable.logout);
+                break;
+        }
+        //((ImageView)convertView.findViewById(R.id.list_image)).setImageResource(R.drawable.ic_launcher);
         return convertView;
     }
 }
