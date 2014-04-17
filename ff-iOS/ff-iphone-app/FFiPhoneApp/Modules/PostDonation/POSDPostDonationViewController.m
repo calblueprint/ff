@@ -234,7 +234,7 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
     self.addressLabel.font = labelFont;
     self.pickupByLabel.font = labelFont;
     self.weightLabel.font = labelFont;
-    self.confirmButton.font = labelFont;
+    [self.confirmButton.titleLabel setFont:labelFont];
 
     
 }
