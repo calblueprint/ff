@@ -67,7 +67,7 @@ public class DonationListFragment extends ListFragment{
                     try{
                         for (int i=0; i<jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            //TODO: parse JSONArray and make array of Donaiton objects.
+                            //TODO: parse JSONArray and make array of Donation objects.
                         }
                     } catch (JSONException e) {
                         Log.e("JSON List Error", e.toString());
