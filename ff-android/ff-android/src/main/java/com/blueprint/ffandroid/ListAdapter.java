@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * A list adapter
+ * A list adapter for the navbar that allows images to be put next to text.
  */
 public class ListAdapter extends BaseAdapter{
     private LayoutInflater inflater;
