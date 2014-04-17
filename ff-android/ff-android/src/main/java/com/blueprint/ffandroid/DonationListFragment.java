@@ -27,6 +27,7 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ import java.util.Locale;
 public class DonationListFragment extends ListFragment{
 
     private static RequestQueue queue;
-    private static String BASE_URL = "http://feeding_forever.herokuapp.com/api/pickups/auth_token=";
+    private static String BASE_URL = "http://feeding-forever.herokuapp.com/api/pickups/?access_token=";
     private String token;
 
     public static DonationListFragment newInstance(){
@@ -67,7 +68,8 @@ public class DonationListFragment extends ListFragment{
             new Response.Listener<JSONArray>() {
                 @Override
                 public void onResponse(JSONArray jsonArray) {
-                    ArrayList<Donation> data = new ArrayList<Donation>(jsonArray.length());
+//                    ArrayList<Donation> data = new ArrayList<Donation>(jsonArray.length());
+                    Donation[] data = new Donation[jsonArray.length()];
 
                     try{
                         for (int i=0; i<jsonArray.length(); i++) {
@@ -78,7 +80,7 @@ public class DonationListFragment extends ListFragment{
                             donation.setStatus(jsonObject.getString("status"));
                             String dateString = jsonObject.getString("createdAt");
                             donation.setDateCreated(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH).parse(dateString));
-                            data.add(i, donation);
+                            data[i] = donation;
 
                         }
                     } catch (JSONException e){
@@ -89,9 +91,9 @@ public class DonationListFragment extends ListFragment{
                         return;
                     }
 
-                    Collections.sort(data);
+                    Arrays.sort(data);
 
-                    DonationAdapter adapter = new DonationAdapter(DonationListFragment.this.getActivity(), (Donation[]) data.toArray());
+                    DonationAdapter adapter = new DonationAdapter(DonationListFragment.this.getActivity(), data);
                     DonationListFragment.this.setListAdapter(adapter);
 
                 }
@@ -107,8 +109,10 @@ public class DonationListFragment extends ListFragment{
                     } else {
                         try {
                             JSONObject response = new JSONObject(new String(volleyError.networkResponse.data));
-                            message = (String) response.get("message");
+                            message = response.toString();
+                            Log.e("Volley Error", message);
                         } catch (Exception e) {
+                            Log.e("Volley Error", "unknown");
                             message = "Unknown Error";
                         }
                     }
@@ -170,16 +174,18 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         String status = d.getStatus();
         donationStatus.setText(status);
 
-        if (status == "complete") {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.dark_green));
-        } else if (status == "canceled") {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.button_red));
-        } else if (status == "moving") {
-            donationStatus.setBackgroundColor(0xF1C40F);
-        } else if (status == "available") {
-            donationStatus.setBackgroundColor(0xE67E22);
+        if (status.equals("complete")) {
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.complete));
+        } else if (status.equals("canceled")) {
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.canceled));
+        } else if (status.equals("moving")) {
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.moving));
+        } else if (status.equals("available")) {
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.available));
+        } else if (status.equals("claimed")) {
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.claimed));
         } else {
-            donationStatus.setBackgroundColor(0x2980B9);
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.unknown));
         }
 
         return rowView;
