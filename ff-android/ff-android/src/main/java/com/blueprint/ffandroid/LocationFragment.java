@@ -214,7 +214,10 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
          */
     @Override
     public void onConnected(Bundle dataBundle) {
-        onLocationChanged(mLocationClient.getLastLocation());
+        if (mLocationClient.isConnected()) {
+            onLocationChanged(mLocationClient.getLastLocation());
+            mLocationClient.disconnect();
+        }
     }
 
     /**
