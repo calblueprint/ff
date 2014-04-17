@@ -6,9 +6,9 @@
         android:drawable="@drawable/row_color" />
 
     <item android:state_pressed="true"
-        android:drawable="@drawable/row_gradient_hover" />
+        android:drawable="@drawable/row_color_pressed" />
 
     <item android:state_selected="true"
         android:state_pressed="false"
-        android:drawable="@drawable/row_gradient_hover" />
+        android:drawable="@drawable/row_color_pressed" />
 </selector>
