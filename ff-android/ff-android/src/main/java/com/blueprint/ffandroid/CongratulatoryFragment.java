@@ -11,12 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
-
-import com.facebook.FacebookException;
-import com.facebook.FacebookOperationCanceledException;
-import com.facebook.Session;
-import com.facebook.SessionState;
-import com.facebook.UiLifecycleHelper;
+import com.facebook.*;
 import com.facebook.widget.FacebookDialog;
 import com.facebook.widget.WebDialog;
 import com.facebook.widget.WebDialog.OnCompleteListener;
@@ -29,6 +24,7 @@ import com.facebook.widget.WebDialog.OnCompleteListener;
 public class CongratulatoryFragment extends Fragment {
 
     private static String TAG = "Congratulatory Fragment";
+    private MainActivity parent;
     private UiLifecycleHelper uiHelper;
     private Session.StatusCallback callback = new Session.StatusCallback() {
         @Override
@@ -36,6 +32,8 @@ public class CongratulatoryFragment extends Fragment {
             onSessionStateChange(session, state, exception);
         }
     };
+    private Button fbButton;
+    private Button donationButton;
 
     private void onSessionStateChange(Session session, SessionState state, Exception exception) {
         if (state.isOpened()) {
@@ -70,6 +68,7 @@ public class CongratulatoryFragment extends Fragment {
         if (savedInstanceState != null) {
             uiHelper.onCreate(savedInstanceState);
         }
+        parent = (MainActivity)this.getActivity();
     }
 
     @Override
@@ -77,13 +76,14 @@ public class CongratulatoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_congratulatory, container, false);
-        Button button = (Button) rootView.findViewById(R.id.share);
-        button.setOnClickListener(new View.OnClickListener() {
+        fbButton = (Button) rootView.findViewById(R.id.share);
+        fbButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.d(TAG,"SWAAG");
                 publishShareDialog();
             }
         });
+        donationButton = (Button) rootView.findViewById(R.id.go_to_donation);
+        setFonts();
         return rootView;
     }
 
@@ -218,4 +218,11 @@ public class CongratulatoryFragment extends Fragment {
         feedDialog.show();
     }
 
+    /**
+     * Sets the fonts of the Buttons and TextViews in this fragment
+     */
+    private void setFonts(){
+        fbButton.setTypeface(parent.myTypeface);
+        donationButton.setTypeface(parent.myTypeface);
+    }
 }

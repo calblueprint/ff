@@ -20,5 +20,6 @@
     <color name="orange">#FF6600</color>
     <color name="facebook_blue">#4C66A4</color>
     <color name="feeding_forward_green">#4BA39B</color>
-    
+    <color name="nav_drawer_grey">#2E2E2E</color>
+    <color name="nav_drawer_grey_selected">#3b3b3b</color>
 </resources>

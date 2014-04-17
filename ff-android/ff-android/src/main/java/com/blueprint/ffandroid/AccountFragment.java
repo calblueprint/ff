@@ -1,5 +1,6 @@
 package com.blueprint.ffandroid;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -9,8 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.content.Context;
-import android.content.SharedPreferences;
 
 
 
@@ -41,6 +40,8 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     private TextView emailText;
     /** The TextView that holds the user's organization. */
     private TextView organizationText;
+    private Activity parent;
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -67,6 +68,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
         organization = prefs.getString("role", "");
         super.onCreate(savedInstanceState);
         System.out.println("Created account fragment!");
+        parent = getActivity();
     }
 
     @Override
@@ -107,9 +109,6 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case(R.id.checkbox_cheese):
-                //Do whatever is supposed to be done when the checkbox is toggled.
-                break;
             default:
                 break;
         }

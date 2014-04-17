@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="y3r-js-PoC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="y3r-js-PoC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <development version="4600" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - Current Donations-->
@@ -30,12 +32,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qUS-7b-CPu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="vr0-jK-7yW">
                                     <rect key="frame" x="0.0" y="107" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPc-fo-YAF">
+                                            <rect key="frame" x="134" y="12" width="80" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="ved-hV-5Qe"/>
                                             </constraints>
@@ -43,7 +47,9 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="unz-rY-4S3"/>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="unz-rY-4S3">
+                                            <rect key="frame" x="106" y="12" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <constraints>
@@ -63,12 +69,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="vbb-wE-JNo">
+                                                    <rect key="frame" x="5" y="8" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" type="user" id="giC-z8-6BN"/>
                                                         <constraint firstAttribute="height" constant="70" type="user" id="u95-k5-0Iu"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2y-gd-7tY">
+                                                    <rect key="frame" x="83" y="8" width="214" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="214" type="user" id="vHf-aY-JPG"/>
                                                     </constraints>
@@ -77,6 +85,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="status" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="vWO-5h-zeZ">
+                                                    <rect key="frame" x="83" y="57" width="228" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="228" id="52E-ax-C1Y"/>
                                                         <constraint firstAttribute="height" constant="21" type="user" id="8J3-4p-8B4"/>
@@ -86,6 +95,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10 pounds" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="175" translatesAutoresizingMaskIntoConstraints="NO" id="S99-4Y-bmH">
+                                                    <rect key="frame" x="83" y="34" width="175" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="175" id="aha-a2-vWv"/>
                                                         <constraint firstAttribute="height" constant="21" type="user" id="bf7-lR-74T"/>
@@ -94,7 +104,9 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QQW-WN-knE"/>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QQW-WN-knE">
+                                                    <rect key="frame" x="280" y="33" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -168,12 +180,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ToH-9A-5U8">
+                                <rect key="frame" x="10" y="14" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" type="user" id="9Vv-gq-h9J"/>
                                     <constraint firstAttribute="height" constant="70" type="user" id="SQb-Hs-Pdn"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rim-aa-jXS">
+                                <rect key="frame" x="88" y="14" width="220" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="eII-MG-uga"/>
                                 </constraints>
@@ -182,6 +196,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="status" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="220" translatesAutoresizingMaskIntoConstraints="NO" id="0Ed-hV-cbq">
+                                <rect key="frame" x="88" y="63" width="220" height="21"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" type="user" id="whf-en-MPG"/>
@@ -191,6 +206,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="pounds" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="220" translatesAutoresizingMaskIntoConstraints="NO" id="7Il-VM-nOi">
+                                <rect key="frame" x="88" y="39" width="220" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" type="user" id="7fy-LI-iQZ"/>
                                 </constraints>
@@ -199,10 +215,13 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODE-On-wCS" userLabel="View - Location - Availability">
+                                <rect key="frame" x="0.0" y="102" width="319" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjM-4N-8Nb">
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="70"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LOCATION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8I-d2-Fyj">
+                                                <rect key="frame" x="11" y="0.0" width="75" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="oGd-9r-nq3"/>
                                                     <constraint firstAttribute="width" constant="75" id="tVM-9a-Jh5"/>
@@ -212,6 +231,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="123 Market Street, Suite ABC abc abc, San Francisco, CA" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="140" translatesAutoresizingMaskIntoConstraints="NO" id="Tjr-m4-lVg">
+                                                <rect key="frame" x="11" y="16" width="140" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="OvG-LS-2Ja"/>
                                                     <constraint firstAttribute="width" constant="140" id="jFm-na-RFl"/>
@@ -230,8 +250,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfg-h6-f38">
+                                        <rect key="frame" x="160" y="0.0" width="159" height="70"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="AVAILABILITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S41-5y-KZI">
+                                                <rect key="frame" x="8" y="0.0" width="85" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="85" id="3Yk-x1-SSf"/>
                                                     <constraint firstAttribute="height" constant="21" id="Gxd-pQ-V6d"/>
@@ -241,6 +263,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="April 12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z16-qy-mZS">
+                                                <rect key="frame" x="8" y="20" width="147" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="dnG-UZ-kMX"/>
                                                     <constraint firstAttribute="width" constant="147" id="zoL-Q2-HMl"/>
@@ -250,6 +273,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10:00 AM - 13:40 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEv-zd-5HY">
+                                                <rect key="frame" x="8" y="39" width="147" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="fse-Or-QEi"/>
                                                 </constraints>
@@ -285,6 +309,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xF-Dc-7Zg" userLabel="View - Status icon - claimed">
+                                <rect key="frame" x="12" y="180" width="24" height="60"/>
                                 <color key="backgroundColor" red="0.93591471380000002" green="0.93962296199999995" blue="0.93644316790000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" type="user" id="Dl9-3i-FpZ"/>
@@ -292,6 +317,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQQ-t6-0Gh" userLabel="View - Status icon - picked up">
+                                <rect key="frame" x="12" y="239" width="24" height="60"/>
                                 <color key="backgroundColor" red="0.93591471380000002" green="0.93962296199999995" blue="0.93644316790000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" type="user" id="VIu-lt-B19"/>
@@ -299,6 +325,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Waiting to assign driver for pick up" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSY-0w-7We">
+                                <rect key="frame" x="44" y="179" width="262" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="y8o-t8-cpv"/>
                                 </constraints>
@@ -307,6 +334,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Once assigned, you'll be given contact info and the estimated arrival time of the driver." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="262" translatesAutoresizingMaskIntoConstraints="NO" id="kFR-dE-3rW">
+                                <rect key="frame" x="44" y="202" width="262" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" type="user" id="bQe-92-Vuh"/>
                                 </constraints>
@@ -315,6 +343,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Awaiting Pick Up" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJR-BO-KyN">
+                                <rect key="frame" x="44" y="242" width="262" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" type="user" id="miZ-7h-pVl"/>
                                 </constraints>
@@ -323,6 +352,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Once your donation is picked up, it will be taken to a nearby recipient organization." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="262" translatesAutoresizingMaskIntoConstraints="NO" id="kZ8-0R-rTC">
+                                <rect key="frame" x="44" y="265" width="262" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" type="user" id="kGw-h1-GFJ"/>
                                 </constraints>
@@ -331,6 +361,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJB-6F-iL8" customClass="FFButtonWithStyleRedH40">
+                                <rect key="frame" x="12" y="313" width="297" height="40"/>
                                 <color key="backgroundColor" red="0.79215693473815918" green="0.094117656350135803" blue="0.074509806931018829" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="297" type="user" id="0go-oS-sP9"/>
@@ -436,61 +467,6 @@
         <image name="navigationbar_top_left_icon.png" width="50" height="31"/>
         <image name="tabbar_icon_currentdonation.png" width="48" height="32"/>
     </resources>
-    <classes>
-        <class className="CURDCurrentDonationsViewController" superclassName="CurrentDonationsBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CURDCurrentDonationsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableViewCurrentDonations" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="viewTableViewFooter" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="CURDDonationDetailsViewController" superclassName="CurrentDonationsBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CURDDonationDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonBack_onTouchUpInside:"/>
-                <relationship kind="action" name="buttonCancelDonation_onTouchUpInsde:"/>
-                <relationship kind="outlet" name="buttonCancelDonation" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="iconForStatusClaimed" candidateClass="UIView"/>
-                <relationship kind="outlet" name="iconForStatusPickedUp" candidateClass="UIView"/>
-                <relationship kind="outlet" name="imageViewMealPhoto" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelAvailableDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelAvailableTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDonationTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelInfoForStatusClaimed" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelInfoForStatusPickedUp" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelStatusClaimed" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelStatusPickedUp" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelStatusText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTotalLBS" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CURDDonationTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CURDDonationTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityIndicatorView" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="imageViewMealPhoto" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelDonationTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelStatusText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelTotalLBS" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CURDNavigationController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CURDNavigationController.h"/>
-        </class>
-        <class className="CurrentDonationsBaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CurrentDonationsBaseViewController.h"/>
-        </class>
-        <class className="FFButtonWithStyleGreenH30" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFButtonWithStyleGreenH30.h"/>
-        </class>
-        <class className="FFButtonWithStyleRedH40" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFButtonWithStyleRedH40.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -17,6 +17,7 @@
 #import "CURDDonationTableViewCell.h"
 #import "AccountModuleController.h"
 #import "SocialShareModuleController.h"
+#import "FAQModuleController.h"
 
 #import "Dashboard.h"
 
@@ -188,31 +189,22 @@
         [self loadUserDataWithCompletion:^(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations) {
             
             // Configure dashbaord
-            //self.tabBarController = [[Dashboard sharedDashboard] instantiateTabBarControllerWithUser:user];
             self.navDrawerController = [[Dashboard sharedDashboard] instantiateNavDrawerControllerWithUser:user];
-            UINavigationController *navigationController = [[UINavigationController alloc] init];
-            [self.navDrawerController setNavigationController:navigationController];
             MMDrawerController *drawerController = [[MMDrawerController alloc]
-                                                    initWithCenterViewController:navigationController
+                                                    initWithCenterViewController:[self.navDrawerController.viewControllers objectAtIndex:0]
                                                     leftDrawerViewController:self.navDrawerController];
-            [self.navDrawerController setMmDrawerController:drawerController];
+            
             
             [drawerController setMaximumRightDrawerWidth:200.0];
             [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
             [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
             [drawerController setCenterHiddenInteractionMode:MMDrawerOpenCenterInteractionModeNavigationBarOnly];
             
-            // Change rootViewController to dashbaord with animation
-            /*
-            [UIView transitionFromView:self.appDelegate.window.rootViewController.view
-                                toView:self.tabBarController.view
-                              duration:0.65
-                               options:UIViewAnimationOptionTransitionFlipFromRight
-                            completion:^(BOOL finished) {
-                                self.appDelegate.window.rootViewController = self.tabBarController;
-                            }];
-             */
-            NSLog(@"Current NavDrawer view controllers: %@", self.navDrawerController.viewControllers);
+            //[drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+            [self.navDrawerController setMmDrawerController:drawerController];
+            [[Dashboard sharedDashboard].postDonationModuleController setMmDrawerController:drawerController];
+            // TODO: Set MmDrawerController pointer for all module coordinators
+
             [UIView transitionFromView:self.appDelegate.window.rootViewController.view
                                 toView:drawerController.view
                               duration:0.65

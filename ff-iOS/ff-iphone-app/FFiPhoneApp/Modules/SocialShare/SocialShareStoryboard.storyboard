@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NNm-Dz-iyd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="NNm-Dz-iyd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <development version="4600" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Share Donation View Controller-->
@@ -13,6 +15,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44w-i0-MQY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Share Donation" id="zj3-bV-mDl">
                                         <barButtonItem key="leftBarButtonItem" id="Ary-65-d2O">
@@ -49,13 +52,16 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xih-H5-niz">
+                                <rect key="frame" x="10" y="90" width="300" height="248"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="viQ-33-p8p">
+                                        <rect key="frame" x="15" y="77" width="270" height="160"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="1Mr-NE-mPu"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I just donated 500 lbs of Chicken Sandwitch via Feeding Forward (http://www.feedingforward.org)" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="kem-tu-Dyo">
+                                        <rect key="frame" x="15" y="25" width="270" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="270" type="user" id="7L0-eu-DQA"/>
                                             <constraint firstAttribute="height" constant="50" id="DsZ-Pq-EgC"/>
@@ -65,6 +71,7 @@
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="“" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAo-yu-z4J">
+                                        <rect key="frame" x="15" y="7" width="31" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="31" id="YJn-uW-CxV"/>
                                             <constraint firstAttribute="height" constant="51" id="vg1-BR-6Li"/>
@@ -88,6 +95,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdl-0i-Xlf" customClass="FFButtonWithStyleGreenH40">
+                                <rect key="frame" x="10" y="354" width="300" height="40"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" type="user" id="4vr-fR-KJw"/>
@@ -105,6 +113,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zk0-oN-tNo">
+                                <rect key="frame" x="20" y="54" width="180" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="hZC-Mi-uWt"/>
                                     <constraint firstAttribute="height" constant="33" type="user" id="hh4-5Q-kRQ"/>
@@ -114,6 +123,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j65-b4-CXO" customClass="FFButtonWithStyleGreenH40">
+                                <rect key="frame" x="10" y="408" width="300" height="40"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" type="user" id="hpV-yI-pCk"/>
@@ -161,28 +171,6 @@
     <resources>
         <image name="navigationbar_top_left_icon.png" width="50" height="31"/>
     </resources>
-    <classes>
-        <class className="FFButtonWithStyleGreenH40" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FFButtonWithStyleGreenH40.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SOCSShareDonationViewController" superclassName="SocialShareBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SOCSShareDonationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonCancel_onTouchUpInside:"/>
-                <relationship kind="action" name="buttonExit_onTouchUpInside:"/>
-                <relationship kind="action" name="buttonShare_onTouchUpInside:"/>
-                <relationship kind="outlet" name="imageViewPicture" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelMessage" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="viewMessageBackground" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="SocialShareBaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialShareBaseViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

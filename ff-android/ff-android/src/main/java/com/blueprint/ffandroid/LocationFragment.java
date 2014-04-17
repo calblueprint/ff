@@ -1,5 +1,6 @@
 package com.blueprint.ffandroid;
 
+import android.app.ActionBar;
 import android.content.IntentSender;
 import android.location.Location;
 import android.location.LocationListener;
@@ -114,14 +115,13 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     }
 
     private void updateMap(Location location) {
-        double lat = location.getLatitude();
-        double lng = location.getLongitude();
+        if (location != null) {
+            double lat = location.getLatitude();
+            double lng = location.getLongitude();
 
-        CameraUpdate center = CameraUpdateFactory.newLatLng(new LatLng(lat, lng));
-        CameraUpdate zoom = CameraUpdateFactory.zoomTo(15);
-
-        map.moveCamera(center);
-        map.animateCamera(zoom);
+            LatLng myLocation = new LatLng(lat, lng);
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 16));
+        }
     }
 
     private void updateMap(String address) {
@@ -303,6 +303,8 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     public void onClick(View v) {
         switch (v.getId()) {
             case (R.id.forward_button):
+                parent.mTitle = "Fill Out Donation Details";
+                parent.getActionBar().setTitle(parent.mTitle);
                 parent.replaceFragment(parent.formFragment);
                 break;
         }
