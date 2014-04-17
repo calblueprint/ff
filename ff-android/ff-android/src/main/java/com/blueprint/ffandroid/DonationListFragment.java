@@ -1,19 +1,15 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
-import android.app.ListFragment;
+import android.support.v4.app.ListFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -71,7 +67,6 @@ public class DonationListFragment extends ListFragment{
             new Response.Listener<JSONArray>() {
                 @Override
                 public void onResponse(JSONArray jsonArray) {
-//                    Donation data[] = new Donation[jsonArray.length()];
                     ArrayList<Donation> data = new ArrayList<Donation>(jsonArray.length());
 
                     try{
@@ -176,9 +171,9 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         donationStatus.setText(status);
 
         if (status == "complete") {
-            donationStatus.setBackgroundColor(R.color.dark_green);
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.dark_green));
         } else if (status == "canceled") {
-            donationStatus.setBackgroundColor(R.color.button_red);
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.button_red));
         } else if (status == "moving") {
             donationStatus.setBackgroundColor(0xF1C40F);
         } else if (status == "available") {
