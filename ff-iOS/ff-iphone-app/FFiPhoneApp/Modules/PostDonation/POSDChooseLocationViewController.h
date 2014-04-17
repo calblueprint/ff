@@ -10,10 +10,17 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-@class MKMapView, FFDataLocation;
+@class MKMapView, FFDataLocation, POSDChooseLocationViewController;
+
+@protocol POSDChooseLocationViewControllerDelegate <NSObject>
+
+- (void)chooseLocationViewController:(POSDChooseLocationViewController *)controller didSelectLocation:(FFDataLocation *) location;
+
+@end
 
 @interface POSDChooseLocationViewController : PostDonationBaseViewController <CLLocationManagerDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) FFDataLocation *location;
+@property (weak, nonatomic) id <POSDChooseLocationViewControllerDelegate> delegate;
 
 @end

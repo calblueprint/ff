@@ -11,6 +11,7 @@
 #import "PostDonationModuleController.h"
 #import "PastDonationsModuleController.h"
 #import "AccountModuleController.h"
+#import "NavDrawerController.h"
 
 @class AppDelegate, FFDataUser, FFError;
 
@@ -18,6 +19,7 @@
 
 @property (nonatomic, weak) AppDelegate *appDelegate;
 @property (nonatomic, strong) UITabBarController *tabBarController;
+@property (nonatomic) NavDrawerController *navDrawerController;
 @property (nonatomic, weak) NSUserDefaults *userDefaults;
 
 + (instancetype)initSharedCoordinator;

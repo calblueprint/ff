@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMDrawerController.h"
+#import "MMDrawerVisualState.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic,strong) MMDrawerController * drawerController;
 
 @end
