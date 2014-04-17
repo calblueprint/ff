@@ -7,7 +7,7 @@
 //
 
 #import "FAQModuleController.h"
-#import "AccountBaseViewController.h"
+#import "FAQBaseViewController.h"
 #import "FAQConstants.h"
 
 #import "ModuleControllerProtocol.h"
@@ -23,7 +23,7 @@
 
 + (BOOL)isModuleMemberWithViewController:(id)viewController
 {
-    return [viewController isKindOfClass:[AccountBaseViewController class]];
+    return [viewController isKindOfClass:[FAQBaseViewController class]];
 }
 
 - (id)initWithModuleCoordinator:(ModuleCoordinator *)moduleCoordinator
@@ -45,7 +45,7 @@
 - (UIViewController *)instantiateFAQViewController
 {
     id viewController = [_storyboard instantiateViewControllerWithIdentifier:@"FAQViewController"];
-    [viewController setModuleController:self];
+//    [viewController setModuleController:self];
     
     return viewController;
 }

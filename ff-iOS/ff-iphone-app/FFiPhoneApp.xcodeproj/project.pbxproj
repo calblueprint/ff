@@ -303,6 +303,11 @@
 		A39AA80018FCC4020052D1DE /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */; };
 		A39AA80118FCC4020052D1DE /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */; };
 		A39AA80218FCC4020052D1DE /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */; };
+		A3B9821718FF6085005E443A /* FAQStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B9821618FF6085005E443A /* FAQStoryboard.storyboard */; };
+		A3B9821A18FF611A005E443A /* FAQConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821918FF611A005E443A /* FAQConstants.m */; };
+		A3B9821D18FF615B005E443A /* FAQModuleController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821C18FF615B005E443A /* FAQModuleController.m */; };
+		A3B9822018FF660B005E443A /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821F18FF660B005E443A /* FAQViewController.m */; };
+		A3B9822318FF752D005E443A /* FAQBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9822218FF752D005E443A /* FAQBaseViewController.m */; };
 		E4165D3518FF723800A7C202 /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = E4165D2A18FF723800A7C202 /* demo.html */; };
 		E4165D3618FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.eot in Resources */ = {isa = PBXBuildFile; fileRef = E4165D2C18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.eot */; };
 		E4165D3718FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.svg in Resources */ = {isa = PBXBuildFile; fileRef = E4165D2D18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.svg */; };
@@ -696,6 +701,15 @@
 		A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
 		A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
 		A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		A3B9821618FF6085005E443A /* FAQStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FAQStoryboard.storyboard; sourceTree = "<group>"; };
+		A3B9821818FF60AE005E443A /* FAQConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQConstants.h; sourceTree = "<group>"; };
+		A3B9821918FF611A005E443A /* FAQConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQConstants.m; sourceTree = "<group>"; };
+		A3B9821B18FF615B005E443A /* FAQModuleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQModuleController.h; sourceTree = "<group>"; };
+		A3B9821C18FF615B005E443A /* FAQModuleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQModuleController.m; sourceTree = "<group>"; };
+		A3B9821E18FF660B005E443A /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
+		A3B9821F18FF660B005E443A /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
+		A3B9822118FF752D005E443A /* FAQBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQBaseViewController.h; sourceTree = "<group>"; };
+		A3B9822218FF752D005E443A /* FAQBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQBaseViewController.m; sourceTree = "<group>"; };
 		E4165D2A18FF723800A7C202 /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		E4165D2C18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Light.eot"; sourceTree = "<group>"; };
 		E4165D2D18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.svg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Light.svg"; sourceTree = "<group>"; };
@@ -1531,10 +1545,12 @@
 				A3B9821618FF6085005E443A /* FAQStoryboard.storyboard */,
 				A3B9821818FF60AE005E443A /* FAQConstants.h */,
 				A3B9821918FF611A005E443A /* FAQConstants.m */,
-				A3B9821B18FF615B005E443A /* FAQModuleController.h */,
-				A3B9821C18FF615B005E443A /* FAQModuleController.m */,
 				A3B9821E18FF660B005E443A /* FAQViewController.h */,
 				A3B9821F18FF660B005E443A /* FAQViewController.m */,
+				A3B9821B18FF615B005E443A /* FAQModuleController.h */,
+				A3B9821C18FF615B005E443A /* FAQModuleController.m */,
+				A3B9822118FF752D005E443A /* FAQBaseViewController.h */,
+				A3B9822218FF752D005E443A /* FAQBaseViewController.m */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -1921,6 +1937,7 @@
 				9B5B222317A83D730003B1CD /* NSArray+FFNull.m in Sources */,
 				9B5B222417A83D730003B1CD /* UIButton+FFStyles.m in Sources */,
 				9B5B222517A83D730003B1CD /* UITextField+FFStyles.m in Sources */,
+				A3B9822318FF752D005E443A /* FAQBaseViewController.m in Sources */,
 				9B5B224117A89BF10003B1CD /* AUTFacebookLoginViewController.m in Sources */,
 				9B5B224417A8B6F40003B1CD /* FFUI.m in Sources */,
 				9B5B232617A8CFEB0003B1CD /* AUTOptionsViewController.m in Sources */,

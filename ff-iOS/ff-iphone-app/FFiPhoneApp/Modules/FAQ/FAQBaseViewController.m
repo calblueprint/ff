@@ -1,21 +1,14 @@
 //
-//  FAQViewController.m
+//  FAQBaseViewController.m
 //  FFiPhoneApp
 //
 //  Created by Tony Wu on 4/16/14.
 //  Copyright (c) 2014 Feeding Forward. All rights reserved.
 //
 
-#import "FAQViewController.h"
+#import "FAQBaseViewController.h"
 
-@interface FAQViewController ()
-
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
-@end
-
-@implementation FAQViewController
-
+@implementation FAQBaseViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,6 +29,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [segue.destinationViewController setModuleController:self.moduleController];
 }
 
 @end

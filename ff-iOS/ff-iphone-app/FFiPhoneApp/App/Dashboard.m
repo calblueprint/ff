@@ -16,6 +16,7 @@
 #import "PastDonationsModuleController.h"
 #import "AccountModuleController.h"
 #import "POSDPostDonationViewController.h"
+#import "FAQModuleController.h"
 
 #import "FFKit.h"
 
@@ -27,6 +28,7 @@
 @property (strong, nonatomic) UIViewController *pastDonationsViewController;
 @property (strong, nonatomic) UIViewController *accountViewController;
 @property (strong, nonatomic) UIViewController *authenticationOptionsViewController;
+@property (strong, nonatomic) UIViewController *FAQViewController;
 @property (strong, nonatomic) void (^authenticationCompletionBlock)(BOOL isSuccess, NSString *authToken, FFError *error);
 
 @end
@@ -258,12 +260,18 @@
         [self.accountModuleController setDelegate:self.moduleCoordinator];
         self.accountViewController = [self.accountModuleController instantiateProfileViewController];
         
+        // FAQ
+        self.FAQModuleController = [[FAQModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
+        [self.FAQModuleController setDelegate:self.moduleCoordinator];
+        self.FAQViewController = [self.FAQModuleController instantiateFAQViewController];
+        
         self.navDrawerController.viewControllers = @[self.postDonationViewController,
                                                   self.currentDonationsViewController,
                                                   self.pastDonationsViewController,
-                                                  self.accountViewController];
-        self.navDrawerController.navCellNames = @[@"Donate", @"Current Donation", @"Past Donations", @"Account"];
-        self.navDrawerController.drawerIcons = @[@"donate.png", @"donatelist.png", @"donatelist.png", @"account.png"];
+                                                  self.accountViewController,
+                                                  self.FAQViewController];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Current Donation", @"Past Donations", @"Account", @"FAQ"];
+        self.navDrawerController.drawerIcons = @[@"donate.png", @"donatelist.png", @"donatelist.png", @"account.png", @"faq.png"];
         
         // Release inactive modules
         self.authenticationModuleController = nil;

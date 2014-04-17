@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "ModuleControllerProtocol.h"
 
+@protocol FAQModuleControllerDelegate <NSObject>
+@end
 
 @interface FAQModuleController : NSObject <ModuleControllerProtocol>
-@property (strong, nonatomic) UIStoryboard *storyboard;
+@property (weak, nonatomic) id <FAQModuleControllerDelegate> delegate;
 
+@property (strong, nonatomic) UIStoryboard *storyboard;
 - (UIViewController *)instantiateFAQViewController;
 @end
