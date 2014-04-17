@@ -58,6 +58,7 @@ public class MainActivity extends ActionBarActivity
     FormFragment formFragment;
     Fragment currentFragment;
     CongratulatoryFragment congratulatoryFragment;
+    FAQFragment faqFragment;
     /** Font Declaration **/
     public Typeface myTypeface;
 
@@ -101,6 +102,7 @@ public class MainActivity extends ActionBarActivity
         accountFragment = AccountFragment.newInstance();
         formFragment = FormFragment.newInstance();
         congratulatoryFragment = CongratulatoryFragment.newInstance();
+        faqFragment = FAQFragment.newInstance();
         currentFragment = locationFragment;
     }
 
@@ -114,6 +116,9 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 2:
                 replaceFragment(accountFragment);
+                break;
+            case 3:
+                replaceFragment(faqFragment);
                 break;
             case 4:
                 SharedPreferences prefs = getSharedPreferences(LoginActivity.PREFS, 0);

@@ -1,7 +1,5 @@
 package com.blueprint.ffandroid;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,10 +8,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.support.v4.app.Fragment;
+
 
 public class FAQFragment extends Fragment {
 
-    Button button;
+    public static FAQFragment newInstance() {
+        FAQFragment fragment = new FAQFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
