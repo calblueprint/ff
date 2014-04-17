@@ -27,6 +27,8 @@
     <string name="title_field">Title</string>
     <string name="forward_button">Forward!</string>
     <string name="faq_description">About Feeding Forward</string>
+    <string name="faq_link">Feeding Forward Website</string>
+
 
     <string name="GEOCODER_API_KEY">AIzaSyCnJmnYV5n961YR8DYSOivhsPdx76Zp0lY</string>
 
