@@ -45,7 +45,7 @@
 - (UIViewController *)instantiateFAQViewController
 {
     id viewController = [_storyboard instantiateViewControllerWithIdentifier:@"FAQViewController"];
-    [viewController setModuleController:self];
+//    [viewController setModuleController:self];
     
     return viewController;
 }

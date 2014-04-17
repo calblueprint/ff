@@ -17,6 +17,7 @@
 #import "CURDDonationTableViewCell.h"
 #import "AccountModuleController.h"
 #import "SocialShareModuleController.h"
+#import "FAQModuleController.h"
 
 #import "Dashboard.h"
 

@@ -8,10 +8,6 @@
 
 #import "FAQBaseViewController.h"
 
-@interface FAQBaseViewController ()
-
-@end
-
 @implementation FAQBaseViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -261,16 +261,17 @@
         self.accountViewController = [self.accountModuleController instantiateProfileViewController];
         
         // FAQ
-        self.FAQViewController = [[FAQModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
+        self.FAQModuleController = [[FAQModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
         [self.FAQModuleController setDelegate:self.moduleCoordinator];
         self.FAQViewController = [self.FAQModuleController instantiateFAQViewController];
         
         self.navDrawerController.viewControllers = @[self.postDonationViewController,
                                                   self.currentDonationsViewController,
                                                   self.pastDonationsViewController,
-                                                  self.accountViewController];
-        self.navDrawerController.navCellNames = @[@"Donate", @"Current Donation", @"Past Donations", @"Account"];
-        self.navDrawerController.drawerIcons = @[@"donate.png", @"donatelist.png", @"donatelist.png", @"account.png"];
+                                                  self.accountViewController,
+                                                  self.FAQViewController];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Current Donation", @"Past Donations", @"Account", @"FAQ"];
+        self.navDrawerController.drawerIcons = @[@"donate.png", @"donatelist.png", @"donatelist.png", @"account.png", @"faq.png"];
         
         // Release inactive modules
         self.authenticationModuleController = nil;
