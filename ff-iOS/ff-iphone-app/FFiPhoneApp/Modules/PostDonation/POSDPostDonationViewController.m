@@ -55,6 +55,12 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 
+@property (weak, nonatomic) IBOutlet UILabel *kindLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weightLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pickupByLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UIButton *confirmButton;
+
 
 
 @property (strong, nonatomic) UIDatePicker *datePicker;
@@ -160,8 +166,8 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 //
 - (void)setTextOnButton:(UIButton *)button title:(NSString *)title titleFontSize:(float)titleFontSize description:(NSString *)description descriptionFontSize:(float)descriptionFontSize
 {
-	UIFont *titleFont = [UIFont fontWithName:@"HelveticaNeue" size:titleFontSize];
-	UIFont *descriptionFont = [UIFont fontWithName:@"HelveticaNeue" size:descriptionFontSize];
+	UIFont *titleFont = [UIFont fontWithName:@"ProximaNovaA-Regular" size:titleFontSize];
+	UIFont *descriptionFont = [UIFont fontWithName:@"ProximaNovaA-Regular" size:descriptionFontSize];
 	
 	// Create attributed string for title
 	NSMutableAttributedString *buttonTitleText = [[NSMutableAttributedString alloc] initWithString:title attributes:@{NSFontAttributeName: titleFont}];
@@ -222,6 +228,15 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 {
 	self.selectPickupByButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 	self.selectPickupByButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20);
+    //Set fonts for Labels
+    UIFont *labelFont = [UIFont fontWithName:@"ProximaNovaA-Regular" size:18.0];
+    self.kindLabel.font = labelFont;
+    self.addressLabel.font = labelFont;
+    self.pickupByLabel.font = labelFont;
+    self.weightLabel.font = labelFont;
+    self.confirmButton.font = labelFont;
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -417,7 +432,7 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 		self.datePickerConfirm = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, datePickerConfirmButtonHeight)];
 		self.datePickerConfirm.backgroundColor = [UIColor colorWithRed:35.0/255 green:135.0/255 blue:162.0/255 alpha:1.0];
 		[self.datePickerConfirm setTitle:@"CONFIRM DATE" forState:UIControlStateNormal];
-		self.datePickerConfirm.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20];
+		self.datePickerConfirm.titleLabel.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:20];
 		[self.datePickerConfirm setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		[self.datePickerConfirm setTitleColor:[UIColor colorWithWhite:0.8 alpha:1.0] forState:UIControlStateHighlighted];
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4pf-ai-wTA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4pf-ai-wTA">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -482,13 +482,18 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="addressLabel" destination="vmT-pi-NX7" id="pk2-x2-MPi"/>
+                        <outlet property="confirmButton" destination="eCe-cT-YgC" id="w1Q-Eo-whN"/>
+                        <outlet property="kindLabel" destination="yvS-5L-iQT" id="ZX9-a3-VgD"/>
                         <outlet property="photoView" destination="12n-N6-M8r" id="Nmi-GU-XdF"/>
+                        <outlet property="pickupByLabel" destination="tiX-Q3-9VB" id="G32-dT-P3z"/>
                         <outlet property="selectAddressButton" destination="kro-Wp-HIF" id="MNa-mS-HzM"/>
                         <outlet property="selectDonationAmountField" destination="2BE-KT-tXb" id="nmH-DF-3LH"/>
                         <outlet property="selectKindButton" destination="4ce-Bj-moa" id="WSX-Up-6As"/>
                         <outlet property="selectKindField" destination="nVj-0W-aVy" id="DAf-kA-Ydx"/>
                         <outlet property="selectPickupByButton" destination="7l9-Zp-pYj" id="qrh-TN-xOL"/>
                         <outlet property="selectWeightButton" destination="En9-QA-Afm" id="dy5-hS-csB"/>
+                        <outlet property="weightLabel" destination="g6q-ho-n1j" id="a9t-C5-4lQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhQ-15-2V7" userLabel="First Responder" sceneMemberID="firstResponder"/>
