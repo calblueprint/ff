@@ -118,4 +118,6 @@
     <string name="proxima_nova_regular">fonts/Mark Simonson - Proxima Nova Alt Regular.otf</string>
     <string name="proxima_nova_light">fonts/Mark Simonson - Proxima Nova Alt Light.otf</string>
 
+    <string name="pickups_list_url">http://feeding-forever.herokuapp.com/api/pickups/?access_token=</string>
+
 </resources>
