@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/list_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="25dip"
+            android:layout_height="25dip" />
 
     </LinearLayout>
 
@@ -31,7 +31,7 @@
         android:text="List Item"
         android:textColor="#FFFFFF"
         android:typeface="sans"
-        android:textSize="15dip"
+        android:textSize="17dip"
         android:textStyle="bold"/>
 
 
