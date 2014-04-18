@@ -16,6 +16,7 @@
 #import "PastDonationsModuleController.h"
 #import "AccountModuleController.h"
 #import "POSDPostDonationViewController.h"
+#import "FAQModuleController.h"
 
 #import "FFKit.h"
 
@@ -27,6 +28,7 @@
 @property (strong, nonatomic) UIViewController *pastDonationsViewController;
 @property (strong, nonatomic) UIViewController *accountViewController;
 @property (strong, nonatomic) UIViewController *authenticationOptionsViewController;
+@property (strong, nonatomic) UIViewController *FAQViewController;
 @property (strong, nonatomic) void (^authenticationCompletionBlock)(BOOL isSuccess, NSString *authToken, FFError *error);
 
 @end
@@ -205,7 +207,7 @@
 
 - (NavDrawerController *)instantiateNavDrawerControllerWithUser:(FFDataUser *)user
 {
-    self.navDrawerController = [[NavDrawerController alloc] init];
+    self.navDrawerController = [[NavDrawerController alloc] initWithStyle:UITableViewStyleGrouped];
     
     // Post Donation
     self.postDonationModuleController = [[PostDonationModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
@@ -229,6 +231,8 @@
         self.authenticationOptionsViewController = [self.authenticationModuleController instantiateOptionsViewController];
         self.navDrawerController.viewControllers = @[self.postDonationViewController,
                                                   self.authenticationOptionsViewController];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Account"];
+        self.navDrawerController.drawerIcons = @[@"donate.png", @"account.png"];
         
         // Clear user locations data stored in the post donation module
         [self.postDonationModuleController setUserLocations:nil];
@@ -256,10 +260,18 @@
         [self.accountModuleController setDelegate:self.moduleCoordinator];
         self.accountViewController = [self.accountModuleController instantiateProfileViewController];
         
+        // FAQ
+        self.FAQModuleController = [[FAQModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
+        [self.FAQModuleController setDelegate:self.moduleCoordinator];
+        self.FAQViewController = [self.FAQModuleController instantiateFAQViewController];
+        
         self.navDrawerController.viewControllers = @[self.postDonationViewController,
                                                   self.currentDonationsViewController,
                                                   self.pastDonationsViewController,
-                                                  self.accountViewController];
+                                                  self.accountViewController,
+                                                  self.FAQViewController];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Current Donation", @"Past Donations", @"Account", @"FAQ"];
+        self.navDrawerController.drawerIcons = @[@"donate.png", @"donatelist.png", @"donatelist.png", @"account.png", @"faq.png"];
         
         // Release inactive modules
         self.authenticationModuleController = nil;
@@ -299,17 +311,17 @@
     self.authenticationOptionsViewController = [self.authenticationModuleController instantiateOptionsViewController];
     
     // Replace the existing Authentication Options view with a new one
-    NSMutableArray *tabBarViewControllers = [NSMutableArray array];
+    NSMutableArray *navDrawerViewControllers = [NSMutableArray array];
     for (UIViewController *viewController in self.tabBarController.viewControllers) {
         if ([viewController class] == [self.authenticationOptionsViewController class]) {
-            [tabBarViewControllers addObject:self.authenticationOptionsViewController];
+            [navDrawerViewControllers addObject:self.authenticationOptionsViewController];
         }
         else {
-            [tabBarViewControllers addObject:viewController];
+            [navDrawerViewControllers addObject:viewController];
         }
     }
     
-    self.navDrawerController.viewControllers = tabBarViewControllers;
+    self.navDrawerController.viewControllers = navDrawerViewControllers;
     
     return self.navDrawerController;
 }

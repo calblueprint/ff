@@ -25,5 +25,5 @@ NSString * const kProximaNovaRegular = @"ProximaNovaA-Regular";
 NSString * const kProximaNovaLight = @"ProximaNovaA-Light";
 
 //REST API URLS
-NSString * const kRequestBaseURL = @"http://feedingforever.herokuapp.com";
+NSString * const kRequestBaseURL = @"http://feeding-forever.herokuapp.com";
 NSString * const kRequestDonatePath = @"/api/pickups";

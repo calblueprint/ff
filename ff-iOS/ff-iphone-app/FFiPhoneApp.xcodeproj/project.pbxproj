@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0987D96318F43B98001510F8 /* NavDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0987D96218F43B98001510F8 /* NavDrawerController.m */; };
+		0987D9B518FC7CE7001510F8 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B018FC7CE7001510F8 /* logout.png */; };
+		0987D9B618FC7CE7001510F8 /* faq.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B118FC7CE7001510F8 /* faq.png */; };
+		0987D9B718FC7CE7001510F8 /* donatelist.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B218FC7CE7001510F8 /* donatelist.png */; };
+		0987D9B818FC7CE7001510F8 /* donate.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B318FC7CE7001510F8 /* donate.png */; };
+		0987D9B918FC7CE7001510F8 /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B418FC7CE7001510F8 /* account.png */; };
+		0987D9BB18FC8680001510F8 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9BA18FC8680001510F8 /* menu.png */; };
 		9B1ABD4217AE50D90041CA0F /* POSDChooseAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1ABD4117AE50D90041CA0F /* POSDChooseAmountViewController.m */; };
 		9B28D32E17AC7105001D742D /* AuthenticationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B28D32D17AC7104001D742D /* AuthenticationConstants.m */; };
 		9B4F18EC17A59826005516A0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4F18EB17A59825005516A0 /* ImageIO.framework */; };
@@ -284,6 +290,35 @@
 		9BFAE59F17AF36370058AFE9 /* POSDChooseTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */; };
 		9BFAE5A617B07D100058AFE9 /* navigationbar_top_left_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */; };
 		9BFAE5A717B07D100058AFE9 /* navigationbar_top_left_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */; };
+		A39AA7F218FCC3B00052D1DE /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E157179E792D001618E1 /* AFHTTPClient.m */; };
+		A39AA7F318FCC3B00052D1DE /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E159179E792D001618E1 /* AFHTTPRequestOperation.m */; };
+		A39AA7F418FCC3B00052D1DE /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E15B179E792D001618E1 /* AFImageRequestOperation.m */; };
+		A39AA7F518FCC3B00052D1DE /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E15D179E792D001618E1 /* AFJSONRequestOperation.m */; };
+		A39AA7F618FCC3B00052D1DE /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E15F179E792D001618E1 /* AFNetworkActivityIndicatorManager.m */; };
+		A39AA7F718FCC3B00052D1DE /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E162179E792D001618E1 /* AFPropertyListRequestOperation.m */; };
+		A39AA7F818FCC3B00052D1DE /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E164179E792D001618E1 /* AFURLConnectionOperation.m */; };
+		A39AA7F918FCC3B00052D1DE /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E166179E792D001618E1 /* AFXMLRequestOperation.m */; };
+		A39AA7FA18FCC3B00052D1DE /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4E168179E792D001618E1 /* UIImageView+AFNetworking.m */; };
+		A39AA7FF18FCC4020052D1DE /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FB18FCC4020052D1DE /* MMDrawerBarButtonItem.m */; };
+		A39AA80018FCC4020052D1DE /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */; };
+		A39AA80118FCC4020052D1DE /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */; };
+		A39AA80218FCC4020052D1DE /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */; };
+		A3B9821718FF6085005E443A /* FAQStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B9821618FF6085005E443A /* FAQStoryboard.storyboard */; };
+		A3B9821A18FF611A005E443A /* FAQConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821918FF611A005E443A /* FAQConstants.m */; };
+		A3B9821D18FF615B005E443A /* FAQModuleController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821C18FF615B005E443A /* FAQModuleController.m */; };
+		A3B9822018FF660B005E443A /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9821F18FF660B005E443A /* FAQViewController.m */; };
+		A3B9822318FF752D005E443A /* FAQBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9822218FF752D005E443A /* FAQBaseViewController.m */; };
+		E4165D3518FF723800A7C202 /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = E4165D2A18FF723800A7C202 /* demo.html */; };
+		E4165D3618FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.eot in Resources */ = {isa = PBXBuildFile; fileRef = E4165D2C18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.eot */; };
+		E4165D3718FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.svg in Resources */ = {isa = PBXBuildFile; fileRef = E4165D2D18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.svg */; };
+		E4165D3818FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4165D2E18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.ttf */; };
+		E4165D3918FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.woff in Resources */ = {isa = PBXBuildFile; fileRef = E4165D2F18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.woff */; };
+		E4165D3A18FF723800A7C202 /* fonts.css in Resources */ = {isa = PBXBuildFile; fileRef = E4165D3018FF723800A7C202 /* fonts.css */; };
+		E4165D3B18FF723800A7C202 /* Free Fonts.URL in Resources */ = {isa = PBXBuildFile; fileRef = E4165D3118FF723800A7C202 /* Free Fonts.URL */; };
+		E4165D3C18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4165D3218FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */; };
+		E4165D3D18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4165D3318FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf */; };
+		E4165D3E18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4165D3418FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf */; };
+		E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4EF65E018FDCD56007E76BF /* photodefault.jpg */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -301,6 +336,12 @@
 		01AD18368F1B46E9A38A5085 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0987D96118F43B98001510F8 /* NavDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavDrawerController.h; sourceTree = "<group>"; };
 		0987D96218F43B98001510F8 /* NavDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavDrawerController.m; sourceTree = "<group>"; };
+		0987D9B018FC7CE7001510F8 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
+		0987D9B118FC7CE7001510F8 /* faq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq.png; sourceTree = "<group>"; };
+		0987D9B218FC7CE7001510F8 /* donatelist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donatelist.png; sourceTree = "<group>"; };
+		0987D9B318FC7CE7001510F8 /* donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donate.png; sourceTree = "<group>"; };
+		0987D9B418FC7CE7001510F8 /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account.png; sourceTree = "<group>"; };
+		0987D9BA18FC8680001510F8 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = Theme/menu.png; sourceTree = "<group>"; };
 		1F46002C458C4125A3A1E6B5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		9B025A7B17A0EEC6004960C4 /* FFRecordAuthToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecordAuthToken.h; sourceTree = "<group>"; };
 		9B025A7C17A0EEC7004960C4 /* FFRecordAuthToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecordAuthToken.m; sourceTree = "<group>"; };
@@ -656,6 +697,33 @@
 		9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSDChooseTimeViewController.m; sourceTree = "<group>"; };
 		9BFAE5A417B07D100058AFE9 /* navigationbar_top_left_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_top_left_icon.png; sourceTree = "<group>"; };
 		9BFAE5A517B07D100058AFE9 /* navigationbar_top_left_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_top_left_icon@2x.png"; sourceTree = "<group>"; };
+		A39AA7FB18FCC4020052D1DE /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
+		A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		A3B9821618FF6085005E443A /* FAQStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FAQStoryboard.storyboard; sourceTree = "<group>"; };
+		A3B9821818FF60AE005E443A /* FAQConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQConstants.h; sourceTree = "<group>"; };
+		A3B9821918FF611A005E443A /* FAQConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQConstants.m; sourceTree = "<group>"; };
+		A3B9821B18FF615B005E443A /* FAQModuleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQModuleController.h; sourceTree = "<group>"; };
+		A3B9821C18FF615B005E443A /* FAQModuleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQModuleController.m; sourceTree = "<group>"; };
+		A3B9821E18FF660B005E443A /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
+		A3B9821F18FF660B005E443A /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
+		A3B9822118FF752D005E443A /* FAQBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQBaseViewController.h; sourceTree = "<group>"; };
+		A3B9822218FF752D005E443A /* FAQBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQBaseViewController.m; sourceTree = "<group>"; };
+		E4165D2A18FF723800A7C202 /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
+		E4165D2C18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Light.eot"; sourceTree = "<group>"; };
+		E4165D2D18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.svg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Light.svg"; sourceTree = "<group>"; };
+		E4165D2E18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Light.ttf"; sourceTree = "<group>"; };
+		E4165D2F18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Light.woff"; sourceTree = "<group>"; };
+		E4165D3018FF723800A7C202 /* fonts.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = fonts.css; sourceTree = "<group>"; };
+		E4165D3118FF723800A7C202 /* Free Fonts.URL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Free Fonts.URL"; sourceTree = "<group>"; };
+		E4165D3218FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Regular Italic.otf"; sourceTree = "<group>"; };
+		E4165D3318FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Regular.ttf"; sourceTree = "<group>"; };
+		E4165D3418FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Thin.otf"; sourceTree = "<group>"; };
+		E4165D3F18FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Simonson - Proxima Nova Alt Regular Italic.otf"; path = "FFiPhoneApp/Assets/Fonts/Mark Simonson - Proxima Nova Alt Regular Italic.otf"; sourceTree = "<group>"; };
+		E4165D4018FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Simonson - Proxima Nova Alt Regular.ttf"; path = "FFiPhoneApp/Assets/Fonts/Mark Simonson - Proxima Nova Alt Regular.ttf"; sourceTree = "<group>"; };
+		E4165D4118FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Simonson - Proxima Nova Alt Thin.otf"; path = "FFiPhoneApp/Assets/Fonts/Mark Simonson - Proxima Nova Alt Thin.otf"; sourceTree = "<group>"; };
+		E4EF65E018FDCD56007E76BF /* photodefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photodefault.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -696,6 +764,18 @@
 				0987D96218F43B98001510F8 /* NavDrawerController.m */,
 			);
 			name = NavDrawer;
+			sourceTree = "<group>";
+		};
+		0987D9AF18FC7BF6001510F8 /* NavigationDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				0987D9B018FC7CE7001510F8 /* logout.png */,
+				0987D9B118FC7CE7001510F8 /* faq.png */,
+				0987D9B218FC7CE7001510F8 /* donatelist.png */,
+				0987D9B318FC7CE7001510F8 /* donate.png */,
+				0987D9B418FC7CE7001510F8 /* account.png */,
+			);
+			name = NavigationDrawer;
 			sourceTree = "<group>";
 		};
 		9B025A7F17A1E5B3004960C4 /* App */ = {
@@ -771,6 +851,7 @@
 		9B4F18ED17A59849005516A0 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				0987D9AF18FC7BF6001510F8 /* NavigationDrawer */,
 				9BC778D817BC5D1D00ADFD9A /* TabBar */,
 				9BC778B417BB8D0D00ADFD9A /* ShareDonation */,
 				9B64E16717B9FE980051E8F1 /* CurrentDonations */,
@@ -800,6 +881,7 @@
 		9B4F191517A5D881005516A0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A3B9821518FF6067005E443A /* FAQ */,
 				9BDA8BC617A5EE5B00F69001 /* AppLoader */,
 				9BDA8C8617A766E300F69001 /* Authentication */,
 				9B4F191617A5D882005516A0 /* Account */,
@@ -1031,6 +1113,13 @@
 		9B98D174179CEE4C0032888C = {
 			isa = PBXGroup;
 			children = (
+				E4165D3F18FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */,
+				E4165D4018FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf */,
+				E4165D4118FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf */,
+				A39AA7FB18FCC4020052D1DE /* MMDrawerBarButtonItem.m */,
+				A39AA7FC18FCC4020052D1DE /* MMDrawerController.m */,
+				A39AA7FD18FCC4020052D1DE /* MMDrawerVisualState.m */,
+				A39AA7FE18FCC4020052D1DE /* UIViewController+MMDrawerController.m */,
 				9BC778B717BBFB0D00ADFD9A /* Social.framework */,
 				9B6B000517ADC0BE000437A9 /* CoreLocation.framework */,
 				9B6B000317AD95D1000437A9 /* MapKit.framework */,
@@ -1154,8 +1243,10 @@
 				9BC778BB17BC3AD900ADFD9A /* app_icon@2x.png */,
 				9B98D265179D0E870032888C /* first.png */,
 				9B98D266179D0E870032888C /* first@2x.png */,
+				E4EF65E018FDCD56007E76BF /* photodefault.jpg */,
 				9B98D267179D0E870032888C /* second.png */,
 				9B98D268179D0E870032888C /* second@2x.png */,
+				0987D9BA18FC8680001510F8 /* menu.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1448,13 +1539,53 @@
 			path = PostDonation;
 			sourceTree = "<group>";
 		};
+		A3B9821518FF6067005E443A /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				A3B9821618FF6085005E443A /* FAQStoryboard.storyboard */,
+				A3B9821818FF60AE005E443A /* FAQConstants.h */,
+				A3B9821918FF611A005E443A /* FAQConstants.m */,
+				A3B9821E18FF660B005E443A /* FAQViewController.h */,
+				A3B9821F18FF660B005E443A /* FAQViewController.m */,
+				A3B9821B18FF615B005E443A /* FAQModuleController.h */,
+				A3B9821C18FF615B005E443A /* FAQModuleController.m */,
+				A3B9822118FF752D005E443A /* FAQBaseViewController.h */,
+				A3B9822218FF752D005E443A /* FAQBaseViewController.m */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
 		A3C8AD8818D6306900F94542 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				A3C8ADA418DA9E0100F94542 /* Mark Simonson - Proxima Nova Alt Light.ttf */,
-				A3C8ADA218DA9CBC00F94542 /* Mark Simonson - Proxima Nova Alt Regular.ttf */,
+				E4165D2918FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light */,
+				E4165D3218FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */,
+				E4165D3318FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf */,
+				E4165D3418FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E4165D2918FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light */ = {
+			isa = PBXGroup;
+			children = (
+				E4165D2A18FF723800A7C202 /* demo.html */,
+				E4165D2B18FF723800A7C202 /* fonts */,
+				E4165D3018FF723800A7C202 /* fonts.css */,
+				E4165D3118FF723800A7C202 /* Free Fonts.URL */,
+			);
+			path = "Mark Simonson - Proxima Nova Alt Light";
+			sourceTree = "<group>";
+		};
+		E4165D2B18FF723800A7C202 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E4165D2C18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.eot */,
+				E4165D2D18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.svg */,
+				E4165D2E18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.ttf */,
+				E4165D2F18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.woff */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1531,6 +1662,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4165D3C18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf in Resources */,
+				E4165D3D18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf in Resources */,
+				E4165D3E18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf in Resources */,
 				9BBB110317A7CE9F00EA924D /* login_background.png in Resources */,
 				9BBB110417A7CE9F00EA924D /* login_background@2x.png in Resources */,
 				9BBB110517A7CE9F00EA924D /* login_logo.png in Resources */,
@@ -1544,7 +1678,6 @@
 				9BBB111D17A7CEAF00EA924D /* first@2x.png in Resources */,
 				9BBB111E17A7CEAF00EA924D /* second.png in Resources */,
 				9BBB111F17A7CEAF00EA924D /* second@2x.png in Resources */,
-				A3C8ADA518DA9E0100F94542 /* Mark Simonson - Proxima Nova Alt Light.ttf in Resources */,
 				9B5B223017A851B10003B1CD /* AuthenticationStoryboard.storyboard in Resources */,
 				9B5B223117A851EC0003B1CD /* AppLoaderStoryboard.storyboard in Resources */,
 				9B5B233117A8D9A30003B1CD /* navigationbar_background@2x.png in Resources */,
@@ -1559,13 +1692,18 @@
 				9BFA589F17A9D7DD00908526 /* postdonation_button_when_highlighted.png in Resources */,
 				9BFA58A017A9D7DD00908526 /* postdonation_button_when_selected.png in Resources */,
 				9BFA58A117A9D7DD00908526 /* postdonation_button_where_highlighted.png in Resources */,
+				E4165D3618FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.eot in Resources */,
 				9BFA58A217A9D7DD00908526 /* postdonation_button_where_selected.png in Resources */,
+				E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */,
+				E4165D3518FF723800A7C202 /* demo.html in Resources */,
 				9BFA58BF17A9E08200908526 /* postdonation_button_howmuch_normal@2x.png in Resources */,
+				E4165D3918FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.woff in Resources */,
 				9BFA58C017A9E08200908526 /* postdonation_button_howmuch_selected@2x.png in Resources */,
 				9BFA58C117A9E08200908526 /* postdonation_button_picture_highlighted@2x.png in Resources */,
 				9BFA58C217A9E08200908526 /* postdonation_button_picture_normal@2x.png in Resources */,
 				9BFA58C317A9E08200908526 /* postdonation_button_picture_selected@2x.png in Resources */,
 				9BFA58C417A9E08200908526 /* postdonation_button_when_normal@2x.png in Resources */,
+				0987D9B818FC7CE7001510F8 /* donate.png in Resources */,
 				9BFA58C517A9E08200908526 /* postdonation_button_when_selected@2x.png in Resources */,
 				9BFA58C617A9E08200908526 /* postdonation_button_where_normal@2x.png in Resources */,
 				9BFA58C717A9E08200908526 /* postdonation_button_where_selected@2x.png in Resources */,
@@ -1574,9 +1712,11 @@
 				9BFA58D317A9E12600908526 /* postdonation_button_where_highlighted@2x.png in Resources */,
 				9B6B308717AA52EF00A53738 /* postdonation_button_howmuch_highlighted-568h@2x.png in Resources */,
 				9B6B308917AA52EF00A53738 /* postdonation_button_howmuch_normal-568h@2x.png in Resources */,
+				0987D9BB18FC8680001510F8 /* menu.png in Resources */,
 				9B6B308B17AA52EF00A53738 /* postdonation_button_howmuch_selected-568h@2x.png in Resources */,
 				9B6B308D17AA52EF00A53738 /* postdonation_button_picture_highlighted-568h@2x.png in Resources */,
 				9B6B308F17AA52EF00A53738 /* postdonation_button_picture_normal-568h@2x.png in Resources */,
+				E4165D3B18FF723800A7C202 /* Free Fonts.URL in Resources */,
 				9B6B309117AA52EF00A53738 /* postdonation_button_picture_selected-568h@2x.png in Resources */,
 				9B6B309317AA52EF00A53738 /* postdonation_button_when_highlighted-568h@2x.png in Resources */,
 				9B6B309517AA52EF00A53738 /* postdonation_button_when_normal-568h@2x.png in Resources */,
@@ -1598,6 +1738,7 @@
 				9BB52FD317B23F7B00813AF6 /* divider_230x1.png in Resources */,
 				9BE4789517B4F51900B83CC6 /* AccountStoryboard.storyboard in Resources */,
 				9B64E14A17B999000051E8F1 /* CurrentDonationsStoryboard.storyboard in Resources */,
+				0987D9B918FC7CE7001510F8 /* account.png in Resources */,
 				9B64E14F17B9BD4E0051E8F1 /* PastDonationsStoryboard.storyboard in Resources */,
 				9B64E16517B9FE670051E8F1 /* pastdonations_default_mealphoto.png in Resources */,
 				9B64E16617B9FE670051E8F1 /* pastdonations_default_mealphoto@2x.png in Resources */,
@@ -1610,11 +1751,11 @@
 				9B64E19817BAF7F40051E8F1 /* button_green_20x20_disabled@2x.png in Resources */,
 				9B64E19917BAF7F40051E8F1 /* button_green_20x20_highlighted.png in Resources */,
 				9B64E19A17BAF7F40051E8F1 /* button_green_20x20_highlighted@2x.png in Resources */,
+				0987D9B718FC7CE7001510F8 /* donatelist.png in Resources */,
 				9B64E19B17BAF7F40051E8F1 /* button_green_20x20_normal.png in Resources */,
 				9B64E19C17BAF7F40051E8F1 /* button_green_20x20_normal@2x.png in Resources */,
 				9B64E19D17BAF7F40051E8F1 /* button_green_30x30_disabled.png in Resources */,
 				9B64E19E17BAF7F40051E8F1 /* button_green_30x30_disabled@2x.png in Resources */,
-				A3C8ADA318DA9CBC00F94542 /* Mark Simonson - Proxima Nova Alt Regular.ttf in Resources */,
 				9B64E19F17BAF7F40051E8F1 /* button_green_30x30_highlighted.png in Resources */,
 				9B64E1A017BAF7F40051E8F1 /* button_green_30x30_highlighted@2x.png in Resources */,
 				9B64E1A117BAF7F40051E8F1 /* button_green_30x30_normal.png in Resources */,
@@ -1622,12 +1763,15 @@
 				9B64E1A317BAF7F40051E8F1 /* button_green_40x40_disabled.png in Resources */,
 				9B64E1A417BAF7F40051E8F1 /* button_green_40x40_disabled@2x.png in Resources */,
 				9B64E1A517BAF7F40051E8F1 /* button_green_40x40_highlighted.png in Resources */,
+				E4165D3718FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.svg in Resources */,
 				9B64E1A617BAF7F40051E8F1 /* button_green_40x40_highlighted@2x.png in Resources */,
 				9B64E1A717BAF7F40051E8F1 /* button_green_40x40_normal.png in Resources */,
 				9B64E1A817BAF7F40051E8F1 /* button_green_40x40_normal@2x.png in Resources */,
 				9B64E1CA17BB0A790051E8F1 /* button_red_20x20_disabled.png in Resources */,
 				9B64E1CB17BB0A790051E8F1 /* button_red_20x20_disabled@2x.png in Resources */,
 				9B64E1CC17BB0A790051E8F1 /* button_red_20x20_highlighted.png in Resources */,
+				E4165D3818FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.ttf in Resources */,
+				0987D9B518FC7CE7001510F8 /* logout.png in Resources */,
 				9B64E1CD17BB0A790051E8F1 /* button_red_20x20_highlighted@2x.png in Resources */,
 				9B64E1CE17BB0A790051E8F1 /* button_red_20x20_normal.png in Resources */,
 				9B64E1CF17BB0A790051E8F1 /* button_red_20x20_normal@2x.png in Resources */,
@@ -1654,11 +1798,14 @@
 				9BC778D717BC504E00ADFD9A /* Default.png in Resources */,
 				9BC778E117BC5D1D00ADFD9A /* tabbar_icon_account.png in Resources */,
 				9BC778E217BC5D1D00ADFD9A /* tabbar_icon_account@2x.png in Resources */,
+				A3B9821718FF6085005E443A /* FAQStoryboard.storyboard in Resources */,
+				0987D9B618FC7CE7001510F8 /* faq.png in Resources */,
 				9BC778E317BC5D1D00ADFD9A /* tabbar_icon_currentdonation.png in Resources */,
 				9BC778E417BC5D1D00ADFD9A /* tabbar_icon_currentdonation@2x.png in Resources */,
 				9BC778E517BC5D1D00ADFD9A /* tabbar_icon_pastdonation.png in Resources */,
 				9BC778E617BC5D1D00ADFD9A /* tabbar_icon_pastdonation@2x.png in Resources */,
 				9BC778E717BC5D1D00ADFD9A /* tabbar_icon_postdonation.png in Resources */,
+				E4165D3A18FF723800A7C202 /* fonts.css in Resources */,
 				9BC778E817BC5D1D00ADFD9A /* tabbar_icon_postdonation@2x.png in Resources */,
 				9BC41E63181A44E500886900 /* button_facebook_login.png in Resources */,
 				9BC41E64181A44E500886900 /* button_facebook_login@2x.png in Resources */,
@@ -1742,6 +1889,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39AA7FF18FCC4020052D1DE /* MMDrawerBarButtonItem.m in Sources */,
+				A39AA80018FCC4020052D1DE /* MMDrawerController.m in Sources */,
+				A39AA80118FCC4020052D1DE /* MMDrawerVisualState.m in Sources */,
+				A39AA80218FCC4020052D1DE /* UIViewController+MMDrawerController.m in Sources */,
+				A39AA7F218FCC3B00052D1DE /* AFHTTPClient.m in Sources */,
+				A39AA7F318FCC3B00052D1DE /* AFHTTPRequestOperation.m in Sources */,
+				A39AA7F418FCC3B00052D1DE /* AFImageRequestOperation.m in Sources */,
+				A39AA7F518FCC3B00052D1DE /* AFJSONRequestOperation.m in Sources */,
+				A39AA7F618FCC3B00052D1DE /* AFNetworkActivityIndicatorManager.m in Sources */,
+				A39AA7F718FCC3B00052D1DE /* AFPropertyListRequestOperation.m in Sources */,
+				A39AA7F818FCC3B00052D1DE /* AFURLConnectionOperation.m in Sources */,
+				A39AA7F918FCC3B00052D1DE /* AFXMLRequestOperation.m in Sources */,
+				A39AA7FA18FCC3B00052D1DE /* UIImageView+AFNetworking.m in Sources */,
 				9BBB110217A7CE6A00EA924D /* main.m in Sources */,
 				9BBB112017A7CEC600EA924D /* AppDelegate.m in Sources */,
 				9BBB112117A7CFC400EA924D /* ModuleCoordinator.m in Sources */,
@@ -1754,11 +1914,13 @@
 				9BBB112B17A7D0D500EA924D /* FFRecordObject.m in Sources */,
 				9BBB112C17A8307100EA924D /* FFRecordLocation.m in Sources */,
 				9BBB112D17A8307900EA924D /* FFRecordDonation.m in Sources */,
+				A3B9822018FF660B005E443A /* FAQViewController.m in Sources */,
 				9BBB112E17A8307D00EA924D /* FFRecordUser.m in Sources */,
 				9BBB112F17A8308000EA924D /* FFRecordMealPhoto.m in Sources */,
 				9BBB113017A8308300EA924D /* FFRecordImage.m in Sources */,
 				9BBB113117A8308600EA924D /* FFRecordAuthToken.m in Sources */,
 				9BBB113217A831A500EA924D /* FFDataObject.m in Sources */,
+				A3B9821A18FF611A005E443A /* FAQConstants.m in Sources */,
 				9BBB113317A831A500EA924D /* FFDataDonation.m in Sources */,
 				9BBB113417A831A500EA924D /* FFDataImage.m in Sources */,
 				9BBB113517A831A500EA924D /* FFDataLocation.m in Sources */,
@@ -1775,11 +1937,13 @@
 				9B5B222317A83D730003B1CD /* NSArray+FFNull.m in Sources */,
 				9B5B222417A83D730003B1CD /* UIButton+FFStyles.m in Sources */,
 				9B5B222517A83D730003B1CD /* UITextField+FFStyles.m in Sources */,
+				A3B9822318FF752D005E443A /* FAQBaseViewController.m in Sources */,
 				9B5B224117A89BF10003B1CD /* AUTFacebookLoginViewController.m in Sources */,
 				9B5B224417A8B6F40003B1CD /* FFUI.m in Sources */,
 				9B5B232617A8CFEB0003B1CD /* AUTOptionsViewController.m in Sources */,
 				9B6B307617AA206500A53738 /* UIView+FFStyles.m in Sources */,
 				9B6B307917AA4CE500A53738 /* UIImage+FFImage.m in Sources */,
+				A3B9821D18FF615B005E443A /* FAQModuleController.m in Sources */,
 				9B6B30C417AC515F00A53738 /* AppLoaderConstants.m in Sources */,
 				9B6B30D117AC53C800A53738 /* PostDonationBaseViewController.m in Sources */,
 				9B6B30D217AC53C800A53738 /* PostDonationConstants.m in Sources */,
@@ -1913,7 +2077,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

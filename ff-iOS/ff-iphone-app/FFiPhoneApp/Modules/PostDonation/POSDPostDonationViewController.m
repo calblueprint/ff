@@ -53,6 +53,15 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 @property (weak, nonatomic) IBOutlet UIButton *selectWeightButton;
 @property (weak, nonatomic) IBOutlet UITextField *selectDonationAmountField;
 
+@property (weak, nonatomic) IBOutlet UIImageView *photoView;
+
+@property (weak, nonatomic) IBOutlet UILabel *kindLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weightLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pickupByLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UIButton *confirmButton;
+
+
 
 @property (strong, nonatomic) UIDatePicker *datePicker;
 @property (strong, nonatomic) UIView *datePickerContainer;
@@ -100,6 +109,9 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 		self.selectDonationAmountField.delegate = self;
 		self.selectDonationAmountField.keyboardType = UIKeyboardTypeDecimalPad;
     // Register to receive notification for prefilling the post donation form
+		
+		UIImage *image = [UIImage imageNamed: @"photodefault.jpg"];
+	[self.photoView setImage:image];
 	
 }
 
@@ -133,6 +145,10 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 //			self.selectAddressButton.titleLabel.text = self.donation.location.streetAddressOne;
     }
 	[self configurePostDonationButtonStatus];
+	
+	UIGestureRecognizer *tapPhoto = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(takePhoto)];
+	[self.photoView	addGestureRecognizer:tapPhoto];
+	self.photoView.userInteractionEnabled = YES;
 }
 
 - (void)configurePostDonationButtonStatus
@@ -150,8 +166,8 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 //
 - (void)setTextOnButton:(UIButton *)button title:(NSString *)title titleFontSize:(float)titleFontSize description:(NSString *)description descriptionFontSize:(float)descriptionFontSize
 {
-	UIFont *titleFont = [UIFont fontWithName:@"HelveticaNeue" size:titleFontSize];
-	UIFont *descriptionFont = [UIFont fontWithName:@"HelveticaNeue" size:descriptionFontSize];
+	UIFont *titleFont = [UIFont fontWithName:@"ProximaNovaA-Regular" size:titleFontSize];
+	UIFont *descriptionFont = [UIFont fontWithName:@"ProximaNovaA-Regular" size:descriptionFontSize];
 	
 	// Create attributed string for title
 	NSMutableAttributedString *buttonTitleText = [[NSMutableAttributedString alloc] initWithString:title attributes:@{NSFontAttributeName: titleFont}];
@@ -212,6 +228,15 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 {
 	self.selectPickupByButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 	self.selectPickupByButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20);
+    //Set fonts for Labels
+    UIFont *labelFont = [UIFont fontWithName:@"ProximaNovaA-Regular" size:18.0];
+    self.kindLabel.font = labelFont;
+    self.addressLabel.font = labelFont;
+    self.pickupByLabel.font = labelFont;
+    self.weightLabel.font = labelFont;
+    [self.confirmButton.titleLabel setFont:labelFont];
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -335,7 +360,7 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 // UIImagePickerController delegate method
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [self setImageMealPhoto:[info objectForKey:UIImagePickerControllerEditedImage]];
+	[self.photoView setImage:[info objectForKey:UIImagePickerControllerEditedImage]];
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
@@ -357,9 +382,45 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
     // Disable user interaction on all buttons
 	if (textField == self.selectKindField) {
     textField.text = self.selectKindButton.titleLabel.text;
+		NSString *tag = [NSString stringWithFormat:@"%d", self.selectKindButton.tag];
+		((UILabel *)[self.buttonLabelCollection objectForKey:tag]).text = @"";
 	} else if (textField == self.selectDonationAmountField) {
 		textField.text = self.selectWeightButton.titleLabel.text;
+		NSString *tag = [NSString stringWithFormat:@"%d", self.selectWeightButton.tag];
+		((UILabel *)[self.buttonLabelCollection objectForKey:tag]).text = @"";
+		
+		// Show a confirm button
+		UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+    numberToolbar.barStyle = UIBarStyleDefault;
+		
+    numberToolbar.items = [NSArray arrayWithObjects:
+													 [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],
+													 [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+													 [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
+													 nil];
+    [numberToolbar sizeToFit];
+    textField.inputAccessoryView = numberToolbar;
+
 	}
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+	NSUInteger newLength = [textField.text length] + [string length] - range.length;
+	if (textField == self.selectDonationAmountField) {
+		return (newLength > 10) ? NO : YES;
+	} else {
+		return (newLength > 30) ? NO : YES;
+	}
+}
+
+-(void)cancelNumberPad{
+	[self.selectDonationAmountField resignFirstResponder];
+	self.selectDonationAmountField.text = @"";
+}
+
+-(void)doneWithNumberPad{
+//	NSString *num = self.selectDonationAmountField.text;
+	[self.selectDonationAmountField resignFirstResponder];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -407,7 +468,7 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 		self.datePickerConfirm = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, datePickerConfirmButtonHeight)];
 		self.datePickerConfirm.backgroundColor = [UIColor colorWithRed:35.0/255 green:135.0/255 blue:162.0/255 alpha:1.0];
 		[self.datePickerConfirm setTitle:@"CONFIRM DATE" forState:UIControlStateNormal];
-		self.datePickerConfirm.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20];
+		self.datePickerConfirm.titleLabel.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:20];
 		[self.datePickerConfirm setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		[self.datePickerConfirm setTitleColor:[UIColor colorWithWhite:0.8 alpha:1.0] forState:UIControlStateHighlighted];
 
@@ -417,7 +478,7 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 		[self.view addSubview:self.datePickerConfirm];
 	}
 	self.datePickerContainer.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-	NSInteger tabBarHeight = 50;
+	NSInteger tabBarHeight = 0;
 	[UIView animateWithDuration:0.4 animations:^{
 		[self.datePickerContainer setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3]];
 		self.datePicker.frame = CGRectMake(0, self.view.frame.size.height - self.datePicker.frame.size.height - tabBarHeight, self.datePicker.frame.size.width, self.datePicker.frame.size.height);
@@ -464,6 +525,10 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
 	NSLog(@"Submit button clicked.");
 }
 
+- (void) takePhoto {
+	NSLog(@"take poto");
+	[self presentPictureSourceOptions];
+}
 
 #pragma mark - POSDChooseLocationViewController delegate
 
