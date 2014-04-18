@@ -6,22 +6,30 @@ import android.location.Location;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 /**
  * An object to represent a donation in the Feeding Forward application.
  */
-public class Donation {
+public class Donation implements Comparable<Donation>{
 
-    /** The title of the donation. */
-    private String _title;
-    /** A description of the donation. */
-    private String _description;
+    /** The kind of  donation. */
+    private String _kind;
     /** A picture associated with the donation. */
     private Picture _picture;
     /** A location associated with the donation. */
     private Location _location;
     /** A human-readable representation of the location */
     private String _address;
+    /** The state tbe donation was made in. */
+    private String _state;
+    /** The city the donation was made in. */
+    private String _city;
+    /** The full address the donation was made in. */
+    private String _fullAddress;
     /** The weight of the donation */
     private double _weight;
     /** The type of vehicle that the donation asks for. */
@@ -30,16 +38,21 @@ public class Donation {
     private Date _startDate;
     /** The end date of the donation. */
     private Date _endDate;
+    /** The date the donation was created */
+    private Date _dateCreated;
+    /** The phone number of the user who created the donation. */
+    private String _phoneNumber;
+    /** The status of the donation */
+    private String _status;
 
     /** Returns a donation by taking in a TITLE, DESCRIPTION, a PICTURE, a
      *  LOCATION, the WEIGHT, a type of VEHICLE, and a START date and END
      *  date of a donation.
      */
-    public Donation(String title, String description, Picture picture,
+    public Donation(String kind, Picture picture,
                     Location location, String address, double weight, String vehicle,
-                    Date start, Date end) {
-        _title = title;
-        _description = description;
+                    Date start, Date end, String phoneNumber, String city, String state, String status) {
+        _kind = kind;
         _picture = picture;
         _location = location;
         _address = address;
@@ -47,13 +60,16 @@ public class Donation {
         _vehicle = vehicle;
         _startDate = start;
         _endDate = end;
+        _phoneNumber = phoneNumber;
+        _city = city;
+        _state = state;
+        _status = status;
     }
 
     /** Returns an empty donation.
      */
     public Donation() {
-        _title = "";
-        _description = "";
+        _kind = "";
         _picture = new Picture();
         _location = null;
         _address = "";
@@ -61,16 +77,14 @@ public class Donation {
         _vehicle = "";
         _startDate = new Date();
         _endDate = new Date();
-    }
-
-    /** Returns the title of the donation.*/
-    public String getTitle(){
-        return _title;
+        _phoneNumber = "";
+        _status = "";
+        _dateCreated = new Date();
     }
 
     /** Returns the description of the donation. */
-    public String getDescription(){
-        return _description;
+    public String getKind(){
+        return _kind;
     }
 
     /** Returns the picture of the donation. */
@@ -85,6 +99,9 @@ public class Donation {
 
     /** Returns the address of the donation. */
     public String getAddress() { return _address; }
+
+    /** Returns the address including the state, city, and country. */
+    public String getFullAddress() { return _fullAddress; }
 
     /** Returns the weight of the donation. */
     public double getWeight() {
@@ -106,14 +123,24 @@ public class Donation {
         return _endDate;
     }
 
-    /** Sets the TITLE. */
-    public void setTitle(String title){
-        _title = title;
-    }
+    /** Returns the phone of the user who created the donation. */
+    public String getPhoneNumber() { return _phoneNumber; }
+
+    /** Returns the city the donation was made in. */
+    public String getCity() { return _city; }
+
+    /** Returns the state the donation was made in. */
+    public String getState() { return _state; }
+
+    /** Returns the status of the donation. */
+    public String getStatus() { return _status;}
+
+    /** Returns the date the donation was created. */
+    public Date getdateCreated() { return _dateCreated; }
 
     /** Sets the DESCRIPTION. */
-    public void setDescription(String description){
-        _description = description;
+    public void setKind(String kind){
+        _kind = kind;
     }
 
     /** Sets the PICTURE. */
@@ -126,8 +153,18 @@ public class Donation {
         _location = location;
     }
 
-    /** Sets the ADDRESS */
+    /** Sets the ADDRESS. */
     public void setAddress(String address) { _address = address; }
+
+    /** Sets the FULLADDRESS of the donation. */
+    public void setFullAddress(String fullAddress) { _fullAddress = fullAddress; }
+
+    /** Sets the ADDRESS, CITY, and STATE */
+    public void setAddress(String address, String city, String state) {
+        _address = address;
+        _city = city;
+        _state = state;
+    }
 
     /** Sets the Weight. */
     public void setWeight(double weight) {
@@ -149,23 +186,95 @@ public class Donation {
         _endDate = end;
     }
 
+    /** Sets the PHONENUMBER of the donation. */
+    public void setPhoneNumber(String phoneNumber) { _phoneNumber = phoneNumber; }
+
+    /** Sets the status of the donation */
+    public void setStatus(String status) { _status = status; }
+
+    /** Sets the date the donation was created. */
+    public void setDateCreated(Date date) { _dateCreated = date; }
+
+    /** Checks if donation object is valid.
+     * A donation is valid iff none of its fields violate a requirement.
+     * */
+    public boolean isValid() {
+        int numErrors = 0;
+        for (int i : getErrors()) numErrors += i;
+        return numErrors == 0;
+    }
+
+    /** Checks if donation object is valid.
+     * A donation is valid iff it satisfies all the following requirements:
+     * 1. The location is in the United States.
+     * 2. The weight is a number between 1 and 500.
+     * 3. The start date is later than the current time.
+     * 4. The kind field is not empty.
+     * */
+    public int[] getErrors() {
+
+        int[] errors = new int[4];
+        for (int i = 0; i < errors.length; i++) errors[i] = 0;
+
+        // Requirement 1
+        String[] address_fields = _address.split(" ");
+        String country = address_fields[address_fields.length - 1];
+        if (!country.equals("USA")) {
+            errors[0] = 1;
+        }
+
+        // Requirement 2
+        if (_weight < 1 || _weight > 500) {
+            errors[1] = 1;
+        }
+
+        // Requirement 3
+        if (_startDate == null || _startDate.after(new Date())) {
+            errors[1] = 1;
+        }
+
+        // Requirement 4
+        if (_kind.length() == 0) {
+            errors[1] = 1;
+        }
+
+        return errors;
+    }
+
     /** Returns a String that is in JSON format. */
     public String toJSON() {
+        return toJSONObj().toString();
+    }
+
+    /** Returns a JSONObject */
+    public JSONObject toJSONObj() {
         try {
+            // Pickup date
+            // Pickup At
+            // input weight
             JSONObject jsonObj = new JSONObject();
-            jsonObj.put("title", getTitle());
-            jsonObj.put("description", getDescription());
-            jsonObj.put("location", getLocation().toString());
+            jsonObj.put("pickupAt", JSONObject.NULL);
+            jsonObj.put("pickupTime", getStartDate().toString());
+            jsonObj.put("pickupDate", getStartDate().toString());
             jsonObj.put("weight", Double.toString(getWeight()));
-            jsonObj.put("vehicle", getVehicle());
-            jsonObj.put("start", getStartDate().toString());
-            jsonObj.put("end", getEndDate().toString());
-            return jsonObj.toString();
+            jsonObj.put("city", getCity());
+            jsonObj.put("state", getState());
+            jsonObj.put("kind", getKind());
+            jsonObj.put("address", getAddress());
+            jsonObj.put("phone", getPhoneNumber());
+            jsonObj.put("inputWeight", Double.toString(getWeight()));
+            return jsonObj;
         }
         catch(JSONException e) {
             e.printStackTrace();
         }
         return null;
+    }
 
+    /** Compares two Donation objects. Compares the two
+     * by date.
+     */
+    public int compareTo(Donation o) {
+        return _dateCreated.compareTo(o.getdateCreated());
     }
 }

@@ -58,10 +58,15 @@ public class MainActivity extends ActionBarActivity
     FormFragment formFragment;
     Fragment currentFragment;
     CongratulatoryFragment congratulatoryFragment;
+    DonationListFragment donationListFragment;
     FAQFragment faqFragment;
     /** Font Declaration **/
     public Typeface myTypeface;
 
+
+    /** The logged in user's access token for authentication. */
+    public String accessToken;
+    public static final String PREFS = "LOGIN_PREFS";
 
 
 
@@ -82,6 +87,9 @@ public class MainActivity extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         donation = new Donation();
+
+        SharedPreferences prefs = getSharedPreferences(PREFS, 0);
+        accessToken = prefs.getString("token", "NONE");
         // Check device for Play Services APK.
         if (checkPlayServices()) {
             gcm = GoogleCloudMessaging.getInstance(this);
@@ -102,6 +110,7 @@ public class MainActivity extends ActionBarActivity
         accountFragment = AccountFragment.newInstance();
         formFragment = FormFragment.newInstance();
         congratulatoryFragment = CongratulatoryFragment.newInstance();
+        donationListFragment = DonationListFragment.newInstance();
         faqFragment = FAQFragment.newInstance();
         currentFragment = locationFragment;
     }
@@ -113,6 +122,9 @@ public class MainActivity extends ActionBarActivity
         switch (position) {
             case 0:
                 replaceFragment(locationFragment);
+                break;
+            case 1:
+                replaceFragment(donationListFragment);
                 break;
             case 2:
                 replaceFragment(accountFragment);
@@ -156,6 +168,7 @@ public class MainActivity extends ActionBarActivity
             case 5:
                 mTitle = "Congratulations";
                 break;
+
         }
         actionBar.setTitle(mTitle);
     }

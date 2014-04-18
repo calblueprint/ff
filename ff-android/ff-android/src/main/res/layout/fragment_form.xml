@@ -11,13 +11,16 @@
         android:layout_height="@dimen/form_field_size"
         android:id="@+id/donation_kind"
         android:paddingLeft="@dimen/title_textview_horizontal"
+        android:singleLine="true"
         android:hint="@string/kind" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/form_field_size"
         android:id="@+id/donation_weight"
+        android:inputType="number"
         android:paddingLeft="@dimen/title_textview_horizontal"
+        android:singleLine="true"
         android:hint="@string/weight" />
 
     <EditText
