@@ -30,7 +30,6 @@
         android:layout_centerVertical="true"
         android:text="List Item"
         android:textColor="#FFFFFF"
-        android:typeface="sans"
         android:textSize="17dip"
         android:textStyle="bold"/>
 
