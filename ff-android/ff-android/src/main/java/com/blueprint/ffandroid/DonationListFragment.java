@@ -39,7 +39,6 @@ import java.util.Locale;
 public class DonationListFragment extends ListFragment{
 
     private static RequestQueue queue;
-    private static String BASE_URL = "http://feeding-forever.herokuapp.com/api/pickups/?access_token=";
     private String token;
     static SimpleDateFormat outputDateFormat = new SimpleDateFormat("MMMM d',' yyyy", Locale.ENGLISH);
     private static SimpleDateFormat inputDateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
@@ -66,7 +65,7 @@ public class DonationListFragment extends ListFragment{
         this.token = prefs.getString("token", "None");
         this.queue = Volley.newRequestQueue(getActivity());
 
-        JsonArrayRequest request = new JsonArrayRequest(BASE_URL + token,
+        JsonArrayRequest request = new JsonArrayRequest(getString(R.string.pickups_list_url) + token,
             new Response.Listener<JSONArray>() {
                 @Override
                 public void onResponse(JSONArray jsonArray) {
