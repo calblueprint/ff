@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * An object to represent a donation in the Feeding Forward application.
  */
-public class Donation {
+public class Donation implements Comparable<Donation>{
 
     /** The kind of  donation. */
     private String _kind;
@@ -38,8 +38,12 @@ public class Donation {
     private Date _startDate;
     /** The end date of the donation. */
     private Date _endDate;
+    /** The date the donation was created */
+    private Date _dateCreated;
     /** The phone number of the user who created the donation. */
     private String _phoneNumber;
+    /** The status of the donation */
+    private String _status;
 
     /** Returns a donation by taking in a TITLE, DESCRIPTION, a PICTURE, a
      *  LOCATION, the WEIGHT, a type of VEHICLE, and a START date and END
@@ -47,7 +51,7 @@ public class Donation {
      */
     public Donation(String kind, Picture picture,
                     Location location, String address, double weight, String vehicle,
-                    Date start, Date end, String phoneNumber, String city, String state) {
+                    Date start, Date end, String phoneNumber, String city, String state, String status) {
         _kind = kind;
         _picture = picture;
         _location = location;
@@ -59,6 +63,7 @@ public class Donation {
         _phoneNumber = phoneNumber;
         _city = city;
         _state = state;
+        _status = status;
     }
 
     /** Returns an empty donation.
@@ -73,6 +78,8 @@ public class Donation {
         _startDate = new Date();
         _endDate = new Date();
         _phoneNumber = "";
+        _status = "";
+        _dateCreated = new Date();
     }
 
     /** Returns the description of the donation. */
@@ -125,6 +132,12 @@ public class Donation {
     /** Returns the state the donation was made in. */
     public String getState() { return _state; }
 
+    /** Returns the status of the donation. */
+    public String getStatus() { return _status;}
+
+    /** Returns the date the donation was created. */
+    public Date getdateCreated() { return _dateCreated; }
+
     /** Sets the DESCRIPTION. */
     public void setKind(String kind){
         _kind = kind;
@@ -175,6 +188,12 @@ public class Donation {
 
     /** Sets the PHONENUMBER of the donation. */
     public void setPhoneNumber(String phoneNumber) { _phoneNumber = phoneNumber; }
+
+    /** Sets the status of the donation */
+    public void setStatus(String status) { _status = status; }
+
+    /** Sets the date the donation was created. */
+    public void setDateCreated(Date date) { _dateCreated = date; }
 
     /** Checks if donation object is valid.
      * A donation is valid iff none of its fields violate a requirement.
@@ -250,5 +269,12 @@ public class Donation {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /** Compares two Donation objects. Compares the two
+     * by date.
+     */
+    public int compareTo(Donation o) {
+        return _dateCreated.compareTo(o.getdateCreated());
     }
 }

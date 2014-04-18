@@ -20,5 +20,12 @@
     <color name="orange">#FF6600</color>
     <color name="facebook_blue">#4C66A4</color>
     <color name="feeding_forward_green">#4BA39B</color>
-    
+    <color name="nav_drawer_grey">#2E2E2E</color>
+    <color name="nav_drawer_grey_selected">#3b3b3b</color>
+    <color name="complete">#27ae60</color>
+    <color name="canceled">#c0392b</color>
+    <color name="claimed">#f39c12</color>
+    <color name="moving">#f1c40f</color>
+    <color name="available">#d35400</color>
+    <color name="unknown">#2980B9</color>
 </resources>

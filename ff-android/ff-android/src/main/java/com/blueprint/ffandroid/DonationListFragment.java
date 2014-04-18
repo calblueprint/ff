@@ -1,18 +1,15 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
-import android.app.ListFragment;
+import android.support.v4.app.ListFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,13 +25,21 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
+import java.util.ArrayList;
+import java.util.Locale;
+
 /**
  * Created by Nishant on 4/12/14.
  */
 public class DonationListFragment extends ListFragment{
 
     private static RequestQueue queue;
-    private static String BASE_URL = "http://feeding_forever.herokuapp.com/api/pickups/auth_token=";
+    private static String BASE_URL = "http://feeding-forever.herokuapp.com/api/pickups/?access_token=";
     private String token;
 
     public static DonationListFragment newInstance(){
@@ -63,16 +68,30 @@ public class DonationListFragment extends ListFragment{
             new Response.Listener<JSONArray>() {
                 @Override
                 public void onResponse(JSONArray jsonArray) {
-                    Donation data[] = new Donation[jsonArray.length()];
+//                    ArrayList<Donation> data = new ArrayList<Donation>(jsonArray.length());
+                    Donation[] data = new Donation[jsonArray.length()];
+
                     try{
                         for (int i=0; i<jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            //TODO: parse JSONArray and make array of Donation objects.
+                            Donation donation = new Donation();
+                            donation.setAddress(jsonObject.getJSONObject("location").getString("text"));
+                            donation.setKind(jsonObject.getString("kind"));
+                            donation.setStatus(jsonObject.getString("status"));
+                            String dateString = jsonObject.getString("createdAt");
+                            donation.setDateCreated(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH).parse(dateString));
+                            data[i] = donation;
+
                         }
-                    } catch (JSONException e) {
+                    } catch (JSONException e){
+                        Log.e("JSON List Error", e.toString());
+                        return;
+                    } catch (ParseException e){
                         Log.e("JSON List Error", e.toString());
                         return;
                     }
+
+                    Arrays.sort(data);
 
                     DonationAdapter adapter = new DonationAdapter(DonationListFragment.this.getActivity(), data);
                     DonationListFragment.this.setListAdapter(adapter);
@@ -90,8 +109,10 @@ public class DonationListFragment extends ListFragment{
                     } else {
                         try {
                             JSONObject response = new JSONObject(new String(volleyError.networkResponse.data));
-                            message = (String) response.get("message");
+                            message = response.toString();
+                            Log.e("Volley Error", message);
                         } catch (Exception e) {
+                            Log.e("Volley Error", "unknown");
                             message = "Unknown Error";
                         }
                     }
@@ -138,8 +159,36 @@ class DonationAdapter extends ArrayAdapter<Donation> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //TODO: populate table row with donation information
-        return convertView;
+        LayoutInflater inflater = (LayoutInflater) context
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View rowView = inflater.inflate(R.layout.donation_table_row, parent, false);
+        TextView kind = (TextView) rowView.findViewById(R.id.kind);
+        TextView date = (TextView) rowView.findViewById(R.id.date);
+        TextView address = (TextView) rowView.findViewById(R.id.address);
+        TextView donationStatus = (TextView) rowView.findViewById(R.id.status);
+        Donation d = data[position];
+        kind.setText(d.getKind());
+        address.setText(d.getAddress());
+        date.setText(d.getdateCreated().toString());
+
+        String status = d.getStatus();
+        donationStatus.setText(status);
+
+        if (status.equals("complete")) {
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.complete));
+        } else if (status.equals("canceled")) {
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.canceled));
+        } else if (status.equals("moving")) {
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.moving));
+        } else if (status.equals("available")) {
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.available));
+        } else if (status.equals("claimed")) {
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.claimed));
+        } else {
+            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.unknown));
+        }
+
+        return rowView;
     }
 
 
