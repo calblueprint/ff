@@ -41,6 +41,8 @@ public class DonationListFragment extends ListFragment{
     private static RequestQueue queue;
     private static String BASE_URL = "http://feeding-forever.herokuapp.com/api/pickups/?access_token=";
     private String token;
+    static SimpleDateFormat outputDateFormat = new SimpleDateFormat("MMMM d',' yyyy", Locale.ENGLISH);
+    private static SimpleDateFormat inputDateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
 
     public static DonationListFragment newInstance(){
        return new DonationListFragment();
@@ -79,7 +81,7 @@ public class DonationListFragment extends ListFragment{
                             donation.setKind(jsonObject.getString("kind"));
                             donation.setStatus(jsonObject.getString("status"));
                             String dateString = jsonObject.getString("createdAt");
-                            donation.setDateCreated(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH).parse(dateString));
+                            donation.setDateCreated(inputDateFormat.parse(dateString));
                             data[i] = donation;
 
                         }
@@ -164,13 +166,13 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         View rowView = inflater.inflate(R.layout.donation_table_row, parent, false);
         TextView kind = (TextView) rowView.findViewById(R.id.kind);
         TextView date = (TextView) rowView.findViewById(R.id.date);
-        TextView address = (TextView) rowView.findViewById(R.id.address);
         TextView donationStatus = (TextView) rowView.findViewById(R.id.status);
-        Donation d = data[position];
-        kind.setText(d.getKind());
-        address.setText(d.getAddress());
-        date.setText(d.getdateCreated().toString());
 
+        Donation d = data[position];
+        String dateString = DonationListFragment.outputDateFormat.format(d.getdateCreated());
+
+        date.setText(dateString);
+        kind.setText(d.getKind());
         String status = d.getStatus();
         donationStatus.setText(status);
 
