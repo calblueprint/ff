@@ -1,6 +1,8 @@
 package com.blueprint.ffandroid;
 
 import android.content.Context;
+import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +16,15 @@ import android.widget.TextView;
 public class ListAdapter extends BaseAdapter{
     private LayoutInflater inflater;
     private String[] data;
+    private Typeface typeFace;
+    private final String TAG = "ListAdapter";
 
-    public ListAdapter(Context context, String[] data){
+    public ListAdapter(Context context, String[] data, Typeface tf){
         // Caches the LayoutInflater for quicker use
         this.inflater = LayoutInflater.from(context);
         // Sets the events data
         this.data= data;
+        typeFace = tf;
     }
 
     public int getCount() {
@@ -48,7 +53,9 @@ public class ListAdapter extends BaseAdapter{
             // Inflates the Common View from XML file
             convertView = this.inflater.inflate(R.layout.navdrawer_row, null);
         }
-        ((TextView) convertView.findViewById(R.id.list_item)).setText(myText);
+        TextView myTextView = (TextView) convertView.findViewById(R.id.list_item);
+        myTextView.setText(myText);
+        myTextView.setTypeface(typeFace);
         switch (position) {
             case 0: ((ImageView)convertView.findViewById(R.id.list_image)).setImageResource(R.drawable.donate);
                 break;
