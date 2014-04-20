@@ -19,6 +19,7 @@
                 android:layout_height="56dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/name_header"
+                android:id="@+id/account_name_header"
                 android:gravity="center_vertical"/>
 
         <TextView
@@ -45,6 +46,7 @@
             android:layout_height="56dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/email_header"
+            android:id="@+id/account_email_header"
             android:gravity="center_vertical"/>
 
 
@@ -74,6 +76,7 @@
             android:layout_height="56dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/organization_header"
+            android:id="@+id/account_organization_header"
             android:gravity="center_vertical"/>
 
     <TextView

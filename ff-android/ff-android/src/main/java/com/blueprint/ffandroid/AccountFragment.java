@@ -3,6 +3,7 @@ package com.blueprint.ffandroid;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -40,6 +41,9 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     private TextView emailText;
     /** The TextView that holds the user's organization. */
     private TextView organizationText;
+    /** The rootview from the parent activity. */
+    private View rootView;
+    /** The MainActivity. */
     private MainActivity parent;
 
     /**
@@ -78,7 +82,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
 
 
 
-        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
+        rootView = inflater.inflate(R.layout.fragment_account, container, false);
         nameText = (TextView) rootView.findViewById(R.id.account_name);
         nameText.setText(name);
         emailText = (TextView) rootView.findViewById(R.id.account_email);
@@ -119,9 +123,15 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
      * Sets the fonts of the Buttons and TextViews in this fragment
      */
     private void setFonts(){
-        nameText.setTypeface(parent.myTypeface);
-        emailText.setTypeface(parent.myTypeface);
-        organizationText.setTypeface(parent.myTypeface);
+        Typeface tf = (parent.myTypeface);
+        nameText.setTypeface(tf);
+        emailText.setTypeface(tf);
+        organizationText.setTypeface(tf);
+        ((TextView) rootView.findViewById(R.id.account_name_header)).setTypeface(tf);
+        ((TextView) rootView.findViewById(R.id.account_email_header)).setTypeface(tf);
+        ((TextView) rootView.findViewById(R.id.account_organization_header)).setTypeface(tf);
+
+
     }
 
     /**
