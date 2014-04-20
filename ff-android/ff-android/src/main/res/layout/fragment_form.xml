@@ -34,6 +34,26 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/form_field_size"
+        android:id="@+id/phone_field"
+        android:inputType="number"
+        android:paddingLeft="@dimen/title_textview_horizontal"
+        android:singleLine="true"
+        android:hint="@string/phone_number" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_size"
+        android:id="@+id/finish_by"
+        android:paddingLeft="@dimen/title_textview_horizontal"
+        android:focusable="false"
+        android:hint="@string/finish_by_time" />
+
+
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_size"
         android:id="@+id/address_field"
         android:paddingLeft="@dimen/title_textview_horizontal"
         android:hint="@string/address" />
