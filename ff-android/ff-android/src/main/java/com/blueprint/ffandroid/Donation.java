@@ -252,9 +252,6 @@ public class Donation {
     /** Returns a JSONObject */
     public JSONObject toJSONObj() {
         try {
-            // Pickup date
-            // Pickup At
-            // input weight
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("pickupAt", JSONObject.NULL);
             jsonObj.put("pickupTime", getStartTime());
