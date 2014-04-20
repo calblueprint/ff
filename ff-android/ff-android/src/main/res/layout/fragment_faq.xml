@@ -4,18 +4,21 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:id="@+id/faq"
         android:layout_width="wrap_content"
         android:layout_height="56dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/faq"
         android:layout_gravity="center"/>
     <TextView
+        android:id="@+id/about_feeding_forward"
         android:layout_width="wrap_content"
         android:layout_height="56dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/faq_description"
         android:layout_gravity="left"/>
     <TextView
+        android:id="@+id/about_description"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
