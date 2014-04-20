@@ -40,7 +40,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     private TextView emailText;
     /** The TextView that holds the user's organization. */
     private TextView organizationText;
-    private Activity parent;
+    private MainActivity parent;
 
     /**
      * Use this factory method to create a new instance of
@@ -68,7 +68,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
         organization = prefs.getString("role", "");
         super.onCreate(savedInstanceState);
         System.out.println("Created account fragment!");
-        parent = getActivity();
+        parent = (MainActivity) getActivity();
     }
 
     @Override
@@ -85,6 +85,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
         emailText.setText(email);
         organizationText = (TextView) rootView.findViewById(R.id.account_organization);
         organizationText.setText(organization);
+        setFonts();
         return rootView;
     }
 
@@ -112,6 +113,15 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
             default:
                 break;
         }
+    }
+
+    /**
+     * Sets the fonts of the Buttons and TextViews in this fragment
+     */
+    private void setFonts(){
+        nameText.setTypeface(parent.myTypeface);
+        emailText.setTypeface(parent.myTypeface);
+        organizationText.setTypeface(parent.myTypeface);
     }
 
     /**
