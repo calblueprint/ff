@@ -7,6 +7,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Array;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -124,6 +126,11 @@ public class Donation {
 
     /** Returns the state the donation was made in. */
     public String getState() { return _state; }
+
+    private String getStartTime() {
+        DateFormat df = new SimpleDateFormat("MMMM/dd/yyyy hh:mm aaa");
+        return df.format(_startDate);
+    }
 
     /** Sets the DESCRIPTION. */
     public void setKind(String kind){
@@ -250,7 +257,7 @@ public class Donation {
             // input weight
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("pickupAt", JSONObject.NULL);
-            jsonObj.put("pickupTime", getStartDate().toString());
+            jsonObj.put("pickupTime", getStartTime());
             jsonObj.put("pickupDate", getStartDate().toString());
             jsonObj.put("weight", Double.toString(getWeight()));
             jsonObj.put("city", getCity());
