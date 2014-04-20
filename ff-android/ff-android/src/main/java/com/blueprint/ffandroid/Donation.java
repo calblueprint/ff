@@ -176,6 +176,21 @@ public class Donation {
     /** Sets the PHONENUMBER of the donation. */
     public void setPhoneNumber(String phoneNumber) { _phoneNumber = phoneNumber; }
 
+    private JSONObject getLocationJson() {
+        JSONObject locationJson = null;
+        try {
+            locationJson = new JSONObject();
+            locationJson.put("type", "Point");
+            ArrayList<Double> coordinates = new ArrayList<Double>(2);
+            coordinates.add(0, getLocation().getLatitude());
+            coordinates.add(1, getLocation().getLatitude());
+            locationJson.put("coordinates", coordinates);
+            locationJson.put("text", getAddress());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return locationJson;
+    }
     /** Checks if donation object is valid.
      * A donation is valid iff none of its fields violate a requirement.
      * */
@@ -235,15 +250,15 @@ public class Donation {
             // input weight
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("pickupAt", JSONObject.NULL);
-            jsonObj.put("pickupTime", "5pm"); //getStartDate().toString());
-            jsonObj.put("pickupDate", "02/14/14/");//getStartDate().toString());
-            jsonObj.put("weight", "1");//Double.toString(getWeight()));
-            jsonObj.put("city", "San Francisco");//getCity());
-            jsonObj.put("state", "CA");//getState());
-            jsonObj.put("kind", "20 Breakfast Burritos");//getKind());
-            jsonObj.put("address", "434 Ellis St.");//getAddress());
-            jsonObj.put("phone", "858-952-4845");//getPhoneNumber());
-            jsonObj.put("inputWeight", "1");//Double.toString(getWeight()));
+            jsonObj.put("pickupTime", getStartDate().toString());
+            jsonObj.put("pickupDate", getStartDate().toString());
+            jsonObj.put("weight", Double.toString(getWeight()));
+            jsonObj.put("city", getCity());
+            jsonObj.put("state", getState());
+            jsonObj.put("kind", getKind());
+            jsonObj.put("location", getLocationJson());
+            jsonObj.put("phone", getPhoneNumber());
+            jsonObj.put("inputWeight", Double.toString(getWeight()));
             return jsonObj;
         }
         catch(JSONException e) {
