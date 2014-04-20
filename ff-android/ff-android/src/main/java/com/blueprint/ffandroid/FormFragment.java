@@ -61,16 +61,24 @@ public class FormFragment extends Fragment implements View.OnClickListener,
     private EditText pickup_time_field;
     private EditText address_field;
     private Button pickup_button;
+    private EditText finish_by_field;
+    private EditText phone_field;
 
     private static final String url = "http://feeding-forever.herokuapp.com/api/pickups";
 
     /** The date the donation will be picked up. */
     private Date pickup_date;
 
+    /** The date and time the donation must be picked up by. */
+    private Date finish_by_date;
+
     /** Checks if date picker has been fired.
      * Related to a bug in dialog pickers in Android.
      */
     private boolean pickerFired;
+
+    /** The datepicker that was displayed. */
+    private int datePickerDisplayed;
 
     /** The ImageView that will appear on the screen. */
     private ImageView mImageView;
@@ -117,23 +125,33 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         if (donation.getLocation() != null) {
             address_field.setText(donation.getFullAddress());
         }
+        if (donation.getEndDate() != null) {
+            finish_by_field.setText(dateString(donation.getEndDate()));
+        }
+
     }
 
     public void setupFragment(View rootView) {
         ImageButton photo = (ImageButton) rootView.findViewById(R.id.camera_button);
 
         kind_field = (EditText) rootView.findViewById(R.id.donation_kind);
-        weight_field = (EditText) rootView.findViewById(R.id.donation_weight);
+        weight_field = (EditText) rootView.findViewById(R.id.donation_weight_field);
         pickup_time_field = (EditText) rootView.findViewById(R.id.pickup_time);
         address_field = (EditText) rootView.findViewById(R.id.address_field);
         pickup_button = (Button) rootView.findViewById(R.id.pickup_button);
+        finish_by_field = (EditText) rootView.findViewById(R.id.finish_by);
+        phone_field = (EditText) rootView.findViewById(R.id.phone_field);
 
         pickup_button.setOnClickListener(this);
-
         photo.setOnClickListener(this);
         pickup_time_field.setOnClickListener(this);
+        finish_by_field.setOnClickListener(this);
 
         pickup_date = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.HOUR_OF_DAY, 3);
+        finish_by_date = cal.getTime();
     }
 
     private String dateString(Date date) {
@@ -166,7 +184,14 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
     @Override
     public void onDateSet(DatePicker view, int year, int monthOfYear, int  dayOfMonth) {
-        pickup_date = new Date(year, monthOfYear, dayOfMonth);
+        switch (datePickerDisplayed) {
+            case R.id.finish_by:
+                finish_by_date = new Date(year, monthOfYear, dayOfMonth);
+                break;
+            case R.id.pickup_time:
+                pickup_date = new Date(year, monthOfYear, dayOfMonth);
+                break;
+        }
         if (!pickerFired) {
             pickerFired = true;
             showPickupTimeDialog();
@@ -181,11 +206,20 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        pickup_date.setMinutes(minute);
-        pickup_date.setHours(hourOfDay);
-
-        parent.donation.setStartDate(pickup_date);
-        pickup_time_field.setText(dateString(pickup_date));
+        switch (datePickerDisplayed) {
+            case R.id.finish_by:
+                finish_by_date.setMinutes(minute);
+                finish_by_date.setHours(hourOfDay);
+                parent.donation.setEndDate(finish_by_date);
+                finish_by_field.setText(dateString(finish_by_date));
+                break;
+            case R.id.pickup_time:
+                pickup_date.setMinutes(minute);
+                pickup_date.setHours(hourOfDay);
+                parent.donation.setStartDate(pickup_date);
+                pickup_time_field.setText(dateString(pickup_date));
+                break;
+        }
         pickerFired = false;
     }
 
@@ -241,21 +275,13 @@ public class FormFragment extends Fragment implements View.OnClickListener,
     }
 
     private boolean validateDonation() {
-        System.out.println(parent.donation.isValid());
         return parent.donation.isValid();
     }
 
     private void postDonation() {
         RequestQueue queue = Volley.newRequestQueue(parent);
-        JSONObject donationJson = parent.donation.toJSONObj();
-//        try {
-//            donationJson.put("access_token", parent.accessToken);
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
 
-
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url+"?access_token="+parent.accessToken, donationJson,
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url+"?access_token="+parent.accessToken, parent.donation.toJSONObj(),
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
@@ -280,6 +306,12 @@ public class FormFragment extends Fragment implements View.OnClickListener,
             case R.id.pickup_time:
                 pickerFired = false;
                 showPickupDateDialog();
+                datePickerDisplayed = R.id.pickup_time;
+                break;
+            case R.id.finish_by:
+                pickerFired = false;
+                showPickupDateDialog();
+                datePickerDisplayed = R.id.finish_by;
                 break;
             case R.id.pickup_button:
                 updateDonation();
