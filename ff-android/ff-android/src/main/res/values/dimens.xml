@@ -19,6 +19,8 @@
 
     <!-- Form Fragment -->
     <dimen name="form_field_size">56dp</dimen>
+    <dimen name="field_title_padding">10dp</dimen>
+    <dimen name="picture_height">150dp</dimen>
 
 
     <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
