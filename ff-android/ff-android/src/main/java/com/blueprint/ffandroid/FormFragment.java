@@ -63,6 +63,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
     private Button pickup_button;
     private EditText finish_by_field;
     private EditText phone_field;
+    private ImageView food_imageview;
 
     private static final String url = "http://feeding-forever.herokuapp.com/api/pickups";
 
@@ -141,6 +142,9 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         pickup_button = (Button) rootView.findViewById(R.id.pickup_button);
         finish_by_field = (EditText) rootView.findViewById(R.id.finish_by);
         phone_field = (EditText) rootView.findViewById(R.id.phone_field);
+        food_imageview = (ImageView) rootView.findViewById(R.id.image_banner);
+
+        food_imageview.setImageResource(R.drawable.hipster_food);
 
         pickup_button.setOnClickListener(this);
         photo.setOnClickListener(this);
@@ -172,7 +176,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
 
-            mImageView.setImageBitmap(imageBitmap);
+            food_imageview.setImageBitmap(imageBitmap);
         }
     }
 
