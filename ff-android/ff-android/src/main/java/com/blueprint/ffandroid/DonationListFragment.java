@@ -1,6 +1,7 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.support.v4.app.ListFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -168,11 +169,17 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         TextView donationStatus = (TextView) rowView.findViewById(R.id.status);
         Donation d = data[position];
         kind.setText(d.getKind());
+        MainActivity activity = (MainActivity) this.getContext();
+        Typeface tf = activity.myTypeface;
+        kind.setTypeface(tf);
         address.setText(d.getAddress());
+        address.setTypeface(tf);
         date.setText(d.getdateCreated().toString());
+        date.setTypeface(tf);
 
         String status = d.getStatus();
         donationStatus.setText(status);
+        donationStatus.setTypeface(tf);
 
         if (status.equals("complete")) {
             donationStatus.setTextColor(context.getResources().getColor(R.color.complete));
