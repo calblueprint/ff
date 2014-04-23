@@ -43,6 +43,7 @@ public class DonationListFragment extends ListFragment{
     private static String BASE_URL = "http://feeding-forever.herokuapp.com/api/pickups/?access_token=";
     private String token;
 
+
     public static DonationListFragment newInstance(){
        return new DonationListFragment();
     }
@@ -151,9 +152,12 @@ class DonationAdapter extends ArrayAdapter<Donation> {
 
     private Donation[] data;
     private Context context;
+    /** A Simple Date Formatter to make date strings more readable. */
+    private SimpleDateFormat sdf;
 
     public DonationAdapter(Context context, Donation[] data){
         super(context, R.layout.donation_table_row, data);
+        sdf = new SimpleDateFormat("EEE, MMM d, ''yy");
         this.data = data;
         this.context = context;
     }
@@ -174,9 +178,8 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         kind.setTypeface(tf);
         address.setText(d.getAddress());
         address.setTypeface(tf);
-        date.setText(d.getdateCreated().toString());
+        date.setText(sdf.format(d.getdateCreated()));
         date.setTypeface(tf);
-
         String status = d.getStatus();
         donationStatus.setText(status);
         donationStatus.setTypeface(tf);
