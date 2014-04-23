@@ -175,17 +175,17 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         donationStatus.setText(status);
 
         if (status.equals("complete")) {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.complete));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.complete));
         } else if (status.equals("canceled")) {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.canceled));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.canceled));
         } else if (status.equals("moving")) {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.moving));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.moving));
         } else if (status.equals("available")) {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.available));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.available));
         } else if (status.equals("claimed")) {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.claimed));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.claimed));
         } else {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.unknown));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.unknown));
         }
 
         return rowView;
