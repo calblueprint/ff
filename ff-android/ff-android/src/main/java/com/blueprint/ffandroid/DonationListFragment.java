@@ -1,6 +1,7 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.support.v4.app.ListFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -41,6 +42,7 @@ public class DonationListFragment extends ListFragment{
     private static RequestQueue queue;
     private static String BASE_URL = "http://feeding-forever.herokuapp.com/api/pickups/?access_token=";
     private String token;
+
 
     public static DonationListFragment newInstance(){
        return new DonationListFragment();
@@ -150,9 +152,12 @@ class DonationAdapter extends ArrayAdapter<Donation> {
 
     private Donation[] data;
     private Context context;
+    /** A Simple Date Formatter to make date strings more readable. */
+    private SimpleDateFormat sdf;
 
     public DonationAdapter(Context context, Donation[] data){
         super(context, R.layout.donation_table_row, data);
+        sdf = new SimpleDateFormat("EEE, MMM d, ''yy");
         this.data = data;
         this.context = context;
     }
@@ -168,24 +173,29 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         TextView donationStatus = (TextView) rowView.findViewById(R.id.status);
         Donation d = data[position];
         kind.setText(d.getKind());
+        MainActivity activity = (MainActivity) this.getContext();
+        Typeface tf = activity.myTypeface;
+        kind.setTypeface(tf);
         address.setText(d.getAddress());
-        date.setText(d.getdateCreated().toString());
-
+        address.setTypeface(tf);
+        date.setText(sdf.format(d.getdateCreated()));
+        date.setTypeface(tf);
         String status = d.getStatus();
         donationStatus.setText(status);
+        donationStatus.setTypeface(tf);
 
         if (status.equals("complete")) {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.complete));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.complete));
         } else if (status.equals("canceled")) {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.canceled));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.canceled));
         } else if (status.equals("moving")) {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.moving));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.moving));
         } else if (status.equals("available")) {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.available));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.available));
         } else if (status.equals("claimed")) {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.claimed));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.claimed));
         } else {
-            donationStatus.setBackgroundColor(context.getResources().getColor(R.color.unknown));
+            donationStatus.setTextColor(context.getResources().getColor(R.color.unknown));
         }
 
         return rowView;
