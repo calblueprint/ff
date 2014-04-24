@@ -30,6 +30,7 @@
     <string name="faq_link">Feeding Forward Website</string>
 
 
+
     <string name="GEOCODER_API_KEY">AIzaSyCnJmnYV5n961YR8DYSOivhsPdx76Zp0lY</string>
 
     <!-- Location Fragment -->
@@ -117,5 +118,13 @@
     <!--Fonts -->
     <string name="proxima_nova_regular">fonts/Mark Simonson - Proxima Nova Alt Regular.otf</string>
     <string name="proxima_nova_light">fonts/Mark Simonson - Proxima Nova Alt Light.otf</string>
+
+    <!--Long Text -->
+    <string name="faq_description_text">Feeding Forward lets you donate your
+        excess food to local organizations serving the hungry. Just let us know
+        what it is and how much and we will work on getting it picked up and
+        delivered to someone ASAP. (Available in San Francisco and Oakland, CA)</string>
+
+
 
 </resources>

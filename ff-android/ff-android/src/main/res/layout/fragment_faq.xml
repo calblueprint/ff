@@ -19,11 +19,11 @@
         android:layout_gravity="left"/>
     <TextView
         android:id="@+id/about_description"
-        android:layout_width="wrap_content"
-        android:layout_height="28dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/faq_description"
-        android:layout_gravity="left"/>
+        android:text="@string/faq_description_text"
+        android:layout_gravity="center"/>
     <Button
         android:id="@+id/ff_link"
         android:layout_width="200dp"
