@@ -5,38 +5,39 @@
     android:orientation="vertical"
     tools:context="com.blueprint.ffandroid.FormFragment">
 
-    <RelativeLayout android:layout_width="match_parent"
-        android:layout_height="@dimen/picture_height">
-
-
-        <ImageView
-            android:id="@+id/image_banner"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
-
-
-        <ImageButton
-            android:id="@+id/camera_button"
-            android:layout_width="@dimen/form_field_size"
-            android:layout_height="@dimen/form_field_size"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/location_margin"
-            android:background="@drawable/green_button"
-            android:src="@android:drawable/ic_menu_camera"
-            android:text="@string/photo"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
-
-    </RelativeLayout>
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/scrollview" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="@dimen/picture_height">
+
+
+                <ImageView
+                    android:id="@+id/image_banner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+
+                <ImageButton
+                    android:id="@+id/camera_button"
+                    android:layout_width="@dimen/form_field_size"
+                    android:layout_height="@dimen/form_field_size"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/location_margin"
+                    android:background="@drawable/green_button"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:text="@string/photo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
