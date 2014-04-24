@@ -19,7 +19,9 @@
         android:layout_gravity="left"/>
     <TextView
         android:id="@+id/about_description"
-        android:layout_width="300dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/faq_description_text"
