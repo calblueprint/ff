@@ -191,6 +191,7 @@
             
             // Configure dashbaord
             self.navDrawerController = [[Dashboard sharedDashboard] instantiateNavDrawerControllerWithUser:user];
+            [self.navDrawerController setModuleCoordinator:self];
             MMDrawerController *drawerController = [[MMDrawerController alloc]
                                                     initWithCenterViewController:[self.navDrawerController.viewControllers objectAtIndex:0]
                                                     leftDrawerViewController:self.navDrawerController];

@@ -11,9 +11,8 @@
 #import "PostDonationModuleController.h"
 #import "PastDonationsModuleController.h"
 #import "AccountModuleController.h"
-#import "NavDrawerController.h"
 
-@class AppDelegate, FFDataUser, FFError;
+@class AppDelegate, FFDataUser, FFError, NavDrawerController;
 
 @interface ModuleCoordinator : NSObject <PostDonationModuleControllerDelegate, PastDonationsModuleControllerDelegate, AccountModuleControllerDelegate>
 
