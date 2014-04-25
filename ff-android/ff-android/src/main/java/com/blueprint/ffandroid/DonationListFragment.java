@@ -40,8 +40,8 @@ import java.util.Locale;
 public class DonationListFragment extends ListFragment{
 
     private static RequestQueue queue;
-    private static String BASE_URL = "http://feeding-forever.herokuapp.com/api/pickups/?access_token=";
     private String token;
+    private static SimpleDateFormat inputDateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
 
 
     public static DonationListFragment newInstance(){
@@ -66,11 +66,10 @@ public class DonationListFragment extends ListFragment{
         this.token = prefs.getString("token", "None");
         this.queue = Volley.newRequestQueue(getActivity());
 
-        JsonArrayRequest request = new JsonArrayRequest(BASE_URL + token,
+        JsonArrayRequest request = new JsonArrayRequest(getString(R.string.pickup_list_url) + token,
             new Response.Listener<JSONArray>() {
                 @Override
                 public void onResponse(JSONArray jsonArray) {
-//                    ArrayList<Donation> data = new ArrayList<Donation>(jsonArray.length());
                     Donation[] data = new Donation[jsonArray.length()];
 
                     try{
@@ -81,7 +80,7 @@ public class DonationListFragment extends ListFragment{
                             donation.setKind(jsonObject.getString("kind"));
                             donation.setStatus(jsonObject.getString("status"));
                             String dateString = jsonObject.getString("createdAt");
-                            donation.setDateCreated(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH).parse(dateString));
+                            donation.setDateCreated(inputDateFormat.parse(dateString));
                             data[i] = donation;
 
                         }
