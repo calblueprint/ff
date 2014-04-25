@@ -5,9 +5,10 @@
     android:orientation="vertical"
     tools:context="com.blueprint.ffandroid.FormFragment">
 
-    <ScrollView
+    <com.blueprint.ffandroid.FFScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="always"
         android:id="@+id/scrollview" >
 
         <LinearLayout
@@ -16,13 +17,15 @@
             android:orientation="vertical">
 
             <RelativeLayout android:layout_width="match_parent"
-                android:layout_height="@dimen/picture_height">
+                android:layout_height="@dimen/picture_height"
+                android:id="@+id/image_header_layout">
 
 
                 <ImageView
                     android:id="@+id/image_banner"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"/>
 
 
                 <ImageButton
@@ -259,7 +262,7 @@
                 android:text="@string/pickup_button" />
 
             </LinearLayout>
-        </ScrollView>
+        </com.blueprint.ffandroid.FFScrollView>
 
 
 
