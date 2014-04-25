@@ -1,5 +1,6 @@
 package com.blueprint.ffandroid;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -18,6 +19,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -48,7 +51,7 @@ import java.util.Map;
  */
 public class FormFragment extends Fragment implements View.OnClickListener,
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener,
-        View.OnFocusChangeListener {
+        View.OnFocusChangeListener, FFScrollView.OnScrollViewListener {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -63,7 +66,12 @@ public class FormFragment extends Fragment implements View.OnClickListener,
     private Button pickup_button;
     private EditText finish_by_field;
     private EditText phone_field;
+
     private ImageView food_imageview;
+    private FFScrollView scrollView;
+    private RelativeLayout imageHeader;
+
+    private int imageHeight;
 
     private static final String url = "http://feeding-forever.herokuapp.com/api/pickups";
 
@@ -80,9 +88,6 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
     /** The datepicker that was displayed. */
     private int datePickerDisplayed;
-
-    /** The ImageView that will appear on the screen. */
-    private ImageView mImageView;
 
     public FormFragment() {
         // Required empty public constructor
@@ -101,8 +106,6 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_form, container, false);
-
-        mImageView = (ImageView) rootView.findViewById(R.id.photo_imageview);
         parent = (MainActivity) getActivity();
         setupFragment(rootView);
 
@@ -129,7 +132,6 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         if (donation.getEndDate() != null) {
             finish_by_field.setText(dateString(donation.getEndDate()));
         }
-
     }
 
     public void setupFragment(View rootView) {
@@ -143,8 +145,13 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         finish_by_field = (EditText) rootView.findViewById(R.id.finish_by);
         phone_field = (EditText) rootView.findViewById(R.id.phone_field);
         food_imageview = (ImageView) rootView.findViewById(R.id.image_banner);
+        scrollView = (FFScrollView) rootView.findViewById(R.id.scrollview);
+        imageHeader = (RelativeLayout) rootView.findViewById(R.id.image_header_layout);
+
+        scrollView.setScrollViewListener(this);
 
         food_imageview.setImageResource(R.drawable.hipster_food);
+        imageHeight = 300;//(int) getResources().getDimension(R.dimen.picture_height);
 
         pickup_button.setOnClickListener(this);
         photo.setOnClickListener(this);
@@ -156,6 +163,17 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         cal.setTime(new Date());
         cal.add(Calendar.HOUR_OF_DAY, 3);
         finish_by_date = cal.getTime();
+    }
+
+    public void onScrollChanged(FFScrollView v, int l, int t, int oldl, int oldt) {
+        if (t <= 0) {
+            ViewGroup.LayoutParams params = imageHeader.getLayoutParams();
+            params.height = imageHeight + (int) Math.sqrt(-100 * t);
+            imageHeader.setLayoutParams(params);
+            System.out.println("change: " + t);
+            System.out.println("height: " + (imageHeight + (-10 * t)));
+        }
+
     }
 
     private String dateString(Date date) {
@@ -284,6 +302,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
     private void postDonation() {
         RequestQueue queue = Volley.newRequestQueue(parent);
+        System.out.println(parent.donation.toJSON());
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url+"?access_token="+parent.accessToken, parent.donation.toJSONObj(),
                 new Response.Listener<JSONObject>() {
