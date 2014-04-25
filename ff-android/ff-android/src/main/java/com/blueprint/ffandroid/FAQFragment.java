@@ -4,27 +4,26 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.support.v4.app.Fragment;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 
 public class FAQFragment extends Fragment {
 
     /** The button that links to the feeding forward. */
     Button link;
-    /** The title of the FAQ Fragment.*/
-    TextView faq;
     /** The About Feeding Forward Header. */
     TextView faqHeader;
     /** The short description of Feeding Forward. */
     TextView faqDescription;
+    /** The header for The Blueprint Link. */
+    TextView bpHeader;
 
     public static FAQFragment newInstance() {
         FAQFragment fragment = new FAQFragment();
@@ -43,7 +42,7 @@ public class FAQFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_faq, container, false);
-        Button link = (Button) rootView.findViewById(R.id.ff_link);
+        link = (Button) rootView.findViewById(R.id.ff_link);
         link.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -56,7 +55,20 @@ public class FAQFragment extends Fragment {
             }
 
         });
-        faq = (TextView) rootView.findViewById(R.id.faq);
+        ImageButton blueprintLink = (ImageButton) rootView.findViewById(R.id.cal_blueprint_button);
+        blueprintLink.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent browserIntent =
+                        new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.calblueprint.org"));
+                startActivity(browserIntent);
+
+            }
+
+        });
+        bpHeader = (TextView) rootView.findViewById(R.id.created_by_cal_blueprint);
         faqHeader = (TextView) rootView.findViewById(R.id.about_feeding_forward);
         faqDescription = (TextView) rootView.findViewById(R.id.about_description);
         setFonts();
@@ -69,9 +81,10 @@ public class FAQFragment extends Fragment {
     private void setFonts(){
         MainActivity parent = (MainActivity)this.getActivity();
         Typeface tf = parent.myTypeface;
-        faq.setTypeface(tf);
         faqHeader.setTypeface(tf);
         faqDescription.setTypeface(tf);
+        link.setTypeface(tf);
+        bpHeader.setTypeface(tf);
 
     }
 }

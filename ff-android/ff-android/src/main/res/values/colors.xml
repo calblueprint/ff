@@ -28,4 +28,5 @@
     <color name="moving">#f1c40f</color>
     <color name="available">#d35400</color>
     <color name="unknown">#2980B9</color>
+    <color name="transparent">#00000000</color>
 </resources>
