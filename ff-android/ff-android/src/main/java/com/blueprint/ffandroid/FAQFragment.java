@@ -26,6 +26,8 @@ public class FAQFragment extends Fragment {
     TextView faqHeader;
     /** The short description of Feeding Forward. */
     TextView faqDescription;
+    /** The header for The Blueprint Link. */
+    TextView bpHeader;
 
     public static FAQFragment newInstance() {
         FAQFragment fragment = new FAQFragment();
@@ -44,7 +46,7 @@ public class FAQFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_faq, container, false);
-        Button link = (Button) rootView.findViewById(R.id.ff_link);
+        link = (Button) rootView.findViewById(R.id.ff_link);
         link.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -70,6 +72,7 @@ public class FAQFragment extends Fragment {
             }
 
         });
+        bpHeader = (TextView) rootView.findViewById(R.id.created_by_cal_blueprint);
         faq = (TextView) rootView.findViewById(R.id.faq);
         faqHeader = (TextView) rootView.findViewById(R.id.about_feeding_forward);
         faqDescription = (TextView) rootView.findViewById(R.id.about_description);
@@ -86,6 +89,8 @@ public class FAQFragment extends Fragment {
         faq.setTypeface(tf);
         faqHeader.setTypeface(tf);
         faqDescription.setTypeface(tf);
+        link.setTypeface(tf);
+        bpHeader.setTypeface(tf);
 
     }
 }
