@@ -3,6 +3,7 @@ package com.blueprint.ffandroid;
 import android.graphics.Picture;
 import android.location.Location;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -188,9 +189,9 @@ public class Donation {
         try {
             locationJson = new JSONObject();
             locationJson.put("type", "Point");
-            ArrayList<Double> coordinates = new ArrayList<Double>(2);
-            coordinates.add(0, getLocation().getLatitude());
-            coordinates.add(1, getLocation().getLatitude());
+            JSONArray coordinates = new JSONArray();
+            coordinates.put(getLocation().getLatitude());
+            coordinates.put(getLocation().getLatitude());
             locationJson.put("coordinates", coordinates);
             locationJson.put("text", getAddress());
         } catch (JSONException e) {
@@ -254,11 +255,8 @@ public class Donation {
         try {
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("pickupAt", JSONObject.NULL);
-            jsonObj.put("pickupTime", getStartTime());
-            jsonObj.put("pickupDate", getStartDate().toString());
+            jsonObj.put("finishBy", getEndDate().toString());
             jsonObj.put("weight", Double.toString(getWeight()));
-            jsonObj.put("city", getCity());
-            jsonObj.put("state", getState());
             jsonObj.put("kind", getKind());
             jsonObj.put("location", getLocationJson());
             jsonObj.put("phone", getPhoneNumber());
