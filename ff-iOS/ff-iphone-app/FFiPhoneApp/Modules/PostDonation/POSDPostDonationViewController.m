@@ -382,9 +382,45 @@ static NSString * const kDonationDescriptionPlaceholder = @"Add A Description Or
     // Disable user interaction on all buttons
 	if (textField == self.selectKindField) {
     textField.text = self.selectKindButton.titleLabel.text;
+		NSString *tag = [NSString stringWithFormat:@"%d", self.selectKindButton.tag];
+		((UILabel *)[self.buttonLabelCollection objectForKey:tag]).text = @"";
 	} else if (textField == self.selectDonationAmountField) {
 		textField.text = self.selectWeightButton.titleLabel.text;
+		NSString *tag = [NSString stringWithFormat:@"%d", self.selectWeightButton.tag];
+		((UILabel *)[self.buttonLabelCollection objectForKey:tag]).text = @"";
+		
+		// Show a confirm button
+		UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+    numberToolbar.barStyle = UIBarStyleDefault;
+		
+    numberToolbar.items = [NSArray arrayWithObjects:
+													 [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],
+													 [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+													 [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
+													 nil];
+    [numberToolbar sizeToFit];
+    textField.inputAccessoryView = numberToolbar;
+
 	}
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+	NSUInteger newLength = [textField.text length] + [string length] - range.length;
+	if (textField == self.selectDonationAmountField) {
+		return (newLength > 10) ? NO : YES;
+	} else {
+		return (newLength > 30) ? NO : YES;
+	}
+}
+
+-(void)cancelNumberPad{
+	[self.selectDonationAmountField resignFirstResponder];
+	self.selectDonationAmountField.text = @"";
+}
+
+-(void)doneWithNumberPad{
+//	NSString *num = self.selectDonationAmountField.text;
+	[self.selectDonationAmountField resignFirstResponder];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField

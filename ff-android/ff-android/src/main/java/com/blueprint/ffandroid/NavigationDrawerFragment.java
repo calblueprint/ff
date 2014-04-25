@@ -3,6 +3,7 @@ package com.blueprint.ffandroid;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -11,6 +12,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-;
+;import java.util.ArrayList;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -57,6 +59,9 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
+    private static final String TAG = "NavigationDrawerFragment";
+    private MainActivity parent;
+
     public NavigationDrawerFragment() {
     }
 
@@ -76,6 +81,7 @@ public class NavigationDrawerFragment extends Fragment {
 
         // Select either the default item (0) or the last selected item.
         selectItem(mCurrentSelectedPosition);
+        parent = (MainActivity) this.getActivity();
     }
 
     @Override
@@ -96,10 +102,9 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(
+        Typeface tf = Typeface.createFromAsset(parent.getAssets(), "fonts/proxima_nova_regular.otf");
+        mDrawerListView.setAdapter(new ListAdapter(
                 getActionBar().getThemedContext(),
-                android.R.layout.simple_list_item_1,
-                android.R.id.text1,
                 new String[]{
                         getString(R.string.donation_start),
                         getString(R.string.donation_list),
@@ -107,7 +112,7 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.faq),
                         getString(R.string.logout),
                         getString(R.string.congratulations)
-                }));
+                }, tf));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }
