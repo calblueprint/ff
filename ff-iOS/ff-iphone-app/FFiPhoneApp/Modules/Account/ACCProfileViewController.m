@@ -15,6 +15,11 @@
 @interface ACCProfileViewController ()
 
 @property (strong, nonatomic) FFDataUser *user;
+@property (strong, nonatomic) IBOutlet UILabel *leftLabelName;
+@property (strong, nonatomic) IBOutlet UILabel *leftLabelEmail;
+@property (strong, nonatomic) IBOutlet UILabel *leftLabelPhone;
+@property (strong, nonatomic) IBOutlet UILabel *leftLabelOrganization;
+
 @property (strong, nonatomic) IBOutlet UILabel *labelFullName;
 @property (strong, nonatomic) IBOutlet UILabel *labelEmail;
 @property (strong, nonatomic) IBOutlet UILabel *labelMobilePhoneNumber;
@@ -34,15 +39,30 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    //Font used for labels
+    UIFont *labelFont = [UIFont fontWithName:@"ProximaNovaA-Regular" size:16.0];
+    UIFont *leftLabelFont = [UIFont fontWithName:@"ProximaNovaA-Regular" size:13.0];
+    [self.leftLabelName setFont:leftLabelFont];
+    [self.leftLabelEmail setFont:leftLabelFont];
+    [self.leftLabelPhone setFont:leftLabelFont];
+    [self.leftLabelOrganization setFont:leftLabelFont];
+    
     [self.switchSettingShareDonationPopup setOn:[[[NSUserDefaults standardUserDefaults] valueForKey:kUserDefaultsShareDonationPopupKey] boolValue]];
     
     [self setUser:self.moduleController.user];
 
     [self.labelFullName setText:self.user.fullName];
-    [self.labelEmail setText:self.user.email];
-    [self.labelMobilePhoneNumber setText:self.user.mobilePhoneNumber];
-    [self.labelOrganization setText:self.user.organization];
     self.labelFullName.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:20];
+    
+    [self.labelEmail setText:self.user.email];
+    [self.labelEmail setFont:labelFont];
+    
+    [self.labelMobilePhoneNumber setText:self.user.mobilePhoneNumber];
+    [self.labelMobilePhoneNumber setFont:labelFont];
+    
+    [self.labelOrganization setText:self.user.organization];
+    [self.labelOrganization setFont:labelFont];
+    
     
     [self.menuButton setImage:[UIImage imageNamed:@"menu.png"]];
     [self.menuButton setTintColor:[UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:0.65]];
