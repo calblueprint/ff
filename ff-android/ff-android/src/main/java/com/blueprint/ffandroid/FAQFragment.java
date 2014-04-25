@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.support.v4.app.Fragment;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -51,6 +52,19 @@ public class FAQFragment extends Fragment {
 
                 Intent browserIntent =
                         new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.feedingforward.com"));
+                startActivity(browserIntent);
+
+            }
+
+        });
+        ImageButton blueprintLink = (ImageButton) rootView.findViewById(R.id.cal_blueprint_button);
+        blueprintLink.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent browserIntent =
+                        new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.calblueprint.org"));
                 startActivity(browserIntent);
 
             }

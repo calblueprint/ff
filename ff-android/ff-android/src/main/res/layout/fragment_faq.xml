@@ -44,6 +44,7 @@
         android:text="@string/created_by_cal_blueprint"
         android:layout_gravity="left"/>
     <ImageButton
+        android:id="@+id/cal_blueprint_button"
         android:src="@drawable/ic_blueprint_paw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
