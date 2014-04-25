@@ -4,24 +4,20 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.support.v4.app.Fragment;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 
 public class FAQFragment extends Fragment {
 
     /** The button that links to the feeding forward. */
     Button link;
-    /** The title of the FAQ Fragment.*/
-    TextView faq;
     /** The About Feeding Forward Header. */
     TextView faqHeader;
     /** The short description of Feeding Forward. */
@@ -73,7 +69,6 @@ public class FAQFragment extends Fragment {
 
         });
         bpHeader = (TextView) rootView.findViewById(R.id.created_by_cal_blueprint);
-        faq = (TextView) rootView.findViewById(R.id.faq);
         faqHeader = (TextView) rootView.findViewById(R.id.about_feeding_forward);
         faqDescription = (TextView) rootView.findViewById(R.id.about_description);
         setFonts();
@@ -86,7 +81,6 @@ public class FAQFragment extends Fragment {
     private void setFonts(){
         MainActivity parent = (MainActivity)this.getActivity();
         Typeface tf = parent.myTypeface;
-        faq.setTypeface(tf);
         faqHeader.setTypeface(tf);
         faqDescription.setTypeface(tf);
         link.setTypeface(tf);
