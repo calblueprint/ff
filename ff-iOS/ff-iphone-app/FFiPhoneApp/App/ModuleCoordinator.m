@@ -122,7 +122,8 @@
                         [self loadUserDataWithCompletion:^(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations) {
                             
                             // Configure dashbaord
-                            self.tabBarController = [[Dashboard sharedDashboard] tabBarControllerWithUpdatedUser:user];
+                            //self.tabBarController = [[Dashboard sharedDashboard] tabBarControllerWithUpdatedUser:user];
+                            self.navDrawerController = [[Dashboard sharedDashboard] navDrawerControllerWithUpdatedUser:user];
 
                             // Dismiss login view
                             [self.appDelegate.window.rootViewController dismissViewControllerAnimated:YES completion:^{
@@ -190,6 +191,7 @@
             
             // Configure dashbaord
             self.navDrawerController = [[Dashboard sharedDashboard] instantiateNavDrawerControllerWithUser:user];
+            [self.navDrawerController setModuleCoordinator:self];
             MMDrawerController *drawerController = [[MMDrawerController alloc]
                                                     initWithCenterViewController:[self.navDrawerController.viewControllers objectAtIndex:0]
                                                     leftDrawerViewController:self.navDrawerController];
@@ -203,6 +205,7 @@
             //[drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
             [self.navDrawerController setMmDrawerController:drawerController];
             [[Dashboard sharedDashboard].postDonationModuleController setMmDrawerController:drawerController];
+            [[Dashboard sharedDashboard].accountModuleController setMmDrawerController:drawerController];
             // TODO: Set MmDrawerController pointer for all module coordinators
 
             [UIView transitionFromView:self.appDelegate.window.rootViewController.view
@@ -291,7 +294,8 @@
     [self.userDefaults synchronize];
     [[FFAPIClient sharedClient] setAPIAuthToken:nil];
     
-    self.tabBarController = [dashboard tabBarControllerWithUpdatedUser:nil];
+    //self.tabBarController = [dashboard tabBarControllerWithUpdatedUser:nil];
+    self.navDrawerController = [dashboard navDrawerControllerWithUpdatedUser:nil];
 }
 
 #pragma mark - AuthenticationModuleController called methods
@@ -352,7 +356,7 @@
     Dashboard *dashboard = [Dashboard sharedDashboard];
     
     // Switch tab to Active Donations
-    dashboard.tabBarController.selectedIndex = 1;
+    //dashboard.tabBarController.selectedIndex = 1;
 
     // Delay adding new donation to allow row animation on Active Donations's table view
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
@@ -360,7 +364,8 @@
     });
     
     // Reset Post Donation form
-    self.tabBarController = [dashboard tabBarControllerWithReloadedPostDonationView];
+    //self.tabBarController = [dashboard tabBarControllerWithReloadedPostDonationView];
+    self.navDrawerController = [dashboard navDrawerControllerWithReloadedPostDonationView];
 }
 
 - (void)            didPostDonation:(FFDataDonation *)donation
@@ -398,7 +403,8 @@
         UIViewController *shareDonationViewController = [socialShareModuleController instantiateShareDonationViewController];
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
-            [dashboard.tabBarController presentViewController:shareDonationViewController animated:YES completion:nil];
+            //[dashboard.tabBarController presentViewController:shareDonationViewController animated:YES completion:nil];
+            [dashboard.navDrawerController presentViewController:shareDonationViewController animated:YES completion:nil];
         });
     }
 }
