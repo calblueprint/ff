@@ -8,6 +8,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
@@ -17,12 +19,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -167,13 +171,27 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
     public void onScrollChanged(FFScrollView v, int l, int t, int oldl, int oldt) {
         if (t <= 0) {
-            ViewGroup.LayoutParams params = imageHeader.getLayoutParams();
-            params.height = imageHeight + (int) Math.sqrt(-100 * t);
-            imageHeader.setLayoutParams(params);
-            System.out.println("change: " + t);
-            System.out.println("height: " + (imageHeight + (-10 * t)));
+            updateImageView(t * -1);
         }
+    }
 
+    private void updateImageView(int t) {
+
+//        Handler uiHandler = new Handler(Looper.getMainLooper());
+//
+//        final int delta = t;
+//        uiHandler.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                RelativeLayout.LayoutParams layout = (RelativeLayout.LayoutParams) food_imageview.getLayoutParams();
+//                layout.height = (imageHeight + (delta * 10));
+//                food_imageview.setLayoutParams(layout);
+//            }
+//        });
+//        
+//        RelativeLayout.LayoutParams layout = (RelativeLayout.LayoutParams) food_imageview.getLayoutParams();
+//        layout.height = imageHeight + (delta * 10);
+//        food_imageview.setLayoutParams(layout);
     }
 
     private String dateString(Date date) {
