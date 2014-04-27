@@ -228,7 +228,7 @@ public class Donation {
         }
 
         // Requirement 2
-        if (_weight < 1 || _weight > 500) {
+        if (_weight <= 1 || _weight >= 500) {
             errors[1] = 1;
         }
 
