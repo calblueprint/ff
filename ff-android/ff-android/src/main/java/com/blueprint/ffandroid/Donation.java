@@ -234,12 +234,12 @@ public class Donation {
 
         // Requirement 3
         if (_startDate == null || _startDate.after(new Date())) {
-            errors[1] = 1;
+            errors[2] = 1;
         }
 
         // Requirement 4
         if (_kind.length() == 0) {
-            errors[1] = 1;
+            errors[3] = 1;
         }
 
         return errors;
