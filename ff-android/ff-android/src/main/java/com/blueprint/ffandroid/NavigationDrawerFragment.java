@@ -12,6 +12,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -175,7 +177,10 @@ public class NavigationDrawerFragment extends Fragment {
 
                 getActivity().supportInvalidateOptionsMenu(); // calls onPrepareOptionsMenu()
                 ActionBar actionBar = getActionBar();
-                actionBar.setTitle("Feeding Forward");
+                SpannableString s = new SpannableString("Food Finder");
+                s.setSpan(new TypefaceSpan(parent, "myTypeface"), 0, s.length(),
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                actionBar.setTitle(s);
             }
         };
 
