@@ -14,6 +14,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -62,7 +63,7 @@ import java.util.Map;
 public class FormFragment extends Fragment implements View.OnClickListener,
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener,
         View.OnFocusChangeListener, FFScrollView.OnScrollViewListener,
-        View.OnTouchListener, View.OnKeyListener {
+        View.OnTouchListener {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -163,7 +164,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         scrollView = (FFScrollView) rootView.findViewById(R.id.scrollview);
         imageHeader = (RelativeLayout) rootView.findViewById(R.id.image_header_layout);
 
-        phone_field.setOnKeyListener(this);
+        phone_field.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
 
         scrollView.setScrollViewListener(this);
 
@@ -246,16 +247,6 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 //        RelativeLayout.LayoutParams layout = (RelativeLayout.LayoutParams) food_imageview.getLayoutParams();
 //        layout.height = imageHeight + (delta * 10);
 //        food_imageview.setLayoutParams(layout);
-    }
-
-    @Override
-    public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-        switch (v.getId()) {
-            case R.id.phone_field:
-                s
-        }
-        return false;
     }
 
     @Override

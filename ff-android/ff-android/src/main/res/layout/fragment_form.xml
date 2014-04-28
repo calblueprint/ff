@@ -227,7 +227,7 @@
                     android:background="@android:color/transparent"
                     android:paddingLeft="@dimen/field_title_padding"
                     android:inputType="phone"
-                    android:maxLength="11"
+                    android:maxLength="14"
                     android:hint="@string/phone_number" />
             </RelativeLayout>
 
