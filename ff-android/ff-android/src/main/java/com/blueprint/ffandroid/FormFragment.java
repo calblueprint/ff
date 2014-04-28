@@ -12,8 +12,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -55,7 +57,8 @@ import java.util.Map;
  */
 public class FormFragment extends Fragment implements View.OnClickListener,
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener,
-        View.OnFocusChangeListener, FFScrollView.OnScrollViewListener {
+        View.OnFocusChangeListener, FFScrollView.OnScrollViewListener,
+        View.OnTouchListener {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -74,6 +77,9 @@ public class FormFragment extends Fragment implements View.OnClickListener,
     private ImageView food_imageview;
     private FFScrollView scrollView;
     private RelativeLayout imageHeader;
+    private TextView releaseTextView;
+
+    private boolean showImage;
 
     private int imageHeight;
 
@@ -155,7 +161,11 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         scrollView.setScrollViewListener(this);
 
         food_imageview.setImageResource(R.drawable.hipster_food);
-        imageHeight = 300;//(int) getResources().getDimension(R.dimen.picture_height);
+        //imageHeight = (int) getResources().getDimension(R.dimen.picture_height);
+
+        scrollToView(imageHeader);
+
+        rootView.setOnTouchListener(this);
 
         pickup_button.setOnClickListener(this);
         photo.setOnClickListener(this);
@@ -170,9 +180,24 @@ public class FormFragment extends Fragment implements View.OnClickListener,
     }
 
     public void onScrollChanged(FFScrollView v, int l, int t, int oldl, int oldt) {
+        showImage = false;
         if (t <= 0) {
             updateImageView(t * -1);
+            if (t < -80) {
+                // open photo view
+                showImage = true;
+            }
         }
+    }
+
+    private final void scrollToView(View view){
+        final View v = view;
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, v.getTop());
+            }
+        });
     }
 
     private void updateImageView(int t) {
@@ -192,6 +217,17 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 //        RelativeLayout.LayoutParams layout = (RelativeLayout.LayoutParams) food_imageview.getLayoutParams();
 //        layout.height = imageHeight + (delta * 10);
 //        food_imageview.setLayoutParams(layout);
+    }
+
+
+    @Override
+    public boolean onTouch(View view, MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_UP) {
+            if (showImage) {
+                System.out.println("show the image");
+            }
+        }
+        return true;
     }
 
     private String dateString(Date date) {
@@ -320,7 +356,6 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
     private void postDonation() {
         RequestQueue queue = Volley.newRequestQueue(parent);
-        System.out.println(parent.donation.toJSON());
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url+"?access_token="+parent.accessToken, parent.donation.toJSONObj(),
                 new Response.Listener<JSONObject>() {
