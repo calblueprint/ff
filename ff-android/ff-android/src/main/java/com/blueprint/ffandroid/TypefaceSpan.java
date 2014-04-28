@@ -5,6 +5,7 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
+import android.util.Log;
 import android.util.LruCache;
 
 /**
@@ -23,6 +24,9 @@ public class TypefaceSpan extends MetricAffectingSpan{
         if (tf == null) {
             MainActivity parent = (MainActivity) context;
             tf = parent.myTypeface;
+            Log.i("TypefaceSpan", tf + "");
+            Log.i("TypefaceSpan", typefaceName);
+
             typefaceCache.put(typefaceName, tf);
         }
     }
