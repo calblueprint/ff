@@ -30,7 +30,7 @@
         android:text="@string/faq_link"
         android:textColor="@color/white"
         android:layout_gravity="center"
-        android:background="@drawable/green_button"
+        android:background="@drawable/bp_button"
         android:layout_marginTop="20dp" />
     <TextView
         android:id="@+id/created_by_cal_blueprint"
