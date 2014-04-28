@@ -135,21 +135,17 @@ public class Donation implements Comparable<Donation>{
     /** Returns the state the donation was made in. */
     public String getState() { return _state; }
 
-<<<<<<< HEAD
     private String getStartTime() {
         DateFormat df = new SimpleDateFormat("MMMM/dd/yyyy hh:mm aaa");
         return df.format(_startDate);
     }
 
-||||||| merged common ancestors
-=======
     /** Returns the status of the donation. */
     public String getStatus() { return _status;}
 
     /** Returns the date the donation was created. */
     public Date getdateCreated() { return _dateCreated; }
 
->>>>>>> master
     /** Sets the DESCRIPTION. */
     public void setKind(String kind){
         _kind = kind;
