@@ -18,7 +18,8 @@
 
             <RelativeLayout android:layout_width="match_parent"
                 android:layout_height="@dimen/picture_height"
-                android:id="@+id/image_header_layout">
+                android:id="@+id/image_header_layout"
+                android:padding="@dimen/form_padding" >
 
 
                 <ImageView
@@ -45,7 +46,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/form_field_size"
-                android:background="@android:drawable/editbox_background" >
+                android:background="@drawable/text_field"
+                android:layout_margin="@dimen/form_padding">
 
                 <TextView
                     android:id="@+id/kind_header"
@@ -55,6 +57,7 @@
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical|center_horizontal"
                     android:textStyle="bold"
+                    android:padding="5dp"
                     android:textColor="#000000"
                     android:text="@string/kind"
                     android:background="@android:color/transparent" />
@@ -65,18 +68,20 @@
                     android:layout_height="match_parent"
                     android:singleLine="true"
                     android:layout_toRightOf="@+id/kind_header"
-                    android:textColor="#C0C0C0"
+                    android:textColor="@color/dark_grey"
                     android:textColorHint="#C0C0C0"
                     android:textStyle="bold"
                     android:background="@android:color/transparent"
                     android:paddingLeft="@dimen/field_title_padding"
+                    android:maxLength="30"
                     android:hint="@string/kind_hint" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/form_field_size"
-                android:background="@android:drawable/editbox_background" >
+                android:background="@drawable/text_field"
+                android:layout_margin="@dimen/form_padding" >
 
                 <TextView
                     android:id="@+id/weight_header"
@@ -86,6 +91,7 @@
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical|center_horizontal"
                     android:textStyle="bold"
+                    android:padding="5dp"
                     android:textColor="#000000"
                     android:text="@string/weight"
                     android:background="@android:color/transparent" />
@@ -96,12 +102,14 @@
                     android:layout_height="match_parent"
                     android:singleLine="true"
                     android:layout_toRightOf="@+id/weight_header"
-                    android:textColor="#C0C0C0"
+                    android:textColor="@color/dark_grey"
                     android:textColorHint="#C0C0C0"
                     android:textStyle="bold"
+                    android:padding="5dp"
                     android:background="@android:color/transparent"
                     android:paddingLeft="@dimen/field_title_padding"
                     android:inputType="number"
+                    android:maxLength="3"
                     android:hint="@string/weight_hint" />
 
                 <TextView
@@ -112,6 +120,7 @@
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical|center_horizontal"
                     android:textStyle="bold"
+                    android:padding="5dp"
                     android:textColor="#000000"
                     android:text="@string/donation_weight"
                     android:background="@android:color/transparent" />
@@ -120,7 +129,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/form_field_size"
-                android:background="@android:drawable/editbox_background" >
+                android:background="@drawable/text_field"
+                android:layout_margin="@dimen/form_padding" >
 
                 <TextView
                     android:id="@+id/start_date_header"
@@ -130,6 +140,7 @@
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical|center_horizontal"
                     android:textStyle="bold"
+                    android:padding="5dp"
                     android:textColor="#000000"
                     android:text="@string/start_time_hint"
                     android:background="@android:color/transparent" />
@@ -140,7 +151,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="true"
                     android:layout_toRightOf="@+id/start_date_header"
-                    android:textColor="#C0C0C0"
+                    android:textColor="@color/dark_grey"
                     android:textColorHint="#C0C0C0"
                     android:textStyle="bold"
                     android:background="@android:color/transparent"
@@ -154,7 +165,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/form_field_size"
-                android:background="@android:drawable/editbox_background" >
+                android:background="@drawable/text_field"
+                android:layout_margin="@dimen/form_padding" >
 
                 <TextView
                     android:id="@+id/end_date_header"
@@ -164,6 +176,7 @@
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical|center_horizontal"
                     android:textStyle="bold"
+                    android:padding="5dp"
                     android:textColor="#000000"
                     android:text="@string/end_time_hint"
                     android:background="@android:color/transparent" />
@@ -174,7 +187,7 @@
                     android:layout_height="match_parent"
                     android:singleLine="true"
                     android:layout_toRightOf="@+id/end_date_header"
-                    android:textColor="#C0C0C0"
+                    android:textColor="@color/dark_grey"
                     android:textColorHint="#C0C0C0"
                     android:textStyle="bold"
                     android:background="@android:color/transparent"
@@ -186,7 +199,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/form_field_size"
-                android:background="@android:drawable/editbox_background" >
+                android:background="@drawable/text_field"
+                android:layout_margin="@dimen/form_padding" >
 
                 <TextView
                     android:id="@+id/phone_header"
@@ -196,6 +210,7 @@
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical|center_horizontal"
                     android:textStyle="bold"
+                    android:padding="5dp"
                     android:textColor="#000000"
                     android:text="@string/phone_number_header"
                     android:background="@android:color/transparent" />
@@ -206,19 +221,21 @@
                     android:layout_height="match_parent"
                     android:singleLine="true"
                     android:layout_toRightOf="@+id/phone_header"
-                    android:textColor="#C0C0C0"
+                    android:textColor="@color/dark_grey"
                     android:textColorHint="#C0C0C0"
                     android:textStyle="bold"
                     android:background="@android:color/transparent"
                     android:paddingLeft="@dimen/field_title_padding"
-                    android:inputType="number"
+                    android:inputType="phone"
+                    android:maxLength="11"
                     android:hint="@string/phone_number" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/form_field_size"
-                android:background="@android:drawable/editbox_background" >
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_field"
+                android:layout_margin="@dimen/form_padding" >
 
                 <TextView
                     android:id="@+id/address_header"
@@ -226,6 +243,7 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
+                    android:padding="5dp"
                     android:gravity="center_vertical|center_horizontal"
                     android:textStyle="bold"
                     android:textColor="#000000"
@@ -237,7 +255,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/address_header"
-                    android:textColor="#C0C0C0"
+                    android:textColor="@color/dark_grey"
                     android:textColorHint="#C0C0C0"
                     android:textStyle="bold"
                     android:background="@android:color/transparent"
