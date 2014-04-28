@@ -158,7 +158,7 @@
                                                   self.pastDonationsViewController,
                                                   self.accountViewController,
                                                   self.FAQViewController];
-        self.navDrawerController.navCellNames = @[@"Donate", @"Current Donation", @"Past Donations", @"Account", @"FAQ", @"Logout"];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Current Donation", @"Past Donations", @"Account", @"About", @"Logout"];
         self.navDrawerController.drawerIcons = @[@"donate.png", @"donatelist.png", @"donatelist.png", @"account.png", @"faq.png", @"logout.png"];
         
         // Release inactive modules
