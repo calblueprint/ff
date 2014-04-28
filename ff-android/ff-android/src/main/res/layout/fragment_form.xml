@@ -5,63 +5,265 @@
     android:orientation="vertical"
     tools:context="com.blueprint.ffandroid.FormFragment">
 
-
-    <EditText
+    <com.blueprint.ffandroid.FFScrollView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/form_field_size"
-        android:id="@+id/donation_kind"
-        android:paddingLeft="@dimen/title_textview_horizontal"
-        android:singleLine="true"
-        android:hint="@string/kind" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/form_field_size"
-        android:id="@+id/donation_weight"
-        android:inputType="number"
-        android:paddingLeft="@dimen/title_textview_horizontal"
-        android:singleLine="true"
-        android:hint="@string/weight" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/form_field_size"
-        android:id="@+id/pickup_time"
-        android:paddingLeft="@dimen/title_textview_horizontal"
-        android:focusable="false"
-        android:hint="@string/pickup_time" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/form_field_size"
-        android:id="@+id/address_field"
-        android:paddingLeft="@dimen/title_textview_horizontal"
-        android:hint="@string/address" />
-
-    <ImageView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/photo_imageview"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:layout_gravity="center_horizontal" />
+        android:overScrollMode="always"
+        android:id="@+id/scrollview" >
 
-    <ImageButton
-        android:id="@+id/camera_button"
-        android:layout_width="@dimen/form_field_size"
-        android:layout_height="@dimen/form_field_size"
-        android:layout_gravity="center"
-        android:layout_margin="@dimen/location_margin"
-        android:background="@drawable/green_button"
-        android:src="@android:drawable/ic_menu_camera"
-        android:text="@string/photo" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/pickup_button"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/location_margin"
-        android:background="@drawable/green_button"
-        android:textColor="@color/white"
-        android:text="@string/pickup_button" />
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="@dimen/picture_height"
+                android:id="@+id/image_header_layout">
+
+
+                <ImageView
+                    android:id="@+id/image_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"/>
+
+
+                <ImageButton
+                    android:id="@+id/camera_button"
+                    android:layout_width="@dimen/form_field_size"
+                    android:layout_height="@dimen/form_field_size"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/location_margin"
+                    android:background="@drawable/green_button"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:text="@string/photo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/form_field_size"
+                android:background="@android:drawable/editbox_background" >
+
+                <TextView
+                    android:id="@+id/kind_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="@string/kind"
+                    android:background="@android:color/transparent" />
+
+                <EditText
+                    android:id="@+id/donation_kind"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:layout_toRightOf="@+id/kind_header"
+                    android:textColor="#C0C0C0"
+                    android:textColorHint="#C0C0C0"
+                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="@dimen/field_title_padding"
+                    android:hint="@string/kind_hint" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/form_field_size"
+                android:background="@android:drawable/editbox_background" >
+
+                <TextView
+                    android:id="@+id/weight_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="@string/weight"
+                    android:background="@android:color/transparent" />
+
+                <EditText
+                    android:id="@+id/donation_weight_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:layout_toRightOf="@+id/weight_header"
+                    android:textColor="#C0C0C0"
+                    android:textColorHint="#C0C0C0"
+                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="@dimen/field_title_padding"
+                    android:inputType="number"
+                    android:hint="@string/weight_hint" />
+
+                <TextView
+                    android:id="@+id/units"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="@string/donation_weight"
+                    android:background="@android:color/transparent" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/form_field_size"
+                android:background="@android:drawable/editbox_background" >
+
+                <TextView
+                    android:id="@+id/start_date_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="@string/start_time_hint"
+                    android:background="@android:color/transparent" />
+
+                <EditText
+                    android:id="@+id/pickup_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:layout_toRightOf="@+id/start_date_header"
+                    android:textColor="#C0C0C0"
+                    android:textColorHint="#C0C0C0"
+                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="@dimen/field_title_padding"
+                    android:focusable="false"
+                    android:hint="@string/pickup_time" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/form_field_size"
+                android:background="@android:drawable/editbox_background" >
+
+                <TextView
+                    android:id="@+id/end_date_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="@string/end_time_hint"
+                    android:background="@android:color/transparent" />
+
+                <EditText
+                    android:id="@+id/finish_by"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:layout_toRightOf="@+id/end_date_header"
+                    android:textColor="#C0C0C0"
+                    android:textColorHint="#C0C0C0"
+                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="@dimen/field_title_padding"
+                    android:focusable="false"
+                    android:hint="@string/pickup_time" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/form_field_size"
+                android:background="@android:drawable/editbox_background" >
+
+                <TextView
+                    android:id="@+id/phone_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="@string/phone_number_header"
+                    android:background="@android:color/transparent" />
+
+                <EditText
+                    android:id="@+id/phone_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:layout_toRightOf="@+id/phone_header"
+                    android:textColor="#C0C0C0"
+                    android:textColorHint="#C0C0C0"
+                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="@dimen/field_title_padding"
+                    android:inputType="number"
+                    android:hint="@string/phone_number" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/form_field_size"
+                android:background="@android:drawable/editbox_background" >
+
+                <TextView
+                    android:id="@+id/address_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="@string/address"
+                    android:background="@android:color/transparent" />
+
+                <EditText
+                    android:id="@+id/address_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/address_header"
+                    android:textColor="#C0C0C0"
+                    android:textColorHint="#C0C0C0"
+                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="@dimen/field_title_padding"
+                    android:hint="@string/phone_number" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/photo_imageview"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/pickup_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/location_margin"
+                android:background="@drawable/green_button"
+                android:textColor="@color/white"
+                android:text="@string/pickup_button" />
+
+            </LinearLayout>
+        </com.blueprint.ffandroid.FFScrollView>
+
+
 
 </LinearLayout>

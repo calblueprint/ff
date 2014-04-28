@@ -175,6 +175,13 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     }
 
     /**
+     * Update the donation object based on form field.
+     */
+    public void updateDonation() {
+        parent.donation.setFullAddress(address_field.getText().toString());
+    }
+
+    /**
      * Sets the address of the donation.
      */
     public void setAddress(String address) {
@@ -214,7 +221,10 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
          */
     @Override
     public void onConnected(Bundle dataBundle) {
-        onLocationChanged(mLocationClient.getLastLocation());
+        if (mLocationClient.isConnected()) {
+            onLocationChanged(mLocationClient.getLastLocation());
+            mLocationClient.disconnect();
+        }
     }
 
     /**
@@ -303,6 +313,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     public void onClick(View v) {
         switch (v.getId()) {
             case (R.id.forward_button):
+                updateDonation();
                 parent.mTitle = "Fill Out Donation Details";
                 parent.getActionBar().setTitle(parent.mTitle);
                 parent.replaceFragment(parent.formFragment);

@@ -127,6 +127,7 @@ public class LoginActivity extends Activity {
                             message = (String) response.get("message");
                             } catch (Exception e) {
                                 message = "Unknown Error";
+                                e.printStackTrace();
                             }
                         }
                         Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
