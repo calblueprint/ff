@@ -34,7 +34,7 @@
                     android:layout_height="@dimen/form_field_size"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/location_margin"
-                    android:background="@drawable/green_button"
+                    android:background="@drawable/blue_button"
                     android:src="@android:drawable/ic_menu_camera"
                     android:text="@string/photo"
                     android:layout_centerHorizontal="true"
@@ -257,7 +257,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/location_margin"
-                android:background="@drawable/green_button"
+                android:background="@drawable/bp_button"
                 android:textColor="@color/white"
                 android:text="@string/pickup_button" />
 
