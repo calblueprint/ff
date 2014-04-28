@@ -129,10 +129,10 @@
     <string name="proxima_nova_light">fonts/Mark Simonson - Proxima Nova Alt Light.otf</string>
 
     <!--Long Text -->
-    <string name="faq_description_text">Feeding Forward lets you donate your
+    <string name="faq_description_text">This application lets you donate your
         excess food to local organizations serving the hungry. Just let us know
         what it is and how much and we will work on getting it picked up and
-        delivered to someone ASAP. (Available in San Francisco and Oakland, CA)</string>
+        delivered to someone ASAP.</string>
 
 
 
