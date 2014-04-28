@@ -183,8 +183,9 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         pickup_date = new Date();
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
-        cal.add(Calendar.HOUR_OF_DAY, 3);
+        cal.add(Calendar.HOUR_OF_DAY, 2);
         finish_by_date = cal.getTime();
+        finish_by_field.setText(dateString(finish_by_date));
     }
 
     /**
