@@ -200,6 +200,4 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         return rowView;
     }
 
-
-
 }

@@ -25,7 +25,7 @@ import java.text.SimpleDateFormat;
  */
 public class DonationDetailFragment extends Fragment {
 
-    Donation d;
+    Donation donation;
     private SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d, ''yy");
 
     private TextView kind;
@@ -38,7 +38,7 @@ public class DonationDetailFragment extends Fragment {
     }
 
     public DonationDetailFragment(){
-        d = new Donation();
+        donation = new Donation();
     }
 
     void setDonationText(Donation d){
@@ -49,7 +49,7 @@ public class DonationDetailFragment extends Fragment {
     }
 
     void updateView(Donation d){
-        this.d = d;
+        this.donation = d;
         if (kind != null) {
             setDonationText(d);
         }
@@ -85,8 +85,7 @@ public class DonationDetailFragment extends Fragment {
         status = (TextView) rootView.findViewById(R.id.status);
         address = (TextView) rootView.findViewById(R.id.address);
 
-        setDonationText(d);
-
+        setDonationText(donation);
 
         return rootView;
     }
