@@ -42,6 +42,8 @@
         android:background="@color/transparent"/>
     <TextView
         android:id="@+id/created_by_cal_blueprint"
+        android:paddingTop="20dip"
+        android:textColor="@color/bp_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
