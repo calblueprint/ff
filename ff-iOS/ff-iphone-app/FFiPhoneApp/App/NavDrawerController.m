@@ -13,6 +13,7 @@
 @end
 
 @implementation NavDrawerController
+@synthesize moduleCoordinator;
 @synthesize viewControllers;
 @synthesize drawerIcons;
 
@@ -43,7 +44,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [viewControllers count];
+    if ([viewControllers count] == 5)
+    {
+        return [viewControllers count] + 1;
+    }
+    else
+    {
+        return [viewControllers count];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,9 +84,16 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"Nav Drawer index selected: %d", indexPath.row);
-    UIViewController *viewController = [viewControllers objectAtIndex:indexPath.row];
-    
-    [self.mmDrawerController setCenterViewController:viewController withCloseAnimation:YES completion:nil];
+    if (indexPath.row == 5) {
+        NSLog(@"logout shit");
+        NSLog(@"module coordinator: %@", moduleCoordinator);
+        [self logoutUser];
+        
+    }
+    else {
+        UIViewController *viewController = [viewControllers objectAtIndex:indexPath.row];
+        [self.mmDrawerController setCenterViewController:viewController withCloseAnimation:YES completion:nil];
+    }
 }
 
 + (UIImage*)resizeImage:(UIImage*)image withWidth:(int)width withHeight:(int)height
@@ -103,6 +118,12 @@
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
+- (void)logoutUser
+{
+    [self.moduleCoordinator didReceiveRequestToLogoutUserWithSender:self];
+    //Logout functionality goes here
 }
 
 @end

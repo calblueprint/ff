@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MMDrawerController.h"
+#import "ModuleCoordinator.h"
+
+@class ModuleCoordinator;
 
 @interface NavDrawerController : UITableViewController
+
+@property (nonatomic) ModuleCoordinator *moduleCoordinator;
 
 @property (nonatomic) NSArray *viewControllers;
 @property (nonatomic) NSArray *navCellNames;
