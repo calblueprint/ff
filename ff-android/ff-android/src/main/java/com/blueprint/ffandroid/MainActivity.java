@@ -60,6 +60,7 @@ public class MainActivity extends ActionBarActivity
     CongratulatoryFragment congratulatoryFragment;
     DonationListFragment donationListFragment;
     FAQFragment faqFragment;
+    DonationDetailFragment donationDetailFragment;
     /** Font Declaration **/
     public Typeface myTypeface;
 
@@ -112,6 +113,7 @@ public class MainActivity extends ActionBarActivity
         congratulatoryFragment = CongratulatoryFragment.newInstance();
         donationListFragment = DonationListFragment.newInstance();
         faqFragment = FAQFragment.newInstance();
+        donationDetailFragment = DonationDetailFragment.newInstance();
         currentFragment = locationFragment;
     }
 
@@ -335,6 +337,12 @@ public class MainActivity extends ActionBarActivity
      */
     private void sendRegistrationIdToBackend() {
         // Your implementation here.
+    }
+
+    void updateDetailView(Donation d){
+        this.donationDetailFragment.updateView(d);
+        replaceFragment(donationDetailFragment);
+
     }
 }
 

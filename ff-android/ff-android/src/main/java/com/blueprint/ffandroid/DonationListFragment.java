@@ -1,6 +1,7 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v4.app.ListFragment;
 import android.content.Context;
@@ -130,7 +131,9 @@ public class DonationListFragment extends ListFragment{
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
-        //TODO: launch detail view for selected item
+       Donation d = (Donation) this.getListView().getItemAtPosition(position);
+       Log.d("donation kind", d.getKind());
+       ((MainActivity) this.getActivity()).updateDetailView(d);
 
     }
 
