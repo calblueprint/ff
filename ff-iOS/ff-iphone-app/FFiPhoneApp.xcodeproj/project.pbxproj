@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0958EC1B190DF868009412A4 /* ic_blueprint_paw.png in Resources */ = {isa = PBXBuildFile; fileRef = 0958EC1A190DF868009412A4 /* ic_blueprint_paw.png */; };
 		096F339C1903804C002FDC6F /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 096F339B1903804C002FDC6F /* menu.png */; };
 		0987D96318F43B98001510F8 /* NavDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0987D96218F43B98001510F8 /* NavDrawerController.m */; };
 		0987D9B518FC7CE7001510F8 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B018FC7CE7001510F8 /* logout.png */; };
@@ -334,6 +335,7 @@
 
 /* Begin PBXFileReference section */
 		01AD18368F1B46E9A38A5085 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0958EC1A190DF868009412A4 /* ic_blueprint_paw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_blueprint_paw.png; sourceTree = "<group>"; };
 		096F339B1903804C002FDC6F /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		0987D96118F43B98001510F8 /* NavDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavDrawerController.h; sourceTree = "<group>"; };
 		0987D96218F43B98001510F8 /* NavDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavDrawerController.m; sourceTree = "<group>"; };
@@ -1235,6 +1237,7 @@
 		9B98D261179D0E870032888C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0958EC1A190DF868009412A4 /* ic_blueprint_paw.png */,
 				9B7109D017AC8761000C7E39 /* VehicleTypes */,
 				9B4F18ED17A59849005516A0 /* Theme */,
 				9BC778D617BC504E00ADFD9A /* Default.png */,
@@ -1708,6 +1711,7 @@
 				9BFA58C617A9E08200908526 /* postdonation_button_where_normal@2x.png in Resources */,
 				9BFA58C717A9E08200908526 /* postdonation_button_where_selected@2x.png in Resources */,
 				9BFA58D117A9E12600908526 /* postdonation_button_howmuch_highlighted@2x.png in Resources */,
+				0958EC1B190DF868009412A4 /* ic_blueprint_paw.png in Resources */,
 				9BFA58D217A9E12600908526 /* postdonation_button_when_highlighted@2x.png in Resources */,
 				9BFA58D317A9E12600908526 /* postdonation_button_where_highlighted@2x.png in Resources */,
 				9B6B308717AA52EF00A53738 /* postdonation_button_howmuch_highlighted-568h@2x.png in Resources */,
