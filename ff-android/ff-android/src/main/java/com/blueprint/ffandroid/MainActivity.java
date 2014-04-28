@@ -13,6 +13,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.util.Log;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -60,6 +62,7 @@ public class MainActivity extends ActionBarActivity
     CongratulatoryFragment congratulatoryFragment;
     DonationListFragment donationListFragment;
     FAQFragment faqFragment;
+    DonationDetailFragment donationDetailFragment;
     /** Font Declaration **/
     public Typeface myTypeface;
 
@@ -74,6 +77,7 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        myTypeface = Typeface.createFromAsset(getAssets(), "fonts/proxima_nova_regular.otf");
         initializeFragments();
         setContentView(R.layout.activity_donate);
         context = this;
@@ -101,7 +105,6 @@ public class MainActivity extends ActionBarActivity
         } else {
             Log.i(TAG, "No valid Google Play Services APK found.");
         }
-        myTypeface = Typeface.createFromAsset(getAssets(), "fonts/proxima_nova_regular.otf");
 
     }
 
@@ -112,6 +115,7 @@ public class MainActivity extends ActionBarActivity
         congratulatoryFragment = CongratulatoryFragment.newInstance();
         donationListFragment = DonationListFragment.newInstance();
         faqFragment = FAQFragment.newInstance();
+        donationDetailFragment = DonationDetailFragment.newInstance();
         currentFragment = locationFragment;
     }
 
@@ -170,7 +174,9 @@ public class MainActivity extends ActionBarActivity
                 break;
 
         }
-        actionBar.setTitle(mTitle);
+        SpannableString s = new SpannableString(mTitle);
+        s.setSpan(new TypefaceSpan(this, "myTypeface"), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        actionBar.setTitle(s);
     }
 
     public void replaceFragment(Fragment newFragment){
@@ -183,13 +189,6 @@ public class MainActivity extends ActionBarActivity
         ft.show(newFragment);
         ft.commit();
         currentFragment = newFragment;
-    }
-
-    public void restoreActionBar() {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
     }
 
     @Override
@@ -335,6 +334,12 @@ public class MainActivity extends ActionBarActivity
      */
     private void sendRegistrationIdToBackend() {
         // Your implementation here.
+    }
+
+    void updateDetailView(Donation d){
+        this.donationDetailFragment.updateView(d);
+        replaceFragment(donationDetailFragment);
+
     }
 }
 

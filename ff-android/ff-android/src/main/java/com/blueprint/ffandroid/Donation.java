@@ -292,6 +292,6 @@ public class Donation implements Comparable<Donation>{
      * by date.
      */
     public int compareTo(Donation o) {
-        return _dateCreated.compareTo(o.getdateCreated());
+        return -1 * _dateCreated.compareTo(o.getdateCreated());
     }
 }

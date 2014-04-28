@@ -13,10 +13,10 @@
 
 
     <ImageView
-            android:layout_width="300dp"
-            android:layout_height="163dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:id="@+id/imageView"
-            android:background="@drawable/feedingforwardlogowithtext"
+            android:background="@drawable/ic_blueprint_paw"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"/>
     <EditText
@@ -43,7 +43,7 @@
         android:textSize="20sp"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/white"
-        android:background="@drawable/green_button"
+        android:background="@drawable/bp_button"
         android:layout_marginTop="20dp"/>
 
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -41,6 +42,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -120,6 +122,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         View rootView =  inflater.inflate(R.layout.fragment_form, container, false);
         parent = (MainActivity) getActivity();
         setupFragment(rootView);
+        setFonts(rootView);
 
         loadDonation();
 
@@ -181,6 +184,28 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         cal.setTime(new Date());
         cal.add(Calendar.HOUR_OF_DAY, 3);
         finish_by_date = cal.getTime();
+    }
+
+    /**
+     * Sets the fonts of the Buttons and TextViews in this fragment
+     */
+    private void setFonts(View rootView){
+        Typeface tf = (parent.myTypeface);
+        kind_field.setTypeface(tf);
+        weight_field.setTypeface(tf);
+        pickup_time_field.setTypeface(tf);
+        address_field.setTypeface(tf);
+        pickup_button.setTypeface(tf);
+        finish_by_field.setTypeface(tf);
+        phone_field.setTypeface(tf);
+
+        ((TextView) rootView.findViewById(R.id.kind_header)).setTypeface(tf);
+        ((TextView) rootView.findViewById(R.id.weight_header)).setTypeface(tf);
+        ((TextView) rootView.findViewById(R.id.start_date_header)).setTypeface(tf);
+        ((TextView) rootView.findViewById(R.id.end_date_header)).setTypeface(tf);
+        ((TextView) rootView.findViewById(R.id.address_header)).setTypeface(tf);
+        ((TextView) rootView.findViewById(R.id.phone_header)).setTypeface(tf);
+        ((TextView) rootView.findViewById(R.id.units)).setTypeface(tf);
     }
 
     public void onScrollChanged(FFScrollView v, int l, int t, int oldl, int oldt) {

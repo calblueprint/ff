@@ -1,6 +1,7 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v4.app.ListFragment;
 import android.content.Context;
@@ -40,8 +41,8 @@ import java.util.Locale;
 public class DonationListFragment extends ListFragment{
 
     private static RequestQueue queue;
-    private static String BASE_URL = "http://feeding-forever.herokuapp.com/api/pickups/?access_token=";
     private String token;
+    private static SimpleDateFormat inputDateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
 
 
     public static DonationListFragment newInstance(){
@@ -66,11 +67,10 @@ public class DonationListFragment extends ListFragment{
         this.token = prefs.getString("token", "None");
         this.queue = Volley.newRequestQueue(getActivity());
 
-        JsonArrayRequest request = new JsonArrayRequest(BASE_URL + token,
+        JsonArrayRequest request = new JsonArrayRequest(getString(R.string.pickup_list_url) + token,
             new Response.Listener<JSONArray>() {
                 @Override
                 public void onResponse(JSONArray jsonArray) {
-//                    ArrayList<Donation> data = new ArrayList<Donation>(jsonArray.length());
                     Donation[] data = new Donation[jsonArray.length()];
 
                     try{
@@ -81,7 +81,7 @@ public class DonationListFragment extends ListFragment{
                             donation.setKind(jsonObject.getString("kind"));
                             donation.setStatus(jsonObject.getString("status"));
                             String dateString = jsonObject.getString("createdAt");
-                            donation.setDateCreated(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH).parse(dateString));
+                            donation.setDateCreated(inputDateFormat.parse(dateString));
                             data[i] = donation;
 
                         }
@@ -131,7 +131,9 @@ public class DonationListFragment extends ListFragment{
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
-        //TODO: launch detail view for selected item
+       Donation d = (Donation) this.getListView().getItemAtPosition(position);
+       Log.d("donation kind", d.getKind());
+       ((MainActivity) this.getActivity()).updateDetailView(d);
 
     }
 
@@ -169,15 +171,12 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         View rowView = inflater.inflate(R.layout.donation_table_row, parent, false);
         TextView kind = (TextView) rowView.findViewById(R.id.kind);
         TextView date = (TextView) rowView.findViewById(R.id.date);
-        TextView address = (TextView) rowView.findViewById(R.id.address);
         TextView donationStatus = (TextView) rowView.findViewById(R.id.status);
         Donation d = data[position];
         kind.setText(d.getKind());
         MainActivity activity = (MainActivity) this.getContext();
         Typeface tf = activity.myTypeface;
         kind.setTypeface(tf);
-        address.setText(d.getAddress());
-        address.setTypeface(tf);
         date.setText(sdf.format(d.getdateCreated()));
         date.setTypeface(tf);
         String status = d.getStatus();
@@ -200,7 +199,5 @@ class DonationAdapter extends ArrayAdapter<Donation> {
 
         return rowView;
     }
-
-
 
 }

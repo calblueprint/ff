@@ -31,10 +31,10 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_blueprint_paw"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-        android:logo="@drawable/feedingforwardlogonotext">
+        android:logo="@drawable/ic_blueprint_paw">
         <receiver
             android:name=".GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
