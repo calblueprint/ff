@@ -70,6 +70,7 @@
                     android:textStyle="bold"
                     android:background="@android:color/transparent"
                     android:paddingLeft="@dimen/field_title_padding"
+                    android:maxLength="30"
                     android:hint="@string/kind_hint" />
             </RelativeLayout>
 
@@ -102,6 +103,7 @@
                     android:background="@android:color/transparent"
                     android:paddingLeft="@dimen/field_title_padding"
                     android:inputType="number"
+                    android:maxLength="3"
                     android:hint="@string/weight_hint" />
 
                 <TextView
@@ -212,6 +214,7 @@
                     android:background="@android:color/transparent"
                     android:paddingLeft="@dimen/field_title_padding"
                     android:inputType="number"
+                    android:maxLength="11"
                     android:hint="@string/phone_number" />
             </RelativeLayout>
 
@@ -226,6 +229,7 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
+                    android:padding="5dp"
                     android:gravity="center_vertical|center_horizontal"
                     android:textStyle="bold"
                     android:textColor="#000000"
