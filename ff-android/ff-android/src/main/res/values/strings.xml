@@ -8,7 +8,7 @@
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="congratulations">Congratulations!</string>
-    <string name="congratulations_small">You have successfully posted a donation!</string>
+    <string name="congratulations_small">You have finished posting a donation!</string>
     <string name="share">Share on Facebook</string>
     <string name="congratulations_id">Share on Facebook</string>
     <string name="go_to_donation"> Go to Donation </string>
@@ -26,6 +26,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_field">Title</string>
     <string name="forward_button">Forward!</string>
+    <string name="faq_description">About Feeding Forward</string>
+    <string name="created_by_cal_blueprint">Created by Cal Blueprint</string>
+    <string name="faq_link">Feeding Forward Website</string>
+
+
 
     <string name="GEOCODER_API_KEY">AIzaSyCnJmnYV5n961YR8DYSOivhsPdx76Zp0lY</string>
 
@@ -118,5 +123,17 @@
     <string name="pass">Password</string>
     <string name="login_button">Log In</string>
     <string name="app_id">223792107810969</string>
+
+    <!--Fonts -->
+    <string name="proxima_nova_regular">fonts/Mark Simonson - Proxima Nova Alt Regular.otf</string>
+    <string name="proxima_nova_light">fonts/Mark Simonson - Proxima Nova Alt Light.otf</string>
+
+    <!--Long Text -->
+    <string name="faq_description_text">Feeding Forward lets you donate your
+        excess food to local organizations serving the hungry. Just let us know
+        what it is and how much and we will work on getting it picked up and
+        delivered to someone ASAP. (Available in San Francisco and Oakland, CA)</string>
+
+
 
 </resources>

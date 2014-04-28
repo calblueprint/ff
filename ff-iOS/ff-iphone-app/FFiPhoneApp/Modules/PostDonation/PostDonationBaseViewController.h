@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PostDonationModuleController.h"
+#import "MMDrawerController.h"
 
 @class PostDonationModuleController;
 

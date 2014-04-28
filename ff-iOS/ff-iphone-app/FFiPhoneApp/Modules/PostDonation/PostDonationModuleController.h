@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "ModuleControllerProtocol.h"
+#import "MMDrawerController.h"
 
 @class AppDelegate, FFDataDonation, FFError, FFDataImage, FFDataLocation, POSDPostDonationViewController;
 
@@ -32,6 +33,8 @@ andDidRetrievePersistedDonation:(FFDataDonation *)persistedDonation
 @property (strong, nonatomic) NSArray *userLocations;
 @property (strong, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) POSDPostDonationViewController *postDonationViewController;
+@property (nonatomic) MMDrawerController *mmDrawerController;
+
 
 - (UINavigationController *)instantiatePostDonationNavigationViewController;
 - (void)    postDonation:(FFDataDonation *)donation
