@@ -134,6 +134,7 @@
         what it is and how much and we will work on getting it picked up and
         delivered to someone ASAP.</string>
 
+    <string name="pickup_list_url">http://feeding-forever.herokuapp.com/api/pickups/?access_token=</string>
 
 
 </resources>
