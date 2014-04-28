@@ -168,15 +168,12 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         View rowView = inflater.inflate(R.layout.donation_table_row, parent, false);
         TextView kind = (TextView) rowView.findViewById(R.id.kind);
         TextView date = (TextView) rowView.findViewById(R.id.date);
-//        TextView address = (TextView) rowView.findViewById(R.id.address);
         TextView donationStatus = (TextView) rowView.findViewById(R.id.status);
         Donation d = data[position];
         kind.setText(d.getKind());
         MainActivity activity = (MainActivity) this.getContext();
         Typeface tf = activity.myTypeface;
         kind.setTypeface(tf);
-//        address.setText(d.getAddress());
-//        address.setTypeface(tf);
         date.setText(sdf.format(d.getdateCreated()));
         date.setTypeface(tf);
         String status = d.getStatus();
