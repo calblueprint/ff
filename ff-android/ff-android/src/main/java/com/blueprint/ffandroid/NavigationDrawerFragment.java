@@ -155,9 +155,6 @@ public class NavigationDrawerFragment extends Fragment {
                     return;
                 }
                 getActivity().supportInvalidateOptionsMenu(); // calls onPrepareOptionsMenu()
-                ActionBar actionBar = getActionBar();
-                CharSequence title = ((MainActivity)getActivity()).mTitle;
-                actionBar.setTitle(title);
             }
 
             @Override

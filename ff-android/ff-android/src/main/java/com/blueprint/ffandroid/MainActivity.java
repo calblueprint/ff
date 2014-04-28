@@ -189,13 +189,6 @@ public class MainActivity extends ActionBarActivity
         currentFragment = newFragment;
     }
 
-    public void restoreActionBar() {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
