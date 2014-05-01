@@ -313,6 +313,9 @@
 		E4165D3C18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4165D3218FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */; };
 		E4165D3D18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4165D3318FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf */; };
 		E4165D3E18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4165D3418FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf */; };
+		E47842D31911E95400F5C5E3 /* cookie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E47842D01911E95400F5C5E3 /* cookie.jpg */; };
+		E47842D41911E95400F5C5E3 /* pie.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E47842D11911E95400F5C5E3 /* pie.jpeg */; };
+		E47842D51911E95400F5C5E3 /* cake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E47842D21911E95400F5C5E3 /* cake.jpg */; };
 		E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4EF65E018FDCD56007E76BF /* photodefault.jpg */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -707,6 +710,9 @@
 		E4165D3F18FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Simonson - Proxima Nova Alt Regular Italic.otf"; path = "FFiPhoneApp/Assets/Fonts/Mark Simonson - Proxima Nova Alt Regular Italic.otf"; sourceTree = "<group>"; };
 		E4165D4018FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Simonson - Proxima Nova Alt Regular.ttf"; path = "FFiPhoneApp/Assets/Fonts/Mark Simonson - Proxima Nova Alt Regular.ttf"; sourceTree = "<group>"; };
 		E4165D4118FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Simonson - Proxima Nova Alt Thin.otf"; path = "FFiPhoneApp/Assets/Fonts/Mark Simonson - Proxima Nova Alt Thin.otf"; sourceTree = "<group>"; };
+		E47842D01911E95400F5C5E3 /* cookie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cookie.jpg; sourceTree = "<group>"; };
+		E47842D11911E95400F5C5E3 /* pie.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pie.jpeg; sourceTree = "<group>"; };
+		E47842D21911E95400F5C5E3 /* cake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cake.jpg; sourceTree = "<group>"; };
 		E4EF65E018FDCD56007E76BF /* photodefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photodefault.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1199,6 +1205,7 @@
 		9B98D261179D0E870032888C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E47842CF1911E94400F5C5E3 /* sample_images */,
 				0958EC1A190DF868009412A4 /* ic_blueprint_paw.png */,
 				9B7109D017AC8761000C7E39 /* VehicleTypes */,
 				9B4F18ED17A59849005516A0 /* Theme */,
@@ -1553,6 +1560,16 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		E47842CF1911E94400F5C5E3 /* sample_images */ = {
+			isa = PBXGroup;
+			children = (
+				E47842D01911E95400F5C5E3 /* cookie.jpg */,
+				E47842D11911E95400F5C5E3 /* pie.jpeg */,
+				E47842D21911E95400F5C5E3 /* cake.jpg */,
+			);
+			name = sample_images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1669,6 +1686,7 @@
 				9BFA58C117A9E08200908526 /* postdonation_button_picture_highlighted@2x.png in Resources */,
 				9BFA58C217A9E08200908526 /* postdonation_button_picture_normal@2x.png in Resources */,
 				9BFA58C317A9E08200908526 /* postdonation_button_picture_selected@2x.png in Resources */,
+				E47842D41911E95400F5C5E3 /* pie.jpeg in Resources */,
 				9BFA58C417A9E08200908526 /* postdonation_button_when_normal@2x.png in Resources */,
 				0987D9B818FC7CE7001510F8 /* donate.png in Resources */,
 				9BFA58C517A9E08200908526 /* postdonation_button_when_selected@2x.png in Resources */,
@@ -1700,6 +1718,7 @@
 				9B7109D817AC8761000C7E39 /* vehicle_type-small.png in Resources */,
 				9BFAE5A617B07D100058AFE9 /* navigationbar_top_left_icon.png in Resources */,
 				9BFAE5A717B07D100058AFE9 /* navigationbar_top_left_icon@2x.png in Resources */,
+				E47842D31911E95400F5C5E3 /* cookie.jpg in Resources */,
 				9BB52FCE17B1F14C00813AF6 /* test.jpg in Resources */,
 				9BB52FD117B236AA00813AF6 /* login_logo@2x.png in Resources */,
 				9BB52FD317B23F7B00813AF6 /* divider_230x1.png in Resources */,
@@ -1719,6 +1738,7 @@
 				9B64E19A17BAF7F40051E8F1 /* button_green_20x20_highlighted@2x.png in Resources */,
 				0987D9B718FC7CE7001510F8 /* donatelist.png in Resources */,
 				9B64E19B17BAF7F40051E8F1 /* button_green_20x20_normal.png in Resources */,
+				E47842D51911E95400F5C5E3 /* cake.jpg in Resources */,
 				9B64E19C17BAF7F40051E8F1 /* button_green_20x20_normal@2x.png in Resources */,
 				9B64E19D17BAF7F40051E8F1 /* button_green_30x30_disabled.png in Resources */,
 				9B64E19E17BAF7F40051E8F1 /* button_green_30x30_disabled@2x.png in Resources */,
