@@ -9,6 +9,7 @@
     <color name="button_green_pressed">#00a54a</color>
     <color name="navy_blue">#030A37</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="grey">#EEEEEE</color>
     <color name="dark_blue_text">#2E4B87</color>
     <color name="dark_blue_text_pressed">#284074</color>
