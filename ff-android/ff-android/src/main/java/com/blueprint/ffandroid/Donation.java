@@ -3,10 +3,13 @@ package com.blueprint.ffandroid;
 import android.graphics.Picture;
 import android.location.Location;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Array;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -76,7 +79,7 @@ public class Donation implements Comparable<Donation>{
         _weight = 0.0;
         _vehicle = "";
         _startDate = new Date();
-        _endDate = new Date();
+        _endDate = null;
         _phoneNumber = "";
         _status = "";
         _dateCreated = new Date();
@@ -131,6 +134,11 @@ public class Donation implements Comparable<Donation>{
 
     /** Returns the state the donation was made in. */
     public String getState() { return _state; }
+
+    private String getStartTime() {
+        DateFormat df = new SimpleDateFormat("MMMM/dd/yyyy hh:mm aaa");
+        return df.format(_startDate);
+    }
 
     /** Returns the status of the donation. */
     public String getStatus() { return _status;}
@@ -189,6 +197,21 @@ public class Donation implements Comparable<Donation>{
     /** Sets the PHONENUMBER of the donation. */
     public void setPhoneNumber(String phoneNumber) { _phoneNumber = phoneNumber; }
 
+    private JSONObject getLocationJson() {
+        JSONObject locationJson = null;
+        try {
+            locationJson = new JSONObject();
+            locationJson.put("type", "Point");
+            JSONArray coordinates = new JSONArray();
+            coordinates.put(getLocation().getLatitude());
+            coordinates.put(getLocation().getLatitude());
+            locationJson.put("coordinates", coordinates);
+            locationJson.put("text", getAddress());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return locationJson;
+    }
     /** Sets the status of the donation */
     public void setStatus(String status) { _status = status; }
 
@@ -224,18 +247,18 @@ public class Donation implements Comparable<Donation>{
         }
 
         // Requirement 2
-        if (_weight < 1 || _weight > 500) {
+        if (_weight <= 1 || _weight >= 500) {
             errors[1] = 1;
         }
 
         // Requirement 3
         if (_startDate == null || _startDate.after(new Date())) {
-            errors[1] = 1;
+            errors[2] = 1;
         }
 
         // Requirement 4
         if (_kind.length() == 0) {
-            errors[1] = 1;
+            errors[3] = 1;
         }
 
         return errors;
@@ -249,18 +272,12 @@ public class Donation implements Comparable<Donation>{
     /** Returns a JSONObject */
     public JSONObject toJSONObj() {
         try {
-            // Pickup date
-            // Pickup At
-            // input weight
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("pickupAt", JSONObject.NULL);
-            jsonObj.put("pickupTime", getStartDate().toString());
-            jsonObj.put("pickupDate", getStartDate().toString());
+            jsonObj.put("finishBy", getEndDate().toString());
             jsonObj.put("weight", Double.toString(getWeight()));
-            jsonObj.put("city", getCity());
-            jsonObj.put("state", getState());
             jsonObj.put("kind", getKind());
-            jsonObj.put("address", getAddress());
+            jsonObj.put("location", getLocationJson());
             jsonObj.put("phone", getPhoneNumber());
             jsonObj.put("inputWeight", Double.toString(getWeight()));
             return jsonObj;
@@ -275,6 +292,6 @@ public class Donation implements Comparable<Donation>{
      * by date.
      */
     public int compareTo(Donation o) {
-        return _dateCreated.compareTo(o.getdateCreated());
+        return -1 * _dateCreated.compareTo(o.getdateCreated());
     }
 }

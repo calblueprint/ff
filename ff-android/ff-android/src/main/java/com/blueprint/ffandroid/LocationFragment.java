@@ -1,33 +1,26 @@
 package com.blueprint.ffandroid;
 
-import android.app.ActionBar;
 import android.content.IntentSender;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.loopj.android.http.*;
-
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.location.LocationClient;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -64,6 +57,8 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     private LocationManager locationManager;
 
     private GoogleMap map;
+    /**View used to save fragment state after onDestroy()**/
+    private View rootView;
 
     /**
      * Use this factory method to create a new instance of
@@ -90,7 +85,16 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView =  inflater.inflate(R.layout.fragment_location, container, false);
+        if (rootView != null) {
+            ViewGroup parent = (ViewGroup) rootView.getParent();
+            if (parent != null)
+                parent.removeView(rootView);
+        }
+        try {
+            rootView = inflater.inflate(R.layout.fragment_location, container, false);
+        } catch (InflateException e) {
+        /* map is already there, just return view as it is */
+        }
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
         forward.setOnClickListener(this);
         parent = (MainActivity)this.getActivity();
@@ -175,6 +179,13 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     }
 
     /**
+     * Update the donation object based on form field.
+     */
+    public void updateDonation() {
+        parent.donation.setFullAddress(address_field.getText().toString());
+    }
+
+    /**
      * Sets the address of the donation.
      */
     public void setAddress(String address) {
@@ -214,7 +225,10 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
          */
     @Override
     public void onConnected(Bundle dataBundle) {
-        onLocationChanged(mLocationClient.getLastLocation());
+        if (mLocationClient.isConnected()) {
+            onLocationChanged(mLocationClient.getLastLocation());
+            mLocationClient.disconnect();
+        }
     }
 
     /**
@@ -303,6 +317,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     public void onClick(View v) {
         switch (v.getId()) {
             case (R.id.forward_button):
+                updateDonation();
                 parent.mTitle = "Fill Out Donation Details";
                 parent.getActionBar().setTitle(parent.mTitle);
                 parent.replaceFragment(parent.formFragment);

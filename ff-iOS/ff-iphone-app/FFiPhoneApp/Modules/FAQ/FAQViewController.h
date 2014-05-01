@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FAQBaseViewController.h"
 
 
 
-@interface FAQViewController : UIViewController
+@interface FAQViewController : FAQBaseViewController
 @end

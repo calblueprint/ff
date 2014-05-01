@@ -3,6 +3,7 @@
     <color name="donation_title_colour">#040404</color>
     <color name="donation_status_colour">#FF0000</color>
     <color name="donation_servings_colour">#00BE56</color>
+    <color name="bp_blue">#1b75bc</color>
     <color name="button_darkish_blue">#495698</color>
     <color name="button_green">#00BE56</color>
     <color name="button_green_pressed">#00a54a</color>

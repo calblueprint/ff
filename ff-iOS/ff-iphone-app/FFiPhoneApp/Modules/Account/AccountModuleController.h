@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ModuleControllerProtocol.h"
+#import "MMDrawerController.h"
+
 
 @class FFDataUser;
 
@@ -22,6 +24,8 @@
 @property (weak, nonatomic) id <AccountModuleControllerDelegate> delegate;
 @property (strong, nonatomic) UIStoryboard *storyboard;
 @property (strong, nonatomic) FFDataUser *user;
+@property (strong, nonatomic) MMDrawerController *mmDrawerController;
+
 
 - (UIViewController *)instantiateProfileViewController;
 - (void)logoutUser;

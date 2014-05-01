@@ -1,7 +1,5 @@
-Feeding Forward
-===============
+This Android and iOS application lets you donate your excess food to local organizations serving the hungry. Any organization committed to helping relieve hunger in their community is welcome to use this app.
 
-Android and iOS for the nonprofit organization Feeding Forward.
 
 Who We Are
 ----

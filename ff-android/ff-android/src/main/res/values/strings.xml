@@ -13,7 +13,7 @@
     <string name="congratulations_id">Share on Facebook</string>
     <string name="go_to_donation"> Go to Donation </string>
     <string name="donation_start_title">Title</string>
-    <string name="app_name">Feeding Forward</string>
+    <string name="app_name">Food Finder</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
@@ -26,9 +26,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_field">Title</string>
     <string name="forward_button">Forward!</string>
-    <string name="faq_description">About Feeding Forward</string>
+    <string name="faq_description">About Food Finder</string>
     <string name="created_by_cal_blueprint">Created by Cal Blueprint</string>
-    <string name="faq_link">Feeding Forward Website</string>
+    <string name="faq_link">Organization Website</string>
 
 
 
@@ -44,6 +44,14 @@
     <string name="pickup_time">Pickup Time</string>
     <string name="photo">Take Photo</string>
     <string name="pickup_button">SCHEDULE PICKUP</string>
+    <string name="phone_number_header">Phone number</string>
+    <string name="phone_number">8584928002</string>
+    <string name="donation_weight">pounds</string>
+    <string name="weight_hint">5</string>
+    <string name="kind_hint">20 Breakfast Burritos</string>
+    <string name="start_time_hint">Start Time</string>
+    <string name="end_time_hint">Pick up by</string>
+    <string name="release_photo">Release to view photo</string>
 
     <string name="name_header">Name</string>
     <string name="email_header">Email</string>
@@ -121,11 +129,12 @@
     <string name="proxima_nova_light">fonts/Mark Simonson - Proxima Nova Alt Light.otf</string>
 
     <!--Long Text -->
-    <string name="faq_description_text">Feeding Forward lets you donate your
+    <string name="faq_description_text">This application lets you donate your
         excess food to local organizations serving the hungry. Just let us know
         what it is and how much and we will work on getting it picked up and
-        delivered to someone ASAP. (Available in San Francisco and Oakland, CA)</string>
+        delivered to someone ASAP.</string>
 
+    <string name="pickup_list_url">http://feeding-forever.herokuapp.com/api/pickups/?access_token=</string>
 
 
 </resources>
