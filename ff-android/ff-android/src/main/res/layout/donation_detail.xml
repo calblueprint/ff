@@ -5,17 +5,26 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="6dip"
+        android:contentDescription="TODO"
+        android:src="@drawable/hamburger" />
+
     <TextView
         android:id="@+id/kind"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/img"
         android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/kind"
+        android:layout_below="@id/img"
         android:textSize="20dp"
         />
 
@@ -30,7 +39,7 @@
         android:id="@+id/status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/date"
+        android:layout_below="@id/address"
         android:textSize="20dp"/>
 
     <Button
