@@ -13,7 +13,6 @@
 #import "AuthenticationModuleController.h"
 #import "PostDonationModuleController.h"
 #import "CurrentDonationsModuleController.h"
-#import "PastDonationsModuleController.h"
 #import "AccountModuleController.h"
 #import "POSDPostDonationViewController.h"
 #import "FAQModuleController.h"
@@ -135,12 +134,7 @@
         self.currentDonationsModuleController = [[CurrentDonationsModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
         self.currentDonationsViewController = [self.currentDonationsModuleController instantiateCurrentDonationsNavigationViewController];
 
-        // Past Donations
-        self.pastDonationsModuleController = [[PastDonationsModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
-        [self.pastDonationsModuleController setDelegate:self.moduleCoordinator];
-        self.pastDonationsViewController = [self.pastDonationsModuleController instantiatePastDonationsNavigationViewController];
-        
-        // Account
+            // Account
         self.accountModuleController = [[AccountModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
         [self.accountModuleController setDelegate:self.moduleCoordinator];
         self.accountViewController = [self.accountModuleController instantiateProfileViewController];
@@ -249,13 +243,8 @@
         // Current Donations
         self.currentDonationsModuleController = [[CurrentDonationsModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
         self.currentDonationsViewController = [self.currentDonationsModuleController instantiateCurrentDonationsNavigationViewController];
-        
-        // Past Donations
-        self.pastDonationsModuleController = [[PastDonationsModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
-        [self.pastDonationsModuleController setDelegate:self.moduleCoordinator];
-        self.pastDonationsViewController = [self.pastDonationsModuleController instantiatePastDonationsNavigationViewController];
-        
-        // Account
+   
+			// Account
         self.accountModuleController = [[AccountModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
         [self.accountModuleController setDelegate:self.moduleCoordinator];
         self.accountViewController = [self.accountModuleController instantiateProfileViewController];
@@ -267,10 +256,9 @@
         
         self.navDrawerController.viewControllers = @[self.postDonationViewController,
                                                   self.currentDonationsViewController,
-                                                  self.pastDonationsViewController,
                                                   self.accountViewController,
                                                   self.FAQViewController];
-        self.navDrawerController.navCellNames = @[@"Donate", @"Current Donation", @"Past Donations", @"Account", @"FAQ"];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Donations", @"Account", @"FAQ"];
         self.navDrawerController.drawerIcons = @[@"donate.png", @"donatelist.png", @"donatelist.png", @"account.png", @"faq.png"];
         
         // Release inactive modules

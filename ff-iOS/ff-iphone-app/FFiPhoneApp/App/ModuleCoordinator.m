@@ -13,7 +13,6 @@
 #import "AuthenticationModuleController.h"
 #import "PostDonationModuleController.h"
 #import "CurrentDonationsModuleController.h"
-#import "PastDonationsModuleController.h"
 #import "CURDDonationTableViewCell.h"
 #import "AccountModuleController.h"
 #import "SocialShareModuleController.h"
@@ -238,7 +237,6 @@
         if (user) { [self didRetrieveUser:user]; }
         if (locations) { [self didRetrieveLocations:locations]; }
         if (currentDonations) { [self didRetrieveCurrentDonations:currentDonations]; }
-        if (pastDonations) { [self didRetrievePastDonations:pastDonations]; }
         
     }];
 }
@@ -268,15 +266,6 @@
     // Pass donations to CurrentDonations module
     Dashboard *dashboard = [Dashboard sharedDashboard];
     [dashboard.currentDonationsModuleController setDonationContainerCollectionWithDonations:currentDonations];
-}
-
-- (void)didRetrievePastDonations:(NSArray *)pastDonations;
-{
-    DebugLog(@"Did retrieve past donations");
-    
-    // Pass donations to PastDonations module
-    Dashboard *dashboard = [Dashboard sharedDashboard];
-    [dashboard.pastDonationsModuleController setDonationContainerCollectionWithDonations:pastDonations];
 }
 
 #pragma mark - AccountModuleControllerDelegate

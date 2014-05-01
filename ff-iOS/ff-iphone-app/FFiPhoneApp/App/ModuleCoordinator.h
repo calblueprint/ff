@@ -9,13 +9,12 @@
 #import <Foundation/Foundation.h>
 
 #import "PostDonationModuleController.h"
-#import "PastDonationsModuleController.h"
 #import "AccountModuleController.h"
 #import "NavDrawerController.h"
 
 @class AppDelegate, FFDataUser, FFError;
 
-@interface ModuleCoordinator : NSObject <PostDonationModuleControllerDelegate, PastDonationsModuleControllerDelegate, AccountModuleControllerDelegate>
+@interface ModuleCoordinator : NSObject <PostDonationModuleControllerDelegate, AccountModuleControllerDelegate>
 
 @property (nonatomic, weak) AppDelegate *appDelegate;
 @property (nonatomic, strong) UITabBarController *tabBarController;
