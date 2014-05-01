@@ -61,9 +61,9 @@ public class DonationDetailFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.donation_detail, container, false);
 
-        Button back = (Button) rootView.findViewById(R.id.back);
+        //Button back = (Button) rootView.findViewById(R.id.back);
         Button cancel = (Button) rootView.findViewById(R.id.cancel_pickup);
-
+/*
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +72,7 @@ public class DonationDetailFragment extends Fragment {
                 mainActivity.replaceFragment(listViewFragment);
             }
         });
-
+*/
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
