@@ -71,13 +71,6 @@
 		9B64E14A17B999000051E8F1 /* CurrentDonationsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B64E14217B999000051E8F1 /* CurrentDonationsStoryboard.storyboard */; };
 		9B64E14B17B99CD70051E8F1 /* FFRecordDelivery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64E12517B8BA8B0051E8F1 /* FFRecordDelivery.m */; };
 		9B64E14C17B99CFA0051E8F1 /* FFDataDelivery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64E12217B8B9520051E8F1 /* FFDataDelivery.m */; };
-		9B64E14F17B9BD4E0051E8F1 /* PastDonationsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B64E14E17B9BD4E0051E8F1 /* PastDonationsStoryboard.storyboard */; };
-		9B64E15217B9DC1C0051E8F1 /* PastDonationsConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64E15117B9DC1C0051E8F1 /* PastDonationsConstants.m */; };
-		9B64E15517B9DC300051E8F1 /* PastDonationsModuleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64E15417B9DC300051E8F1 /* PastDonationsModuleController.m */; };
-		9B64E15817B9DC4C0051E8F1 /* PastDonationsBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64E15717B9DC4C0051E8F1 /* PastDonationsBaseViewController.m */; };
-		9B64E15B17B9DCAF0051E8F1 /* PASDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64E15A17B9DCAE0051E8F1 /* PASDNavigationController.m */; };
-		9B64E15E17B9DCDC0051E8F1 /* PASDPastDonationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64E15D17B9DCDC0051E8F1 /* PASDPastDonationsViewController.m */; };
-		9B64E16117B9DD030051E8F1 /* PASDDonationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64E16017B9DD030051E8F1 /* PASDDonationTableViewCell.m */; };
 		9B64E16517B9FE670051E8F1 /* pastdonations_default_mealphoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B64E16317B9FE670051E8F1 /* pastdonations_default_mealphoto.png */; };
 		9B64E16617B9FE670051E8F1 /* pastdonations_default_mealphoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B64E16417B9FE670051E8F1 /* pastdonations_default_mealphoto@2x.png */; };
 		9B64E16A17B9FE980051E8F1 /* currentdonations_default_mealphoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B64E16817B9FE980051E8F1 /* currentdonations_default_mealphoto.png */; };
@@ -416,19 +409,6 @@
 		9B64E14017B999000051E8F1 /* CurrentDonationsModuleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentDonationsModuleController.h; sourceTree = "<group>"; };
 		9B64E14117B999000051E8F1 /* CurrentDonationsModuleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentDonationsModuleController.m; sourceTree = "<group>"; };
 		9B64E14217B999000051E8F1 /* CurrentDonationsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CurrentDonationsStoryboard.storyboard; sourceTree = "<group>"; };
-		9B64E14E17B9BD4E0051E8F1 /* PastDonationsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PastDonationsStoryboard.storyboard; sourceTree = "<group>"; };
-		9B64E15017B9DC1C0051E8F1 /* PastDonationsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastDonationsConstants.h; sourceTree = "<group>"; };
-		9B64E15117B9DC1C0051E8F1 /* PastDonationsConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastDonationsConstants.m; sourceTree = "<group>"; };
-		9B64E15317B9DC300051E8F1 /* PastDonationsModuleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastDonationsModuleController.h; sourceTree = "<group>"; };
-		9B64E15417B9DC300051E8F1 /* PastDonationsModuleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastDonationsModuleController.m; sourceTree = "<group>"; };
-		9B64E15617B9DC4B0051E8F1 /* PastDonationsBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastDonationsBaseViewController.h; sourceTree = "<group>"; };
-		9B64E15717B9DC4C0051E8F1 /* PastDonationsBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastDonationsBaseViewController.m; sourceTree = "<group>"; };
-		9B64E15917B9DCAE0051E8F1 /* PASDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PASDNavigationController.h; sourceTree = "<group>"; };
-		9B64E15A17B9DCAE0051E8F1 /* PASDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PASDNavigationController.m; sourceTree = "<group>"; };
-		9B64E15C17B9DCDB0051E8F1 /* PASDPastDonationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PASDPastDonationsViewController.h; sourceTree = "<group>"; };
-		9B64E15D17B9DCDC0051E8F1 /* PASDPastDonationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PASDPastDonationsViewController.m; sourceTree = "<group>"; };
-		9B64E15F17B9DD020051E8F1 /* PASDDonationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PASDDonationTableViewCell.h; sourceTree = "<group>"; };
-		9B64E16017B9DD030051E8F1 /* PASDDonationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PASDDonationTableViewCell.m; sourceTree = "<group>"; };
 		9B64E16317B9FE670051E8F1 /* pastdonations_default_mealphoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pastdonations_default_mealphoto.png; sourceTree = "<group>"; };
 		9B64E16417B9FE670051E8F1 /* pastdonations_default_mealphoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pastdonations_default_mealphoto@2x.png"; sourceTree = "<group>"; };
 		9B64E16817B9FE980051E8F1 /* currentdonations_default_mealphoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = currentdonations_default_mealphoto.png; sourceTree = "<group>"; };
@@ -892,7 +872,6 @@
 				9BDA8C8617A766E300F69001 /* Authentication */,
 				9B4F191617A5D882005516A0 /* Account */,
 				9B64E13317B999000051E8F1 /* CurrentDonations */,
-				9B64E14D17B9BD2B0051E8F1 /* PastDonations */,
 				9B6B30C517AC53C800A53738 /* PostDonation */,
 				9BC778A517BB809C00ADFD9A /* SocialShare */,
 			);
@@ -961,26 +940,6 @@
 				9B64E13917B999000051E8F1 /* CURDDonationTableViewCell.m */,
 			);
 			path = CurrentDonations;
-			sourceTree = "<group>";
-		};
-		9B64E14D17B9BD2B0051E8F1 /* PastDonations */ = {
-			isa = PBXGroup;
-			children = (
-				9B64E14E17B9BD4E0051E8F1 /* PastDonationsStoryboard.storyboard */,
-				9B64E15017B9DC1C0051E8F1 /* PastDonationsConstants.h */,
-				9B64E15117B9DC1C0051E8F1 /* PastDonationsConstants.m */,
-				9B64E15317B9DC300051E8F1 /* PastDonationsModuleController.h */,
-				9B64E15417B9DC300051E8F1 /* PastDonationsModuleController.m */,
-				9B64E15617B9DC4B0051E8F1 /* PastDonationsBaseViewController.h */,
-				9B64E15717B9DC4C0051E8F1 /* PastDonationsBaseViewController.m */,
-				9B64E15917B9DCAE0051E8F1 /* PASDNavigationController.h */,
-				9B64E15A17B9DCAE0051E8F1 /* PASDNavigationController.m */,
-				9B64E15C17B9DCDB0051E8F1 /* PASDPastDonationsViewController.h */,
-				9B64E15D17B9DCDC0051E8F1 /* PASDPastDonationsViewController.m */,
-				9B64E15F17B9DD020051E8F1 /* PASDDonationTableViewCell.h */,
-				9B64E16017B9DD030051E8F1 /* PASDDonationTableViewCell.m */,
-			);
-			path = PastDonations;
 			sourceTree = "<group>";
 		};
 		9B64E16217B9FE670051E8F1 /* PastDonations */ = {
@@ -1747,7 +1706,6 @@
 				9BE4789517B4F51900B83CC6 /* AccountStoryboard.storyboard in Resources */,
 				9B64E14A17B999000051E8F1 /* CurrentDonationsStoryboard.storyboard in Resources */,
 				0987D9B918FC7CE7001510F8 /* account.png in Resources */,
-				9B64E14F17B9BD4E0051E8F1 /* PastDonationsStoryboard.storyboard in Resources */,
 				9B64E16517B9FE670051E8F1 /* pastdonations_default_mealphoto.png in Resources */,
 				9B64E16617B9FE670051E8F1 /* pastdonations_default_mealphoto@2x.png in Resources */,
 				9B64E16A17B9FE980051E8F1 /* currentdonations_default_mealphoto.png in Resources */,
@@ -1979,13 +1937,7 @@
 				9B64E14717B999000051E8F1 /* CurrentDonationsBaseViewController.m in Sources */,
 				9B64E14817B999000051E8F1 /* CurrentDonationsConstants.m in Sources */,
 				9B64E14917B999000051E8F1 /* CurrentDonationsModuleController.m in Sources */,
-				9B64E15217B9DC1C0051E8F1 /* PastDonationsConstants.m in Sources */,
 				0987D96318F43B98001510F8 /* NavDrawerController.m in Sources */,
-				9B64E15517B9DC300051E8F1 /* PastDonationsModuleController.m in Sources */,
-				9B64E15817B9DC4C0051E8F1 /* PastDonationsBaseViewController.m in Sources */,
-				9B64E15B17B9DCAF0051E8F1 /* PASDNavigationController.m in Sources */,
-				9B64E15E17B9DCDC0051E8F1 /* PASDPastDonationsViewController.m in Sources */,
-				9B64E16117B9DD030051E8F1 /* PASDDonationTableViewCell.m in Sources */,
 				9B64E18117BAEF940051E8F1 /* FFButtonWithStyleGreenH40.m in Sources */,
 				9B64E1AB17BAFA530051E8F1 /* FFButtonWithStyleGreenH30.m in Sources */,
 				9B64E1AE17BAFA890051E8F1 /* FFButtonWithStyleGreenH20.m in Sources */,
