@@ -132,7 +132,6 @@ public class DonationListFragment extends ListFragment{
     public void onListItemClick(ListView l, View v, int position, long id) {
 
        Donation d = (Donation) this.getListView().getItemAtPosition(position);
-       Log.d("donation kind", d.getKind());
        ((MainActivity) this.getActivity()).updateDetailView(d);
 
     }
