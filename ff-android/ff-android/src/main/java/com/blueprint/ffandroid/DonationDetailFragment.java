@@ -28,10 +28,17 @@ public class DonationDetailFragment extends Fragment {
     Donation donation;
     private SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d, ''yy");
 
+    /** The TextView that shows what kind of donation it is. */
     private TextView kind;
+    /** The TextView that shows the date of the donation. */
     private TextView date;
+    /** The TextView that shows the status of the donation. */
     private TextView status;
+    /** The TextView that shows the address of the donation. */
     private TextView address;
+
+    /** The status of the donation. */
+    private String statusValue;
 
     public static DonationDetailFragment newInstance(){
         return new DonationDetailFragment();
@@ -43,7 +50,22 @@ public class DonationDetailFragment extends Fragment {
 
     void setDonationText(Donation d){
         kind.setText(d.getKind());
-        status.setText(d.getStatus());
+        statusValue = d.getStatus();
+        status.setText(statusValue);
+        Context context = this.getActivity();
+        if (statusValue.equals("complete")) {
+            status.setTextColor(context.getResources().getColor(R.color.complete));
+        } else if (statusValue.equals("canceled")) {
+            status.setTextColor(context.getResources().getColor(R.color.canceled));
+        } else if (statusValue.equals("moving")) {
+            status.setTextColor(context.getResources().getColor(R.color.moving));
+        } else if (statusValue.equals("available")) {
+            status.setTextColor(context.getResources().getColor(R.color.available));
+        } else if (statusValue.equals("claimed")) {
+           status.setTextColor(context.getResources().getColor(R.color.claimed));
+        } else {
+            status.setTextColor(context.getResources().getColor(R.color.unknown));
+        }
         address.setText(d.getAddress());
         date.setText(sdf.format(d.getdateCreated()));
     }
