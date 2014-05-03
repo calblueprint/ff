@@ -1,6 +1,7 @@
 package com.blueprint.ffandroid;
 
 import android.content.IntentSender;
+import android.graphics.Point;
 import android.graphics.Typeface;
 import android.location.Location;
 import android.location.LocationListener;
@@ -11,6 +12,7 @@ import android.view.*;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
@@ -54,6 +56,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
 
     /** The Address Field displayed to the user */
     private EditText address_field;
+    private ImageButton locationButton;
 
     private GoogleMap map;
     /**View used to save fragment state after onDestroy()**/
@@ -92,7 +95,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         try {
             rootView = inflater.inflate(R.layout.fragment_location, container, false);
         } catch (InflateException e) {
-        /* map is already there, just return view as it is */
+            /* map is already there, just return view as it is */
         }
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
         forward.setOnClickListener(this);
@@ -102,10 +105,12 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         address_field.setOnFocusChangeListener(this);
         address_field.setOnEditorActionListener(this);
 
+        locationButton = (ImageButton) rootView.findViewById(R.id.current_location_button);
+        locationButton.setOnClickListener(this);
+
         setFonts(rootView);
 
         map = ((SupportMapFragment) parent.getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-        map.setMyLocationEnabled(true);
         mLocationClient = new LocationClient(parent, this, this);
 
         return rootView;
@@ -181,6 +186,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                     String state = address_components.getJSONObject(4).getString("short_name");
                     setAddress(number+" "+street, city, state);
                     setAddress(address);
+                    System.out.print(address);
                 } catch (JSONException e) {
                     Toast.makeText(parent, "Error retrieving address", Toast.LENGTH_SHORT).show();
                 }
@@ -199,6 +205,8 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
      * Sets the address of the donation.
      */
     public void setAddress(String address) {
+        System.out.println("setting address");
+
         address_field.setText(address);
         parent.donation.setFullAddress(address);
     }
@@ -238,6 +246,8 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         if (mLocationClient.isConnected()) {
             onLocationChanged(mLocationClient.getLastLocation());
             mLocationClient.disconnect();
+        } else {
+            System.out.println("not connected");
         }
     }
 
@@ -331,6 +341,10 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                 parent.mTitle = "Fill Out Donation Details";
                 parent.getActionBar().setTitle(parent.mTitle);
                 parent.replaceFragment(parent.formFragment);
+                break;
+            case (R.id.current_location_button):
+                System.out.println("address");
+                mLocationClient.connect();
                 break;
         }
     }
