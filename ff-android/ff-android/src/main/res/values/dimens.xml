@@ -23,6 +23,7 @@
     <dimen name="field_title_padding">10dp</dimen>
     <dimen name="picture_height">150dp</dimen>
     <dimen name="release_text_bottom">10dp</dimen>
+    <dimen name="textSize">18sp</dimen>
 
 
     <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
