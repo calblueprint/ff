@@ -22,7 +22,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/form_field_size"
         android:minHeight="@dimen/min_address_height"
         android:id="@+id/address_form_field"
         android:background="@drawable/text_field"
@@ -32,7 +32,7 @@
         <TextView
             android:id="@+id/address_header"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/form_field_size"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:gravity="center_vertical|center_horizontal"
@@ -44,16 +44,28 @@
 
         <EditText
             android:id="@+id/address_field"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/address_field_size"
+            android:layout_height="@dimen/form_field_size"
             android:layout_toRightOf="@+id/address_header"
             android:textColor="@color/black"
             android:textColorHint="#C0C0C0"
             android:textStyle="bold"
             android:textSize="@dimen/textSize"
             android:background="@android:color/transparent"
-            android:gravity="center_vertical|center_horizontal"
+            android:gravity="center"
+            android:singleLine="false"
             android:hint="@string/address_hint" />
+
+        <ImageButton
+            android:id="@+id/current_location_button"
+            android:layout_width="@dimen/gps_width"
+            android:layout_height="@dimen/form_field_size"
+            android:layout_toRightOf="@id/address_field"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="#8FFFFFFF"
+            android:src="@drawable/gps"/>
 
     </RelativeLayout>
 
