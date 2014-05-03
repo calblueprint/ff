@@ -44,7 +44,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if ([viewControllers count] == 5)
+    if ([viewControllers count] == 4)
     {
         return [viewControllers count] + 1;
     }
