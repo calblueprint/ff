@@ -342,16 +342,21 @@ public class MainActivity extends ActionBarActivity
     void updateDetailView(Donation d){
         this.donationDetailFragment.updateView(d);
         FragmentManager fm = getSupportFragmentManager();
-        fm.beginTransaction().show(donationDetailFragment).addToBackStack("fragBack").commit();
+        fm.beginTransaction().show(donationListFragment).addToBackStack("fragBack").commit();
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         replaceFragment(donationDetailFragment);
+        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setIcon(R.drawable.abc_ic_ab_back_holo_light);
+
     }
 
     /** Activates when MenuItem Item is selected. If it is in a Detail View
      * of a donation the activity bar turns into a back button. */
     public boolean onOptionsItemSelected(MenuItem item) {
         if (donationDetailFragment.isVisible()) {
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setIcon(R.drawable.ic_blueprint_paw);
             replaceFragment(donationListFragment);
             return true;
         } else {
