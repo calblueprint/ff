@@ -48,6 +48,8 @@ public class DonationDetailFragment extends Fragment {
         donation = new Donation();
     }
 
+    /** Takes in a donation D and sets all the texts and colors in the
+     * TextView. */
     void setDonationText(Donation d){
         kind.setText(d.getKind());
         statusValue = d.getStatus();
@@ -70,6 +72,7 @@ public class DonationDetailFragment extends Fragment {
         date.setText(sdf.format(d.getdateCreated()));
     }
 
+    /** Takes in a Donation D and updates the TextView. */
     void updateView(Donation d){
         this.donation = d;
         if (kind != null) {
