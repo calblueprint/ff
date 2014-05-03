@@ -79,7 +79,7 @@ public class Donation implements Comparable<Donation>{
         _weight = 0.0;
         _vehicle = "";
         _startDate = new Date();
-        _endDate = new Date();
+        _endDate = null;
         _phoneNumber = "";
         _status = "";
         _dateCreated = new Date();

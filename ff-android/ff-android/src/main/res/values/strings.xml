@@ -45,7 +45,7 @@
     <string name="photo">Take Photo</string>
     <string name="pickup_button">SCHEDULE PICKUP</string>
     <string name="phone_number_header">Phone number</string>
-    <string name="phone_number">8584928002</string>
+    <string name="phone_number">(XXX)XXX-XXXX</string>
     <string name="donation_weight">pounds</string>
     <string name="weight_hint">5</string>
     <string name="kind_hint">20 Breakfast Burritos</string>

@@ -14,6 +14,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.telephony.PhoneNumberFormattingTextWatcher;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -162,6 +164,8 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         scrollView = (FFScrollView) rootView.findViewById(R.id.scrollview);
         imageHeader = (RelativeLayout) rootView.findViewById(R.id.image_header_layout);
 
+        phone_field.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
+
         scrollView.setScrollViewListener(this);
 
         food_imageview.setImageResource(R.drawable.hipster_food);
@@ -179,8 +183,9 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         pickup_date = new Date();
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
-        cal.add(Calendar.HOUR_OF_DAY, 3);
+        cal.add(Calendar.HOUR_OF_DAY, 2);
         finish_by_date = cal.getTime();
+        finish_by_field.setText(dateString(finish_by_date));
     }
 
     /**
@@ -244,7 +249,6 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 //        layout.height = imageHeight + (delta * 10);
 //        food_imageview.setLayoutParams(layout);
     }
-
 
     @Override
     public boolean onTouch(View view, MotionEvent event) {

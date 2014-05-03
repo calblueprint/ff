@@ -13,7 +13,6 @@
 #import "AuthenticationModuleController.h"
 #import "PostDonationModuleController.h"
 #import "CurrentDonationsModuleController.h"
-#import "PastDonationsModuleController.h"
 #import "AccountModuleController.h"
 #import "POSDPostDonationViewController.h"
 #import "FAQModuleController.h"
@@ -90,7 +89,6 @@
     return self;
 }
 
-
 #pragma mark replacing tab bar with nav drawer
 
 - (NavDrawerController *)instantiateNavDrawerControllerWithUser:(FFDataUser *)user
@@ -137,13 +135,8 @@
         // Current Donations
         self.currentDonationsModuleController = [[CurrentDonationsModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
         self.currentDonationsViewController = [self.currentDonationsModuleController instantiateCurrentDonationsNavigationViewController];
-        
-        // Past Donations
-        self.pastDonationsModuleController = [[PastDonationsModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
-        [self.pastDonationsModuleController setDelegate:self.moduleCoordinator];
-        self.pastDonationsViewController = [self.pastDonationsModuleController instantiatePastDonationsNavigationViewController];
-        
-        // Account
+   
+			// Account
         self.accountModuleController = [[AccountModuleController alloc] initWithModuleCoordinator:self.moduleCoordinator];
         [self.accountModuleController setDelegate:self.moduleCoordinator];
         self.accountViewController = [self.accountModuleController instantiateProfileViewController];
@@ -155,12 +148,11 @@
         
         self.navDrawerController.viewControllers = @[self.postDonationViewController,
                                                   self.currentDonationsViewController,
-                                                  self.pastDonationsViewController,
                                                   self.accountViewController,
                                                   self.FAQViewController];
-        self.navDrawerController.navCellNames = @[@"Donate", @"Current Donation", @"Past Donations", @"Account", @"About", @"Logout"];
+        self.navDrawerController.navCellNames = @[@"Donate", @"Donations", @"Account", @"About", @"Logout"];
         self.navDrawerController.drawerIcons = @[@"donate.png", @"donatelist.png", @"donatelist.png", @"account.png", @"faq.png", @"logout.png"];
-        
+      
         // Release inactive modules
         self.authenticationModuleController = nil;
     }
