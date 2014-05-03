@@ -84,7 +84,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"Nav Drawer index selected: %d", indexPath.row);
-    if (indexPath.row == 5) {
+    if (indexPath.row == 4) {
         NSLog(@"logout shit");
         NSLog(@"module coordinator: %@", moduleCoordinator);
         [self logoutUser];
