@@ -16,9 +16,12 @@
     <!-- Location Fragment -->
     <dimen name="min_address_height">56dp</dimen>
     <dimen name="map_min_height">126dp</dimen>
+    <dimen name="gps_height">24dp</dimen>
+    <dimen name="gps_width">24dp</dimen>
+    <dimen name="address_field_size">260dp</dimen>
 
     <!-- Form Fragment -->
-    <dimen name="form_field_size">56dp</dimen>
+    <dimen name="form_field_size">64dp</dimen>
     <dimen name="form_padding">3dp</dimen>
     <dimen name="field_title_padding">10dp</dimen>
     <dimen name="picture_height">150dp</dimen>
