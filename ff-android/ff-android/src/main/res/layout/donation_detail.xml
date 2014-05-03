@@ -4,42 +4,37 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/detail_bar">
-
     <ImageView
         android:id="@+id/img"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginRight="1dp"
-        android:layout_weight="2"
+        android:layout_marginLeft="10dp"
         android:src="@drawable/hamburger" />
 
     <TextView
         android:id="@+id/kind"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/img"
+        android:layout_alignTop="@id/img"
         android:textSize="25sp"/>
-    </LinearLayout>
 
     <TextView
         android:id="@+id/status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/detail_bar"
-        android:gravity="right"
-        android:textSize="20sp"/>
+        android:layout_below="@id/kind"
+        android:layout_toRightOf="@id/img"
+        android:gravity="center"
+        android:textSize="22sp"/>
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/status"
+        android:layout_below="@id/img"
         android:textSize="20sp"
         />
 
@@ -61,7 +56,7 @@
         android:layout_marginRight="30dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Cancel Pickup"
+        android:text="@string/cancel_pickup"
         android:textSize="20sp"
         android:textColor="@color/white"
         android:layout_gravity="center"
