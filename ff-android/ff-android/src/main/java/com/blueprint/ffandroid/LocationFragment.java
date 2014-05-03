@@ -1,6 +1,7 @@
 package com.blueprint.ffandroid;
 
 import android.content.IntentSender;
+import android.graphics.Typeface;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -54,8 +55,6 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     /** The Address Field displayed to the user */
     private EditText address_field;
 
-    private LocationManager locationManager;
-
     private GoogleMap map;
     /**View used to save fragment state after onDestroy()**/
     private View rootView;
@@ -103,12 +102,23 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         address_field.setOnFocusChangeListener(this);
         address_field.setOnEditorActionListener(this);
 
+        setFonts(rootView);
+
         map = ((SupportMapFragment) parent.getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
         map.setMyLocationEnabled(true);
         mLocationClient = new LocationClient(parent, this, this);
 
         return rootView;
     }
+
+    private void setFonts(View rootView){
+        Typeface tf = (parent.myTypeface);
+        address_field.setTypeface(tf);
+
+        ((TextView) rootView.findViewById(R.id.address_header)).setTypeface(tf);
+        ((TextView) rootView.findViewById(R.id.forward_button)).setTypeface(tf);
+    }
+
 
     @Override
     public void onLocationChanged(Location location) {
