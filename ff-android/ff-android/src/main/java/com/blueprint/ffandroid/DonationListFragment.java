@@ -22,6 +22,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,8 +42,6 @@ import java.util.Locale;
  */
 public class DonationListFragment extends Fragment {
 
-    private static RequestQueue queue;
-    private String token;
     private static SimpleDateFormat inputDateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
 
 
@@ -68,8 +68,10 @@ public class DonationListFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-        final ListView listView = (ListView) getView().findViewById(R.id.donation_list);
-        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
+        final PullToRefreshListView pullToRefreshView = (PullToRefreshListView) getView().findViewById(R.id.donation_list);
+
+        //Set onclicklistener for the pull-to-refresh view
+        pullToRefreshView.setOnItemClickListener(new ListView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
@@ -79,67 +81,81 @@ public class DonationListFragment extends Fragment {
         });
 
         SharedPreferences prefs = getActivity().getSharedPreferences(LoginActivity.PREFS, 0);
-        this.token = prefs.getString("token", "None");
-        this.queue = Volley.newRequestQueue(getActivity());
+        final String token = prefs.getString("token", "None");
+        final RequestQueue queue = Volley.newRequestQueue(getActivity());
 
-        JsonArrayRequest request = new JsonArrayRequest(getString(R.string.pickup_list_url) + token,
-            new Response.Listener<JSONArray>() {
-                @Override
-                public void onResponse(JSONArray jsonArray) {
-                    Donation[] data = new Donation[jsonArray.length()];
+        pullToRefreshView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
 
-                    try{
-                        for (int i=0; i<jsonArray.length(); i++) {
-                            JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            Donation donation = new Donation();
-                            donation.setAddress(jsonObject.getJSONObject("location").getString("text"));
-                            donation.setKind(jsonObject.getString("kind"));
-                            donation.setStatus(jsonObject.getString("status"));
-                            String dateString = jsonObject.getString("createdAt");
-                            donation.setDateCreated(inputDateFormat.parse(dateString));
-                            data[i] = donation;
 
+            @Override
+            public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+
+                //Declare refreshView final
+                final PullToRefreshBase<ListView> list = refreshView;
+
+                JsonArrayRequest request = new JsonArrayRequest(getString(R.string.pickup_list_url) + token,
+                        new Response.Listener<JSONArray>() {
+                            @Override
+                            public void onResponse(JSONArray jsonArray) {
+                                Donation[] data = new Donation[jsonArray.length()];
+
+                                try{
+                                    for (int i=0; i<jsonArray.length(); i++) {
+                                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                        Donation donation = new Donation();
+                                        donation.setAddress(jsonObject.getJSONObject("location").getString("text"));
+                                        donation.setKind(jsonObject.getString("kind"));
+                                        donation.setStatus(jsonObject.getString("status"));
+                                        String dateString = jsonObject.getString("createdAt");
+                                        donation.setDateCreated(inputDateFormat.parse(dateString));
+                                        data[i] = donation;
+
+                                    }
+                                } catch (JSONException e){
+                                    Log.e("JSON List Error", e.toString());
+                                    return;
+                                } catch (ParseException e){
+                                    Log.e("JSON List Error", e.toString());
+                                    return;
+                                }
+
+                                Arrays.sort(data);
+
+                                DonationAdapter adapter = new DonationAdapter(DonationListFragment.this.getActivity(), data);
+                                pullToRefreshView.setAdapter(adapter);
+
+                            }
+                        },
+
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError volleyError) {
+                                Context context = getActivity();
+                                String message;
+                                if (volleyError instanceof NetworkError){
+                                    message = "Network Error. Please try again later.";
+                                } else {
+                                    try {
+                                        JSONObject response = new JSONObject(new String(volleyError.networkResponse.data));
+                                        message = response.toString();
+                                        Log.e("Volley Error", message);
+                                    } catch (Exception e) {
+                                        Log.e("Volley Error", "unknown");
+                                        message = "Unknown Error";
+                                    }
+                                }
+                                Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
                         }
-                    } catch (JSONException e){
-                        Log.e("JSON List Error", e.toString());
-                        return;
-                    } catch (ParseException e){
-                        Log.e("JSON List Error", e.toString());
-                        return;
-                    }
+                );
 
-                    Arrays.sort(data);
-
-                    DonationAdapter adapter = new DonationAdapter(DonationListFragment.this.getActivity(), data);
-                    listView.setAdapter(adapter);
-
-                }
-            },
-
-            new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError volleyError) {
-                    Context context = getActivity();
-                    String message;
-                    if (volleyError instanceof NetworkError){
-                        message = "Network Error. Please try again later.";
-                    } else {
-                        try {
-                            JSONObject response = new JSONObject(new String(volleyError.networkResponse.data));
-                            message = response.toString();
-                            Log.e("Volley Error", message);
-                        } catch (Exception e) {
-                            Log.e("Volley Error", "unknown");
-                            message = "Unknown Error";
-                        }
-                    }
-                    Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
-                    toast.show();
-                }
+                queue.add(request);
             }
-        );
+        });
 
-        queue.add(request);
+
+
 
     }
 
