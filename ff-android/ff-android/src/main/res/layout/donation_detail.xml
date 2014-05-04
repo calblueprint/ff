@@ -30,26 +30,36 @@
         android:layout_below="@id/kind"
         android:layout_toRightOf="@id/img"
         android:gravity="center"
-        android:textSize="22sp"/>
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:layout_centerHorizontal="true"
+        android:text="|" />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/img"
+        android:layout_toStartOf="@id/divider"
         android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="20sp"
+        android:layout_marginRight="10dp"
+        android:gravity="right"
+        android:textSize="13sp"
         />
 
     <TextView
         android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/date"
-        android:layout_marginBottom="5dp"
+        android:layout_alignTop="@id/divider"
+        android:layout_toRightOf="@id/divider"
         android:layout_marginLeft="10dp"
-        android:textSize="20sp"/>
+        android:textSize="13sp"/>
 
     <ImageView
         android:id="@+id/top_circle"
@@ -89,6 +99,7 @@
         android:background="@drawable/ic_bp_blue_circle"
         android:layout_below="@id/bottom_bar"
         android:layout_marginLeft="30dp" />
+
     <Button
         android:id="@+id/cancel_pickup"
         android:paddingLeft="30dp"
@@ -104,6 +115,5 @@
         android:textColor="@color/white"
         android:layout_gravity="center"
         android:background="@color/button_red"/>
-
 
 </RelativeLayout>
