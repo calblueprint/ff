@@ -16,15 +16,19 @@ import android.support.v7.app.ActionBarActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class MainActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements View.OnClickListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -41,6 +45,11 @@ public class MainActivity extends ActionBarActivity
     public static final String PROPERTY_REG_ID = "registration_id";
     private static final String PROPERTY_APP_VERSION = "appVersion";
     String SENDER_ID = "699498087377";
+
+    /** The awesome navigation controller. */
+    private ResideMenu resideMenu;
+    private ArrayList<ResideMenuItem> menuItems;
+
 
 
     GoogleCloudMessaging gcm;
@@ -80,16 +89,14 @@ public class MainActivity extends ActionBarActivity
         myTypeface = Typeface.createFromAsset(getAssets(), "fonts/proxima_nova_regular.otf");
         initializeFragments();
         setContentView(R.layout.activity_donate);
+
+        initializeNavigation();
+
         context = this;
 
-        mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        replaceFragment(locationFragment);
         mTitle = getTitle();
 
-        // Set up the drawer.
-        mNavigationDrawerFragment.setUp(
-                R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
         donation = new Donation();
 
         SharedPreferences prefs = getSharedPreferences(PREFS, 0);
@@ -108,6 +115,29 @@ public class MainActivity extends ActionBarActivity
 
     }
 
+    private void initializeNavigation() {
+        resideMenu = new ResideMenu(this);
+        resideMenu.setBackground(R.drawable.menu_background);
+        resideMenu.attachToActivity(this);
+        resideMenu.setShadowVisible(false);
+        resideMenu.setDirectionDisable(ResideMenu.DIRECTION_RIGHT);
+
+        String titles[] = { "Donate!", "Donation List", "Account", "FAQ", "Logout", "Congratulations!" };
+        int icon[] = { R.drawable.donate, R.drawable.donatelist, R.drawable.account, R.drawable.faq, R.drawable.logout, R.drawable.logout};
+        menuItems = new ArrayList<ResideMenuItem>();
+        for (int i = 0; i < titles.length; i++) {
+            ResideMenuItem item = new ResideMenuItem(this, icon[i], titles[i]);
+            item.setOnClickListener(this);
+            resideMenu.addMenuItem(item, ResideMenu.DIRECTION_LEFT);
+            menuItems.add(item);
+        }
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        return resideMenu.onInterceptTouchEvent(event) || super.dispatchTouchEvent(event);
+    }
+
     private void initializeFragments(){
         locationFragment = LocationFragment.newInstance();
         accountFragment = AccountFragment.newInstance();
@@ -120,8 +150,9 @@ public class MainActivity extends ActionBarActivity
     }
 
     @Override
-    public void onNavigationDrawerItemSelected(int position) {
+    public void onClick(View view) {
         // update the main content by replacing fragments
+        int position = menuItems.indexOf(view);
         setActionBar(position);
         switch (position) {
             case 0:
@@ -149,6 +180,7 @@ public class MainActivity extends ActionBarActivity
                 replaceFragment(congratulatoryFragment);
                 break;
         }
+        resideMenu.closeMenu();
     }
 
     private void setActionBar(int position){
