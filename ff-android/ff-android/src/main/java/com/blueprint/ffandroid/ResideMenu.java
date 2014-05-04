@@ -101,7 +101,7 @@ public class ResideMenu extends FrameLayout implements GestureDetector.OnGesture
         int orientation = getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             shadow_AdjustScaleX = 0.034f;
-            shadow_AdjustScaleY = 0.12f;
+            shadow_AdjustScaleY = 0.15f;
         } else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             shadow_AdjustScaleX = 0.06f;
             shadow_AdjustScaleY = 0.07f;
@@ -248,7 +248,7 @@ public class ResideMenu extends FrameLayout implements GestureDetector.OnGesture
 
         isOpened = true;
         AnimatorSet scaleDown_activity = buildScaleDownAnimation(view_activity, 0.5f, 0.5f);
-        AnimatorSet scaleDown_shadow = buildScaleDownAnimation(iv_shadow, 0.5f + shadow_AdjustScaleX, 0.5f + shadow_AdjustScaleY);
+        AnimatorSet scaleDown_shadow = buildScaleDownAnimation(iv_shadow, 0.5f, 0.5f - shadow_AdjustScaleY);
         AnimatorSet alpha_menu = buildMenuAnimation(sv_menu, 1.0f);
         scaleDown_shadow.addListener(animationListener);
         scaleDown_activity.playTogether(scaleDown_shadow);
@@ -472,8 +472,11 @@ public class ResideMenu extends FrameLayout implements GestureDetector.OnGesture
         switch (ev.getAction()){
             case MotionEvent.ACTION_DOWN:
                 canScale = !isInIgnoredView(ev);
+                System.out.println(ev.getX());
+                if (ev.getX() >= 30) {
+                    canScale = false;
+                }
                 break;
-
             case MotionEvent.ACTION_MOVE:
                 if (!canScale || isInDisableDirection(scaleDirection))
                     break;
@@ -483,8 +486,8 @@ public class ResideMenu extends FrameLayout implements GestureDetector.OnGesture
                 float targetScale = getTargetScale(ev.getRawX());
                 ViewHelper.setScaleX(view_activity, targetScale);
                 ViewHelper.setScaleY(view_activity, targetScale);
-                ViewHelper.setScaleX(iv_shadow, targetScale + shadow_AdjustScaleX);
-                ViewHelper.setScaleY(iv_shadow, targetScale + shadow_AdjustScaleY);
+                ViewHelper.setScaleX(iv_shadow, targetScale);
+                ViewHelper.setScaleY(iv_shadow, targetScale - shadow_AdjustScaleY);
                 ViewHelper.setAlpha(sv_menu, (1 - targetScale) * 2.0f);
                 break;
 
