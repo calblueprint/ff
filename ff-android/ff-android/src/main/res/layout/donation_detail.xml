@@ -63,15 +63,26 @@
 
     <ImageView
         android:id="@+id/top_circle"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:background="@drawable/ic_bp_blue_circle"
         android:layout_below="@id/address"
         android:layout_marginLeft="30dp" />
 
+    <TextView
+        android:id="@+id/case_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="1dp"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@id/top_circle"
+        android:layout_toRightOf="@id/top_circle"
+        android:text="Awaiting Driver Assignment"
+        android:textSize="15sp"/>
+
     <ImageView
         android:id="@+id/top_bar"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="70dp"
         android:src="@drawable/ic_black_bar"
         android:layout_below="@id/top_circle"/>
@@ -79,26 +90,48 @@
 
     <ImageView
         android:id="@+id/mid_circle"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:background="@drawable/ic_bp_blue_circle"
         android:layout_below="@id/top_bar"
         android:layout_marginLeft="30dp" />
 
+    <TextView
+        android:id="@+id/case_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="1dp"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@id/mid_circle"
+        android:layout_toRightOf="@id/mid_circle"
+        android:text="Awaiting Pickup"
+        android:textSize="15sp"/>
+
     <ImageView
         android:id="@+id/bottom_bar"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="70dp"
         android:src="@drawable/ic_black_bar"
         android:layout_below="@id/mid_circle"/>
 
     <ImageView
         android:id="@+id/bot_circle"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:background="@drawable/ic_bp_blue_circle"
         android:layout_below="@id/bottom_bar"
         android:layout_marginLeft="30dp" />
+
+    <TextView
+        android:id="@+id/case_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="1dp"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@id/bot_circle"
+        android:layout_toRightOf="@id/bot_circle"
+        android:text="Pickuped"
+        android:textSize="15sp"/>
 
     <Button
         android:id="@+id/cancel_pickup"
