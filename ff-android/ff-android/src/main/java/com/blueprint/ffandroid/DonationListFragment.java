@@ -38,11 +38,12 @@ import java.util.Locale;
 /**
  * Created by Nishant on 4/12/14.
  */
-public class DonationListFragment extends ListFragment{
+public class DonationListFragment extends ListFragment implements FragmentLifeCycle {
 
     private static RequestQueue queue;
     private String token;
     private static SimpleDateFormat inputDateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
+    private boolean created = false;
 
 
     public static DonationListFragment newInstance(){
@@ -62,6 +63,8 @@ public class DonationListFragment extends ListFragment{
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
+
+        created = true;
 
         SharedPreferences prefs = getActivity().getSharedPreferences(LoginActivity.PREFS, 0);
         this.token = prefs.getString("token", "None");
@@ -148,6 +151,15 @@ public class DonationListFragment extends ListFragment{
         super.onDetach();
     }
 
+    @Override
+    public void willAppear() {
+        return;
+    }
+
+    @Override
+    public boolean isCreated() {
+        return created;
+    }
 }
 
 class DonationAdapter extends ArrayAdapter<Donation> {
