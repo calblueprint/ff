@@ -1,5 +1,6 @@
 package com.blueprint.ffandroid;
 
+import android.content.Context;
 import android.content.IntentSender;
 import android.graphics.Point;
 import android.graphics.Typeface;
@@ -8,8 +9,14 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.text.TextWatcher;
+import android.text.method.KeyListener;
 import android.view.*;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -41,8 +48,7 @@ import org.json.JSONObject;
 public class LocationFragment extends Fragment implements View.OnClickListener, LocationListener,
         GooglePlayServicesClient.ConnectionCallbacks,
         GooglePlayServicesClient.OnConnectionFailedListener,
-        View.OnFocusChangeListener,
-        TextView.OnEditorActionListener {
+        View.OnFocusChangeListener, FragmentLifeCycle {
 
 
     /** A request code to send to Google Play services */
@@ -61,6 +67,9 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     private GoogleMap map;
     /**View used to save fragment state after onDestroy()**/
     private View rootView;
+
+    /** Whether the fragment has been created previously */
+    private boolean created = false;
 
     /**
      * Use this factory method to create a new instance of
@@ -97,13 +106,35 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         } catch (InflateException e) {
             /* map is already there, just return view as it is */
         }
+
+        created = true;
+
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
         forward.setOnClickListener(this);
         parent = (MainActivity)this.getActivity();
 
         address_field = (EditText) rootView.findViewById(R.id.address_field);
         address_field.setOnFocusChangeListener(this);
-        address_field.setOnEditorActionListener(this);
+
+
+        InputFilter filter = new InputFilter() {
+            public CharSequence filter(CharSequence source, int start, int end,
+                                       Spanned dest, int dstart, int dend) {
+                for (int i = start; i < end; i++) {
+                    if (source.charAt(i) == '\n') {
+                        InputMethodManager imm = (InputMethodManager) parent.getSystemService(
+                                Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(address_field.getWindowToken(), 0);
+                        address_field.clearFocus();
+                        return "";
+                    }
+                }
+                return null;
+            }
+        };
+
+        address_field.setFilters(new InputFilter[]{filter});
+
 
         locationButton = (ImageButton) rootView.findViewById(R.id.current_location_button);
         locationButton.setOnClickListener(this);
@@ -111,6 +142,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         setFonts(rootView);
 
         map = ((SupportMapFragment) parent.getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+        map.setMyLocationEnabled(true);
         mLocationClient = new LocationClient(parent, this, this);
 
         return rootView;
@@ -140,6 +172,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
 
             LatLng myLocation = new LatLng(lat, lng);
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 16));
+            parent.donation.setLocation(location);
         }
     }
 
@@ -186,7 +219,6 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                     String state = address_components.getJSONObject(4).getString("short_name");
                     setAddress(number+" "+street, city, state);
                     setAddress(address);
-                    System.out.print(address);
                 } catch (JSONException e) {
                     Toast.makeText(parent, "Error retrieving address", Toast.LENGTH_SHORT).show();
                 }
@@ -205,8 +237,6 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
      * Sets the address of the donation.
      */
     public void setAddress(String address) {
-        System.out.println("setting address");
-
         address_field.setText(address);
         parent.donation.setFullAddress(address);
     }
@@ -325,13 +355,15 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     }
 
     @Override
-    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-        EditText address = (EditText) v;
-        if (actionId == EditorInfo.IME_ACTION_DONE) {
-            address.clearFocus();
-        }
-        return true;
+    public void willAppear() {
+        return;
     }
+
+    @Override
+    public boolean isCreated() {
+        return created;
+    }
+
 
     @Override
     public void onClick(View v) {
