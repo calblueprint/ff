@@ -241,9 +241,6 @@
 		9BC778B617BB8D0D00ADFD9A /* sharedonation_default_message_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC778B517BB8D0D00ADFD9A /* sharedonation_default_message_picture.png */; };
 		9BC778B817BBFB0D00ADFD9A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC778B717BBFB0D00ADFD9A /* Social.framework */; };
 		9BC778C417BC421900ADFD9A /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC778BE17BC3E6700ADFD9A /* app_icon.png */; };
-		9BC778C517BC426100ADFD9A /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC778BB17BC3AD900ADFD9A /* app_icon@2x.png */; };
-		9BC778D317BC504200ADFD9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC778D217BC504100ADFD9A /* Default-568h@2x.png */; };
-		9BC778D517BC504800ADFD9A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC778D417BC504800ADFD9A /* Default@2x.png */; };
 		9BC778D717BC504E00ADFD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC778D617BC504E00ADFD9A /* Default.png */; };
 		9BC778E117BC5D1D00ADFD9A /* tabbar_icon_account.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC778D917BC5D1D00ADFD9A /* tabbar_icon_account.png */; };
 		9BC778E217BC5D1D00ADFD9A /* tabbar_icon_account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC778DA17BC5D1D00ADFD9A /* tabbar_icon_account@2x.png */; };
@@ -313,6 +310,13 @@
 		E4165D3C18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4165D3218FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */; };
 		E4165D3D18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4165D3318FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf */; };
 		E4165D3E18FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4165D3418FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf */; };
+		E47842D31911E95400F5C5E3 /* cookie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E47842D01911E95400F5C5E3 /* cookie.jpg */; };
+		E47842D41911E95400F5C5E3 /* pie.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E47842D11911E95400F5C5E3 /* pie.jpeg */; };
+		E47842D51911E95400F5C5E3 /* cake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E47842D21911E95400F5C5E3 /* cake.jpg */; };
+		E4B0A1B319159C480034C32B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B119159C480034C32B /* Default-568h@2x.png */; };
+		E4B0A1B419159C480034C32B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B219159C480034C32B /* Default@2x.png */; };
+		E4B0A1B619159CA40034C32B /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B519159CA40034C32B /* app_icon@2x.png */; };
+		E4B0A1B819159D510034C32B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B719159D510034C32B /* Images.xcassets */; };
 		E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4EF65E018FDCD56007E76BF /* photodefault.jpg */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -554,10 +558,7 @@
 		9BC778B217BB816200ADFD9A /* SOCSShareDonationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOCSShareDonationViewController.m; sourceTree = "<group>"; };
 		9BC778B517BB8D0D00ADFD9A /* sharedonation_default_message_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sharedonation_default_message_picture.png; sourceTree = "<group>"; };
 		9BC778B717BBFB0D00ADFD9A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		9BC778BB17BC3AD900ADFD9A /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app_icon@2x.png"; path = "../../../app_icon@2x.png"; sourceTree = "<group>"; };
 		9BC778BE17BC3E6700ADFD9A /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_icon.png; path = ../../../app_icon.png; sourceTree = "<group>"; };
-		9BC778D217BC504100ADFD9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../Default-568h@2x.png"; sourceTree = "<group>"; };
-		9BC778D417BC504800ADFD9A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../../Default@2x.png"; sourceTree = "<group>"; };
 		9BC778D617BC504E00ADFD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../../Default.png; sourceTree = "<group>"; };
 		9BC778D917BC5D1D00ADFD9A /* tabbar_icon_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_icon_account.png; sourceTree = "<group>"; };
 		9BC778DA17BC5D1D00ADFD9A /* tabbar_icon_account@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_icon_account@2x.png"; sourceTree = "<group>"; };
@@ -707,6 +708,13 @@
 		E4165D3F18FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Regular Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Simonson - Proxima Nova Alt Regular Italic.otf"; path = "FFiPhoneApp/Assets/Fonts/Mark Simonson - Proxima Nova Alt Regular Italic.otf"; sourceTree = "<group>"; };
 		E4165D4018FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Simonson - Proxima Nova Alt Regular.ttf"; path = "FFiPhoneApp/Assets/Fonts/Mark Simonson - Proxima Nova Alt Regular.ttf"; sourceTree = "<group>"; };
 		E4165D4118FF729400A7C202 /* Mark Simonson - Proxima Nova Alt Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Simonson - Proxima Nova Alt Thin.otf"; path = "FFiPhoneApp/Assets/Fonts/Mark Simonson - Proxima Nova Alt Thin.otf"; sourceTree = "<group>"; };
+		E47842D01911E95400F5C5E3 /* cookie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cookie.jpg; sourceTree = "<group>"; };
+		E47842D11911E95400F5C5E3 /* pie.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pie.jpeg; sourceTree = "<group>"; };
+		E47842D21911E95400F5C5E3 /* cake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cake.jpg; sourceTree = "<group>"; };
+		E4B0A1B119159C480034C32B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E4B0A1B219159C480034C32B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E4B0A1B519159CA40034C32B /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
+		E4B0A1B719159D510034C32B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E4EF65E018FDCD56007E76BF /* photodefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photodefault.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1127,6 +1135,7 @@
 				9B98D260179D0E870032888C /* Assets */,
 				9B98D25A179D0E870032888C /* App */,
 				9B4F191517A5D881005516A0 /* Modules */,
+				E4B0A1B719159D510034C32B /* Images.xcassets */,
 				9B98D187179CEE4C0032888C /* Supporting Files */,
 			);
 			path = FFiPhoneApp;
@@ -1199,14 +1208,15 @@
 		9B98D261179D0E870032888C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E4B0A1B119159C480034C32B /* Default-568h@2x.png */,
+				E4B0A1B219159C480034C32B /* Default@2x.png */,
+				E47842CF1911E94400F5C5E3 /* sample_images */,
 				0958EC1A190DF868009412A4 /* ic_blueprint_paw.png */,
 				9B7109D017AC8761000C7E39 /* VehicleTypes */,
 				9B4F18ED17A59849005516A0 /* Theme */,
 				9BC778D617BC504E00ADFD9A /* Default.png */,
-				9BC778D417BC504800ADFD9A /* Default@2x.png */,
-				9BC778D217BC504100ADFD9A /* Default-568h@2x.png */,
 				9BC778BE17BC3E6700ADFD9A /* app_icon.png */,
-				9BC778BB17BC3AD900ADFD9A /* app_icon@2x.png */,
+				E4B0A1B519159CA40034C32B /* app_icon@2x.png */,
 				9B98D265179D0E870032888C /* first.png */,
 				9B98D266179D0E870032888C /* first@2x.png */,
 				E4EF65E018FDCD56007E76BF /* photodefault.jpg */,
@@ -1553,6 +1563,16 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		E47842CF1911E94400F5C5E3 /* sample_images */ = {
+			isa = PBXGroup;
+			children = (
+				E47842D01911E95400F5C5E3 /* cookie.jpg */,
+				E47842D11911E95400F5C5E3 /* pie.jpeg */,
+				E47842D21911E95400F5C5E3 /* cake.jpg */,
+			);
+			name = sample_images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1647,6 +1667,7 @@
 				9B5B223017A851B10003B1CD /* AuthenticationStoryboard.storyboard in Resources */,
 				9B5B223117A851EC0003B1CD /* AppLoaderStoryboard.storyboard in Resources */,
 				9B5B233117A8D9A30003B1CD /* navigationbar_background@2x.png in Resources */,
+				E4B0A1B419159C480034C32B /* Default@2x.png in Resources */,
 				9BFA588917A9D62B00908526 /* postdonation_button_howmuch_normal.png in Resources */,
 				9BFA588B17A9D62B00908526 /* postdonation_button_picture_highlighted.png in Resources */,
 				9BFA588C17A9D62B00908526 /* postdonation_button_picture_normal.png in Resources */,
@@ -1663,12 +1684,14 @@
 				9BFA58A217A9D7DD00908526 /* postdonation_button_where_selected.png in Resources */,
 				E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */,
 				E4165D3518FF723800A7C202 /* demo.html in Resources */,
+				E4B0A1B819159D510034C32B /* Images.xcassets in Resources */,
 				9BFA58BF17A9E08200908526 /* postdonation_button_howmuch_normal@2x.png in Resources */,
 				E4165D3918FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.woff in Resources */,
 				9BFA58C017A9E08200908526 /* postdonation_button_howmuch_selected@2x.png in Resources */,
 				9BFA58C117A9E08200908526 /* postdonation_button_picture_highlighted@2x.png in Resources */,
 				9BFA58C217A9E08200908526 /* postdonation_button_picture_normal@2x.png in Resources */,
 				9BFA58C317A9E08200908526 /* postdonation_button_picture_selected@2x.png in Resources */,
+				E47842D41911E95400F5C5E3 /* pie.jpeg in Resources */,
 				9BFA58C417A9E08200908526 /* postdonation_button_when_normal@2x.png in Resources */,
 				0987D9B818FC7CE7001510F8 /* donate.png in Resources */,
 				9BFA58C517A9E08200908526 /* postdonation_button_when_selected@2x.png in Resources */,
@@ -1700,6 +1723,7 @@
 				9B7109D817AC8761000C7E39 /* vehicle_type-small.png in Resources */,
 				9BFAE5A617B07D100058AFE9 /* navigationbar_top_left_icon.png in Resources */,
 				9BFAE5A717B07D100058AFE9 /* navigationbar_top_left_icon@2x.png in Resources */,
+				E47842D31911E95400F5C5E3 /* cookie.jpg in Resources */,
 				9BB52FCE17B1F14C00813AF6 /* test.jpg in Resources */,
 				9BB52FD117B236AA00813AF6 /* login_logo@2x.png in Resources */,
 				9BB52FD317B23F7B00813AF6 /* divider_230x1.png in Resources */,
@@ -1719,6 +1743,7 @@
 				9B64E19A17BAF7F40051E8F1 /* button_green_20x20_highlighted@2x.png in Resources */,
 				0987D9B718FC7CE7001510F8 /* donatelist.png in Resources */,
 				9B64E19B17BAF7F40051E8F1 /* button_green_20x20_normal.png in Resources */,
+				E47842D51911E95400F5C5E3 /* cake.jpg in Resources */,
 				9B64E19C17BAF7F40051E8F1 /* button_green_20x20_normal@2x.png in Resources */,
 				9B64E19D17BAF7F40051E8F1 /* button_green_30x30_disabled.png in Resources */,
 				9B64E19E17BAF7F40051E8F1 /* button_green_30x30_disabled@2x.png in Resources */,
@@ -1732,6 +1757,7 @@
 				E4165D3718FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.svg in Resources */,
 				9B64E1A617BAF7F40051E8F1 /* button_green_40x40_highlighted@2x.png in Resources */,
 				9B64E1A717BAF7F40051E8F1 /* button_green_40x40_normal.png in Resources */,
+				E4B0A1B619159CA40034C32B /* app_icon@2x.png in Resources */,
 				9B64E1A817BAF7F40051E8F1 /* button_green_40x40_normal@2x.png in Resources */,
 				9B64E1CA17BB0A790051E8F1 /* button_red_20x20_disabled.png in Resources */,
 				9B64E1CB17BB0A790051E8F1 /* button_red_20x20_disabled@2x.png in Resources */,
@@ -1758,9 +1784,6 @@
 				9BC778A717BB80E000ADFD9A /* SocialShareStoryboard.storyboard in Resources */,
 				9BC778B617BB8D0D00ADFD9A /* sharedonation_default_message_picture.png in Resources */,
 				9BC778C417BC421900ADFD9A /* app_icon.png in Resources */,
-				9BC778C517BC426100ADFD9A /* app_icon@2x.png in Resources */,
-				9BC778D317BC504200ADFD9A /* Default-568h@2x.png in Resources */,
-				9BC778D517BC504800ADFD9A /* Default@2x.png in Resources */,
 				9BC778D717BC504E00ADFD9A /* Default.png in Resources */,
 				9BC778E117BC5D1D00ADFD9A /* tabbar_icon_account.png in Resources */,
 				9BC778E217BC5D1D00ADFD9A /* tabbar_icon_account@2x.png in Resources */,
@@ -1775,6 +1798,7 @@
 				9BC778E817BC5D1D00ADFD9A /* tabbar_icon_postdonation@2x.png in Resources */,
 				9BC41E63181A44E500886900 /* button_facebook_login.png in Resources */,
 				9BC41E64181A44E500886900 /* button_facebook_login@2x.png in Resources */,
+				E4B0A1B319159C480034C32B /* Default-568h@2x.png in Resources */,
 				9BC41E67181A4EB800886900 /* login_divider_with_or_230x1.png in Resources */,
 				9BC41E68181A4EB800886900 /* login_divider_with_or_230x1@2x.png in Resources */,
 			);
@@ -2036,7 +2060,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -2049,6 +2073,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F46002C458C4125A3A1E6B5 /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2090,14 +2115,14 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Komal Ahmad (2Y9G4JSWKE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Komal Ahmad (2Y9G4JSWKE)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alton Zheng (JY7HNABSQZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alton Zheng (JY7HNABSQZ)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "D374F755-D54C-4457-A07C-00974DE0654D";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D374F755-D54C-4457-A07C-00974DE0654D";
@@ -2111,6 +2136,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F46002C458C4125A3A1E6B5 /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFiPhoneApp/App/FFiPhoneApp-Prefix.pch";
 				INFOPLIST_FILE = "FFiPhoneApp/app/FFiPhoneApp-Info.plist";

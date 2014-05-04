@@ -1,9 +1,8 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v4.app.ListFragment;
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -38,7 +38,7 @@ import java.util.Locale;
 /**
  * Created by Nishant on 4/12/14.
  */
-public class DonationListFragment extends ListFragment implements FragmentLifeCycle {
+public class DonationListFragment extends Fragment implements FragmentLifeCycle {
 
     private static RequestQueue queue;
     private String token;
@@ -59,10 +59,25 @@ public class DonationListFragment extends ListFragment implements FragmentLifeCy
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        View rootView = inflater.inflate(R.layout.donation_listview, container, false);
+        return rootView;
+    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
+        final ListView listView = (ListView) getView().findViewById(R.id.donation_list);
+        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
+                DonationListFragment.this.onListItemClick((ListView) parent, view, position, id);
+
+            }
+        });
 
         created = true;
 
@@ -99,7 +114,7 @@ public class DonationListFragment extends ListFragment implements FragmentLifeCy
                     Arrays.sort(data);
 
                     DonationAdapter adapter = new DonationAdapter(DonationListFragment.this.getActivity(), data);
-                    DonationListFragment.this.setListAdapter(adapter);
+                    listView.setAdapter(adapter);
 
                 }
             },
@@ -131,11 +146,9 @@ public class DonationListFragment extends ListFragment implements FragmentLifeCy
 
     }
 
-    @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
-       Donation d = (Donation) this.getListView().getItemAtPosition(position);
-       Log.d("donation kind", d.getKind());
+       Donation d = (Donation) l.getItemAtPosition(position);
        ((MainActivity) this.getActivity()).updateDetailView(d);
 
     }
