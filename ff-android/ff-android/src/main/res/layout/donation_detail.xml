@@ -10,7 +10,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:src="@drawable/hamburger" />
@@ -59,6 +59,7 @@
         android:layout_alignTop="@id/divider"
         android:layout_toRightOf="@id/divider"
         android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"
         android:textSize="13sp"/>
 
     <ImageView
@@ -120,7 +121,8 @@
         android:layout_height="20dp"
         android:background="@drawable/ic_bp_blue_circle"
         android:layout_below="@id/bottom_bar"
-        android:layout_marginLeft="30dp" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:id="@+id/case_3"
@@ -130,7 +132,7 @@
         android:paddingLeft="10dp"
         android:layout_alignTop="@id/bot_circle"
         android:layout_toRightOf="@id/bot_circle"
-        android:text="Pickuped"
+        android:text="Pickedup"
         android:textSize="15sp"/>
 
     <Button
