@@ -12,7 +12,7 @@
 
     <ImageView
             android:id="@+id/iv_shadow"
-            android:background="@color/grey"
+            android:background="@drawable/shadow"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:scaleType="fitXY"/>
