@@ -3,6 +3,7 @@ package com.blueprint.ffandroid;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Point;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.*;
@@ -101,7 +102,7 @@ public class ResideMenu extends FrameLayout implements GestureDetector.OnGesture
         int orientation = getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             shadow_AdjustScaleX = 0.034f;
-            shadow_AdjustScaleY = 0.15f;
+            shadow_AdjustScaleY = 0.17f;
         } else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             shadow_AdjustScaleX = 0.06f;
             shadow_AdjustScaleY = 0.07f;
@@ -154,6 +155,15 @@ public class ResideMenu extends FrameLayout implements GestureDetector.OnGesture
             this.rightMenuItems.add(menuItem);
             layout_right_menu.addView(menuItem);
         }
+    }
+
+    /**
+     * returns whether the menu is open;
+     *
+     * @return
+     */
+    public boolean isOpen() {
+        return isOpened;
     }
 
     /**
@@ -463,6 +473,13 @@ public class ResideMenu extends FrameLayout implements GestureDetector.OnGesture
         return targetScale;
     }
 
+    private boolean isInTouchView(float x) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        int width = size.x;
+        return (width - 50 <= x);
+    }
+
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         float currentActivityScaleX = ViewHelper.getScaleX(view_activity);
@@ -478,7 +495,10 @@ public class ResideMenu extends FrameLayout implements GestureDetector.OnGesture
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (!canScale || isInDisableDirection(scaleDirection))
+                if (!canScale && !isOpen()) {
+                    break;
+                }
+                if (isInDisableDirection(scaleDirection))
                     break;
                 if (currentActivityScaleX < 0.95)
                     sv_menu.setVisibility(VISIBLE);
@@ -492,12 +512,13 @@ public class ResideMenu extends FrameLayout implements GestureDetector.OnGesture
                 break;
 
             case MotionEvent.ACTION_UP:
-                if (!canScale)
-                    break;
-                if (currentActivityScaleX > 0.75f){
+                if (currentActivityScaleX > 0.75f) {
                     closeMenu();
-                }else{
+                } else {
                     openMenu(scaleDirection);
+                }
+                if (!isOpen() && isInTouchView(ev.getX())) {
+                    closeMenu();
                 }
                 break;
         }
