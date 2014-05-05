@@ -490,7 +490,6 @@ public class ResideMenu extends FrameLayout implements GestureDetector.OnGesture
         switch (ev.getAction()){
             case MotionEvent.ACTION_DOWN:
                 canScale = !isInIgnoredView(ev);
-                System.out.println(ev.getX());
                 if (ev.getX() >= 30) {
                     canScale = false;
                 }
