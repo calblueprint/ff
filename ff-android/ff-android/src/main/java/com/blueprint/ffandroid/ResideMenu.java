@@ -476,6 +476,7 @@ public class ResideMenu extends FrameLayout implements GestureDetector.OnGesture
     private boolean isInTouchView(float x) {
         Display display = activity.getWindowManager().getDefaultDisplay();
         Point size = new Point();
+        display.getSize(size);
         int width = size.x;
         return (width - 50 <= x);
     }
