@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -19,6 +20,8 @@ import android.util.Log;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.google.android.gms.location.LocationClient;
+import android.support.v4.app.FragmentManager.BackStackEntry;
 
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -106,6 +109,7 @@ public class MainActivity extends ActionBarActivity
             Log.i(TAG, "No valid Google Play Services APK found.");
         }
 
+
     }
 
     private void initializeFragments(){
@@ -123,18 +127,24 @@ public class MainActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         setActionBar(position);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int itemsOnStack = fragmentManager.getBackStackEntryCount();
+
         switch (position) {
             case 0:
                 replaceFragment(locationFragment);
                 break;
             case 1:
-                replaceFragment(donationListFragment);
+                if (itemsOnStack == 0) replaceFragmentWithBackStack(donationListFragment);
+                else replaceFragment(donationListFragment);
                 break;
             case 2:
-                replaceFragment(accountFragment);
+                if (itemsOnStack == 0) replaceFragmentWithBackStack(accountFragment);
+                else replaceFragment(accountFragment);
                 break;
             case 3:
-                replaceFragment(faqFragment);
+                if (itemsOnStack == 0) replaceFragmentWithBackStack(faqFragment);
+                else replaceFragment(faqFragment);
                 break;
             case 4:
                 SharedPreferences prefs = getSharedPreferences(LoginActivity.PREFS, 0);
@@ -146,8 +156,10 @@ public class MainActivity extends ActionBarActivity
                 startActivity(intent);
                 break;
             case 5:
-                replaceFragment(congratulatoryFragment);
+                if (itemsOnStack == 0) replaceFragmentWithBackStack(congratulatoryFragment);
+                else replaceFragment(congratulatoryFragment);
                 break;
+
         }
     }
 
@@ -182,12 +194,20 @@ public class MainActivity extends ActionBarActivity
     public void replaceFragment(Fragment newFragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction ft = fragmentManager.beginTransaction();
-        if(!newFragment.isAdded()){
-            ft.add(R.id.container, newFragment);
-        }
-        ft.hide(currentFragment);
-        ft.show(newFragment);
+        ft.replace(R.id.container, newFragment);
         ft.commit();
+        Log.d("Current Fragment", currentFragment.toString());
+        Log.d("New Fragment", newFragment.toString());
+        currentFragment = newFragment;
+    }
+
+    public void replaceFragmentWithBackStack(Fragment newFragment){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.addToBackStack(((HasName) newFragment).getName());
+        ft.replace(R.id.container, newFragment);
+        ft.commit();
+        Log.d("Current Fragment (back stack)", currentFragment.toString());
+        Log.d("New Fragment (back stack)", newFragment.toString());
         currentFragment = newFragment;
     }
 
@@ -338,7 +358,7 @@ public class MainActivity extends ActionBarActivity
 
     void updateDetailView(Donation d){
         this.donationDetailFragment.updateView(d);
-        replaceFragment(donationDetailFragment);
+        replaceFragmentWithBackStack(donationDetailFragment);
 
     }
 }
