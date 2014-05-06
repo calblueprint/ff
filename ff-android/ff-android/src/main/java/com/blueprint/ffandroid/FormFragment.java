@@ -153,7 +153,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
     }
 
     public void setupFragment(View rootView) {
-        ImageButton photo = (ImageButton) rootView.findViewById(R.id.camera_button);
+        ImageView photo = (ImageView) rootView.findViewById(R.id.image_banner);
 
         kind_field = (EditText) rootView.findViewById(R.id.donation_kind);
         weight_field = (EditText) rootView.findViewById(R.id.donation_weight_field);
@@ -440,7 +440,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                     displayInvalidDialog();
                 }
                 break;
-            case R.id.camera_button:
+            case R.id.image_banner:
                 dispatchTakePictureIntent();
                 break;
         }

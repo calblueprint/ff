@@ -227,8 +227,6 @@
 		9BBB11DB17A83B8900EA924D /* UserAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B025A9817A1E692004960C4 /* UserAPITests.m */; };
 		9BBB11DC17A83B8900EA924D /* LocationAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B025A9E17A21A75004960C4 /* LocationAPITests.m */; };
 		9BBB11DD17A83B8900EA924D /* DonationAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B025AA117A240F3004960C4 /* DonationAPITests.m */; };
-		9BC41E63181A44E500886900 /* button_facebook_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC41E61181A44E500886900 /* button_facebook_login.png */; };
-		9BC41E64181A44E500886900 /* button_facebook_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC41E62181A44E500886900 /* button_facebook_login@2x.png */; };
 		9BC41E67181A4EB800886900 /* login_divider_with_or_230x1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC41E65181A4EB800886900 /* login_divider_with_or_230x1.png */; };
 		9BC41E68181A4EB800886900 /* login_divider_with_or_230x1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC41E66181A4EB800886900 /* login_divider_with_or_230x1@2x.png */; };
 		9BC41E71181A635700886900 /* AUTForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC41E70181A635700886900 /* AUTForgotPasswordViewController.m */; };
@@ -317,6 +315,7 @@
 		E4B0A1B419159C480034C32B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B219159C480034C32B /* Default@2x.png */; };
 		E4B0A1B619159CA40034C32B /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B519159CA40034C32B /* app_icon@2x.png */; };
 		E4B0A1B819159D510034C32B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B719159D510034C32B /* Images.xcassets */; };
+		E4EF13361918640F00BD8FBD /* button_facebook_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4EF13351918640F00BD8FBD /* button_facebook_login@2x.png */; };
 		E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4EF65E018FDCD56007E76BF /* photodefault.jpg */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -539,8 +538,6 @@
 		9BB5303317B3856100813AF6 /* ACCProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACCProfileViewController.m; sourceTree = "<group>"; };
 		9BBB114117A8380700EA924D /* FFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAPIClient.h; sourceTree = "<group>"; };
 		9BBB114217A8380700EA924D /* FFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAPIClient.m; sourceTree = "<group>"; };
-		9BC41E61181A44E500886900 /* button_facebook_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_facebook_login.png; sourceTree = "<group>"; };
-		9BC41E62181A44E500886900 /* button_facebook_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_facebook_login@2x.png"; sourceTree = "<group>"; };
 		9BC41E65181A4EB800886900 /* login_divider_with_or_230x1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_divider_with_or_230x1.png; sourceTree = "<group>"; };
 		9BC41E66181A4EB800886900 /* login_divider_with_or_230x1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_divider_with_or_230x1@2x.png"; sourceTree = "<group>"; };
 		9BC41E6F181A635700886900 /* AUTForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUTForgotPasswordViewController.h; sourceTree = "<group>"; };
@@ -715,6 +712,7 @@
 		E4B0A1B219159C480034C32B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E4B0A1B519159CA40034C32B /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
 		E4B0A1B719159D510034C32B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E4EF13351918640F00BD8FBD /* button_facebook_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_facebook_login@2x.png"; path = "../../../../../../../../../button_facebook_login@2x.png"; sourceTree = "<group>"; };
 		E4EF65E018FDCD56007E76BF /* photodefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photodefault.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -916,8 +914,7 @@
 		9B5B233517A8DBA10003B1CD /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				9BC41E61181A44E500886900 /* button_facebook_login.png */,
-				9BC41E62181A44E500886900 /* button_facebook_login@2x.png */,
+				E4EF13351918640F00BD8FBD /* button_facebook_login@2x.png */,
 				9B64E1DC17BB35C80051E8F1 /* donation_table_placeholder.png */,
 				9B64E1DD17BB35C80051E8F1 /* donation_table_placeholder@2x.png */,
 				9B64E17817BA3A0E0051E8F1 /* cross.png */,
@@ -1660,6 +1657,7 @@
 				9BBB111617A7CEAB00EA924D /* apploader_background.png in Resources */,
 				9BBB111717A7CEAB00EA924D /* apploader_background@2x.png in Resources */,
 				9BBB111817A7CEAB00EA924D /* apploader_logo.png in Resources */,
+				E4EF13361918640F00BD8FBD /* button_facebook_login@2x.png in Resources */,
 				9BBB111C17A7CEAF00EA924D /* first.png in Resources */,
 				9BBB111D17A7CEAF00EA924D /* first@2x.png in Resources */,
 				9BBB111E17A7CEAF00EA924D /* second.png in Resources */,
@@ -1796,8 +1794,6 @@
 				9BC778E717BC5D1D00ADFD9A /* tabbar_icon_postdonation.png in Resources */,
 				E4165D3A18FF723800A7C202 /* fonts.css in Resources */,
 				9BC778E817BC5D1D00ADFD9A /* tabbar_icon_postdonation@2x.png in Resources */,
-				9BC41E63181A44E500886900 /* button_facebook_login.png in Resources */,
-				9BC41E64181A44E500886900 /* button_facebook_login@2x.png in Resources */,
 				E4B0A1B319159C480034C32B /* Default-568h@2x.png in Resources */,
 				9BC41E67181A4EB800886900 /* login_divider_with_or_230x1.png in Resources */,
 				9BC41E68181A4EB800886900 /* login_divider_with_or_230x1@2x.png in Resources */,

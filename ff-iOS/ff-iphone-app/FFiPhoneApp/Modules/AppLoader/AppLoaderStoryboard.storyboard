@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9SJ-L6-mB1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9SJ-L6-mB1">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -17,29 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="apploader_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ezv-SM-6Nw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" image="apploader_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="obF-tz-h1p">
-                                <rect key="frame" x="20" y="90" width="280" height="117"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="117" id="FYo-BK-TyX"/>
-                                </constraints>
-                            </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HRa-kV-jpf">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" ambiguous="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HRa-kV-jpf">
                                 <rect key="frame" x="142" y="320" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="HRa-kV-jpf" secondAttribute="bottom" constant="123" id="8xV-gV-JKa"/>
-                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="leading" secondItem="1Fs-1p-d9z" secondAttribute="leading" id="CdU-Oq-nIm"/>
-                            <constraint firstAttribute="trailing" secondItem="obF-tz-h1p" secondAttribute="trailing" constant="20" symbolic="YES" id="Isv-g3-uxN"/>
-                            <constraint firstItem="obF-tz-h1p" firstAttribute="leading" secondItem="1Fs-1p-d9z" secondAttribute="leading" constant="20" symbolic="YES" id="X7y-3S-Sng"/>
-                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="top" secondItem="1Fs-1p-d9z" secondAttribute="top" id="bNA-qF-ah3"/>
-                            <constraint firstItem="obF-tz-h1p" firstAttribute="top" secondItem="1Fs-1p-d9z" secondAttribute="top" constant="90" id="m8R-a0-fcc"/>
-                            <constraint firstItem="HRa-kV-jpf" firstAttribute="centerX" secondItem="obF-tz-h1p" secondAttribute="centerX" id="rOA-W7-rm6"/>
-                            <constraint firstItem="Ezv-SM-6Nw" firstAttribute="bottom" secondItem="1Fs-1p-d9z" secondAttribute="bottom" id="wvw-31-Wbo"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -49,10 +33,6 @@
             <point key="canvasLocation" x="159" y="-96"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="apploader_background.png" width="320" height="480"/>
-        <image name="apploader_logo.png" width="200" height="139"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
