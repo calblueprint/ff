@@ -39,7 +39,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         GooglePlayServicesClient.ConnectionCallbacks,
         GooglePlayServicesClient.OnConnectionFailedListener,
         View.OnFocusChangeListener,
-        TextView.OnEditorActionListener {
+        TextView.OnEditorActionListener, HasName {
 
 
     /** A request code to send to Google Play services */
@@ -320,8 +320,16 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                 updateDonation();
                 parent.mTitle = "Fill Out Donation Details";
                 parent.getActionBar().setTitle(parent.mTitle);
-                parent.replaceFragment(parent.formFragment);
+                parent.replaceFragmentWithBackStack(parent.formFragment);
                 break;
         }
+    }
+
+    /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "LocationFragment";
     }
 }
