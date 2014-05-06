@@ -170,7 +170,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
         scrollView.setScrollViewListener(this);
 
-        food_imageview.setImageResource(R.drawable.hipster_food);
+        food_imageview.setImageResource(R.drawable.defaultphoto);
         //imageHeight = (int) getResources().getDimension(R.dimen.picture_height);
 
         scrollToView(imageHeader);
