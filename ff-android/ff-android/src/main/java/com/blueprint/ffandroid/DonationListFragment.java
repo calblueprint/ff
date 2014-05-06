@@ -1,8 +1,11 @@
 package com.blueprint.ffandroid;
 
 import android.app.Activity;
+
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -147,7 +150,6 @@ public class DonationListFragment extends Fragment {
 
        Donation d = (Donation) l.getItemAtPosition(position);
        ((MainActivity) this.getActivity()).updateDetailView(d);
-
     }
 
 
