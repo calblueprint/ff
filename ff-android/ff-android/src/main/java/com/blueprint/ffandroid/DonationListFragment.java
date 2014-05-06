@@ -43,9 +43,10 @@ import java.util.Locale;
 /**
  * Created by Nishant on 4/12/14.
  */
-public class DonationListFragment extends Fragment {
+public class DonationListFragment extends Fragment implements FragmentLifeCycle {
 
     private static SimpleDateFormat inputDateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
+    private boolean created = false;
 
 
     public static DonationListFragment newInstance(){
@@ -91,6 +92,7 @@ public class DonationListFragment extends Fragment {
             }
         });
 
+        created = true;
 
         getData(listView, pullToRefreshView);
 
@@ -196,6 +198,15 @@ public class DonationListFragment extends Fragment {
         super.onDetach();
     }
 
+    @Override
+    public void willAppear() {
+        return;
+    }
+
+    @Override
+    public boolean isCreated() {
+        return created;
+    }
 }
 
 class DonationAdapter extends ArrayAdapter<Donation> {

@@ -89,5 +89,4 @@ public class DonationDetailFragment extends Fragment {
 
         return rootView;
     }
-
 }

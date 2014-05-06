@@ -24,7 +24,7 @@ import org.w3c.dom.Text;
 /**
  * A fragment that congradulates the user when he or she completes a donation.
  */
-public class CongratulatoryFragment extends Fragment {
+public class CongratulatoryFragment extends Fragment implements FragmentLifeCycle {
 
     /** The tag used for debugging. */
     private static String TAG = "Congratulatory Fragment";
@@ -46,6 +46,8 @@ public class CongratulatoryFragment extends Fragment {
     private TextView title;
     /** The textview of the congratulation statement. */
     private TextView congratulationsText;
+
+    private boolean created = false;
 
     private void onSessionStateChange(Session session, SessionState state, Exception exception) {
         if (state.isOpened()) {
@@ -97,6 +99,8 @@ public class CongratulatoryFragment extends Fragment {
         donationButton = (Button) rootView.findViewById(R.id.go_to_donation);
         title = (TextView) rootView.findViewById(R.id.congratulations_title);
         congratulationsText = (TextView) rootView.findViewById(R.id.congratulations_text);
+
+        created = true;
 
         setFonts();
         return rootView;
@@ -242,5 +246,15 @@ public class CongratulatoryFragment extends Fragment {
         donationButton.setTypeface(tf);
         congratulationsText.setTypeface(tf);
         title.setTypeface(tf);
+    }
+
+    @Override
+    public void willAppear() {
+        return;
+    }
+
+    @Override
+    public boolean isCreated() {
+        return created;
     }
 }

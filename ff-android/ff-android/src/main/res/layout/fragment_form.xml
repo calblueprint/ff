@@ -226,6 +226,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:minHeight="@dimen/min_address_height"
                 android:background="@drawable/text_field"
                 android:layout_margin="@dimen/form_padding" >
 
@@ -248,12 +249,13 @@
                     android:layout_height="match_parent"
                     android:textSize="@dimen/textSize"
                     android:layout_toRightOf="@+id/address_header"
+                    android:gravity="center_horizontal"
                     android:textColor="@color/black"
                     android:textColorHint="#C0C0C0"
                     android:textStyle="bold"
                     android:background="@android:color/transparent"
                     android:paddingLeft="@dimen/field_title_padding"
-                    android:hint="@string/phone_number" />
+                    android:hint="@string/address_hint" />
             </RelativeLayout>
 
             <ImageView
