@@ -191,6 +191,9 @@ public class MainActivity extends ActionBarActivity
         ft.show(newFragment);
         ft.commit();
         currentFragment = newFragment;
+        if (((FragmentLifeCycle) currentFragment).isCreated()) {
+            ((FragmentLifeCycle) currentFragment).willAppear();
+        }
     }
 
     @Override
@@ -361,5 +364,4 @@ public class MainActivity extends ActionBarActivity
             return super.onOptionsItemSelected(item);
         }
     }
-
 }

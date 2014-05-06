@@ -1,15 +1,25 @@
 package com.blueprint.ffandroid;
 
+import android.content.Context;
 import android.content.IntentSender;
+import android.graphics.Point;
+import android.graphics.Typeface;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.text.TextWatcher;
+import android.text.method.KeyListener;
 import android.view.*;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
@@ -38,8 +48,7 @@ import org.json.JSONObject;
 public class LocationFragment extends Fragment implements View.OnClickListener, LocationListener,
         GooglePlayServicesClient.ConnectionCallbacks,
         GooglePlayServicesClient.OnConnectionFailedListener,
-        View.OnFocusChangeListener,
-        TextView.OnEditorActionListener {
+        View.OnFocusChangeListener, FragmentLifeCycle {
 
 
     /** A request code to send to Google Play services */
@@ -53,12 +62,14 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
 
     /** The Address Field displayed to the user */
     private EditText address_field;
-
-    private LocationManager locationManager;
+    private ImageButton locationButton;
 
     private GoogleMap map;
     /**View used to save fragment state after onDestroy()**/
     private View rootView;
+
+    /** Whether the fragment has been created previously */
+    private boolean created = false;
 
     /**
      * Use this factory method to create a new instance of
@@ -93,15 +104,42 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         try {
             rootView = inflater.inflate(R.layout.fragment_location, container, false);
         } catch (InflateException e) {
-        /* map is already there, just return view as it is */
+            /* map is already there, just return view as it is */
         }
+
+        created = true;
+
         Button forward = (Button) rootView.findViewById(R.id.forward_button);
         forward.setOnClickListener(this);
         parent = (MainActivity)this.getActivity();
 
         address_field = (EditText) rootView.findViewById(R.id.address_field);
         address_field.setOnFocusChangeListener(this);
-        address_field.setOnEditorActionListener(this);
+
+
+        InputFilter filter = new InputFilter() {
+            public CharSequence filter(CharSequence source, int start, int end,
+                                       Spanned dest, int dstart, int dend) {
+                for (int i = start; i < end; i++) {
+                    if (source.charAt(i) == '\n') {
+                        InputMethodManager imm = (InputMethodManager) parent.getSystemService(
+                                Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(address_field.getWindowToken(), 0);
+                        address_field.clearFocus();
+                        return "";
+                    }
+                }
+                return null;
+            }
+        };
+
+        address_field.setFilters(new InputFilter[]{filter});
+
+
+        locationButton = (ImageButton) rootView.findViewById(R.id.current_location_button);
+        locationButton.setOnClickListener(this);
+
+        setFonts(rootView);
 
         map = ((SupportMapFragment) parent.getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
         map.setMyLocationEnabled(true);
@@ -109,6 +147,15 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
 
         return rootView;
     }
+
+    private void setFonts(View rootView){
+        Typeface tf = (parent.myTypeface);
+        address_field.setTypeface(tf);
+
+        ((TextView) rootView.findViewById(R.id.address_header)).setTypeface(tf);
+        ((TextView) rootView.findViewById(R.id.forward_button)).setTypeface(tf);
+    }
+
 
     @Override
     public void onLocationChanged(Location location) {
@@ -125,6 +172,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
 
             LatLng myLocation = new LatLng(lat, lng);
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 16));
+            parent.donation.setLocation(location);
         }
     }
 
@@ -228,6 +276,8 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         if (mLocationClient.isConnected()) {
             onLocationChanged(mLocationClient.getLastLocation());
             mLocationClient.disconnect();
+        } else {
+            System.out.println("not connected");
         }
     }
 
@@ -305,13 +355,15 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
     }
 
     @Override
-    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-        EditText address = (EditText) v;
-        if (actionId == EditorInfo.IME_ACTION_DONE) {
-            address.clearFocus();
-        }
-        return true;
+    public void willAppear() {
+        return;
     }
+
+    @Override
+    public boolean isCreated() {
+        return created;
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -321,6 +373,10 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                 parent.mTitle = "Fill Out Donation Details";
                 parent.getActionBar().setTitle(parent.mTitle);
                 parent.replaceFragment(parent.formFragment);
+                break;
+            case (R.id.current_location_button):
+                System.out.println("address");
+                mLocationClient.connect();
                 break;
         }
     }

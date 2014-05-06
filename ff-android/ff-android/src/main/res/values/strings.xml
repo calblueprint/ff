@@ -53,6 +53,7 @@
     <string name="start_time_hint">Start Time</string>
     <string name="end_time_hint">Pick up by</string>
     <string name="release_photo">Release to view photo</string>
+    <string name="address_hint">Address</string>
 
     <string name="name_header">Name</string>
     <string name="email_header">Email</string>

@@ -25,7 +25,7 @@ import java.text.SimpleDateFormat;
 /**
  * Created by Nishant on 4/27/14.
  */
-public class DonationDetailFragment extends Fragment {
+public class DonationDetailFragment extends Fragment implements FragmentLifeCycle {
 
     Donation donation;
     private SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d, ''yy");
@@ -44,9 +44,10 @@ public class DonationDetailFragment extends Fragment {
     private ImageView midCircle;
     /** The bottom circle in the view. */
     private ImageView botCircle;
-
     /** The status of the donation. */
     private String statusValue;
+    /** Determins whether or not the view was created. */
+    private boolean created = false;
 
     public static DonationDetailFragment newInstance(){
         return new DonationDetailFragment();
@@ -116,7 +117,7 @@ public class DonationDetailFragment extends Fragment {
                 //TODO: Make API request to cancel donation
             }
         });
-
+        created = true;
         kind =  (TextView) rootView.findViewById(R.id.kind);
         date = (TextView) rootView.findViewById(R.id.date);
         status = (TextView) rootView.findViewById(R.id.status);
@@ -128,6 +129,16 @@ public class DonationDetailFragment extends Fragment {
         setDonationText(donation);
 
         return rootView;
+    }
+
+    @Override
+    public void willAppear() {
+        return;
+    }
+
+    @Override
+    public boolean isCreated() {
+        return created;
     }
 
     /** Sets the progress bar to the correct STEP. */
@@ -144,3 +155,4 @@ public class DonationDetailFragment extends Fragment {
         }
     }
 }
+
