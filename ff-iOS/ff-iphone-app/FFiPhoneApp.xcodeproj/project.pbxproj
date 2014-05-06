@@ -315,6 +315,7 @@
 		E4B0A1B419159C480034C32B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B219159C480034C32B /* Default@2x.png */; };
 		E4B0A1B619159CA40034C32B /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B519159CA40034C32B /* app_icon@2x.png */; };
 		E4B0A1B819159D510034C32B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B719159D510034C32B /* Images.xcassets */; };
+		E4EF13361918640F00BD8FBD /* button_facebook_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4EF13351918640F00BD8FBD /* button_facebook_login@2x.png */; };
 		E4EF13381919994F00BD8FBD /* button_facebook_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4EF13371919994E00BD8FBD /* button_facebook_login@2x.png */; };
 		E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4EF65E018FDCD56007E76BF /* photodefault.jpg */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
