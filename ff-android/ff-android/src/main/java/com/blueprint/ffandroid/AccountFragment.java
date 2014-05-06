@@ -20,7 +20,8 @@ import android.widget.TextView;
  * @author howardchen
  *
  */
-public class AccountFragment extends Fragment implements View.OnClickListener, HasName{
+public class AccountFragment extends Fragment implements View.OnClickListener, HasName, FragmentLifeCycle{
+
 
     /** The name of the account.*/
     private String name;
@@ -45,6 +46,8 @@ public class AccountFragment extends Fragment implements View.OnClickListener, H
     private View rootView;
     /** The MainActivity. */
     private MainActivity parent;
+
+    private boolean created = false;
 
     /**
      * Use this factory method to create a new instance of
@@ -80,7 +83,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener, H
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-
+        created = true;
 
         rootView = inflater.inflate(R.layout.fragment_account, container, false);
         nameText = (TextView) rootView.findViewById(R.id.account_name);
@@ -157,5 +160,14 @@ public class AccountFragment extends Fragment implements View.OnClickListener, H
         public void onFragmentInteraction(Uri uri);
     }
 
+    @Override
+    public void willAppear() {
+        return;
+    }
+
+    @Override
+    public boolean isCreated() {
+        return created;
+    }
 
 }

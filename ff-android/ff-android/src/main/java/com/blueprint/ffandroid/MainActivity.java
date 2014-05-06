@@ -17,6 +17,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.Log;
+import android.view.MenuItem;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -208,6 +210,9 @@ public class MainActivity extends ActionBarActivity
         ft.replace(R.id.container, newFragment);
         ft.commit();
         currentFragment = newFragment;
+        if (((FragmentLifeCycle) currentFragment).isCreated()) {
+            ((FragmentLifeCycle) currentFragment).willAppear();
+        }
     }
 
     @Override
@@ -355,10 +360,27 @@ public class MainActivity extends ActionBarActivity
         // Your implementation here.
     }
 
+    /** Updates the DetailView for Donation D. */
     void updateDetailView(Donation d){
         this.donationDetailFragment.updateView(d);
+        FragmentManager fm = getSupportFragmentManager();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
         replaceFragmentWithBackStack(donationDetailFragment);
+        mNavigationDrawerFragment.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
+    }
 
+    /** Activates when MenuItem Item is selected. If it is in a Detail View
+     * of a donation the activity bar turns into a back button. */
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (donationDetailFragment.isVisible()) {
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setIcon(R.drawable.ic_blueprint_paw);
+            replaceFragment(donationListFragment);
+            mNavigationDrawerFragment.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 }
-

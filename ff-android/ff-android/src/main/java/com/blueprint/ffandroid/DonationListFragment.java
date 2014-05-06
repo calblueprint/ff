@@ -2,8 +2,11 @@ package com.blueprint.ffandroid;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.graphics.Typeface;
+
 import android.support.v4.app.Fragment;
+import android.app.FragmentManager;
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -43,9 +46,12 @@ import java.util.Locale;
 /**
  * Created by Nishant on 4/12/14.
  */
-public class DonationListFragment extends Fragment implements HasName {
+
+public class DonationListFragment extends Fragment implements HasName, Fragment {
+
 
     private static SimpleDateFormat inputDateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
+    private boolean created = false;
 
 
     public static DonationListFragment newInstance(){
@@ -91,6 +97,7 @@ public class DonationListFragment extends Fragment implements HasName {
             }
         });
 
+        created = true;
 
         getData(listView, pullToRefreshView);
 
@@ -186,8 +193,14 @@ public class DonationListFragment extends Fragment implements HasName {
         );
 
         queue.add(request);
+
     }
 
+    public void onListItemClick(ListView l, View v, int position, long id) {
+       Donation d = (Donation) l.getItemAtPosition(position);
+       Log.d("donation kind", d.getKind());
+       ((MainActivity) this.getActivity()).updateDetailView(d);
+    }
 
     @Override
     public void onAttach(Activity activity) {
@@ -207,6 +220,15 @@ public class DonationListFragment extends Fragment implements HasName {
         return "DonationListFragment";
     }
 
+    @Override
+    public void willAppear() {
+        return;
+    }
+
+    @Override
+    public boolean isCreated() {
+        return created;
+    }
 }
 
 class DonationAdapter extends ArrayAdapter<Donation> {

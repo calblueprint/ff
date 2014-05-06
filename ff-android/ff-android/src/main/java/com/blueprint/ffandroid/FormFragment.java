@@ -63,7 +63,7 @@ import java.util.Map;
 public class FormFragment extends Fragment implements View.OnClickListener,
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener,
         View.OnFocusChangeListener, FFScrollView.OnScrollViewListener,
-        View.OnTouchListener, HasName {
+        View.OnTouchListener, HasName, FragmentLifeCycle {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -86,7 +86,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
     private boolean showImage;
 
-    private int imageHeight;
+    private boolean created = false;
 
     private static final String url = "http://feeding-forever.herokuapp.com/api/pickups";
 
@@ -124,6 +124,8 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         parent = (MainActivity) getActivity();
         setupFragment(rootView);
         setFonts(rootView);
+
+        created = true;
 
         loadDonation();
 
@@ -405,6 +407,16 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                 }
         );
         queue.add(request);
+    }
+
+    @Override
+    public void willAppear() {
+        loadDonation();
+    }
+
+    @Override
+    public boolean isCreated() {
+        return created;
     }
 
     public void onClick(View view) {

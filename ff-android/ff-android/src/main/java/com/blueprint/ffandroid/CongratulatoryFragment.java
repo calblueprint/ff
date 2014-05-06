@@ -24,7 +24,8 @@ import org.w3c.dom.Text;
 /**
  * A fragment that congradulates the user when he or she completes a donation.
  */
-public class CongratulatoryFragment extends Fragment implements HasName {
+public class CongratulatoryFragment extends Fragment implements HasName, FragmentLifeCycle {
+
 
     /** The tag used for debugging. */
     private static String TAG = "Congratulatory Fragment";
@@ -46,6 +47,8 @@ public class CongratulatoryFragment extends Fragment implements HasName {
     private TextView title;
     /** The textview of the congratulation statement. */
     private TextView congratulationsText;
+
+    private boolean created = false;
 
     private void onSessionStateChange(Session session, SessionState state, Exception exception) {
         if (state.isOpened()) {
@@ -97,6 +100,8 @@ public class CongratulatoryFragment extends Fragment implements HasName {
         donationButton = (Button) rootView.findViewById(R.id.go_to_donation);
         title = (TextView) rootView.findViewById(R.id.congratulations_title);
         congratulationsText = (TextView) rootView.findViewById(R.id.congratulations_text);
+
+        created = true;
 
         setFonts();
         return rootView;
@@ -244,11 +249,22 @@ public class CongratulatoryFragment extends Fragment implements HasName {
         title.setTypeface(tf);
     }
 
+
     /**
      * Returns the name of the class as a string.
      * useful for backstack.
      */
     public String getName() {
         return "CongratulatoryFragment";
+    }
+
+    @Override
+    public void willAppear() {
+        return;
+    }
+
+    @Override
+    public boolean isCreated() {
+        return created;
     }
 }
