@@ -74,18 +74,18 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         Context context = this.getActivity();
         if (statusValue.equals("complete")) {
             status.setTextColor(context.getResources().getColor(R.color.complete));
-            setProgress(0);
+            //setProgress(0);
         } else if (statusValue.equals("canceled")) {
             status.setTextColor(context.getResources().getColor(R.color.canceled));
-            setProgress(4);
+            //setProgress(4);
         } else if (statusValue.equals("moving")) {
             status.setTextColor(context.getResources().getColor(R.color.moving));
-            setProgress(0);
+            //setProgress(0);
         } else if (statusValue.equals("available")) {
             status.setTextColor(context.getResources().getColor(R.color.available));
-            setProgress(2);
+            //setProgress(2);
         } else if (statusValue.equals("claimed")) {
-            setProgress(1);
+            //setProgress(1);
             status.setTextColor(context.getResources().getColor(R.color.claimed));
         } else {
             status.setTextColor(context.getResources().getColor(R.color.unknown));
