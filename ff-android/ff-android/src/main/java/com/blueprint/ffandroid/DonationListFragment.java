@@ -2,8 +2,11 @@ package com.blueprint.ffandroid;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.graphics.Typeface;
+
 import android.support.v4.app.Fragment;
+import android.app.FragmentManager;
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -185,8 +188,14 @@ public class DonationListFragment extends Fragment implements FragmentLifeCycle 
         );
 
         queue.add(request);
+
     }
 
+    public void onListItemClick(ListView l, View v, int position, long id) {
+       Donation d = (Donation) l.getItemAtPosition(position);
+       Log.d("donation kind", d.getKind());
+       ((MainActivity) this.getActivity()).updateDetailView(d);
+    }
 
     @Override
     public void onAttach(Activity activity) {
