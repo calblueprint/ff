@@ -132,6 +132,9 @@ public class MainActivity extends ActionBarActivity
 
         switch (position) {
             case 0:
+                while (fragmentManager.getBackStackEntryCount() > 0) {
+                    fragmentManager.popBackStackImmediate();
+                }
                 replaceFragment(locationFragment);
                 break;
             case 1:
@@ -196,8 +199,6 @@ public class MainActivity extends ActionBarActivity
         android.support.v4.app.FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.replace(R.id.container, newFragment);
         ft.commit();
-        Log.d("Current Fragment", currentFragment.toString());
-        Log.d("New Fragment", newFragment.toString());
         currentFragment = newFragment;
     }
 
@@ -206,8 +207,6 @@ public class MainActivity extends ActionBarActivity
         ft.addToBackStack(((HasName) newFragment).getName());
         ft.replace(R.id.container, newFragment);
         ft.commit();
-        Log.d("Current Fragment (back stack)", currentFragment.toString());
-        Log.d("New Fragment (back stack)", newFragment.toString());
         currentFragment = newFragment;
     }
 
