@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 public class FAQFragment extends Fragment implements FragmentLifeCycle {
 
+
     /** The button that links to the feeding forward. */
     Button link;
     /** The About Feeding Forward Header. */
@@ -91,6 +92,14 @@ public class FAQFragment extends Fragment implements FragmentLifeCycle {
         link.setTypeface(tf);
         bpHeader.setTypeface(tf);
 
+    }
+
+    /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "FAQFragment";
     }
 
     @Override

@@ -48,7 +48,8 @@ import org.json.JSONObject;
 public class LocationFragment extends Fragment implements View.OnClickListener, LocationListener,
         GooglePlayServicesClient.ConnectionCallbacks,
         GooglePlayServicesClient.OnConnectionFailedListener,
-        View.OnFocusChangeListener, FragmentLifeCycle {
+        View.OnFocusChangeListener,
+        TextView.OnEditorActionListener, FragmentLifeCycle {
 
 
     /** A request code to send to Google Play services */
@@ -372,12 +373,20 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                 updateDonation();
                 parent.mTitle = "Fill Out Donation Details";
                 parent.getActionBar().setTitle(parent.mTitle);
-                parent.replaceFragment(parent.formFragment);
+                parent.replaceFragmentWithBackStack(parent.formFragment);
                 break;
             case (R.id.current_location_button):
                 System.out.println("address");
                 mLocationClient.connect();
                 break;
         }
+    }
+
+    /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "LocationFragment";
     }
 }

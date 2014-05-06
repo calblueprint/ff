@@ -26,6 +26,7 @@ import org.w3c.dom.Text;
  */
 public class CongratulatoryFragment extends Fragment implements FragmentLifeCycle {
 
+
     /** The tag used for debugging. */
     private static String TAG = "Congratulatory Fragment";
     /** The main activity of the application. */
@@ -246,6 +247,15 @@ public class CongratulatoryFragment extends Fragment implements FragmentLifeCycl
         donationButton.setTypeface(tf);
         congratulationsText.setTypeface(tf);
         title.setTypeface(tf);
+    }
+
+
+    /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "CongratulatoryFragment";
     }
 
     @Override

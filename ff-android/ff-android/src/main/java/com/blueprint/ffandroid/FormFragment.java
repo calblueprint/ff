@@ -445,4 +445,12 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                 break;
         }
     }
+
+    /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "FormFragment";
+    }
 }

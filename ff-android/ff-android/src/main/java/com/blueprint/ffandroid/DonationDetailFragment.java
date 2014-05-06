@@ -2,6 +2,7 @@ package com.blueprint.ffandroid;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
@@ -25,7 +26,8 @@ import java.text.SimpleDateFormat;
 /**
  * Created by Nishant on 4/27/14.
  */
-public class DonationDetailFragment extends Fragment implements FragmentLifeCycle {
+public class DonationDetailFragment extends Fragment implements FragmentLifeCycle{
+
 
     Donation donation;
     private SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d, ''yy");
@@ -105,6 +107,8 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FragmentManager fm = DonationDetailFragment.this.getActivity().getSupportFragmentManager();
+                fm.popBackStack();
                 MainActivity mainActivity = (MainActivity) DonationDetailFragment.this.getActivity();
                 Fragment listViewFragment = mainActivity.donationListFragment;
                 mainActivity.replaceFragment(listViewFragment);
@@ -129,6 +133,14 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         setDonationText(donation);
 
         return rootView;
+    }
+
+    /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "DonationDetailFragment";
     }
 
     @Override
