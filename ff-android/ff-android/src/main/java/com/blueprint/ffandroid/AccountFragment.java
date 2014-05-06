@@ -20,7 +20,7 @@ import android.widget.TextView;
  * @author howardchen
  *
  */
-public class AccountFragment extends Fragment implements View.OnClickListener{
+public class AccountFragment extends Fragment implements View.OnClickListener, HasName{
 
     /** The name of the account.*/
     private String name;
@@ -135,6 +135,14 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     }
 
     /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "AccountFragment";
+    }
+
+    /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
@@ -148,5 +156,6 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
+
 
 }

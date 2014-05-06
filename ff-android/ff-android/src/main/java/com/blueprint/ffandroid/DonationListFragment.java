@@ -38,7 +38,7 @@ import java.util.Locale;
 /**
  * Created by Nishant on 4/12/14.
  */
-public class DonationListFragment extends Fragment {
+public class DonationListFragment extends Fragment implements HasName {
 
     private static RequestQueue queue;
     private String token;
@@ -110,8 +110,11 @@ public class DonationListFragment extends Fragment {
 
                     Arrays.sort(data);
 
-                    DonationAdapter adapter = new DonationAdapter(DonationListFragment.this.getActivity(), data);
-                    listView.setAdapter(adapter);
+                    Activity activity = DonationListFragment.this.getActivity();
+                    if (activity != null) {
+                        DonationAdapter adapter = new DonationAdapter(DonationListFragment.this.getActivity(), data);
+                        listView.setAdapter(adapter);
+                    }
 
                 }
             },
@@ -159,6 +162,14 @@ public class DonationListFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+    }
+
+    /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "DonationListFragment";
     }
 
 }

@@ -24,7 +24,7 @@ import org.w3c.dom.Text;
 /**
  * A fragment that congradulates the user when he or she completes a donation.
  */
-public class CongratulatoryFragment extends Fragment {
+public class CongratulatoryFragment extends Fragment implements HasName {
 
     /** The tag used for debugging. */
     private static String TAG = "Congratulatory Fragment";
@@ -242,5 +242,13 @@ public class CongratulatoryFragment extends Fragment {
         donationButton.setTypeface(tf);
         congratulationsText.setTypeface(tf);
         title.setTypeface(tf);
+    }
+
+    /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "CongratulatoryFragment";
     }
 }

@@ -14,7 +14,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 
-public class FAQFragment extends Fragment {
+public class FAQFragment extends Fragment implements HasName {
 
     /** The button that links to the feeding forward. */
     Button link;
@@ -86,5 +86,13 @@ public class FAQFragment extends Fragment {
         link.setTypeface(tf);
         bpHeader.setTypeface(tf);
 
+    }
+
+    /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "FAQFragment";
     }
 }

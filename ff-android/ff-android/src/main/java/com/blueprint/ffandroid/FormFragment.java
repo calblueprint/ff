@@ -63,7 +63,7 @@ import java.util.Map;
 public class FormFragment extends Fragment implements View.OnClickListener,
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener,
         View.OnFocusChangeListener, FFScrollView.OnScrollViewListener,
-        View.OnTouchListener {
+        View.OnTouchListener, HasName {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -432,5 +432,13 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                 dispatchTakePictureIntent();
                 break;
         }
+    }
+
+    /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "FormFragment";
     }
 }
