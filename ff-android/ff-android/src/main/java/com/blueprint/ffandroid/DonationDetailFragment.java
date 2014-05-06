@@ -2,6 +2,7 @@ package com.blueprint.ffandroid;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
@@ -50,12 +51,17 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
     private String statusValue;
     /** Determins whether or not the view was created. */
     private boolean created = false;
+    /** The parent activity. */
+    private MainActivity parent;
+    /** The TextView for pickup. */
+    private TextView pickup;
 
     public static DonationDetailFragment newInstance(){
         return new DonationDetailFragment();
     }
 
     public DonationDetailFragment(){
+        parent = (MainActivity) getActivity();
         donation = new Donation();
     }
 
@@ -129,9 +135,9 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         topCircle = (ImageView) rootView.findViewById(R.id.top_circle);
         midCircle = (ImageView) rootView.findViewById(R.id.mid_circle);
         botCircle = (ImageView) rootView.findViewById(R.id.bot_circle);
-
+        parent = (MainActivity) getActivity();
         setDonationText(donation);
-
+        setFonts();
         return rootView;
     }
 
@@ -165,6 +171,17 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         } else if (step == 0) {
             botCircle.setImageResource(R.drawable.ic_bp_blue_circle);
         }
+    }
+
+    /**
+     * Sets the fonts of the Buttons and TextViews in this fragment
+     */
+    private void setFonts(){
+        Typeface tf = (parent.myTypeface);
+        kind.setTypeface(tf);
+        date.setTypeface(tf);
+        status.setTypeface(tf);
+        address.setTypeface(tf);
     }
 }
 
