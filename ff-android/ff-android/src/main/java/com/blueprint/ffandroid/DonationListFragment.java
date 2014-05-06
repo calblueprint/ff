@@ -1,5 +1,6 @@
 package com.blueprint.ffandroid;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
@@ -7,6 +8,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import uk.co.senab.actionbarpulltorefresh.library.DefaultHeaderTransformer;
+import uk.co.senab.actionbarpulltorefresh.library.HeaderTransformer;
 import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout;
 import uk.co.senab.actionbarpulltorefresh.library.ActionBarPullToRefresh;
 import uk.co.senab.actionbarpulltorefresh.library.listeners.OnRefreshListener;
@@ -59,9 +63,15 @@ public class DonationListFragment extends Fragment {
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.donation_listview, container, false);
-        return rootView;
+
+        final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.Theme_DonationList);
+
+        // clone the inflater using the ContextThemeWrapper
+        LayoutInflater localInflater = (LayoutInflater) contextThemeWrapper.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        // inflate the layout using the cloned inflater, not default inflater
+        return localInflater.inflate(R.layout.donation_listview, container, false);
+
     }
 
     @Override
@@ -80,7 +90,6 @@ public class DonationListFragment extends Fragment {
 
             }
         });
-
 
 
         getData(listView, pullToRefreshView);
