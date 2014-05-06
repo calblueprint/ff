@@ -147,11 +147,10 @@ public class DonationListFragment extends Fragment {
     }
 
     public void onListItemClick(ListView l, View v, int position, long id) {
-
        Donation d = (Donation) l.getItemAtPosition(position);
+       Log.d("donation kind", d.getKind());
        ((MainActivity) this.getActivity()).updateDetailView(d);
     }
-
 
     @Override
     public void onAttach(Activity activity) {

@@ -342,13 +342,10 @@ public class MainActivity extends ActionBarActivity
     void updateDetailView(Donation d){
         this.donationDetailFragment.updateView(d);
         FragmentManager fm = getSupportFragmentManager();
-        fm.beginTransaction().show(donationListFragment).addToBackStack("fragBack").commit();
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         replaceFragment(donationDetailFragment);
-        actionBar.setDisplayUseLogoEnabled(true);
-        actionBar.setIcon(R.drawable.abc_ic_ab_back_holo_light);
-
+        mNavigationDrawerFragment.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
     }
 
     /** Activates when MenuItem Item is selected. If it is in a Detail View
@@ -358,6 +355,7 @@ public class MainActivity extends ActionBarActivity
             ActionBar actionBar = getSupportActionBar();
             actionBar.setIcon(R.drawable.ic_blueprint_paw);
             replaceFragment(donationListFragment);
+            mNavigationDrawerFragment.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
             return true;
         } else {
             return super.onOptionsItemSelected(item);
