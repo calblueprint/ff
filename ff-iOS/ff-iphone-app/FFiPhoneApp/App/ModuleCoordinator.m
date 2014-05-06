@@ -49,9 +49,7 @@
     {
         // You can specify any additonal
         // initialization steps here.
-        
-        [self configureAppearance];
-        
+                
         // Keep a reference to app delegate
         [self setAppDelegate:[[UIApplication sharedApplication] delegate]];
         
@@ -118,7 +116,7 @@
                         [self.userDefaults synchronize];
                         
                         // Load user data
-                        [self loadUserDataWithCompletion:^(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations) {
+                        [self loadUserDataWithCompletion:^(FFDataUser *user) {
                             
                             // Configure dashbaord
                             //self.tabBarController = [[Dashboard sharedDashboard] tabBarControllerWithUpdatedUser:user];
@@ -186,7 +184,7 @@
         [self.appDelegate.window makeKeyAndVisible];
 
         // Load user data
-        [self loadUserDataWithCompletion:^(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations) {
+        [self loadUserDataWithCompletion:^(FFDataUser *user) {
             
             // Configure dashbaord
             self.navDrawerController = [[Dashboard sharedDashboard] instantiateNavDrawerControllerWithUser:user];
@@ -227,21 +225,21 @@
 //    [[UINavigationBar appearance]  setBackgroundImage:[UIImage imageNamed:kStyleNavigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];
 }
 
-- (void)loadUserDataWithCompletion:(void (^)(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations))completion
+- (void)loadUserDataWithCompletion:(void (^)(FFDataUser *user))completion
 {
     AppLoaderModuleController *appLoaderModuleController = [[AppLoaderModuleController alloc] initWithModuleCoordinator:self];
-    [appLoaderModuleController loadUserDataWithCompletion:^(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations) {
+    [appLoaderModuleController loadUserDataWithCompletion:^(FFDataUser *user) {
         
         // The completion block should be invoked before other
         //   callbacks, so that changes within the block would
         //   be visible to the callbacks.
-        if (completion) { completion(user, locations, currentDonations, pastDonations); }
+        if (completion) { completion(user); }
         
         // Other callbacks
         if (user) { [self didRetrieveUser:user]; }
-        if (locations) { [self didRetrieveLocations:locations]; }
-        if (currentDonations) { [self didRetrieveCurrentDonations:currentDonations]; }
-        
+//        if (locations) { [self didRetrieveLocations:locations]; }
+//        if (currentDonations) { [self didRetrieveCurrentDonations:currentDonations]; }
+      
     }];
 }
 
