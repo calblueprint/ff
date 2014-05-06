@@ -16,6 +16,6 @@
 @property (strong, nonatomic) UIStoryboard *storyboard;
 
 - (UIViewController *)instantiateLoaderViewController;
-- (void)loadUserDataWithCompletion:(void (^)(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations))completionBlock;
+- (void)loadUserDataWithCompletion:(void (^)(FFDataUser *user))completionBlock;
 
 @end

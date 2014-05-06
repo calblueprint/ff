@@ -33,10 +33,10 @@
                             <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6EB-oN-GAQ" userLabel="View - Name">
                                 <rect key="frame" x="0.0" y="64" width="320" height="60"/>
                                 <subviews>
-                                    <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FAG-uR-dPe">
+                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FAG-uR-dPe">
                                         <rect key="frame" x="0.0" y="3" width="320" height="56"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olN-Ah-fdo">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olN-Ah-fdo">
                                                 <rect key="frame" x="20" y="17" width="75" height="21"/>
                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="10"/>
                                                 <color key="textColor" white="0.31740419708029199" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,14 +49,11 @@
                                                     <constraint firstAttribute="width" constant="229" id="lVz-GM-0SN"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
-                                                <color key="textColor" red="0.13725490196078433" green="0.52941176470588236" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.10588235294117647" green="0.45882352941176469" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="olN-Ah-fdo" firstAttribute="leading" secondItem="FAG-uR-dPe" secondAttribute="leading" constant="10" id="xx7-Ci-MOb"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -68,34 +65,23 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KJ6-Ol-vhX" userLabel="View - Email">
                                 <rect key="frame" x="0.0" y="132" width="320" height="60"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IqH-Ab-RUf">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IqH-Ab-RUf">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="E-MAIL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsb-QJ-oGg">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="E-MAIL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsb-QJ-oGg">
                                                 <rect key="frame" x="20" y="19" width="75" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="4oT-6r-dwk"/>
-                                                    <constraint firstAttribute="height" constant="21" id="oFO-cq-8D8"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="10"/>
                                                 <color key="textColor" white="0.32000000000000001" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="donor@test.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn7-lW-epa">
-                                                <rect key="frame" x="71" y="18" width="229" height="23"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="23" id="85M-z2-4pg"/>
-                                                    <constraint firstAttribute="width" constant="229" id="D5x-95-8fb"/>
-                                                </constraints>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="donor@test.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn7-lW-epa">
+                                                <rect key="frame" x="76" y="18" width="224" height="23"/>
                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
-                                                <color key="textColor" red="0.13725490196078433" green="0.52941176470588236" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.10588235294117647" green="0.45882352941176469" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="dsb-QJ-oGg" firstAttribute="leading" secondItem="IqH-Ab-RUf" secondAttribute="leading" constant="8" id="rR4-uq-hvh"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -108,10 +94,10 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nMe-cG-MeN" userLabel="View - Cell Phone">
                                 <rect key="frame" x="0.0" y="200" width="320" height="60"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y7u-Ce-F8X">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y7u-Ce-F8X">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="CELL PHONE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpB-eD-LH1">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="CELL PHONE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpB-eD-LH1">
                                                 <rect key="frame" x="20" y="19" width="76" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="76" id="Gzu-4g-4vO"/>
@@ -128,14 +114,11 @@
                                                     <constraint firstAttribute="width" constant="206" id="rzi-aC-cKG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
-                                                <color key="textColor" red="0.13725490196078433" green="0.52941176470588236" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.10588235294117647" green="0.45882352941176469" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="ZpB-eD-LH1" firstAttribute="leading" secondItem="y7u-Ce-F8X" secondAttribute="leading" constant="10" id="OdN-Vc-1bg"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -150,7 +133,7 @@
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTI-L7-74Z">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="ORGANIZATION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUR-zV-LnS">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="ORGANIZATION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUR-zV-LnS">
                                                 <rect key="frame" x="20" y="19" width="97" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="97" id="M7P-k3-ym6"/>
@@ -167,7 +150,7 @@
                                                     <constraint firstAttribute="height" constant="23" id="Q03-52-MsP"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
-                                                <color key="textColor" red="0.13725490196078433" green="0.52941176470588236" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.10588235294117647" green="0.45882352941176469" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -175,7 +158,6 @@
                                         <constraints>
                                             <constraint firstItem="mzV-KE-gwZ" firstAttribute="centerY" secondItem="iTI-L7-74Z" secondAttribute="centerY" id="16R-On-055"/>
                                             <constraint firstItem="mzV-KE-gwZ" firstAttribute="top" secondItem="iTI-L7-74Z" secondAttribute="top" constant="19" id="1xF-2C-VHh"/>
-                                            <constraint firstItem="jUR-zV-LnS" firstAttribute="leading" secondItem="iTI-L7-74Z" secondAttribute="leading" constant="10" id="7rK-DU-mCC"/>
                                             <constraint firstItem="mzV-KE-gwZ" firstAttribute="leading" secondItem="iTI-L7-74Z" secondAttribute="leading" constant="104" id="Jf7-10-XTW"/>
                                             <constraint firstAttribute="bottom" secondItem="mzV-KE-gwZ" secondAttribute="bottom" constant="18" id="Z01-pc-aWi"/>
                                         </constraints>
