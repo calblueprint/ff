@@ -122,8 +122,8 @@ public class MainActivity extends ActionBarActivity
         resideMenu.setShadowVisible(false);
         resideMenu.setDirectionDisable(ResideMenu.DIRECTION_RIGHT);
 
-        String titles[] = { "Donate!", "Donation List", "Account", "FAQ", "Logout", "Congratulations!" };
-        int icon[] = { R.drawable.donate, R.drawable.donatelist, R.drawable.account, R.drawable.faq, R.drawable.logout, R.drawable.logout};
+        String titles[] = { "Donate!", "Donation List", "Account", "FAQ", "Logout" };
+        int icon[] = { R.drawable.donate, R.drawable.donatelist, R.drawable.account, R.drawable.faq, R.drawable.logout };
         menuItems = new ArrayList<ResideMenuItem>();
         for (int i = 0; i < titles.length; i++) {
             ResideMenuItem item = new ResideMenuItem(this, icon[i], titles[i]);
