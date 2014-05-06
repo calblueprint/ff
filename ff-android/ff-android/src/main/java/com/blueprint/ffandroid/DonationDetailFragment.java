@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,12 @@ public class DonationDetailFragment extends Fragment {
     private TextView status;
     /** The TextView that shows the address of the donation. */
     private TextView address;
+    /** The top circle in the view. */
+    private ImageView topCircle;
+    /** The middle circle in the view. */
+    private ImageView midCircle;
+    /** The bottom circle in the view. */
+    private ImageView botCircle;
 
     /** The status of the donation. */
     private String statusValue;
@@ -58,13 +65,18 @@ public class DonationDetailFragment extends Fragment {
         Context context = this.getActivity();
         if (statusValue.equals("complete")) {
             status.setTextColor(context.getResources().getColor(R.color.complete));
+            setProgress(0);
         } else if (statusValue.equals("canceled")) {
             status.setTextColor(context.getResources().getColor(R.color.canceled));
+            setProgress(4);
         } else if (statusValue.equals("moving")) {
             status.setTextColor(context.getResources().getColor(R.color.moving));
+            setProgress(1);
         } else if (statusValue.equals("available")) {
             status.setTextColor(context.getResources().getColor(R.color.available));
+            setProgress(2);
         } else if (statusValue.equals("claimed")) {
+            setProgress(1);
            status.setTextColor(context.getResources().getColor(R.color.claimed));
         } else {
             status.setTextColor(context.getResources().getColor(R.color.unknown));
@@ -79,7 +91,6 @@ public class DonationDetailFragment extends Fragment {
         if (kind != null) {
             setDonationText(d);
         }
-
     }
 
     @Override
@@ -110,10 +121,26 @@ public class DonationDetailFragment extends Fragment {
         date = (TextView) rootView.findViewById(R.id.date);
         status = (TextView) rootView.findViewById(R.id.status);
         address = (TextView) rootView.findViewById(R.id.address);
+        topCircle = (ImageView) rootView.findViewById(R.id.top_circle);
+        midCircle = (ImageView) rootView.findViewById(R.id.mid_circle);
+        botCircle = (ImageView) rootView.findViewById(R.id.bot_circle);
 
         setDonationText(donation);
 
         return rootView;
     }
 
+    /** Sets the progress bar to the correct STEP. */
+    private void setProgress(int step) {
+        topCircle.setImageResource(R.drawable.ic_black_circle);
+        midCircle.setImageResource(R.drawable.ic_black_circle);
+        botCircle.setImageResource(R.drawable.ic_black_circle);
+        if (step == 2) {
+            topCircle.setImageResource(R.drawable.ic_bp_blue_circle);
+        } else if (step == 1) {
+            midCircle.setImageResource(R.drawable.ic_bp_blue_circle);
+        } else if (step == 0) {
+            botCircle.setImageResource(R.drawable.ic_bp_blue_circle);
+        }
+    }
 }
