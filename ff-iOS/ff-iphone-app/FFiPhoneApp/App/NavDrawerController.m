@@ -120,6 +120,19 @@
     return newImage;
 }
 
+- (void)loadModuleWithName:(NSString *)name {
+	// Set the default to be the first view controller
+	UIViewController *viewController = [viewControllers objectAtIndex:0];
+	int i;
+	for (i = 0 ; i < [self.navCellNames count]; i++) {
+		if ([self.navCellNames[i] isEqualToString:name]) {
+			break;
+		}
+	}
+	viewController = [viewControllers objectAtIndex:i];
+	[self.mmDrawerController setCenterViewController:viewController withCloseAnimation:YES completion:nil];
+}
+
 - (void)logoutUser
 {
     [self.moduleCoordinator didReceiveRequestToLogoutUserWithSender:self];

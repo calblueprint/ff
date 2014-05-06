@@ -24,5 +24,6 @@
 @property (nonatomic) MMDrawerController *mmDrawerController;
 
 + (UIImage*)resizeImage:(UIImage*)image withWidth:(int)width withHeight:(int)height;
+- (void)loadModuleWithName:(NSString *)name;
 
 @end
