@@ -77,7 +77,7 @@ public class DonationDetailFragment extends Fragment {
             setProgress(2);
         } else if (statusValue.equals("claimed")) {
             setProgress(1);
-           status.setTextColor(context.getResources().getColor(R.color.claimed));
+            status.setTextColor(context.getResources().getColor(R.color.claimed));
         } else {
             status.setTextColor(context.getResources().getColor(R.color.unknown));
         }
