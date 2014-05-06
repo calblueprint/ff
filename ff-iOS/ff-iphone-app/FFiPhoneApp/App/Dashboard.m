@@ -68,7 +68,7 @@
                 [coordinator.userDefaults synchronize];
                 
                 // Load user data
-                [coordinator loadUserDataWithCompletion:^(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations) {
+                [coordinator loadUserDataWithCompletion:^(FFDataUser *user) {
                     // Configure dashbaord
                     //coordinator.tabBarController = [[Dashboard sharedDashboard] tabBarControllerWithUpdatedUser:user];
                     //[coordinator.tabBarController dismissViewControllerAnimated:YES completion:nil];
@@ -85,6 +85,9 @@
             }
         }];
     }
+	
+ 	[self.authenticationModuleController setCompletion:self.authenticationCompletionBlock];
+
 
     return self;
 }
@@ -127,6 +130,8 @@
         self.currentDonationsModuleController = nil;
         self.pastDonationsModuleController = nil;
         self.accountModuleController = nil;
+			[self.navDrawerController loadModuleWithName:@"Account"];
+
     }
     else if ([user.role isEqualToString:@"donor"])
     {
@@ -155,10 +160,13 @@
       
         // Release inactive modules
         self.authenticationModuleController = nil;
+			
+			[self.navDrawerController loadModuleWithName:@"Donations"];
     }
     
     self.navDrawerController.selectedIndex = 0;
-    
+	[self.navDrawerController.tableView reloadData];
+
     return self.navDrawerController;
 }
 
@@ -179,7 +187,7 @@
     }
     
     self.navDrawerController.viewControllers = navDrawerViewControllers;
-    
+	[self.navDrawerController.tableView reloadData];
     return self.navDrawerController;
 }
 
