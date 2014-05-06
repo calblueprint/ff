@@ -2,364 +2,557 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res" >
-            <file
-                name="com_facebook_button_blue"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_button_blue_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_focused.9.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_button_blue_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_normal.9.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_button_blue_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_pressed.9.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_button_check"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_check.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_button_check_off"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_check_off.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_button_check_on"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_check_on.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_button_grey_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_focused.9.png"
-                qualifiers=""
-                type="drawable" />
+        <source path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res" >
             <file
                 name="com_facebook_button_grey_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_normal.9.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_button_grey_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_pressed.9.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_close"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_close.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_inverse_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_inverse_icon.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_list_divider"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_list_divider.9.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_list_section_header_background"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_list_section_header_background.9.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_loginbutton_silver"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_loginbutton_silver.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_logo"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_logo.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_picker_item_background"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_item_background.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_picker_list_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_focused.9.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_picker_list_longpressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_longpressed.9.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_picker_list_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_pressed.9.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_picker_list_selector"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_picker_list_selector_background_transition"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector_background_transition.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_picker_list_selector_disabled"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector_disabled.9.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_picker_top_button"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_picker_top_button.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_place_default_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_place_default_icon.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_profile_default_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_profile_default_icon.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_profile_picture_blank_portrait"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_profile_picture_blank_portrait.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_profile_picture_blank_square"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_profile_picture_blank_square.png"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_top_background"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_top_background.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_top_button"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_top_button.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_usersettingsfragment_background_gradient"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable/com_facebook_usersettingsfragment_background_gradient.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="com_facebook_button_blue_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_focused.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_button_blue_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_normal.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_button_blue_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_pressed.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_button_grey_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_focused.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_button_grey_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_normal.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_button_grey_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_pressed.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_close"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_close.png"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_normal.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_inverse_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_inverse_icon.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_logo"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_logo.png"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_inverse_icon.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_picker_magnifier"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_picker_magnifier.png"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_picker_magnifier.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_button_grey_pressed"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_pressed.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_close"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-ldpi/com_facebook_close.png"
-                qualifiers="ldpi"
-                type="drawable" />
-            <file
-                name="com_facebook_button_blue_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_focused.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_button_blue_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_normal.9.png"
-                qualifiers="mdpi"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_close.png"
+                qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_blue_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_pressed.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_inverse_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_inverse_icon.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_picker_magnifier"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_picker_magnifier.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_button_blue_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_focused.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_button_blue_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_normal.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_button_blue_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_pressed.9.png"
-                qualifiers="xhdpi"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_pressed.9.png"
+                qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_button_grey_focused"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_focused.9.png"
-                qualifiers="xhdpi"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_grey_focused.9.png"
+                qualifiers="hdpi"
                 type="drawable" />
             <file
-                name="com_facebook_button_grey_normal"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_normal.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_button_grey_pressed"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_pressed.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_close"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_close.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="com_facebook_inverse_icon"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_inverse_icon.png"
-                qualifiers="xhdpi"
+                name="com_facebook_button_blue_focused"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_focused.9.png"
+                qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="com_facebook_logo"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_logo.png"
-                qualifiers="xhdpi"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_logo.png"
+                qualifiers="hdpi"
                 type="drawable" />
             <file
-                name="com_facebook_picker_magnifier"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_picker_magnifier.png"
-                qualifiers="xhdpi"
+                name="com_facebook_button_blue_normal"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-hdpi/com_facebook_button_blue_normal.9.png"
+                qualifiers="hdpi"
                 type="drawable" />
-            <file
-                name="com_facebook_friendpickerfragment"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_friendpickerfragment.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="com_facebook_login_activity_layout"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_login_activity_layout.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="com_facebook_picker_activity_circle_row"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_activity_circle_row.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="com_facebook_picker_checkbox"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_checkbox.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="com_facebook_picker_image"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_image.xml"
-                qualifiers=""
-                type="layout" />
             <file
                 name="com_facebook_picker_list_row"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_list_row.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="com_facebook_picker_list_section_header"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_list_section_header.xml"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_picker_list_row.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_picker_search_box"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_search_box.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="com_facebook_picker_title_bar"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_title_bar.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="com_facebook_picker_title_bar_stub"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_picker_title_bar_stub.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="com_facebook_placepickerfragment"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_placepickerfragment.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="com_facebook_placepickerfragment_list_row"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_placepickerfragment_list_row.xml"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_picker_search_box.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_search_bar_layout"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_search_bar_layout.xml"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_search_bar_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="com_facebook_friendpickerfragment"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_friendpickerfragment.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="com_facebook_usersettingsfragment"
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/layout/com_facebook_usersettingsfragment.xml"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_usersettingsfragment.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values/attrs.xml"
+                name="com_facebook_picker_checkbox"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_picker_checkbox.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="com_facebook_login_activity_layout"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_login_activity_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="com_facebook_picker_list_section_header"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_picker_list_section_header.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="com_facebook_picker_title_bar_stub"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_picker_title_bar_stub.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="com_facebook_placepickerfragment"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_placepickerfragment.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="com_facebook_placepickerfragment_list_row"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_placepickerfragment_list_row.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="com_facebook_picker_activity_circle_row"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_picker_activity_circle_row.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="com_facebook_picker_image"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_picker_image.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="com_facebook_picker_title_bar"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/layout/com_facebook_picker_title_bar.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values-xhdpi/dimens.xml"
+                qualifiers="xhdpi" >
+                <dimen name="com_facebook_picker_divider_width" >2px
+                </dimen>
+            </file>
+            <file
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values-ldpi/dimens.xml"
+                qualifiers="ldpi" >
+                <dimen name="com_facebook_picker_divider_width" >1px
+                </dimen>
+            </file>
+            <file
+                name="com_facebook_button_grey_normal"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_normal.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_inverse_icon"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_inverse_icon.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_picker_magnifier"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_picker_magnifier.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_button_grey_pressed"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_pressed.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_close"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_close.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_button_blue_pressed"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_pressed.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_button_grey_focused"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_grey_focused.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_button_blue_focused"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_focused.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_logo"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_logo.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_button_blue_normal"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-xhdpi/com_facebook_button_blue_normal.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_close"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-ldpi/com_facebook_close.png"
+                qualifiers="ldpi"
+                type="drawable" />
+            <file
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values-he/strings.xml"
+                qualifiers="he" >
+                <string name="com_facebook_requesterror_password_changed" >.הסיסמה שלך בפייסבוק השתנתה, אנא חבר מחדש את האפליקציה עם פייסבוק
+                </string>
+                <string name="com_facebook_requesterror_web_login" >.כדי לאפשר מחדש לאפליקציה להתחבר עם פייסבוק https://www.facebook.com או https://m.facebook.com אנא היכנס דרך
+                </string>
+                <string name="com_facebook_usersettingsfragment_logged_in" >מחובר
+                </string>
+                <string name="com_facebook_requesterror_reconnect" >.ארעה שגיאה בעת החיבור עם פייסבוק, חבר בבקשה מחדש את האפליקציה עם פייסבוק
+                </string>
+                <string name="com_facebook_logo_content_description" >פייסבוק לוגו
+                </string>
+                <string name="com_facebook_picker_done_button_text" >בצע
+                </string>
+                <string name="com_facebook_loginview_log_in_button" >התחבר לפייסבוק
+                </string>
+                <string name="com_facebook_loginview_logged_in_as" >מחובר בשם: %1$s
+                </string>
+                <string name="com_facebook_placepicker_subtitle_were_here_only_format" >%1$,d היו פה
+                </string>
+                <string name="com_facebook_requesterror_relogin" >.האפליקציה אינה מחוברת לפייסבוק, אנא היכנס וחבר מחדש את האפליקציה
+                </string>
+                <string name="com_facebook_usersettingsfragment_log_in_button" >התחבר…
+                </string>
+                <string name="com_facebook_internet_permission_error_title" >AndroidManifest שגיאת
+                </string>
+                <string name="com_facebook_internet_permission_error_message" >ההתחברות לתצוגת אתר דורשת אישור אינטרנט
+                </string>
+                <string name="com_facebook_loginview_cancel_action" >בטל
+                </string>
+                <string name="com_facebook_choose_friends" >בחר חברים
+                </string>
+                <string name="com_facebook_loginview_log_out_button" >התנתק
+                </string>
+                <string name="com_facebook_placepicker_subtitle_catetory_only_format" >%1$s
+                </string>
+                <string name="com_facebook_placepicker_subtitle_format" >%1$s • %2$,d היו פה
+                </string>
+                <string name="com_facebook_usersettingsfragment_not_logged_in" >לא מחובר
+                </string>
+                <string name="com_facebook_loading" >..מעלה
+                </string>
+                <string name="com_facebook_nearby" >קרוב אליי
+                </string>
+                <string name="com_facebook_loginview_logged_in_using_facebook" >מחובר באמצעות פייסבוק
+                </string>
+                <string name="com_facebook_dialogloginactivity_ok_button" >אישור
+                </string>
+                <string name="com_facebook_requesterror_permissions" >.חיבור האפליקציה עם פייסבוק נכשל בשל הרשאות לא מספקות, אנא הענק הרשאות לאפליקציה בכדי שהפעולה תוכל להתבצע
+                </string>
+                <string name="com_facebook_loginview_log_out_action" >התנתק
+                </string>
+            </file>
+            <file
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values-mdpi/dimens.xml"
+                qualifiers="mdpi" >
+                <dimen name="com_facebook_picker_divider_width" >1px
+                </dimen>
+            </file>
+            <file
+                name="com_facebook_button_grey_normal"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_normal.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_picker_list_selector_disabled"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector_disabled.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_inverse_icon"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_inverse_icon.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_button_check"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_button_check.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_profile_default_icon"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_profile_default_icon.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_picker_top_button"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_picker_top_button.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_picker_list_longpressed"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_longpressed.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_picker_list_selector_background_transition"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector_background_transition.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_button_grey_pressed"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_pressed.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_usersettingsfragment_background_gradient"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_usersettingsfragment_background_gradient.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_top_background"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_top_background.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_close"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_close.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_button_blue_pressed"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_pressed.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_top_button"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_top_button.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_button_grey_focused"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_button_grey_focused.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_button_blue_focused"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_focused.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_button_blue"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_picker_item_background"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_picker_item_background.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_logo"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_logo.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_profile_picture_blank_square"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_profile_picture_blank_square.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_picker_list_selector"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_selector.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_loginbutton_silver"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_loginbutton_silver.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_picker_list_focused"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_focused.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_button_check_on"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_button_check_on.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_button_check_off"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_button_check_off.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_picker_list_pressed"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_picker_list_pressed.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_button_blue_normal"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_button_blue_normal.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_place_default_icon"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_place_default_icon.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_list_divider"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_list_divider.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_profile_picture_blank_portrait"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_profile_picture_blank_portrait.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="com_facebook_list_section_header_background"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable/com_facebook_list_section_header_background.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values-hdpi/dimens.xml"
+                qualifiers="hdpi" >
+                <dimen name="com_facebook_picker_divider_width" >1px
+                </dimen>
+            </file>
+            <file
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values-iw/strings.xml"
+                qualifiers="iw" >
+                <string name="com_facebook_usersettingsfragment_log_in_button" >התחבר…
+                </string>
+                <string name="com_facebook_loginview_log_out_button" >התנתק
+                </string>
+                <string name="com_facebook_loginview_logged_in_using_facebook" >מחובר באמצעות פייסבוק
+                </string>
+                <string name="com_facebook_internet_permission_error_message" >ההתחברות לתצוגת אתר דורשת אישור אינטרנט
+                </string>
+                <string name="com_facebook_loginview_log_out_action" >התנתק
+                </string>
+                <string name="com_facebook_placepicker_subtitle_catetory_only_format" >%1$s
+                </string>
+                <string name="com_facebook_choose_friends" >בחר חברים
+                </string>
+                <string name="com_facebook_placepicker_subtitle_were_here_only_format" >%1$,d היו פה
+                </string>
+                <string name="com_facebook_usersettingsfragment_not_logged_in" >לא מחובר
+                </string>
+                <string name="com_facebook_placepicker_subtitle_format" >%1$s • %2$,d היו פה
+                </string>
+                <string name="com_facebook_requesterror_permissions" >.חיבור האפליקציה עם פייסבוק נכשל בשל הרשאות לא מספקות, אנא הענק הרשאות לאפליקציה בכדי שהפעולה תוכל להתבצע
+                </string>
+                <string name="com_facebook_requesterror_web_login" >.כדי לאפשר מחדש לאפליקציה להתחבר עם פייסבוק https://www.facebook.com או https://m.facebook.com אנא היכנס דרך
+                </string>
+                <string name="com_facebook_requesterror_relogin" >.האפליקציה אינה מחוברת לפייסבוק, אנא היכנס וחבר מחדש את האפליקציה
+                </string>
+                <string name="com_facebook_requesterror_password_changed" >.הסיסמה שלך בפייסבוק השתנתה, אנא חבר מחדש את האפליקציה עם פייסבוק
+                </string>
+                <string name="com_facebook_picker_done_button_text" >בצע
+                </string>
+                <string name="com_facebook_internet_permission_error_title" >AndroidManifest שגיאת
+                </string>
+                <string name="com_facebook_loginview_logged_in_as" >מחובר בשם: %1$s
+                </string>
+                <string name="com_facebook_requesterror_reconnect" >.ארעה שגיאה בעת החיבור עם פייסבוק, חבר בבקשה מחדש את האפליקציה עם פייסבוק
+                </string>
+                <string name="com_facebook_usersettingsfragment_logged_in" >מחובר
+                </string>
+                <string name="com_facebook_logo_content_description" >פייסבוק לוגו
+                </string>
+                <string name="com_facebook_dialogloginactivity_ok_button" >אישור
+                </string>
+                <string name="com_facebook_loading" >..מעלה
+                </string>
+                <string name="com_facebook_loginview_log_in_button" >התחבר לפייסבוק
+                </string>
+                <string name="com_facebook_nearby" >קרוב אליי
+                </string>
+                <string name="com_facebook_loginview_cancel_action" >בטל
+                </string>
+            </file>
+            <file
+                name="com_facebook_inverse_icon"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_inverse_icon.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_picker_magnifier"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_picker_magnifier.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_button_blue_pressed"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_pressed.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_button_blue_focused"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_focused.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="com_facebook_button_blue_normal"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/drawable-mdpi/com_facebook_button_blue_normal.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values-es/strings.xml"
+                qualifiers="es" >
+                <string name="com_facebook_nearby" >Cercano
+                </string>
+                <string name="com_facebook_requesterror_password_changed" >Su contraseña de Facebook ha cambiado, por favor vuelva a conectar la aplicación con Facebook.
+                </string>
+                <string name="com_facebook_requesterror_reconnect" >Se produjo un error al conectar con Facebook, por favor vuelva a conectar la aplicación con Facebook.
+                </string>
+                <string name="com_facebook_placepicker_subtitle_format" >%1$s • %2$,d estuvieron aquí
+                </string>
+                <string name="com_facebook_loading" >Cargando
+                </string>
+                <string name="com_facebook_requesterror_web_login" >Por favor, iniciar sesión a través https://www.facebook.com o https://m.facebook.com para volver a activar la aplicación para conectar con Facebook.
+                </string>
+                <string name="com_facebook_loginview_cancel_action" >Cancelar
+                </string>
+                <string name="com_facebook_choose_friends" >Elige Amigos
+                </string>
+                <string name="com_facebook_dialogloginactivity_ok_button" >Aceptar
+                </string>
+                <string name="com_facebook_loginview_log_in_button" >Iniciar sesión con Facebook
+                </string>
+                <string name="com_facebook_loginview_logged_in_as" >Sesión iniciada como: %1$s
+                </string>
+                <string name="com_facebook_loginview_log_out_action" >Cerrar sesión
+                </string>
+                <string name="com_facebook_requesterror_permissions" >Una conexión de aplicación con Facebook falló debido a permisos insuficientes, por favor, conceda los permisos de aplicaciones para realizar la operación.
+                </string>
+                <string name="com_facebook_usersettingsfragment_logged_in" >Sesión iniciada
+                </string>
+                <string name="com_facebook_internet_permission_error_title" >Error de AndroidManifest
+                </string>
+                <string name="com_facebook_usersettingsfragment_not_logged_in" >No has iniciado sesión
+                </string>
+                <string name="com_facebook_loginview_logged_in_using_facebook" >Sesión iniciada con Facebook
+                </string>
+                <string name="com_facebook_picker_done_button_text" >Aceptar
+                </string>
+                <string name="com_facebook_placepicker_subtitle_catetory_only_format" >%1$s
+                </string>
+                <string name="com_facebook_internet_permission_error_message" >WebView inicio de sesión requiere permiso INTERNET
+                </string>
+                <string name="com_facebook_placepicker_subtitle_were_here_only_format" >es:%1$,d estuvieron aquí
+                </string>
+                <string name="com_facebook_requesterror_relogin" >La aplicación no se conecta con Facebook, inicie sesión y volver a conectar esta aplicación.
+                </string>
+                <string name="com_facebook_usersettingsfragment_log_in_button" >Iniciar sesión…
+                </string>
+                <string name="com_facebook_logo_content_description" >Logo de Facebook
+                </string>
+                <string name="com_facebook_loginview_log_out_button" >Cerrar sesión
+                </string>
+            </file>
+            <file
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values/drawables.xml"
+                qualifiers="" >
+                <drawable name="com_facebook_picker_default_separator_color" >
+#33464c59
+                </drawable>
+            </file>
+            <file
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values/attrs.xml"
                 qualifiers="" >
                 <declare-styleable name="com_facebook_profile_picture_view" >
                     <attr name="preset_size" >
@@ -437,7 +630,7 @@
                 </declare-styleable>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values/colors.xml"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values/colors.xml"
                 qualifiers="" >
                 <color name="com_facebook_picker_search_bar_background" >#f5f5f7
                 </color>
@@ -448,68 +641,7 @@
                 </dimen>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values/drawables.xml"
-                qualifiers="" >
-                <drawable name="com_facebook_picker_default_separator_color" >
-#33464c59
-                </drawable>
-            </file>
-            <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values/strings.xml"
-                qualifiers="" >
-                <string name="com_facebook_usersettingsfragment_logged_in" >Logged in
-                </string>
-                <string name="com_facebook_internet_permission_error_message" >WebView login requires INTERNET permission
-                </string>
-                <string name="com_facebook_usersettingsfragment_log_in_button" >Log in…
-                </string>
-                <string name="com_facebook_placepicker_subtitle_were_here_only_format" >%1$,d were here
-                </string>
-                <string name="com_facebook_requesterror_password_changed" >Your Facebook password has changed. Please log into this app again to reconnect your Facebook account.
-                </string>
-                <string name="com_facebook_logo_content_description" >Facebook Logo
-                </string>
-                <string name="com_facebook_loginview_log_in_button" >Log in with Facebook
-                </string>
-                <string name="com_facebook_choose_friends" >Choose Friends
-                </string>
-                <string name="com_facebook_requesterror_reconnect" >Please log into this app again to reconnect your Facebook account.
-                </string>
-                <string name="com_facebook_requesterror_web_login" >Your Facebook account is locked. Please log into www.facebook.com to continue.
-                </string>
-                <string name="com_facebook_requesterror_permissions" >This app doesn’t have permission to do this. To change permissions, try logging into the app again.
-                </string>
-                <string name="com_facebook_loginview_log_out_action" >Log out
-                </string>
-                <string name="com_facebook_dialogloginactivity_ok_button" >OK
-                </string>
-                <string name="com_facebook_requesterror_relogin" >Please log into this app again to reconnect your Facebook account.
-                </string>
-                <string name="com_facebook_usersettingsfragment_not_logged_in" >Not logged in
-                </string>
-                <string name="com_facebook_nearby" >Nearby
-                </string>
-                <string name="com_facebook_loginview_logged_in_as" >Logged in as: %1$s
-                </string>
-                <string name="com_facebook_placepicker_subtitle_catetory_only_format" >%1$s
-                </string>
-                <string name="com_facebook_loading" >Loading...
-                </string>
-                <string name="com_facebook_placepicker_subtitle_format" >%1$s • %2$,d were here
-                </string>
-                <string name="com_facebook_loginview_cancel_action" >Cancel
-                </string>
-                <string name="com_facebook_loginview_logged_in_using_facebook" >Logged in using Facebook
-                </string>
-                <string name="com_facebook_picker_done_button_text" >Done
-                </string>
-                <string name="com_facebook_loginview_log_out_button" >Log out
-                </string>
-                <string name="com_facebook_internet_permission_error_title" >AndroidManifest Error
-                </string>
-            </file>
-            <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values/styles.xml"
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values/styles.xml"
                 qualifiers="" >
                 <color name="com_facebook_usersettingsfragment_connected_text_color" >#FFFFFF
                 </color>
@@ -607,197 +739,65 @@ center
                 </dimen>
             </file>
             <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-es/strings.xml"
-                qualifiers="es" >
-                <string name="com_facebook_nearby" >Cercano
+                path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/res/values/strings.xml"
+                qualifiers="" >
+                <string name="com_facebook_usersettingsfragment_logged_in" >Logged in
                 </string>
-                <string name="com_facebook_requesterror_password_changed" >Su contraseña de Facebook ha cambiado, por favor vuelva a conectar la aplicación con Facebook.
+                <string name="com_facebook_internet_permission_error_message" >WebView login requires INTERNET permission
                 </string>
-                <string name="com_facebook_requesterror_reconnect" >Se produjo un error al conectar con Facebook, por favor vuelva a conectar la aplicación con Facebook.
+                <string name="com_facebook_usersettingsfragment_log_in_button" >Log in…
                 </string>
-                <string name="com_facebook_placepicker_subtitle_format" >%1$s • %2$,d estuvieron aquí
+                <string name="com_facebook_placepicker_subtitle_were_here_only_format" >%1$,d were here
                 </string>
-                <string name="com_facebook_loading" >Cargando
+                <string name="com_facebook_requesterror_password_changed" >Your Facebook password has changed. Please log into this app again to reconnect your Facebook account.
                 </string>
-                <string name="com_facebook_requesterror_web_login" >Por favor, iniciar sesión a través https://www.facebook.com o https://m.facebook.com para volver a activar la aplicación para conectar con Facebook.
+                <string name="com_facebook_logo_content_description" >Facebook Logo
                 </string>
-                <string name="com_facebook_loginview_cancel_action" >Cancelar
+                <string name="com_facebook_loginview_log_in_button" >Log in with Facebook
                 </string>
-                <string name="com_facebook_choose_friends" >Elige Amigos
+                <string name="com_facebook_choose_friends" >Choose Friends
                 </string>
-                <string name="com_facebook_dialogloginactivity_ok_button" >Aceptar
+                <string name="com_facebook_requesterror_reconnect" >Please log into this app again to reconnect your Facebook account.
                 </string>
-                <string name="com_facebook_loginview_log_in_button" >Iniciar sesión con Facebook
+                <string name="com_facebook_requesterror_web_login" >Your Facebook account is locked. Please log into www.facebook.com to continue.
                 </string>
-                <string name="com_facebook_loginview_logged_in_as" >Sesión iniciada como: %1$s
+                <string name="com_facebook_requesterror_permissions" >This app doesn’t have permission to do this. To change permissions, try logging into the app again.
                 </string>
-                <string name="com_facebook_loginview_log_out_action" >Cerrar sesión
+                <string name="com_facebook_loginview_log_out_action" >Log out
                 </string>
-                <string name="com_facebook_requesterror_permissions" >Una conexión de aplicación con Facebook falló debido a permisos insuficientes, por favor, conceda los permisos de aplicaciones para realizar la operación.
+                <string name="com_facebook_dialogloginactivity_ok_button" >OK
                 </string>
-                <string name="com_facebook_usersettingsfragment_logged_in" >Sesión iniciada
+                <string name="com_facebook_requesterror_relogin" >Please log into this app again to reconnect your Facebook account.
                 </string>
-                <string name="com_facebook_internet_permission_error_title" >Error de AndroidManifest
+                <string name="com_facebook_usersettingsfragment_not_logged_in" >Not logged in
                 </string>
-                <string name="com_facebook_usersettingsfragment_not_logged_in" >No has iniciado sesión
+                <string name="com_facebook_nearby" >Nearby
                 </string>
-                <string name="com_facebook_loginview_logged_in_using_facebook" >Sesión iniciada con Facebook
-                </string>
-                <string name="com_facebook_picker_done_button_text" >Aceptar
+                <string name="com_facebook_loginview_logged_in_as" >Logged in as: %1$s
                 </string>
                 <string name="com_facebook_placepicker_subtitle_catetory_only_format" >%1$s
                 </string>
-                <string name="com_facebook_internet_permission_error_message" >WebView inicio de sesión requiere permiso INTERNET
+                <string name="com_facebook_loading" >Loading...
                 </string>
-                <string name="com_facebook_placepicker_subtitle_were_here_only_format" >es:%1$,d estuvieron aquí
+                <string name="com_facebook_placepicker_subtitle_format" >%1$s • %2$,d were here
                 </string>
-                <string name="com_facebook_requesterror_relogin" >La aplicación no se conecta con Facebook, inicie sesión y volver a conectar esta aplicación.
+                <string name="com_facebook_loginview_cancel_action" >Cancel
                 </string>
-                <string name="com_facebook_usersettingsfragment_log_in_button" >Iniciar sesión…
+                <string name="com_facebook_loginview_logged_in_using_facebook" >Logged in using Facebook
                 </string>
-                <string name="com_facebook_logo_content_description" >Logo de Facebook
+                <string name="com_facebook_picker_done_button_text" >Done
                 </string>
-                <string name="com_facebook_loginview_log_out_button" >Cerrar sesión
+                <string name="com_facebook_loginview_log_out_button" >Log out
                 </string>
-            </file>
-            <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-hdpi/dimens.xml"
-                qualifiers="hdpi" >
-                <dimen name="com_facebook_picker_divider_width" >1px
-                </dimen>
-            </file>
-            <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-he/strings.xml"
-                qualifiers="he" >
-                <string name="com_facebook_requesterror_password_changed" >.הסיסמה שלך בפייסבוק השתנתה, אנא חבר מחדש את האפליקציה עם פייסבוק
+                <string name="com_facebook_internet_permission_error_title" >AndroidManifest Error
                 </string>
-                <string name="com_facebook_requesterror_web_login" >.כדי לאפשר מחדש לאפליקציה להתחבר עם פייסבוק https://www.facebook.com או https://m.facebook.com אנא היכנס דרך
-                </string>
-                <string name="com_facebook_usersettingsfragment_logged_in" >מחובר
-                </string>
-                <string name="com_facebook_requesterror_reconnect" >.ארעה שגיאה בעת החיבור עם פייסבוק, חבר בבקשה מחדש את האפליקציה עם פייסבוק
-                </string>
-                <string name="com_facebook_logo_content_description" >פייסבוק לוגו
-                </string>
-                <string name="com_facebook_picker_done_button_text" >בצע
-                </string>
-                <string name="com_facebook_loginview_log_in_button" >התחבר לפייסבוק
-                </string>
-                <string name="com_facebook_loginview_logged_in_as" >מחובר בשם: %1$s
-                </string>
-                <string name="com_facebook_placepicker_subtitle_were_here_only_format" >%1$,d היו פה
-                </string>
-                <string name="com_facebook_requesterror_relogin" >.האפליקציה אינה מחוברת לפייסבוק, אנא היכנס וחבר מחדש את האפליקציה
-                </string>
-                <string name="com_facebook_usersettingsfragment_log_in_button" >התחבר…
-                </string>
-                <string name="com_facebook_internet_permission_error_title" >AndroidManifest שגיאת
-                </string>
-                <string name="com_facebook_internet_permission_error_message" >ההתחברות לתצוגת אתר דורשת אישור אינטרנט
-                </string>
-                <string name="com_facebook_loginview_cancel_action" >בטל
-                </string>
-                <string name="com_facebook_choose_friends" >בחר חברים
-                </string>
-                <string name="com_facebook_loginview_log_out_button" >התנתק
-                </string>
-                <string name="com_facebook_placepicker_subtitle_catetory_only_format" >%1$s
-                </string>
-                <string name="com_facebook_placepicker_subtitle_format" >%1$s • %2$,d היו פה
-                </string>
-                <string name="com_facebook_usersettingsfragment_not_logged_in" >לא מחובר
-                </string>
-                <string name="com_facebook_loading" >..מעלה
-                </string>
-                <string name="com_facebook_nearby" >קרוב אליי
-                </string>
-                <string name="com_facebook_loginview_logged_in_using_facebook" >מחובר באמצעות פייסבוק
-                </string>
-                <string name="com_facebook_dialogloginactivity_ok_button" >אישור
-                </string>
-                <string name="com_facebook_requesterror_permissions" >.חיבור האפליקציה עם פייסבוק נכשל בשל הרשאות לא מספקות, אנא הענק הרשאות לאפליקציה בכדי שהפעולה תוכל להתבצע
-                </string>
-                <string name="com_facebook_loginview_log_out_action" >התנתק
-                </string>
-            </file>
-            <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-iw/strings.xml"
-                qualifiers="iw" >
-                <string name="com_facebook_usersettingsfragment_log_in_button" >התחבר…
-                </string>
-                <string name="com_facebook_loginview_log_out_button" >התנתק
-                </string>
-                <string name="com_facebook_loginview_logged_in_using_facebook" >מחובר באמצעות פייסבוק
-                </string>
-                <string name="com_facebook_internet_permission_error_message" >ההתחברות לתצוגת אתר דורשת אישור אינטרנט
-                </string>
-                <string name="com_facebook_loginview_log_out_action" >התנתק
-                </string>
-                <string name="com_facebook_placepicker_subtitle_catetory_only_format" >%1$s
-                </string>
-                <string name="com_facebook_choose_friends" >בחר חברים
-                </string>
-                <string name="com_facebook_placepicker_subtitle_were_here_only_format" >%1$,d היו פה
-                </string>
-                <string name="com_facebook_usersettingsfragment_not_logged_in" >לא מחובר
-                </string>
-                <string name="com_facebook_placepicker_subtitle_format" >%1$s • %2$,d היו פה
-                </string>
-                <string name="com_facebook_requesterror_permissions" >.חיבור האפליקציה עם פייסבוק נכשל בשל הרשאות לא מספקות, אנא הענק הרשאות לאפליקציה בכדי שהפעולה תוכל להתבצע
-                </string>
-                <string name="com_facebook_requesterror_web_login" >.כדי לאפשר מחדש לאפליקציה להתחבר עם פייסבוק https://www.facebook.com או https://m.facebook.com אנא היכנס דרך
-                </string>
-                <string name="com_facebook_requesterror_relogin" >.האפליקציה אינה מחוברת לפייסבוק, אנא היכנס וחבר מחדש את האפליקציה
-                </string>
-                <string name="com_facebook_requesterror_password_changed" >.הסיסמה שלך בפייסבוק השתנתה, אנא חבר מחדש את האפליקציה עם פייסבוק
-                </string>
-                <string name="com_facebook_picker_done_button_text" >בצע
-                </string>
-                <string name="com_facebook_internet_permission_error_title" >AndroidManifest שגיאת
-                </string>
-                <string name="com_facebook_loginview_logged_in_as" >מחובר בשם: %1$s
-                </string>
-                <string name="com_facebook_requesterror_reconnect" >.ארעה שגיאה בעת החיבור עם פייסבוק, חבר בבקשה מחדש את האפליקציה עם פייסבוק
-                </string>
-                <string name="com_facebook_usersettingsfragment_logged_in" >מחובר
-                </string>
-                <string name="com_facebook_logo_content_description" >פייסבוק לוגו
-                </string>
-                <string name="com_facebook_dialogloginactivity_ok_button" >אישור
-                </string>
-                <string name="com_facebook_loading" >..מעלה
-                </string>
-                <string name="com_facebook_loginview_log_in_button" >התחבר לפייסבוק
-                </string>
-                <string name="com_facebook_nearby" >קרוב אליי
-                </string>
-                <string name="com_facebook_loginview_cancel_action" >בטל
-                </string>
-            </file>
-            <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-ldpi/dimens.xml"
-                qualifiers="ldpi" >
-                <dimen name="com_facebook_picker_divider_width" >1px
-                </dimen>
-            </file>
-            <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-mdpi/dimens.xml"
-                qualifiers="mdpi" >
-                <dimen name="com_facebook_picker_divider_width" >1px
-                </dimen>
-            </file>
-            <file
-                path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/res/values-xhdpi/dimens.xml"
-                qualifiers="xhdpi" >
-                <dimen name="com_facebook_picker_divider_width" >2px
-                </dimen>
             </file>
         </source>
-        <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/build/res/rs/release" />
-        <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/build/res/generated/release" />
+        <source path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/build/res/rs/release" />
+        <source path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/build/res/generated/release" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/Users/howardchen/BluePrint/feeding-forward/ff-android/libraries/facebook/src/release/res" />
+        <source path="/home/tony/Blueprint/FeedingForward/ff/ff-android/libraries/facebook/src/release/res" />
     </dataSet>
 
 </merger>

@@ -48,8 +48,7 @@ import org.json.JSONObject;
 public class LocationFragment extends Fragment implements View.OnClickListener, LocationListener,
         GooglePlayServicesClient.ConnectionCallbacks,
         GooglePlayServicesClient.OnConnectionFailedListener,
-        View.OnFocusChangeListener,
-        TextView.OnEditorActionListener, FragmentLifeCycle {
+        View.OnFocusChangeListener, FragmentLifeCycle {
 
 
     /** A request code to send to Google Play services */
