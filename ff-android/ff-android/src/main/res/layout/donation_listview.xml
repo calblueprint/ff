@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Your content, here we're using a ScrollView -->
 
     <ListView
         android:layout_width="match_parent"
