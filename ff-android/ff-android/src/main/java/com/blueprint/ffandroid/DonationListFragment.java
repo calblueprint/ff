@@ -255,8 +255,7 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         TextView donationStatus = (TextView) rowView.findViewById(R.id.status);
         Donation d = data[position];
         kind.setText(d.getKind());
-        MainActivity activity = new MainActivity();
-        Typeface tf = activity.myTypeface;
+        Typeface tf = Typeface.createFromAsset(context.getAssets(), "fonts/proxima_nova_regular.otf");
         kind.setTypeface(tf);
         date.setText(sdf.format(d.getdateCreated()));
         date.setTypeface(tf);
