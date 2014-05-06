@@ -24,7 +24,7 @@ import org.w3c.dom.Text;
 /**
  * A fragment that congradulates the user when he or she completes a donation.
  */
-public class CongratulatoryFragment extends Fragment implements HasName, FragmentLifeCycle {
+public class CongratulatoryFragment extends Fragment implements FragmentLifeCycle {
 
 
     /** The tag used for debugging. */

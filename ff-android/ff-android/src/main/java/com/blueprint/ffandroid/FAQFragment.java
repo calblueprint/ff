@@ -14,7 +14,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 
-public class FAQFragment extends Fragment implements HasName, FragmentLifeCycle {
+public class FAQFragment extends Fragment implements FragmentLifeCycle {
 
 
     /** The button that links to the feeding forward. */

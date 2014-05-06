@@ -26,7 +26,7 @@ import java.text.SimpleDateFormat;
 /**
  * Created by Nishant on 4/27/14.
  */
-public class DonationDetailFragment extends Fragment implements HasName, FragmentLifeCycle{
+public class DonationDetailFragment extends Fragment implements FragmentLifeCycle{
 
 
     Donation donation;

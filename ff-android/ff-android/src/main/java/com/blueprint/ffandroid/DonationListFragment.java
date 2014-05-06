@@ -47,7 +47,7 @@ import java.util.Locale;
  * Created by Nishant on 4/12/14.
  */
 
-public class DonationListFragment extends Fragment implements HasName, Fragment {
+public class DonationListFragment extends Fragment implements FragmentLifeCycle {
 
 
     private static SimpleDateFormat inputDateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);

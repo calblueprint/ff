@@ -7,4 +7,5 @@ public interface FragmentLifeCycle {
 
     public void willAppear();
     public boolean isCreated();
+    public String getName();
 }

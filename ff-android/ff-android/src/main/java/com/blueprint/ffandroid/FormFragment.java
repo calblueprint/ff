@@ -63,7 +63,7 @@ import java.util.Map;
 public class FormFragment extends Fragment implements View.OnClickListener,
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener,
         View.OnFocusChangeListener, FFScrollView.OnScrollViewListener,
-        View.OnTouchListener, HasName, FragmentLifeCycle {
+        View.OnTouchListener, FragmentLifeCycle {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 

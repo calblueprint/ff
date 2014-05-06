@@ -49,7 +49,7 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
         GooglePlayServicesClient.ConnectionCallbacks,
         GooglePlayServicesClient.OnConnectionFailedListener,
         View.OnFocusChangeListener,
-        TextView.OnEditorActionListener, HasName, FragmentLifeCycle {
+        TextView.OnEditorActionListener, FragmentLifeCycle {
 
 
     /** A request code to send to Google Play services */

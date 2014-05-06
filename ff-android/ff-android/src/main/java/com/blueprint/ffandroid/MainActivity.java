@@ -206,7 +206,7 @@ public class MainActivity extends ActionBarActivity
 
     public void replaceFragmentWithBackStack(Fragment newFragment){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.addToBackStack(((HasName) newFragment).getName());
+        ft.addToBackStack(((FragmentLifeCycle) newFragment).getName());
         ft.replace(R.id.container, newFragment);
         ft.commit();
         currentFragment = newFragment;

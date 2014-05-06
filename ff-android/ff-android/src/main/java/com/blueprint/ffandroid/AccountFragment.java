@@ -20,7 +20,7 @@ import android.widget.TextView;
  * @author howardchen
  *
  */
-public class AccountFragment extends Fragment implements View.OnClickListener, HasName, FragmentLifeCycle{
+public class AccountFragment extends Fragment implements View.OnClickListener, FragmentLifeCycle{
 
 
     /** The name of the account.*/
