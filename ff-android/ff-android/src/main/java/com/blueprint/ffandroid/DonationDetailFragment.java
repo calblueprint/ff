@@ -103,16 +103,6 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         Button cancel = (Button) rootView.findViewById(R.id.cancel_pickup);
 
         created = true;
-/*
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity mainActivity = (MainActivity) DonationDetailFragment.this.getActivity();
-                Fragment listViewFragment = mainActivity.donationListFragment;
-                mainActivity.replaceFragment(listViewFragment);
-            }
-        });
-*/
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
