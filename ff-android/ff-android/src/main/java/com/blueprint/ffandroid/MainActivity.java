@@ -18,6 +18,8 @@ import android.text.SpannableString;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -233,6 +235,25 @@ public class MainActivity extends ActionBarActivity
         currentFragment = newFragment;
         if (((FragmentLifeCycle) currentFragment).isCreated()) {
             ((FragmentLifeCycle) currentFragment).willAppear();
+        }
+        if (currentFragment.equals(donationDetailFragment)) {
+            Button actionView = (Button) findViewById(R.id.title_bar_left_menu);
+            actionView.setBackgroundResource(R.drawable.back);
+            findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+                }
+            });
+        } else {
+            Button actionView = (Button) findViewById(R.id.title_bar_left_menu);
+            actionView.setBackgroundResource(R.drawable.titlebar_menu_selector);
+            findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+                }
+            });
         }
     }
 
