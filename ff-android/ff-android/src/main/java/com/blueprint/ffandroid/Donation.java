@@ -227,6 +227,12 @@ public class Donation implements Comparable<Donation>{
         return numErrors == 0;
     }
 
+    /** Converts a date object to a String */
+    private String dateString(Date date) {
+        DateFormat df = new SimpleDateFormat("hh:mm a MMMMM dd");
+        return df.format(date);
+    }
+
     /** Checks if donation object is valid.
      * A donation is valid iff it satisfies all the following requirements:
      * 1. The location is in the United States.
@@ -274,7 +280,7 @@ public class Donation implements Comparable<Donation>{
         try {
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("pickupAt", JSONObject.NULL);
-            jsonObj.put("finishBy", getEndDate().toString());
+            jsonObj.put("finishBy", dateString(getEndDate()));
             jsonObj.put("weight", Double.toString(getWeight()));
             jsonObj.put("kind", getKind());
             jsonObj.put("location", getLocationJson());
