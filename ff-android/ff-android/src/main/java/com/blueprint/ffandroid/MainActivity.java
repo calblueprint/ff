@@ -217,9 +217,8 @@ public class MainActivity extends ActionBarActivity
                 break;
 
         }
-        SpannableString s = new SpannableString(mTitle);
-        s.setSpan(new TypefaceSpan(this, "myTypeface"), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         TextView titleView = (TextView) findViewById(R.id.title);
+        titleView.setTypeface(myTypeface);
         titleView.setText(mTitle);
     }
 
