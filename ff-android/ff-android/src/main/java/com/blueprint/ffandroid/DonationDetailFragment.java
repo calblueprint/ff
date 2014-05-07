@@ -2,6 +2,7 @@ package com.blueprint.ffandroid;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -69,6 +70,8 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
     private TextView case3;
     /** The TextView for case4. */
     private TextView case4;
+    /** Original TextView Colors. */
+    private ColorStateList oldColors;
 
     public static DonationDetailFragment newInstance(){
         return new DonationDetailFragment();
@@ -159,6 +162,7 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
 
         parent = (MainActivity) getActivity();
         setDonationText(donation);
+        oldColors =  case1.getTextColors();
         setFonts();
         return rootView;
     }
@@ -183,26 +187,18 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
 
     /** Sets the progress bar to the correct STEP. */
     private void setProgress(int step) {
-
+        case1.setTextColor(Color.BLACK);
+        case2.setTextColor(Color.BLACK);
+        case3.setTextColor(Color.BLACK);
+        case4.setTextColor(Color.BLACK);
         if (step == 0) {
-            Log.i("fgdgfd", topCircle.getBackground() + "");
-            Drawable d = getResources().getDrawable(R.drawable.cars);
-            d.setColorFilter(R.color.bp_blue, PorterDuff.Mode.MULTIPLY);
-            topCircle.setBackground(d);
-
-            topCircle.getBackground().setColorFilter(R.color.bp_blue, PorterDuff.Mode.MULTIPLY);
-            topCircle.setColorFilter(R.color.bp_blue, PorterDuff.Mode.MULTIPLY);
-            topCircle.setColorFilter(getResources().getColor(R.color.bp_blue));
-
-
+            case1.setTextColor(getResources().getColor(R.color.bp_blue));
         } else if (step == 1) {
-            midCircle.setColorFilter(R.color.bp_blue);
-            midCircle.getBackground().setColorFilter(R.color.bp_blue, PorterDuff.Mode.MULTIPLY);
-
+            case2.setTextColor(getResources().getColor(R.color.bp_blue));
         } else if (step == 2) {
-            botCircle.setColorFilter(R.color.bp_blue);
+            case3.setTextColor(getResources().getColor(R.color.bp_blue));
         } else {
-            cancelCircle.setColorFilter(R.color.bp_blue);
+            case4.setTextColor(getResources().getColor(R.color.bp_blue));
         }
     }
 
