@@ -273,11 +273,12 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
          */
     @Override
     public void onConnected(Bundle dataBundle) {
-        if (mLocationClient.isConnected()) {
+        if (mLocationClient.isConnected() && mLocationClient.getLastLocation() != null) {
             onLocationChanged(mLocationClient.getLastLocation());
             mLocationClient.disconnect();
         } else {
-            System.out.println("not connected");
+            Toast.makeText(parent, "There was an error getting your location. Please make sure location services is on.",
+                    Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -371,21 +372,12 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
             case (R.id.forward_button):
                 updateDonation();
                 parent.mTitle = "Fill Out Donation Details";
-                parent.getActionBar().setTitle(parent.mTitle);
-                parent.replaceFragmentWithBackStack(parent.formFragment);
+                parent.replaceFragment(parent.formFragment);
                 break;
             case (R.id.current_location_button):
                 System.out.println("address");
                 mLocationClient.connect();
                 break;
         }
-    }
-
-    /**
-     * Returns the name of the class as a string.
-     * useful for backstack.
-     */
-    public String getName() {
-        return "LocationFragment";
     }
 }

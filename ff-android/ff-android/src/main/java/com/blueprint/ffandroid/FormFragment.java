@@ -378,8 +378,10 @@ public class FormFragment extends Fragment implements View.OnClickListener,
             System.out.println(e.toString());
         }
         parent.donation.setStartDate(pickup_date);
+        parent.donation.setEndDate(finish_by_date);
         parent.donation.setAddress(address_field.getText().toString());
         parent.donation.setKind(kind_field.getText().toString());
+        parent.donation.setPhoneNumber(phone_field.getText().toString());
     }
 
     private boolean validateDonation() {
@@ -444,13 +446,5 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                 dispatchTakePictureIntent();
                 break;
         }
-    }
-
-    /**
-     * Returns the name of the class as a string.
-     * useful for backstack.
-     */
-    public String getName() {
-        return "FormFragment";
     }
 }
