@@ -29,7 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/kind"
         android:layout_toRightOf="@id/img"
-        android:gravity="center"
         android:textSize="15sp"/>
 
     <TextView
