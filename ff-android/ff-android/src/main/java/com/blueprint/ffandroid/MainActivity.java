@@ -135,6 +135,7 @@ public class MainActivity extends ActionBarActivity
         switch (position) {
             case 0:
                 while (fragmentManager.getBackStackEntryCount() > 0) {
+                    
                     fragmentManager.popBackStackImmediate();
                 }
                 replaceFragment(locationFragment);
@@ -376,6 +377,8 @@ public class MainActivity extends ActionBarActivity
         if (donationDetailFragment.isVisible()) {
             ActionBar actionBar = getSupportActionBar();
             actionBar.setIcon(R.drawable.ic_blueprint_paw);
+            FragmentManager fm = getSupportFragmentManager();
+            fm.popBackStack();
             replaceFragment(donationListFragment);
             mNavigationDrawerFragment.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
             return true;
