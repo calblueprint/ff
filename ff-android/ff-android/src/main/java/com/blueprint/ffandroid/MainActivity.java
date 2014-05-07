@@ -189,9 +189,6 @@ public class MainActivity extends ActionBarActivity
                 this.finish();
                 startActivity(intent);
                 break;
-            case 5:
-                replaceFragment(congratulatoryFragment);
-                break;
         }
         resideMenu.closeMenu();
     }
@@ -214,9 +211,7 @@ public class MainActivity extends ActionBarActivity
             case 4:
                 mTitle = "Logout";
                 break;
-            case 5:
-                mTitle = "Congratulations";
-                break;
+
 
         }
         SpannableString s = new SpannableString(mTitle);
