@@ -386,7 +386,7 @@
                     <navigationItem key="navigationItem" id="Mac-Uy-ikJ">
                         <barButtonItem key="leftBarButtonItem" id="DEu-Vx-Kbo">
                             <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Brk-v0-XGm" customClass="FFButtonWithStyleGreenH30">
-                                <rect key="frame" x="5" y="7" width="40" height="30"/>
+                                <rect key="frame" x="16" y="7" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="25"/>

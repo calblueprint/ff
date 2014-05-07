@@ -315,6 +315,7 @@
 		E4B0A1B419159C480034C32B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B219159C480034C32B /* Default@2x.png */; };
 		E4B0A1B619159CA40034C32B /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B519159CA40034C32B /* app_icon@2x.png */; };
 		E4B0A1B819159D510034C32B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B719159D510034C32B /* Images.xcassets */; };
+		E4E61D521919ADF100B6C150 /* PostDonationCongratulationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E61D511919ADF100B6C150 /* PostDonationCongratulationsViewController.m */; };
 		E4EF13361918640F00BD8FBD /* button_facebook_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4EF13351918640F00BD8FBD /* button_facebook_login@2x.png */; };
 		E4EF13381919994F00BD8FBD /* button_facebook_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4EF13371919994E00BD8FBD /* button_facebook_login@2x.png */; };
 		E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4EF65E018FDCD56007E76BF /* photodefault.jpg */; };
@@ -713,6 +714,8 @@
 		E4B0A1B219159C480034C32B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E4B0A1B519159CA40034C32B /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
 		E4B0A1B719159D510034C32B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E4E61D501919ADF100B6C150 /* PostDonationCongratulationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostDonationCongratulationsViewController.h; sourceTree = "<group>"; };
+		E4E61D511919ADF100B6C150 /* PostDonationCongratulationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostDonationCongratulationsViewController.m; sourceTree = "<group>"; };
 		E4EF13351918640F00BD8FBD /* button_facebook_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_facebook_login@2x.png"; path = "../../../../../../../../../button_facebook_login@2x.png"; sourceTree = "<group>"; };
 		E4EF13371919994E00BD8FBD /* button_facebook_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_facebook_login@2x.png"; sourceTree = "<group>"; };
 		E4EF65E018FDCD56007E76BF /* photodefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photodefault.jpg; sourceTree = "<group>"; };
@@ -1067,6 +1070,8 @@
 				9B1ABD4117AE50D90041CA0F /* POSDChooseAmountViewController.m */,
 				9BFAE59D17AF36370058AFE9 /* POSDChooseTimeViewController.h */,
 				9BFAE59E17AF36370058AFE9 /* POSDChooseTimeViewController.m */,
+				E4E61D501919ADF100B6C150 /* PostDonationCongratulationsViewController.h */,
+				E4E61D511919ADF100B6C150 /* PostDonationCongratulationsViewController.m */,
 			);
 			path = PostDonation;
 			sourceTree = "<group>";
@@ -1947,6 +1952,7 @@
 				9BB52FC417B1EA1700813AF6 /* UIImage+animatedGIF.m in Sources */,
 				9BB52FCB17B1EA4000813AF6 /* UIImage+Resize.m in Sources */,
 				9BB5302B17B384B000813AF6 /* AccountConstants.m in Sources */,
+				E4E61D521919ADF100B6C150 /* PostDonationCongratulationsViewController.m in Sources */,
 				9BB5302E17B384D800813AF6 /* AccountModuleController.m in Sources */,
 				9BB5303117B384F400813AF6 /* AccountBaseViewController.m in Sources */,
 				9BB5303417B3856100813AF6 /* ACCProfileViewController.m in Sources */,

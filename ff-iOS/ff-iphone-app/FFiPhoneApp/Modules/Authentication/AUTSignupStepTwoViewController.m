@@ -27,7 +27,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self configureAppearance];
     
     [self.textFieldFullName setText:self.user.fullName];
     [self.textFieldPhoneNumber setText:self.user.mobilePhoneNumber];
