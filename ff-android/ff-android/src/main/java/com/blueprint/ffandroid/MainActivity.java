@@ -126,7 +126,7 @@ public class MainActivity extends ActionBarActivity
         resideMenu.setShadowVisible(false);
         resideMenu.setDirectionDisable(ResideMenu.DIRECTION_RIGHT);
 
-        String titles[] = { "Donate!", "Donation List", "Account", "FAQ", "Logout" };
+        String titles[] = { "Donate!", "Donation List", "Account", "About", "Logout" };
         int icon[] = { R.drawable.donate, R.drawable.donatelist, R.drawable.account, R.drawable.faq, R.drawable.logout };
         menuItems = new ArrayList<ResideMenuItem>();
         for (int i = 0; i < titles.length; i++) {
@@ -207,7 +207,7 @@ public class MainActivity extends ActionBarActivity
                 mTitle = "Account Details";
                 break;
             case 3:
-                mTitle = "Frequently Asked Questions";
+                mTitle = "About Us";
                 break;
             case 4:
                 mTitle = "Logout";
@@ -217,9 +217,8 @@ public class MainActivity extends ActionBarActivity
                 break;
 
         }
-        SpannableString s = new SpannableString(mTitle);
-        s.setSpan(new TypefaceSpan(this, "myTypeface"), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         TextView titleView = (TextView) findViewById(R.id.title);
+        titleView.setTypeface(myTypeface);
         titleView.setText(mTitle);
     }
 
