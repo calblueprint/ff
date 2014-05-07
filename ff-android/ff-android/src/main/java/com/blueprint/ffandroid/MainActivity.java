@@ -16,6 +16,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -431,5 +433,23 @@ public class MainActivity extends ActionBarActivity
         } else {
             return super.onOptionsItemSelected(item);
         }
+    }
+
+    /**
+     * Listens for back button click and opens nav drawer if it's not open
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            FragmentManager fm = getSupportFragmentManager();
+            if (!resideMenu.isOpen()) {
+                resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+                return true;
+            } else if (resideMenu.isOpen()) {
+                resideMenu.closeMenu();
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
