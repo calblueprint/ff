@@ -19,6 +19,7 @@
 
 @interface CURDCurrentDonationsViewController ()
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewCurrentDonations;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) IBOutlet UIView *viewTableViewFooter;
@@ -34,6 +35,11 @@
 {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    // Configure button appearance
+    [self.menuButton setImage:[UIImage imageNamed:@"menu.png"]];
+    [self.menuButton setTintColor:[UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:0.65]];
+
 	
 	if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
 		self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -292,6 +298,11 @@
 //		[viewController setDonation:donationContainer.data];
 //		[self.navigationController pushViewController:viewController animated:YES];
 //	}
+}
+
+- (IBAction)menuButtonPressed:(id)sender
+{
+    [self.moduleController.mmDrawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 @end

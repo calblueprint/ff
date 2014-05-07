@@ -46,6 +46,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [self.navigationController.navigationBar setTintColor:[UIColor darkGrayColor]];
+    
     [self.labelDonationTitle setText:self.donation.donationTitle];
     [self.labelDonationTitle setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:25]];
     [self.labelStatusText setText:self.donation.statusText];
@@ -54,7 +56,8 @@
     [self.labelTotalLBS setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:12]];
     
     // Show meal photo
-    self.imageViewMealPhoto.contentMode = UIViewContentModeScaleToFill;
+    self.imageViewMealPhoto.contentMode = UIViewContentModeScaleAspectFill;
+    self.imageViewMealPhoto.clipsToBounds = YES;
     [self.imageViewMealPhoto setImage:[UIImage imageNamed:self.donation.mealPhoto.imageURL]];
     
 

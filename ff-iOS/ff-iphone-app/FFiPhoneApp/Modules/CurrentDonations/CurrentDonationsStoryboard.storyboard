@@ -119,10 +119,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Current Donations" id="chh-gm-DTu"/>
+                    <navigationItem key="navigationItem" title="Current Donations" id="chh-gm-DTu">
+                        <barButtonItem key="leftBarButtonItem" id="jGm-au-nuB">
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="zbO-fK-lwM" id="ZdH-pq-a1g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="menuButton" destination="jGm-au-nuB" id="s2s-pJ-pW2"/>
                         <outlet property="tableViewCurrentDonations" destination="qUS-7b-CPu" id="f0S-y7-UWc"/>
                         <outlet property="viewTableViewFooter" destination="vr0-jK-7yW" id="hWF-9H-tmt"/>
                     </connections>
@@ -336,7 +343,6 @@
                         <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="Mac-Uy-ikJ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
