@@ -236,15 +236,24 @@ public class MainActivity extends ActionBarActivity
         if (((FragmentLifeCycle) currentFragment).isCreated()) {
             ((FragmentLifeCycle) currentFragment).willAppear();
         }
-        if (currentFragment.equals(donationDetailFragment)) {
+        if (currentFragment.equals(donationDetailFragment) || currentFragment.equals(formFragment)) {
             Button actionView = (Button) findViewById(R.id.title_bar_left_menu);
             actionView.setBackgroundResource(R.drawable.back);
-            findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    replaceFragment(donationListFragment);
-                }
-            });
+            if (currentFragment.equals(donationDetailFragment)) {
+                findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        replaceFragment(donationListFragment);
+                    }
+                });
+            } else {
+                findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        replaceFragment(locationFragment);
+                    }
+                });
+            }
         } else {
             Button actionView = (Button) findViewById(R.id.title_bar_left_menu);
             actionView.setBackgroundResource(R.drawable.titlebar_menu_selector);
