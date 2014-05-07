@@ -51,9 +51,9 @@
     [self.labelDonationTitle setText:self.donation.donationTitle];
     [self.labelDonationTitle setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:25]];
     [self.labelStatusText setText:self.donation.statusText];
-    [self.labelStatusText setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:12]];
+    [self.labelStatusText setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:16]];
     [self.labelTotalLBS setText:[NSString stringWithFormat:@"%u pounds", self.donation.totalLBS]];
-    [self.labelTotalLBS setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:12]];
+    [self.labelTotalLBS setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:16]];
     
     // Show meal photo
     self.imageViewMealPhoto.contentMode = UIViewContentModeScaleAspectFill;
