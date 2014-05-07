@@ -63,7 +63,7 @@ import java.util.Map;
 public class FormFragment extends Fragment implements View.OnClickListener,
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener,
         View.OnFocusChangeListener, FFScrollView.OnScrollViewListener,
-        View.OnTouchListener {
+        View.OnTouchListener, FragmentLifeCycle {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -86,7 +86,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
     private boolean showImage;
 
-    private int imageHeight;
+    private boolean created = false;
 
     private static final String url = "http://feeding-forever.herokuapp.com/api/pickups";
 
@@ -125,6 +125,8 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         setupFragment(rootView);
         setFonts(rootView);
 
+        created = true;
+
         loadDonation();
 
         return rootView;
@@ -151,7 +153,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
     }
 
     public void setupFragment(View rootView) {
-        ImageButton photo = (ImageButton) rootView.findViewById(R.id.camera_button);
+        ImageView photo = (ImageView) rootView.findViewById(R.id.image_banner);
 
         kind_field = (EditText) rootView.findViewById(R.id.donation_kind);
         weight_field = (EditText) rootView.findViewById(R.id.donation_weight_field);
@@ -407,6 +409,16 @@ public class FormFragment extends Fragment implements View.OnClickListener,
         queue.add(request);
     }
 
+    @Override
+    public void willAppear() {
+        loadDonation();
+    }
+
+    @Override
+    public boolean isCreated() {
+        return created;
+    }
+
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.pickup_time:
@@ -428,7 +440,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                     displayInvalidDialog();
                 }
                 break;
-            case R.id.camera_button:
+            case R.id.image_banner:
                 dispatchTakePictureIntent();
                 break;
         }

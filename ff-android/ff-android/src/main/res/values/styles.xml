@@ -5,4 +5,14 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.DonationList" parent="AppTheme">
+        <item name="ptrHeaderStyle">@style/Widget.Custom.PtrHeader</item>
+    </style>
+
+    <style name="Widget.Custom.PtrHeader" parent="android:Widget">
+        <!-- Color to tint the progress bar -->
+        <item name="ptrProgressBarColor">#1b75bc</item>
+
+    </style>
+
 </resources>

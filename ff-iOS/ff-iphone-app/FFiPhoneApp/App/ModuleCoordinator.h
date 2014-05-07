@@ -27,6 +27,6 @@
 - (void)didCreateAuthToken:(NSString *)authToken sender:(id)sender;
 - (void)didFailCreatingAuthTokenWithError:(FFError *)error sender:(id)sender;
 - (void)didReceiveRequestToRemoveAuthToken:(NSString *)authToken sender:(id)sender;
-- (void)loadUserDataWithCompletion:(void (^)(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations))completion;
+- (void)loadUserDataWithCompletion:(void (^)(FFDataUser *user))completion;
 
 @end
