@@ -123,7 +123,7 @@ public class MainActivity extends ActionBarActivity
 
     private void initializeNavigation() {
         resideMenu = new ResideMenu(this);
-        resideMenu.setBackground(R.drawable.menu_background);
+        resideMenu.setBackground(R.drawable.blueberries3);
         resideMenu.attachToActivity(this);
         resideMenu.setShadowVisible(false);
         resideMenu.setDirectionDisable(ResideMenu.DIRECTION_RIGHT);
