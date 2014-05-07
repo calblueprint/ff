@@ -228,6 +228,10 @@
 }
 
 - (FFDataDonation *) testDonationForIndex:(int)index {
+    NSDate *date = [[NSDate alloc] initWithTimeIntervalSinceNow:NSTimeIntervalSince1970];
+    FFDataLocation *location = [[FFDataLocation alloc] init];
+    [location setStreetAddressOne:@"12345 First Street"];
+    
 	FFDataDonation *donation = [[FFDataDonation alloc] init];
 	FFDataImage *dataImage = [[FFDataImage alloc] init];
 	donation.mealPhoto = dataImage;
@@ -235,14 +239,29 @@
 		case 0:
 			donation.donationTitle = @"Cake";
 			dataImage.imageURL = @"cake.jpg";
+            donation.statusCode = 1;
+            donation.availableStart = date;
+            donation.availableEnd = date;
+            donation.statusText = @"status";
+            donation.location = location;
 			break;
 		case 1:
 			donation.donationTitle = @"Pie";
 			dataImage.imageURL = @"pie.jpeg";
+            donation.statusCode = 2;
+            donation.availableStart = date;
+            donation.availableEnd = date;
+            donation.statusText = @"status";
+            donation.location = location;
 			break;
 		case 2:
 			donation.donationTitle = @"Cookies";
 			dataImage.imageURL = @"cookie.jpg";
+            donation.statusCode = 3;
+            donation.availableStart = date;
+            donation.availableEnd = date;
+            donation.statusText = @"status";
+            donation.location = location;
 			break;
 		default:
 			break;
@@ -252,6 +271,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CURDDonationDetailsViewController *viewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"CURDDonationDetailsViewController"];
+    [viewController setModuleController:self.moduleController];
+    [viewController setCurrentDonationsViewController:self];
+    // TODO: Populate detailed view with data
+    [viewController setDonation:[self testDonationForIndex:indexPath.row]];
+    NSLog(@"image: %@", [self testDonationForIndex:indexPath.row].mealPhoto.imageURL);
+    [self.navigationController pushViewController:viewController animated:YES];
 //	FFTableCellDataContainer *donationContainer = [self.moduleController.donationContainerCollection objectAtIndex:indexPath.row];
 //	if (donationContainer.didSelectRowBlock) {
 //		donationContainer.didSelectRowBlock(self, tableView, indexPath);

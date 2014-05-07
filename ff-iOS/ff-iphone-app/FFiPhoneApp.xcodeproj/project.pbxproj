@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090AB5E919198B830026FB72 /* checkmark-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 090AB5E819198B830026FB72 /* checkmark-32.png */; };
+		090AB5EB19198B9D0026FB72 /* cars-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 090AB5EA19198B9D0026FB72 /* cars-32.png */; };
+		090AB5ED19198BA90026FB72 /* find_user-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 090AB5EC19198BA90026FB72 /* find_user-32.png */; };
+		090AB5F019198BBD0026FB72 /* cancel-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 090AB5EE19198BBD0026FB72 /* cancel-32.png */; };
+		090AB5F119198BBD0026FB72 /* decision-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 090AB5EF19198BBD0026FB72 /* decision-32.png */; };
 		0958EC1B190DF868009412A4 /* ic_blueprint_paw.png in Resources */ = {isa = PBXBuildFile; fileRef = 0958EC1A190DF868009412A4 /* ic_blueprint_paw.png */; };
 		0958EC1F190E16DF009412A4 /* menu-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0958EC1E190E16DF009412A4 /* menu-button@2x.png */; };
 		0958EC21190E1711009412A4 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0958EC20190E1711009412A4 /* menu.png */; };
@@ -333,6 +338,11 @@
 
 /* Begin PBXFileReference section */
 		01AD18368F1B46E9A38A5085 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		090AB5E819198B830026FB72 /* checkmark-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark-32.png"; sourceTree = "<group>"; };
+		090AB5EA19198B9D0026FB72 /* cars-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cars-32.png"; sourceTree = "<group>"; };
+		090AB5EC19198BA90026FB72 /* find_user-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find_user-32.png"; sourceTree = "<group>"; };
+		090AB5EE19198BBD0026FB72 /* cancel-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-32.png"; sourceTree = "<group>"; };
+		090AB5EF19198BBD0026FB72 /* decision-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "decision-32.png"; sourceTree = "<group>"; };
 		0958EC1A190DF868009412A4 /* ic_blueprint_paw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_blueprint_paw.png; sourceTree = "<group>"; };
 		0958EC1E190E16DF009412A4 /* menu-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button@2x.png"; sourceTree = "<group>"; };
 		0958EC20190E1711009412A4 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
@@ -749,6 +759,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		090AB5E719198B4D0026FB72 /* donationIcons */ = {
+			isa = PBXGroup;
+			children = (
+				090AB5EE19198BBD0026FB72 /* cancel-32.png */,
+				090AB5EF19198BBD0026FB72 /* decision-32.png */,
+				090AB5EC19198BA90026FB72 /* find_user-32.png */,
+				090AB5EA19198B9D0026FB72 /* cars-32.png */,
+				090AB5E819198B830026FB72 /* checkmark-32.png */,
+			);
+			name = donationIcons;
+			sourceTree = "<group>";
+		};
 		0987D95E18F43B1D001510F8 /* NavDrawer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1209,6 +1231,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B0A1B119159C480034C32B /* Default-568h@2x.png */,
+				090AB5E719198B4D0026FB72 /* donationIcons */,
 				E4B0A1B219159C480034C32B /* Default@2x.png */,
 				E47842CF1911E94400F5C5E3 /* sample_images */,
 				0958EC1A190DF868009412A4 /* ic_blueprint_paw.png */,
@@ -1692,6 +1715,7 @@
 				9BFA58C217A9E08200908526 /* postdonation_button_picture_normal@2x.png in Resources */,
 				9BFA58C317A9E08200908526 /* postdonation_button_picture_selected@2x.png in Resources */,
 				E47842D41911E95400F5C5E3 /* pie.jpeg in Resources */,
+				090AB5EB19198B9D0026FB72 /* cars-32.png in Resources */,
 				9BFA58C417A9E08200908526 /* postdonation_button_when_normal@2x.png in Resources */,
 				0987D9B818FC7CE7001510F8 /* donate.png in Resources */,
 				9BFA58C517A9E08200908526 /* postdonation_button_when_selected@2x.png in Resources */,
@@ -1746,6 +1770,7 @@
 				E47842D51911E95400F5C5E3 /* cake.jpg in Resources */,
 				9B64E19C17BAF7F40051E8F1 /* button_green_20x20_normal@2x.png in Resources */,
 				9B64E19D17BAF7F40051E8F1 /* button_green_30x30_disabled.png in Resources */,
+				090AB5E919198B830026FB72 /* checkmark-32.png in Resources */,
 				9B64E19E17BAF7F40051E8F1 /* button_green_30x30_disabled@2x.png in Resources */,
 				9B64E19F17BAF7F40051E8F1 /* button_green_30x30_highlighted.png in Resources */,
 				9B64E1A017BAF7F40051E8F1 /* button_green_30x30_highlighted@2x.png in Resources */,
@@ -1757,6 +1782,7 @@
 				E4165D3718FF723800A7C202 /* Mark Simonson - Proxima Nova Alt Light.svg in Resources */,
 				9B64E1A617BAF7F40051E8F1 /* button_green_40x40_highlighted@2x.png in Resources */,
 				9B64E1A717BAF7F40051E8F1 /* button_green_40x40_normal.png in Resources */,
+				090AB5F119198BBD0026FB72 /* decision-32.png in Resources */,
 				E4B0A1B619159CA40034C32B /* app_icon@2x.png in Resources */,
 				9B64E1A817BAF7F40051E8F1 /* button_green_40x40_normal@2x.png in Resources */,
 				9B64E1CA17BB0A790051E8F1 /* button_red_20x20_disabled.png in Resources */,
@@ -1777,6 +1803,8 @@
 				9B64E1D717BB0A790051E8F1 /* button_red_40x40_disabled@2x.png in Resources */,
 				9B64E1D817BB0A790051E8F1 /* button_red_40x40_highlighted.png in Resources */,
 				9B64E1D917BB0A790051E8F1 /* button_red_40x40_highlighted@2x.png in Resources */,
+				090AB5F019198BBD0026FB72 /* cancel-32.png in Resources */,
+				090AB5ED19198BA90026FB72 /* find_user-32.png in Resources */,
 				9B64E1DA17BB0A790051E8F1 /* button_red_40x40_normal.png in Resources */,
 				9B64E1DB17BB0A790051E8F1 /* button_red_40x40_normal@2x.png in Resources */,
 				9B64E1DE17BB35C80051E8F1 /* donation_table_placeholder.png in Resources */,
