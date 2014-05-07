@@ -128,7 +128,6 @@ public class MainActivity extends ActionBarActivity
             resideMenu.setBackground(R.drawable.blueberries3_low);
         }
 
-
         String titles[] = { "Donate!", "Donation List", "Account", "About", "Logout" };
         int icon[] = { R.drawable.donate, R.drawable.donatelist, R.drawable.account, R.drawable.faq, R.drawable.logout };
         menuItems = new ArrayList<ResideMenuItem>();
