@@ -186,9 +186,15 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
 
         if (step == 0) {
             Log.i("fgdgfd", topCircle.getBackground() + "");
-            Drawable d = getResources().getDrawable(R.drawable.find_user);
+            Drawable d = getResources().getDrawable(R.drawable.cars);
             d.setColorFilter(R.color.bp_blue, PorterDuff.Mode.MULTIPLY);
             topCircle.setBackground(d);
+
+            topCircle.getBackground().setColorFilter(R.color.bp_blue, PorterDuff.Mode.MULTIPLY);
+            topCircle.setColorFilter(R.color.bp_blue, PorterDuff.Mode.MULTIPLY);
+            topCircle.setColorFilter(getResources().getColor(R.color.bp_blue));
+
+
         } else if (step == 1) {
             midCircle.setColorFilter(R.color.bp_blue);
             midCircle.getBackground().setColorFilter(R.color.bp_blue, PorterDuff.Mode.MULTIPLY);
