@@ -16,6 +16,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -120,7 +122,7 @@ public class MainActivity extends ActionBarActivity
 
     private void initializeNavigation() {
         resideMenu = new ResideMenu(this);
-        resideMenu.setBackground(R.drawable.menu_background);
+        resideMenu.setBackground(R.drawable.blueberries3);
         resideMenu.attachToActivity(this);
         resideMenu.setShadowVisible(false);
         resideMenu.setDirectionDisable(ResideMenu.DIRECTION_RIGHT);
@@ -186,9 +188,6 @@ public class MainActivity extends ActionBarActivity
                 this.finish();
                 startActivity(intent);
                 break;
-            case 5:
-                replaceFragment(congratulatoryFragment);
-                break;
         }
         resideMenu.closeMenu();
     }
@@ -210,9 +209,7 @@ public class MainActivity extends ActionBarActivity
             case 4:
                 mTitle = "Logout";
                 break;
-            case 5:
-                mTitle = "Congratulations";
-                break;
+
 
         }
         TextView titleView = (TextView) findViewById(R.id.title);
@@ -233,15 +230,24 @@ public class MainActivity extends ActionBarActivity
         if (((FragmentLifeCycle) currentFragment).isCreated()) {
             ((FragmentLifeCycle) currentFragment).willAppear();
         }
-        if (currentFragment.equals(donationDetailFragment)) {
+        if (currentFragment.equals(donationDetailFragment) || currentFragment.equals(formFragment)) {
             Button actionView = (Button) findViewById(R.id.title_bar_left_menu);
             actionView.setBackgroundResource(R.drawable.back);
-            findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    replaceFragment(donationListFragment);
-                }
-            });
+            if (currentFragment.equals(donationDetailFragment)) {
+                findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        replaceFragment(donationListFragment);
+                    }
+                });
+            } else {
+                findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        replaceFragment(locationFragment);
+                    }
+                });
+            }
         } else {
             Button actionView = (Button) findViewById(R.id.title_bar_left_menu);
             actionView.setBackgroundResource(R.drawable.titlebar_menu_selector);
@@ -415,5 +421,23 @@ public class MainActivity extends ActionBarActivity
         } else {
             return super.onOptionsItemSelected(item);
         }
+    }
+
+    /**
+     * Listens for back button click and opens nav drawer if it's not open
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            FragmentManager fm = getSupportFragmentManager();
+            if (!resideMenu.isOpen()) {
+                resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+                return true;
+            } else if (resideMenu.isOpen()) {
+                resideMenu.closeMenu();
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
