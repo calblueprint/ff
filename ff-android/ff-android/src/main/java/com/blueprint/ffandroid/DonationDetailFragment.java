@@ -23,7 +23,7 @@ import java.text.SimpleDateFormat;
 /**
  * Created by Nishant on 4/27/14.
  */
-public class DonationDetailFragment extends Fragment {
+public class DonationDetailFragment extends Fragment implements FragmentLifeCycle {
 
     Donation donation;
     private SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d, ''yy");
@@ -32,6 +32,8 @@ public class DonationDetailFragment extends Fragment {
     private TextView date;
     private TextView status;
     private TextView address;
+
+    private boolean created = false;
 
     public static DonationDetailFragment newInstance(){
         return new DonationDetailFragment();
@@ -64,6 +66,8 @@ public class DonationDetailFragment extends Fragment {
         Button back = (Button) rootView.findViewById(R.id.back);
         Button cancel = (Button) rootView.findViewById(R.id.cancel_pickup);
 
+        created = true;
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,5 +92,13 @@ public class DonationDetailFragment extends Fragment {
         setDonationText(donation);
 
         return rootView;
+    }
+
+    @Override
+    public boolean isCreated() { return created; }
+
+    @Override
+    public void willAppear() {
+        return;
     }
 }
