@@ -170,7 +170,7 @@ public class FormFragment extends Fragment implements View.OnClickListener,
 
         scrollView.setScrollViewListener(this);
 
-        food_imageview.setImageResource(R.drawable.defaultphoto);
+        food_imageview.setImageResource(R.drawable.hipster_food);
         //imageHeight = (int) getResources().getDimension(R.dimen.picture_height);
 
         scrollToView(imageHeader);
@@ -444,13 +444,5 @@ public class FormFragment extends Fragment implements View.OnClickListener,
                 dispatchTakePictureIntent();
                 break;
         }
-    }
-
-    /**
-     * Returns the name of the class as a string.
-     * useful for backstack.
-     */
-    public String getName() {
-        return "FormFragment";
     }
 }

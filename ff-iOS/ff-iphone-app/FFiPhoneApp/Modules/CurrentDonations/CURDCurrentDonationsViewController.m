@@ -140,20 +140,20 @@
 			[self.viewTableViewFooter setHidden:YES];
 			[self.tableViewCurrentDonations reloadData];
 			if (isNoMoreData) {
-				// Create a label as the table view's footer to inform user
-				//  that there are no more data
-				UIView *v = self.tableViewCurrentDonations.tableFooterView;
-				UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(v.frame.origin.x,
-																																	 v.frame.origin.y,
-																																	 v.frame.size.width,
-																																	 v.frame.size.height)];
-				[label setText:@"No more donations"];
-				[label setTextAlignment:NSTextAlignmentCenter];
-				[label setTextColor:[UIColor lightGrayColor]];
-				[label setFont:[UIFont fontWithName:@"Verdana-Bold" size:12.0f]];
-				[label setBackgroundColor:self.tableViewCurrentDonations.tableFooterView.backgroundColor];
-				
-				self.tableViewCurrentDonations.tableFooterView = label;
+//				// Create a label as the table view's footer to inform user
+//				//  that there are no more data
+//				UIView *v = self.tableViewCurrentDonations.tableFooterView;
+//				UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(v.frame.origin.x,
+//																																	 v.frame.origin.y,
+//																																	 v.frame.size.width,
+//																																	 v.frame.size.height)];
+//				[label setText:@"No more donations"];
+//				[label setTextAlignment:NSTextAlignmentCenter];
+//				[label setTextColor:[UIColor lightGrayColor]];
+//				[label setFont:[UIFont fontWithName:@"Verdana-Bold" size:12.0f]];
+//				[label setBackgroundColor:self.tableViewCurrentDonations.tableFooterView.backgroundColor];
+//				
+//				self.tableViewCurrentDonations.tableFooterView = label;
 			}
 		} failure:^(FFError *error) {
 			[FFUI showPopupMessageWithTitle:@"Error" message:error.errorDescription];
@@ -173,15 +173,15 @@
 	//
 	// Display a placeholder message when the table view is empty
 	//
-	if ([self.moduleController.donationContainerCollection count] == 0) {
-		UIImageView *placeholderImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kStyleDonationTablePlaceholderImage]];
-		[placeholderImageView setContentMode:UIViewContentModeScaleAspectFill];
-		[self.tableViewCurrentDonations setBackgroundView:placeholderImageView];
-	}
-	else {
-		[self.tableViewCurrentDonations setBackgroundView:nil];
-	}
-	
+//	if ([self.moduleController.donationContainerCollection count] == 0) {
+//		UIImageView *placeholderImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kStyleDonationTablePlaceholderImage]];
+//		[placeholderImageView setContentMode:UIViewContentModeScaleAspectFill];
+//		[self.tableViewCurrentDonations setBackgroundView:placeholderImageView];
+//	}
+//	else {
+//		[self.tableViewCurrentDonations setBackgroundView:nil];
+//	}
+//	
 	return 3;
 	//    return [self.moduleController.donationContainerCollection count];
 }
@@ -228,10 +228,6 @@
 }
 
 - (FFDataDonation *) testDonationForIndex:(int)index {
-    NSDate *date = [[NSDate alloc] initWithTimeIntervalSinceNow:NSTimeIntervalSince1970];
-    FFDataLocation *location = [[FFDataLocation alloc] init];
-    [location setStreetAddressOne:@"12345 First Street"];
-    
 	FFDataDonation *donation = [[FFDataDonation alloc] init];
 	FFDataImage *dataImage = [[FFDataImage alloc] init];
 	donation.mealPhoto = dataImage;
@@ -239,29 +235,14 @@
 		case 0:
 			donation.donationTitle = @"Cake";
 			dataImage.imageURL = @"cake.jpg";
-            donation.statusCode = 1;
-            donation.availableStart = date;
-            donation.availableEnd = date;
-            donation.statusText = @"status";
-            donation.location = location;
 			break;
 		case 1:
 			donation.donationTitle = @"Pie";
 			dataImage.imageURL = @"pie.jpeg";
-            donation.statusCode = 2;
-            donation.availableStart = date;
-            donation.availableEnd = date;
-            donation.statusText = @"status";
-            donation.location = location;
 			break;
 		case 2:
 			donation.donationTitle = @"Cookies";
 			dataImage.imageURL = @"cookie.jpg";
-            donation.statusCode = 3;
-            donation.availableStart = date;
-            donation.availableEnd = date;
-            donation.statusText = @"status";
-            donation.location = location;
 			break;
 		default:
 			break;
@@ -271,13 +252,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CURDDonationDetailsViewController *viewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"CURDDonationDetailsViewController"];
-    [viewController setModuleController:self.moduleController];
-    [viewController setCurrentDonationsViewController:self];
-    // TODO: Populate detailed view with data
-    [viewController setDonation:[self testDonationForIndex:indexPath.row]];
-    NSLog(@"image: %@", [self testDonationForIndex:indexPath.row].mealPhoto.imageURL);
-    [self.navigationController pushViewController:viewController animated:YES];
 //	FFTableCellDataContainer *donationContainer = [self.moduleController.donationContainerCollection objectAtIndex:indexPath.row];
 //	if (donationContainer.didSelectRowBlock) {
 //		donationContainer.didSelectRowBlock(self, tableView, indexPath);

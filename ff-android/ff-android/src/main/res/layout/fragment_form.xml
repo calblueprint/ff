@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/grey"
     tools:context="com.blueprint.ffandroid.FormFragment">
 
     <com.blueprint.ffandroid.FFScrollView
@@ -269,10 +270,7 @@
                 android:id="@+id/pickup_button"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/location_margin"
-                android:layout_marginLeft="@dimen/location_margin"
-                android:layout_marginBottom="@dimen/location_margin"
-                android:layout_marginTop="5dip"
+                android:layout_margin="@dimen/location_margin"
                 android:background="@drawable/bp_button"
                 android:textColor="@color/white"
                 android:text="@string/pickup_button" />

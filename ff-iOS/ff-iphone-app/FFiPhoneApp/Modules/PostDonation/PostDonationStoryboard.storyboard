@@ -20,6 +20,83 @@
             </objects>
             <point key="canvasLocation" x="-913" y="214"/>
         </scene>
+        <!--Post Donation Congratulations View Controller-->
+        <scene sceneID="M1M-eg-CGe">
+            <objects>
+                <viewController id="vIU-CP-lBD" customClass="PostDonationCongratulationsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8M0-Rh-cVU"/>
+                        <viewControllerLayoutGuide type="bottom" id="FM9-Pa-uFf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vfh-f0-4JT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fke-C6-qBe">
+                                <rect key="frame" x="79" y="79" width="162" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have finished posting a donation!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="o7H-04-pUy">
+                                <rect key="frame" x="33" y="54" width="267" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDI-hb-Pxp">
+                                <rect key="frame" x="42" y="235" width="248" height="42"/>
+                                <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZGC-9d-a3M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Go to Donation">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonDone:" destination="4pf-ai-wTA" eventType="touchUpInside" id="nzu-ft-p39"/>
+                                    <action selector="seeDonations:" destination="vIU-CP-lBD" eventType="touchUpInside" id="Pjb-UT-BEo"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_divider_with_or_230x1.png" translatesAutoresizingMaskIntoConstraints="NO" id="GE3-rd-GW8">
+                                <rect key="frame" x="54" y="285" width="224" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ijl-bh-hCv">
+                                <rect key="frame" x="42" y="312" width="248" height="42"/>
+                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bss-Fs-VmX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Share on Facebook">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonDone:" destination="4pf-ai-wTA" eventType="touchUpInside" id="2Mk-6a-SFh"/>
+                                    <action selector="shareOnFacebook:" destination="vIU-CP-lBD" eventType="touchUpInside" id="mW2-Iq-QJl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88223453439999999" green="0.88223453439999999" blue="0.88223453439999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mfE-Mf-Z0n"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSB-30-LvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-559" y="818"/>
+        </scene>
         <!--Choose Amount View Controller - Choose Amount-->
         <scene sceneID="EVq-UL-Yvk">
             <objects>
@@ -276,12 +353,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJZ-2G-6ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386" y="560"/>
+            <point key="canvasLocation" x="-140" y="560"/>
         </scene>
         <!--Choose Location View Controller - Choose Location-->
         <scene sceneID="ic9-wz-9EZ">
             <objects>
-                <viewController storyboardIdentifier="POSDChooseLocationViewController" id="jio-BJ-eqA" customClass="POSDChooseLocationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="POSDChooseLocationViewController" extendedLayoutIncludesOpaqueBars="YES" id="jio-BJ-eqA" customClass="POSDChooseLocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oy8-un-lrw"/>
                         <viewControllerLayoutGuide type="bottom" id="CCK-2T-pKi"/>
@@ -294,31 +371,30 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="460"/>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRv-LN-b0K">
-                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="361" width="313" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <barButtonItem title="Locate me" id="CAn-Cb-TNz">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="buttonLocateMe_selector:" destination="jio-BJ-eqA" id="3Vc-s0-MII"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="80" style="plain" systemItem="fixedSpace" id="gcD-hG-dtF"/>
+                                    <barButtonItem width="101" style="plain" systemItem="fixedSpace" id="gcD-hG-dtF"/>
                                     <barButtonItem title="Use this location" id="RdX-qz-HMR">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.15294117647058825" green="0.59607843137254901" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="buttonUseThisLocation_selector:" destination="jio-BJ-eqA" id="9RO-aQ-bZs"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </toolbar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xme-Wp-eV7">
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PL9-Eh-jKz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="jio-BJ-eqA" id="Or9-7L-QqV"/>
+                                    <outlet property="delegate" destination="jio-BJ-eqA" id="39Q-K7-Qzs"/>
                                 </connections>
                             </searchBar>
                         </subviews>
@@ -347,23 +423,21 @@
                         <outlet property="buttonLocateMe" destination="CAn-Cb-TNz" id="uXC-MR-YLA"/>
                         <outlet property="buttonUseThisLocation" destination="RdX-qz-HMR" id="ix7-hH-kjF"/>
                         <outlet property="mapView" destination="KNI-ov-0cs" id="kkl-yx-Q5w"/>
-                        <outlet property="searchBar" destination="xme-Wp-eV7" id="rlH-VR-6ax"/>
-                        <outlet property="searchBarDisplayController" destination="JTg-JP-bzm" id="uIU-hJ-WBQ"/>
-                        <outlet property="searchDisplayController" destination="JTg-JP-bzm" id="Ie9-0Y-zQy"/>
+                        <outlet property="searchDisplayController" destination="NF3-Gq-kiO" id="pPZ-M8-MMV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvQ-L7-beo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="JTg-JP-bzm">
+                <searchDisplayController id="NF3-Gq-kiO">
                     <connections>
-                        <outlet property="delegate" destination="jio-BJ-eqA" id="Ls8-8h-hG3"/>
-                        <outlet property="searchBar" destination="xme-Wp-eV7" id="Kas-CU-a7B"/>
-                        <outlet property="searchContentsController" destination="jio-BJ-eqA" id="2iD-xD-w0Y"/>
-                        <outlet property="searchResultsDataSource" destination="jio-BJ-eqA" id="Hzi-DJ-7U4"/>
-                        <outlet property="searchResultsDelegate" destination="jio-BJ-eqA" id="NYN-sj-7z4"/>
+                        <outlet property="delegate" destination="jio-BJ-eqA" id="nV9-cy-IIX"/>
+                        <outlet property="searchBar" destination="PL9-Eh-jKz" id="EF7-MK-pBZ"/>
+                        <outlet property="searchContentsController" destination="jio-BJ-eqA" id="g7X-45-ZGT"/>
+                        <outlet property="searchResultsDataSource" destination="jio-BJ-eqA" id="TIE-ot-jOa"/>
+                        <outlet property="searchResultsDelegate" destination="jio-BJ-eqA" id="yES-eZ-Rik"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="342" y="-79"/>
+            <point key="canvasLocation" x="-184" y="-79"/>
         </scene>
         <!--Post Donation View Controller - Post Donation-->
         <scene sceneID="z8b-N2-YK0">
@@ -374,7 +448,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8NB-48-nPY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EmQ-nn-xDh">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVj-0W-aVy">
@@ -398,7 +472,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCe-cT-YgC">
-                                <rect key="frame" x="10" y="434" width="301" height="50"/>
+                                <rect key="frame" x="10" y="451" width="301" height="50"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="HUh-n6-Sac"/>
@@ -413,6 +487,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonDone:" destination="4pf-ai-wTA" eventType="touchUpInside" id="77J-CG-YEE"/>
+                                    <segue destination="vIU-CP-lBD" kind="push" id="1iU-af-bfk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7l9-Zp-pYj">
@@ -483,7 +558,6 @@
                         <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="addressLabel" destination="vmT-pi-NX7" id="pk2-x2-MPi"/>
                         <outlet property="confirmButton" destination="eCe-cT-YgC" id="w1Q-Eo-whN"/>
@@ -501,7 +575,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhQ-15-2V7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-550" y="249"/>
+            <point key="canvasLocation" x="-774" y="153"/>
         </scene>
         <!--Choose Time View Controller - Choose Time-->
         <scene sceneID="UNL-B8-5Ds">
@@ -622,10 +696,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHD-4w-oka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="214"/>
+            <point key="canvasLocation" x="1001" y="214"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="w5g-jh-m28">
+            <objects>
+                <viewController id="435-L4-hC3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vlh-EW-DMh"/>
+                        <viewControllerLayoutGuide type="bottom" id="1M4-Ab-PoW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7dc-Aw-E85">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDR-hD-Z9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
+        <image name="login_divider_with_or_230x1.png" width="230" height="10"/>
         <image name="tabbar_icon_postdonation.png" width="48" height="32"/>
         <image name="vehicle_type-large.png" width="238" height="84"/>
         <image name="vehicle_type-medium.png" width="238" height="84"/>

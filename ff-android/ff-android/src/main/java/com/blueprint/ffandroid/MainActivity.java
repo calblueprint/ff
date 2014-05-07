@@ -10,26 +10,28 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.view.MenuItem;
-
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
-import com.google.android.gms.location.LocationClient;
-import android.support.v4.app.FragmentManager.BackStackEntry;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class MainActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements View.OnClickListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -46,6 +48,11 @@ public class MainActivity extends ActionBarActivity
     public static final String PROPERTY_REG_ID = "registration_id";
     private static final String PROPERTY_APP_VERSION = "appVersion";
     String SENDER_ID = "699498087377";
+
+    /** The awesome navigation controller. */
+    private ResideMenu resideMenu;
+    private ArrayList<ResideMenuItem> menuItems;
+
 
 
     GoogleCloudMessaging gcm;
@@ -85,16 +92,15 @@ public class MainActivity extends ActionBarActivity
         myTypeface = Typeface.createFromAsset(getAssets(), "fonts/proxima_nova_regular.otf");
         initializeFragments();
         setContentView(R.layout.activity_donate);
+        getActionBar().hide();
+
+        initializeNavigation();
+
         context = this;
 
-        mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        replaceFragment(locationFragment);
         mTitle = getTitle();
 
-        // Set up the drawer.
-        mNavigationDrawerFragment.setUp(
-                R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
         donation = new Donation();
 
         SharedPreferences prefs = getSharedPreferences(PREFS, 0);
@@ -111,7 +117,36 @@ public class MainActivity extends ActionBarActivity
             Log.i(TAG, "No valid Google Play Services APK found.");
         }
 
+    }
 
+    private void initializeNavigation() {
+        resideMenu = new ResideMenu(this);
+        resideMenu.setBackground(R.drawable.menu_background);
+        resideMenu.attachToActivity(this);
+        resideMenu.setShadowVisible(false);
+        resideMenu.setDirectionDisable(ResideMenu.DIRECTION_RIGHT);
+
+        String titles[] = { "Donate!", "Donation List", "Account", "FAQ", "Logout" };
+        int icon[] = { R.drawable.donate, R.drawable.donatelist, R.drawable.account, R.drawable.faq, R.drawable.logout };
+        menuItems = new ArrayList<ResideMenuItem>();
+        for (int i = 0; i < titles.length; i++) {
+            ResideMenuItem item = new ResideMenuItem(this, icon[i], titles[i]);
+            item.setOnClickListener(this);
+            resideMenu.addMenuItem(item, ResideMenu.DIRECTION_LEFT);
+            menuItems.add(item);
+        }
+
+        findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+            }
+        });
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        return resideMenu.onInterceptTouchEvent(event) || super.dispatchTouchEvent(event);
     }
 
     private void initializeFragments(){
@@ -126,30 +161,22 @@ public class MainActivity extends ActionBarActivity
     }
 
     @Override
-    public void onNavigationDrawerItemSelected(int position) {
+    public void onClick(View view) {
         // update the main content by replacing fragments
+        int position = menuItems.indexOf(view);
         setActionBar(position);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        int itemsOnStack = fragmentManager.getBackStackEntryCount();
-
         switch (position) {
             case 0:
-                while (fragmentManager.getBackStackEntryCount() > 0) {
-                    fragmentManager.popBackStackImmediate();
-                }
                 replaceFragment(locationFragment);
                 break;
             case 1:
-                if (itemsOnStack == 0) replaceFragmentWithBackStack(donationListFragment);
-                else replaceFragment(donationListFragment);
+                replaceFragment(donationListFragment);
                 break;
             case 2:
-                if (itemsOnStack == 0) replaceFragmentWithBackStack(accountFragment);
-                else replaceFragment(accountFragment);
+                replaceFragment(accountFragment);
                 break;
             case 3:
-                if (itemsOnStack == 0) replaceFragmentWithBackStack(faqFragment);
-                else replaceFragment(faqFragment);
+                replaceFragment(faqFragment);
                 break;
             case 4:
                 SharedPreferences prefs = getSharedPreferences(LoginActivity.PREFS, 0);
@@ -161,11 +188,10 @@ public class MainActivity extends ActionBarActivity
                 startActivity(intent);
                 break;
             case 5:
-                if (itemsOnStack == 0) replaceFragmentWithBackStack(congratulatoryFragment);
-                else replaceFragment(congratulatoryFragment);
+                replaceFragment(congratulatoryFragment);
                 break;
-
         }
+        resideMenu.closeMenu();
     }
 
     private void setActionBar(int position){
@@ -193,25 +219,41 @@ public class MainActivity extends ActionBarActivity
         }
         SpannableString s = new SpannableString(mTitle);
         s.setSpan(new TypefaceSpan(this, "myTypeface"), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        actionBar.setTitle(s);
+        TextView titleView = (TextView) findViewById(R.id.title);
+        titleView.setText(mTitle);
     }
 
     public void replaceFragment(Fragment newFragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.container, newFragment);
-        ft.commit();
-        currentFragment = newFragment;
-    }
-
-    public void replaceFragmentWithBackStack(Fragment newFragment){
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.addToBackStack(((FragmentLifeCycle) newFragment).getName());
-        ft.replace(R.id.container, newFragment);
+        if(!newFragment.isAdded()){
+            ft.add(R.id.container, newFragment);
+        }
+        ft.hide(currentFragment);
+        ft.show(newFragment);
         ft.commit();
         currentFragment = newFragment;
         if (((FragmentLifeCycle) currentFragment).isCreated()) {
             ((FragmentLifeCycle) currentFragment).willAppear();
+        }
+        if (currentFragment.equals(donationDetailFragment)) {
+            Button actionView = (Button) findViewById(R.id.title_bar_left_menu);
+            actionView.setBackgroundResource(R.drawable.back);
+            findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    replaceFragment(donationListFragment);
+                }
+            });
+        } else {
+            Button actionView = (Button) findViewById(R.id.title_bar_left_menu);
+            actionView.setBackgroundResource(R.drawable.titlebar_menu_selector);
+            findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+                }
+            });
         }
     }
 
@@ -366,8 +408,7 @@ public class MainActivity extends ActionBarActivity
         FragmentManager fm = getSupportFragmentManager();
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        replaceFragmentWithBackStack(donationDetailFragment);
-        mNavigationDrawerFragment.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
+        replaceFragment(donationDetailFragment);
     }
 
     /** Activates when MenuItem Item is selected. If it is in a Detail View
@@ -377,7 +418,6 @@ public class MainActivity extends ActionBarActivity
             ActionBar actionBar = getSupportActionBar();
             actionBar.setIcon(R.drawable.ic_blueprint_paw);
             replaceFragment(donationListFragment);
-            mNavigationDrawerFragment.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
             return true;
         } else {
             return super.onOptionsItemSelected(item);

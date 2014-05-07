@@ -20,8 +20,7 @@ import android.widget.TextView;
  * @author howardchen
  *
  */
-public class AccountFragment extends Fragment implements View.OnClickListener, FragmentLifeCycle{
-
+public class AccountFragment extends Fragment implements View.OnClickListener, FragmentLifeCycle {
 
     /** The name of the account.*/
     private String name;
@@ -135,14 +134,6 @@ public class AccountFragment extends Fragment implements View.OnClickListener, F
         ((TextView) rootView.findViewById(R.id.account_organization_header)).setTypeface(tf);
 
 
-    }
-
-    /**
-     * Returns the name of the class as a string.
-     * useful for backstack.
-     */
-    public String getName() {
-        return "AccountFragment";
     }
 
     /**

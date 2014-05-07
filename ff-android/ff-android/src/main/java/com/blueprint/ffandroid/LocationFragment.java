@@ -372,20 +372,12 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
                 updateDonation();
                 parent.mTitle = "Fill Out Donation Details";
                 parent.getActionBar().setTitle(parent.mTitle);
-                parent.replaceFragmentWithBackStack(parent.formFragment);
+                parent.replaceFragment(parent.formFragment);
                 break;
             case (R.id.current_location_button):
                 System.out.println("address");
                 mLocationClient.connect();
                 break;
         }
-    }
-
-    /**
-     * Returns the name of the class as a string.
-     * useful for backstack.
-     */
-    public String getName() {
-        return "LocationFragment";
     }
 }

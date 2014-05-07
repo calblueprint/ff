@@ -46,9 +46,7 @@ import java.util.Locale;
 /**
  * Created by Nishant on 4/12/14.
  */
-
 public class DonationListFragment extends Fragment implements FragmentLifeCycle {
-
 
     private static SimpleDateFormat inputDateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
     private boolean created = false;
@@ -153,11 +151,8 @@ public class DonationListFragment extends Fragment implements FragmentLifeCycle 
 
                         Arrays.sort(data);
 
-                    Activity activity = DonationListFragment.this.getActivity();
-                    if (activity != null) {
                         DonationAdapter adapter = new DonationAdapter(DonationListFragment.this.getActivity(), data);
                         listView.setAdapter(adapter);
-                    }
 
                         if (pullToRefreshLayout.isRefreshing()) {
                             pullToRefreshLayout.setRefreshComplete();
@@ -212,14 +207,6 @@ public class DonationListFragment extends Fragment implements FragmentLifeCycle 
         super.onDetach();
     }
 
-    /**
-     * Returns the name of the class as a string.
-     * useful for backstack.
-     */
-    public String getName() {
-        return "DonationListFragment";
-    }
-
     @Override
     public void willAppear() {
         return;
@@ -255,7 +242,8 @@ class DonationAdapter extends ArrayAdapter<Donation> {
         TextView donationStatus = (TextView) rowView.findViewById(R.id.status);
         Donation d = data[position];
         kind.setText(d.getKind());
-        Typeface tf = Typeface.createFromAsset(context.getAssets(), "fonts/proxima_nova_regular.otf");
+        MainActivity activity = new MainActivity();
+        Typeface tf = activity.myTypeface;
         kind.setTypeface(tf);
         date.setText(sdf.format(d.getdateCreated()));
         date.setTypeface(tf);
