@@ -92,7 +92,6 @@ public class MainActivity extends ActionBarActivity
         myTypeface = Typeface.createFromAsset(getAssets(), "fonts/proxima_nova_regular.otf");
         initializeFragments();
         setContentView(R.layout.activity_donate);
-        getActionBar().hide();
 
         initializeNavigation();
 
@@ -195,7 +194,6 @@ public class MainActivity extends ActionBarActivity
     }
 
     private void setActionBar(int position){
-        ActionBar actionBar = getSupportActionBar();
         switch (position) {
             case 0:
                 mTitle = "Where Is The Pickup?";
@@ -405,8 +403,6 @@ public class MainActivity extends ActionBarActivity
     void updateDetailView(Donation d){
         this.donationDetailFragment.updateView(d);
         FragmentManager fm = getSupportFragmentManager();
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
         replaceFragment(donationDetailFragment);
     }
 
@@ -414,8 +410,6 @@ public class MainActivity extends ActionBarActivity
      * of a donation the activity bar turns into a back button. */
     public boolean onOptionsItemSelected(MenuItem item) {
         if (donationDetailFragment.isVisible()) {
-            ActionBar actionBar = getSupportActionBar();
-            actionBar.setIcon(R.drawable.ic_blueprint_paw);
             replaceFragment(donationListFragment);
             return true;
         } else {
