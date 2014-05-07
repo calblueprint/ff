@@ -315,7 +315,6 @@
 		E4B0A1B419159C480034C32B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B219159C480034C32B /* Default@2x.png */; };
 		E4B0A1B619159CA40034C32B /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B519159CA40034C32B /* app_icon@2x.png */; };
 		E4B0A1B819159D510034C32B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B719159D510034C32B /* Images.xcassets */; };
-		E4EF13361918640F00BD8FBD /* button_facebook_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4EF13351918640F00BD8FBD /* button_facebook_login@2x.png */; };
 		E4EF13381919994F00BD8FBD /* button_facebook_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4EF13371919994E00BD8FBD /* button_facebook_login@2x.png */; };
 		E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4EF65E018FDCD56007E76BF /* photodefault.jpg */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
@@ -1641,6 +1640,11 @@
 				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Feeding Forward";
+				TargetAttributes = {
+					9B98D17C179CEE4C0032888C = {
+						DevelopmentTeam = HJAWE6PMKB;
+					};
+				};
 			};
 			buildConfigurationList = 9B98D178179CEE4C0032888C /* Build configuration list for PBXProject "FFiPhoneApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2154,10 +2158,13 @@
 			baseConfigurationReference = 1F46002C458C4125A3A1E6B5 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFiPhoneApp/App/FFiPhoneApp-Prefix.pch";
 				INFOPLIST_FILE = "FFiPhoneApp/app/FFiPhoneApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
