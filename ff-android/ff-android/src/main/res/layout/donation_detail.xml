@@ -129,7 +129,7 @@
         android:paddingLeft="10dp"
         android:layout_alignTop="@id/bot_circle"
         android:layout_toRightOf="@id/bot_circle"
-        android:text="Pickedup"
+        android:text="@string/picked_up"
         android:textSize="19sp"/>
 
     <TextView
