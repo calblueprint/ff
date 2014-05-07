@@ -53,8 +53,14 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
     private boolean created = false;
     /** The parent activity. */
     private MainActivity parent;
-    /** The TextView for pickup. */
-    private TextView pickup;
+    /** The TextView for case1. */
+    private TextView case1;
+    /** The TextView for case2. */
+    private TextView case2;
+    /** The TextView for case3. */
+    private TextView case3;
+    /** The TextView for case4. */
+    private TextView case4;
 
     public static DonationDetailFragment newInstance(){
         return new DonationDetailFragment();
@@ -135,6 +141,12 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         topCircle = (ImageView) rootView.findViewById(R.id.top_circle);
         midCircle = (ImageView) rootView.findViewById(R.id.mid_circle);
         botCircle = (ImageView) rootView.findViewById(R.id.bot_circle);
+        case1 = (TextView) rootView.findViewById(R.id.case_1);
+        case2 = (TextView) rootView.findViewById(R.id.case_2);
+        case3 = (TextView) rootView.findViewById(R.id.case_3);
+        case4 = (TextView) rootView.findViewById(R.id.case_4);
+
+
         parent = (MainActivity) getActivity();
         setDonationText(donation);
         setFonts();
@@ -182,6 +194,10 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         date.setTypeface(tf);
         status.setTypeface(tf);
         address.setTypeface(tf);
+        case1.setTypeface(tf);
+        case2.setTypeface(tf);
+        case3.setTypeface(tf);
+        case4.setTypeface(tf);
     }
 }
 
