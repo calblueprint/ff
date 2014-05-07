@@ -273,11 +273,12 @@ public class LocationFragment extends Fragment implements View.OnClickListener, 
          */
     @Override
     public void onConnected(Bundle dataBundle) {
-        if (mLocationClient.isConnected()) {
+        if (mLocationClient.isConnected() && mLocationClient.getLastLocation() != null) {
             onLocationChanged(mLocationClient.getLastLocation());
             mLocationClient.disconnect();
         } else {
-            System.out.println("not connected");
+            Toast.makeText(parent, "There was an error getting your location. Please make sure location services is on.",
+                    Toast.LENGTH_SHORT).show();
         }
     }
 
