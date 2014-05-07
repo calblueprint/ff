@@ -91,8 +91,16 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
     /** Takes in a Donation D and updates the TextView. */
     void updateView(Donation d){
         this.donation = d;
+//        if (kind != null) {
+//            setDonationText(d);
+//        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
         if (kind != null) {
-            setDonationText(d);
+            setDonationText(donation);
         }
     }
 

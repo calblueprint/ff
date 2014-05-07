@@ -135,7 +135,7 @@ public class MainActivity extends ActionBarActivity
         switch (position) {
             case 0:
                 while (fragmentManager.getBackStackEntryCount() > 0) {
-                    
+
                     fragmentManager.popBackStackImmediate();
                 }
                 replaceFragment(locationFragment);
@@ -363,11 +363,11 @@ public class MainActivity extends ActionBarActivity
 
     /** Updates the DetailView for Donation D. */
     void updateDetailView(Donation d){
+        replaceFragmentWithBackStack(donationDetailFragment);
         this.donationDetailFragment.updateView(d);
         FragmentManager fm = getSupportFragmentManager();
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        replaceFragmentWithBackStack(donationDetailFragment);
         mNavigationDrawerFragment.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
     }
 
@@ -378,7 +378,7 @@ public class MainActivity extends ActionBarActivity
             ActionBar actionBar = getSupportActionBar();
             actionBar.setIcon(R.drawable.ic_blueprint_paw);
             FragmentManager fm = getSupportFragmentManager();
-            fm.popBackStack();
+            fm.popBackStackImmediate();
             replaceFragment(donationListFragment);
             mNavigationDrawerFragment.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
             return true;
