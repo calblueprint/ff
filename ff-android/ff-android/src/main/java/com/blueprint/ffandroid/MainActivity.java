@@ -7,6 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -27,6 +28,8 @@ import android.view.MenuItem;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+
+import junit.runner.Version;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -122,10 +125,17 @@ public class MainActivity extends ActionBarActivity
 
     private void initializeNavigation() {
         resideMenu = new ResideMenu(this);
-        resideMenu.setBackground(R.drawable.blueberries3);
         resideMenu.attachToActivity(this);
         resideMenu.setShadowVisible(false);
         resideMenu.setDirectionDisable(ResideMenu.DIRECTION_RIGHT);
+
+        int currentVersion = Build.VERSION.SDK_INT;
+        if (currentVersion >= Build.VERSION_CODES.JELLY_BEAN) {
+            resideMenu.setBackground(R.drawable.blueberries3);
+        } else {
+            resideMenu.setBackground(R.drawable.blueberries3_low);
+        }
+
 
         String titles[] = { "Donate!", "Donation List", "Account", "About", "Logout" };
         int icon[] = { R.drawable.donate, R.drawable.donatelist, R.drawable.account, R.drawable.faq, R.drawable.logout };
