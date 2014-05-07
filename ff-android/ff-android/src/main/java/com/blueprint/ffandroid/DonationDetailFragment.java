@@ -2,7 +2,12 @@ package com.blueprint.ffandroid;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -178,14 +183,16 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
 
     /** Sets the progress bar to the correct STEP. */
     private void setProgress(int step) {
-        topCircle.clearColorFilter();;
-        midCircle.clearColorFilter();
-        botCircle.clearColorFilter();
-        cancelCircle.clearColorFilter();
+
         if (step == 0) {
-            topCircle.setColorFilter(R.color.bp_blue);
+            Log.i("fgdgfd", topCircle.getBackground() + "");
+            Drawable d = getResources().getDrawable(R.drawable.find_user);
+            d.setColorFilter(R.color.bp_blue, PorterDuff.Mode.MULTIPLY);
+            topCircle.setBackground(d);
         } else if (step == 1) {
             midCircle.setColorFilter(R.color.bp_blue);
+            midCircle.getBackground().setColorFilter(R.color.bp_blue, PorterDuff.Mode.MULTIPLY);
+
         } else if (step == 2) {
             botCircle.setColorFilter(R.color.bp_blue);
         } else {
