@@ -316,7 +316,6 @@
 		E4B0A1B619159CA40034C32B /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B519159CA40034C32B /* app_icon@2x.png */; };
 		E4B0A1B819159D510034C32B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B0A1B719159D510034C32B /* Images.xcassets */; };
 		E4E61D521919ADF100B6C150 /* PostDonationCongratulationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E61D511919ADF100B6C150 /* PostDonationCongratulationsViewController.m */; };
-		E4EF13361918640F00BD8FBD /* button_facebook_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4EF13351918640F00BD8FBD /* button_facebook_login@2x.png */; };
 		E4EF13381919994F00BD8FBD /* button_facebook_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4EF13371919994E00BD8FBD /* button_facebook_login@2x.png */; };
 		E4EF65E118FDCD56007E76BF /* photodefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4EF65E018FDCD56007E76BF /* photodefault.jpg */; };
 		EBDC98FED300442CA26D7C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD18368F1B46E9A38A5085 /* libPods.a */; };
@@ -1666,7 +1665,6 @@
 				9BBB111617A7CEAB00EA924D /* apploader_background.png in Resources */,
 				9BBB111717A7CEAB00EA924D /* apploader_background@2x.png in Resources */,
 				9BBB111817A7CEAB00EA924D /* apploader_logo.png in Resources */,
-				E4EF13361918640F00BD8FBD /* button_facebook_login@2x.png in Resources */,
 				9BBB111C17A7CEAF00EA924D /* first.png in Resources */,
 				9BBB111D17A7CEAF00EA924D /* first@2x.png in Resources */,
 				9BBB111E17A7CEAF00EA924D /* second.png in Resources */,
