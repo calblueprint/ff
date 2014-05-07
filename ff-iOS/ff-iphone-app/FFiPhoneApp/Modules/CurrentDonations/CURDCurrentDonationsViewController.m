@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableViewCurrentDonations;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) IBOutlet UIView *viewTableViewFooter;
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
 
 @end
 
@@ -196,9 +197,9 @@
 	FFDataDonation *donation = [self testDonationForIndex:[indexPath row]];
 	cell.labelDonationTitle.text = donation.donationTitle;
 	cell.imageViewMealPhoto.contentMode = UIViewContentModeScaleAspectFill;
-	cell.labelDonationTitle.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:20.0];
-	cell.labelStatusText.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:16.0];
-	cell.labelTotalLBS.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:14.0];
+//	cell.labelDonationTitle.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:20.0];
+//	cell.labelStatusText.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:16.0];
+//	cell.labelTotalLBS.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:14.0];
 	[cell.imageViewMealPhoto setImage:[UIImage imageNamed:donation.mealPhoto.imageURL]];
 	[cell.imageViewMealPhoto setClipsToBounds:YES];
 	
@@ -224,6 +225,13 @@
 //		donationContainer.configureCell(cell);
 //	}
 	
+	UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height)];
+
+	CAGradientLayer *gradient = [CAGradientLayer layer];
+	gradient.frame = view.bounds;
+	gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithWhite:0.0 alpha:0.0] CGColor], (id)[[UIColor colorWithWhite:0.0 alpha:0.8] CGColor], nil];
+	[view.layer insertSublayer:gradient atIndex:0];
+	[cell.contentView insertSubview:view atIndex:1];
 	return cell;
 }
 
@@ -233,11 +241,11 @@
 	donation.mealPhoto = dataImage;
 	switch (index) {
 		case 0:
-			donation.donationTitle = @"Cake";
+			donation.donationTitle = @"Red Velvet Cake";
 			dataImage.imageURL = @"cake.jpg";
 			break;
 		case 1:
-			donation.donationTitle = @"Pie";
+			donation.donationTitle = @"Strawberry Pie";
 			dataImage.imageURL = @"pie.jpeg";
 			break;
 		case 2:
