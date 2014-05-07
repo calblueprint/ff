@@ -17,8 +17,9 @@
 @interface POSDChooseLocationViewController ()
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UISearchDisplayController *searchBarDisplayController;
+
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonUseThisLocation;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonLocateMe;
 
@@ -55,11 +56,13 @@
     [self.searchBarDisplayController setDelegate:self];
     [self.searchBarDisplayController setSearchResultsDataSource:(id)self];
     [self.searchBarDisplayController setSearchResultsDelegate:(id)self];
-  
+
+	
     // Start locating the user immeidately
     if (!self.currentLocationAddressDictionary) {
         [self.locationManager startUpdatingLocation];
     }
+	
 	
 }
 

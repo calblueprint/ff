@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4pf-ai-wTA">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -276,12 +276,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJZ-2G-6ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-140" y="560"/>
+            <point key="canvasLocation" x="386" y="560"/>
         </scene>
         <!--Choose Location View Controller - Choose Location-->
         <scene sceneID="ic9-wz-9EZ">
             <objects>
-                <viewController storyboardIdentifier="POSDChooseLocationViewController" extendedLayoutIncludesOpaqueBars="YES" id="jio-BJ-eqA" customClass="POSDChooseLocationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="POSDChooseLocationViewController" id="jio-BJ-eqA" customClass="POSDChooseLocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oy8-un-lrw"/>
                         <viewControllerLayoutGuide type="bottom" id="CCK-2T-pKi"/>
@@ -294,30 +294,31 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="460"/>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRv-LN-b0K">
-                                <rect key="frame" x="0.0" y="361" width="313" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                 <items>
                                     <barButtonItem title="Locate me" id="CAn-Cb-TNz">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="buttonLocateMe_selector:" destination="jio-BJ-eqA" id="3Vc-s0-MII"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="101" style="plain" systemItem="fixedSpace" id="gcD-hG-dtF"/>
+                                    <barButtonItem width="80" style="plain" systemItem="fixedSpace" id="gcD-hG-dtF"/>
                                     <barButtonItem title="Use this location" id="RdX-qz-HMR">
-                                        <color key="tintColor" red="0.15294117647058825" green="0.59607843137254901" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="buttonUseThisLocation_selector:" destination="jio-BJ-eqA" id="9RO-aQ-bZs"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PL9-Eh-jKz">
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xme-Wp-eV7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="jio-BJ-eqA" id="39Q-K7-Qzs"/>
+                                    <outlet property="delegate" destination="jio-BJ-eqA" id="Or9-7L-QqV"/>
                                 </connections>
                             </searchBar>
                         </subviews>
@@ -346,21 +347,23 @@
                         <outlet property="buttonLocateMe" destination="CAn-Cb-TNz" id="uXC-MR-YLA"/>
                         <outlet property="buttonUseThisLocation" destination="RdX-qz-HMR" id="ix7-hH-kjF"/>
                         <outlet property="mapView" destination="KNI-ov-0cs" id="kkl-yx-Q5w"/>
-                        <outlet property="searchDisplayController" destination="NF3-Gq-kiO" id="pPZ-M8-MMV"/>
+                        <outlet property="searchBar" destination="xme-Wp-eV7" id="rlH-VR-6ax"/>
+                        <outlet property="searchBarDisplayController" destination="JTg-JP-bzm" id="uIU-hJ-WBQ"/>
+                        <outlet property="searchDisplayController" destination="JTg-JP-bzm" id="Ie9-0Y-zQy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvQ-L7-beo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="NF3-Gq-kiO">
+                <searchDisplayController id="JTg-JP-bzm">
                     <connections>
-                        <outlet property="delegate" destination="jio-BJ-eqA" id="nV9-cy-IIX"/>
-                        <outlet property="searchBar" destination="PL9-Eh-jKz" id="EF7-MK-pBZ"/>
-                        <outlet property="searchContentsController" destination="jio-BJ-eqA" id="g7X-45-ZGT"/>
-                        <outlet property="searchResultsDataSource" destination="jio-BJ-eqA" id="TIE-ot-jOa"/>
-                        <outlet property="searchResultsDelegate" destination="jio-BJ-eqA" id="yES-eZ-Rik"/>
+                        <outlet property="delegate" destination="jio-BJ-eqA" id="Ls8-8h-hG3"/>
+                        <outlet property="searchBar" destination="xme-Wp-eV7" id="Kas-CU-a7B"/>
+                        <outlet property="searchContentsController" destination="jio-BJ-eqA" id="2iD-xD-w0Y"/>
+                        <outlet property="searchResultsDataSource" destination="jio-BJ-eqA" id="Hzi-DJ-7U4"/>
+                        <outlet property="searchResultsDelegate" destination="jio-BJ-eqA" id="NYN-sj-7z4"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-184" y="-79"/>
+            <point key="canvasLocation" x="342" y="-79"/>
         </scene>
         <!--Post Donation View Controller - Post Donation-->
         <scene sceneID="z8b-N2-YK0">
@@ -498,7 +501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhQ-15-2V7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-774" y="153"/>
+            <point key="canvasLocation" x="-550" y="249"/>
         </scene>
         <!--Choose Time View Controller - Choose Time-->
         <scene sceneID="UNL-B8-5Ds">
@@ -619,24 +622,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHD-4w-oka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="214"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="w5g-jh-m28">
-            <objects>
-                <viewController id="435-L4-hC3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Vlh-EW-DMh"/>
-                        <viewControllerLayoutGuide type="bottom" id="1M4-Ab-PoW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7dc-Aw-E85">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CDR-hD-Z9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="1527" y="214"/>
         </scene>
     </scenes>
     <resources>
