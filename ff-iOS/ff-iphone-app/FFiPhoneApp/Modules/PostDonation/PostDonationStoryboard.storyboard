@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4pf-ai-wTA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4pf-ai-wTA">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -59,10 +59,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="buttonDone:" destination="4pf-ai-wTA" eventType="touchUpInside" id="nzu-ft-p39"/>
-                                    <action selector="seeDonations:" destination="vIU-CP-lBD" eventType="touchUpInside" id="Pjb-UT-BEo"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_divider_with_or_230x1.png" translatesAutoresizingMaskIntoConstraints="NO" id="GE3-rd-GW8">
                                 <rect key="frame" x="54" y="285" width="224" height="19"/>
@@ -95,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSB-30-LvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-559" y="818"/>
+            <point key="canvasLocation" x="-490" y="955"/>
         </scene>
         <!--Choose Amount View Controller - Choose Amount-->
         <scene sceneID="EVq-UL-Yvk">

@@ -80,7 +80,7 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
             setProgress(3);
         } else if (statusValue.equals("moving")) {
             status.setTextColor(context.getResources().getColor(R.color.moving));
-            setProgress(0);
+            setProgress(2);
         } else if (statusValue.equals("available")) {
             status.setTextColor(context.getResources().getColor(R.color.available));
             setProgress(0);
