@@ -89,6 +89,7 @@ public class MainActivity extends ActionBarActivity
         myTypeface = Typeface.createFromAsset(getAssets(), "fonts/proxima_nova_regular.otf");
         initializeFragments();
         setContentView(R.layout.activity_donate);
+        getActionBar().hide();
 
         initializeNavigation();
 
