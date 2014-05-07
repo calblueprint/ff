@@ -132,6 +132,13 @@ public class MainActivity extends ActionBarActivity
             resideMenu.addMenuItem(item, ResideMenu.DIRECTION_LEFT);
             menuItems.add(item);
         }
+
+        findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+            }
+        });
     }
 
     @Override
