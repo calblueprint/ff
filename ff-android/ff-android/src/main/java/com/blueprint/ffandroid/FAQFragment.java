@@ -14,7 +14,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 
-public class FAQFragment extends Fragment {
+public class FAQFragment extends Fragment implements FragmentLifeCycle {
+
 
     /** The button that links to the feeding forward. */
     Button link;
@@ -24,6 +25,8 @@ public class FAQFragment extends Fragment {
     TextView faqDescription;
     /** The header for The Blueprint Link. */
     TextView bpHeader;
+
+    private boolean created = false;
 
     public static FAQFragment newInstance() {
         FAQFragment fragment = new FAQFragment();
@@ -42,6 +45,9 @@ public class FAQFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_faq, container, false);
+
+        created = true;
+
         link = (Button) rootView.findViewById(R.id.ff_link);
         link.setOnClickListener(new OnClickListener() {
 
@@ -86,5 +92,23 @@ public class FAQFragment extends Fragment {
         link.setTypeface(tf);
         bpHeader.setTypeface(tf);
 
+    }
+
+    /**
+     * Returns the name of the class as a string.
+     * useful for backstack.
+     */
+    public String getName() {
+        return "FAQFragment";
+    }
+
+    @Override
+    public void willAppear() {
+        return;
+    }
+
+    @Override
+    public boolean isCreated() {
+        return created;
     }
 }

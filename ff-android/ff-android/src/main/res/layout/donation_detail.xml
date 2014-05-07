@@ -1,56 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Back"
-        android:textSize="20dp"
-        android:textAlignment="gravity"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:background="@color/navy_blue"
-        android:id="@+id/back" />
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/hamburger" />
 
     <TextView
         android:id="@+id/kind"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"/>
-
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"/>
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        />
+        android:layout_toRightOf="@id/img"
+        android:layout_alignTop="@id/img"
+        android:textSize="25sp"/>
 
     <TextView
         android:id="@+id/status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"/>
+        android:layout_below="@id/kind"
+        android:layout_toRightOf="@id/img"
+        android:gravity="center"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:layout_centerHorizontal="true"
+        android:text="|" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:layout_toStartOf="@id/divider"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="10dp"
+        android:gravity="right"
+        android:textSize="13sp"
+        />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/divider"
+        android:layout_toRightOf="@id/divider"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="13sp"/>
+
+    <ImageView
+        android:id="@+id/top_circle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/ic_black_circle"
+        android:layout_below="@id/address"
+        android:layout_marginLeft="30dp" />
+
+    <TextView
+        android:id="@+id/case_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="1dp"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@id/top_circle"
+        android:layout_toRightOf="@id/top_circle"
+        android:text="Awaiting Driver Assignment"
+        android:textSize="15sp"/>
+
+    <ImageView
+        android:id="@+id/top_bar"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_black_bar"
+        android:layout_below="@id/top_circle"/>
+
+
+    <ImageView
+        android:id="@+id/mid_circle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/ic_black_circle"
+        android:layout_below="@id/top_bar"
+        android:layout_marginLeft="30dp" />
+
+    <TextView
+        android:id="@+id/case_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="1dp"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@id/mid_circle"
+        android:layout_toRightOf="@id/mid_circle"
+        android:text="Awaiting Pickup"
+        android:textSize="15sp"/>
+
+    <ImageView
+        android:id="@+id/bottom_bar"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_black_bar"
+        android:layout_below="@id/mid_circle"/>
+
+    <ImageView
+        android:id="@+id/bot_circle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/ic_black_circle"
+        android:layout_below="@id/bottom_bar"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/case_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="1dp"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@id/bot_circle"
+        android:layout_toRightOf="@id/bot_circle"
+        android:text="Pickedup"
+        android:textSize="15sp"/>
 
     <Button
         android:id="@+id/cancel_pickup"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_below="@id/bot_circle"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Cancel Pickup"
-        android:textSize="20dp"
+        android:text="@string/cancel_pickup"
+        android:textSize="20sp"
         android:textColor="@color/white"
-        android:gravity="center"
+        android:layout_gravity="center"
         android:background="@color/button_red"/>
 
-
-</LinearLayout>
+</RelativeLayout>

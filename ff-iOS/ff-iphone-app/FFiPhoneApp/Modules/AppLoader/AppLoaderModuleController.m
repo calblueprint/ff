@@ -15,8 +15,6 @@
 
 #import "FFKit.h"
 
-static NSUInteger const kNumberOfCallbackToWait = 4;
-
 @implementation AppLoaderModuleController
 {
     //
@@ -25,14 +23,11 @@ static NSUInteger const kNumberOfCallbackToWait = 4;
     //  to ensure the completion block is called exactly once
     //
     dispatch_once_t _completionBlockToken;
-    void (^_completionBlock)(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations);
+    void (^_completionBlock)(FFDataUser *user);
 	__weak ModuleCoordinator *_moduleCoordinator;
 
     NSUInteger _numberOfRemainingCallbackToWait;
     FFDataUser *_user;
-    NSArray *_locations;
-    NSArray *_currentDonations;
-    NSArray *_pastDonations;
 }
 
 //
@@ -55,10 +50,6 @@ static NSUInteger const kNumberOfCallbackToWait = 4;
         
         _moduleCoordinator = moduleCoordinator;
         self.storyboard = [UIStoryboard storyboardWithName:kAppLoaderStoryboardName bundle:nil];
-        
-        // Wait for 4 callbacks: User Info, Locations, Active Donations, Past Donations
-        _numberOfRemainingCallbackToWait = kNumberOfCallbackToWait;
-        
     }
     
     return self;
@@ -74,20 +65,7 @@ static NSUInteger const kNumberOfCallbackToWait = 4;
     return viewController;
 }
 
-- (void)didReceiveCallback
-{
-    _numberOfRemainingCallbackToWait--;
-    if (_numberOfRemainingCallbackToWait == 0) {
-        _numberOfRemainingCallbackToWait = kNumberOfCallbackToWait;
-        if (_completionBlock) {
-            dispatch_once(&_completionBlockToken, ^{
-                _completionBlock(_user, _locations, _currentDonations, _pastDonations);
-            });
-        }
-    }
-}
-
-- (void)loadUserDataWithCompletion:(void (^)(FFDataUser *user, NSArray *locations, NSArray *currentDonations, NSArray *pastDonations))completionBlock
+- (void)loadUserDataWithCompletion:(void (^)(FFDataUser *user))completionBlock
 {
     _completionBlock = completionBlock;
     
@@ -98,37 +76,11 @@ static NSUInteger const kNumberOfCallbackToWait = 4;
         else {
             _user = nil;
         }
-        [self didReceiveCallback];
-    }];
-    
-    [FFRecordLocation retrieveWithCompletion:^(BOOL isSuccess, NSArray *locations, FFError *error) {
-        if (isSuccess) {
-            _locations = locations;
-        }
-        else {
-            _locations = nil;
-        }
-        [self didReceiveCallback];
-    }];
-    
-    [FFRecordDonation retrieveCurrentDonationsWithMaximumID:-1 completion:^(BOOL isSuccess, NSArray *donations, FFError *error) {
-        if (isSuccess) {
-            _currentDonations = donations;
-        }
-        else {
-            _currentDonations = nil;
-        }
-        [self didReceiveCallback];
-    }];
-    
-    [FFRecordDonation retrievePastDonationsWithMaximumID:-1 completion:^(BOOL isSuccess, NSArray *donations, FFError *error) {
-        if (isSuccess) {
-            _pastDonations = donations;
-        }
-        else {
-            _pastDonations = nil;
-        }
-        [self didReceiveCallback];
+				if (_completionBlock) {
+				dispatch_once(&_completionBlockToken, ^{
+						_completionBlock(_user);
+				});
+				}
     }];
 }
 

@@ -10,15 +10,20 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.Log;
+import android.view.MenuItem;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.google.android.gms.location.LocationClient;
+import android.support.v4.app.FragmentManager.BackStackEntry;
 
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -106,6 +111,7 @@ public class MainActivity extends ActionBarActivity
             Log.i(TAG, "No valid Google Play Services APK found.");
         }
 
+
     }
 
     private void initializeFragments(){
@@ -123,18 +129,27 @@ public class MainActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         setActionBar(position);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int itemsOnStack = fragmentManager.getBackStackEntryCount();
+
         switch (position) {
             case 0:
+                while (fragmentManager.getBackStackEntryCount() > 0) {
+                    fragmentManager.popBackStackImmediate();
+                }
                 replaceFragment(locationFragment);
                 break;
             case 1:
-                replaceFragment(donationListFragment);
+                if (itemsOnStack == 0) replaceFragmentWithBackStack(donationListFragment);
+                else replaceFragment(donationListFragment);
                 break;
             case 2:
-                replaceFragment(accountFragment);
+                if (itemsOnStack == 0) replaceFragmentWithBackStack(accountFragment);
+                else replaceFragment(accountFragment);
                 break;
             case 3:
-                replaceFragment(faqFragment);
+                if (itemsOnStack == 0) replaceFragmentWithBackStack(faqFragment);
+                else replaceFragment(faqFragment);
                 break;
             case 4:
                 SharedPreferences prefs = getSharedPreferences(LoginActivity.PREFS, 0);
@@ -146,8 +161,10 @@ public class MainActivity extends ActionBarActivity
                 startActivity(intent);
                 break;
             case 5:
-                replaceFragment(congratulatoryFragment);
+                if (itemsOnStack == 0) replaceFragmentWithBackStack(congratulatoryFragment);
+                else replaceFragment(congratulatoryFragment);
                 break;
+
         }
     }
 
@@ -182,13 +199,20 @@ public class MainActivity extends ActionBarActivity
     public void replaceFragment(Fragment newFragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction ft = fragmentManager.beginTransaction();
-        if(!newFragment.isAdded()){
-            ft.add(R.id.container, newFragment);
-        }
-        ft.hide(currentFragment);
-        ft.show(newFragment);
+        ft.replace(R.id.container, newFragment);
         ft.commit();
         currentFragment = newFragment;
+    }
+
+    public void replaceFragmentWithBackStack(Fragment newFragment){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.addToBackStack(((FragmentLifeCycle) newFragment).getName());
+        ft.replace(R.id.container, newFragment);
+        ft.commit();
+        currentFragment = newFragment;
+        if (((FragmentLifeCycle) currentFragment).isCreated()) {
+            ((FragmentLifeCycle) currentFragment).willAppear();
+        }
     }
 
     @Override
@@ -336,10 +360,27 @@ public class MainActivity extends ActionBarActivity
         // Your implementation here.
     }
 
+    /** Updates the DetailView for Donation D. */
     void updateDetailView(Donation d){
         this.donationDetailFragment.updateView(d);
-        replaceFragment(donationDetailFragment);
+        FragmentManager fm = getSupportFragmentManager();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        replaceFragmentWithBackStack(donationDetailFragment);
+        mNavigationDrawerFragment.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
+    }
 
+    /** Activates when MenuItem Item is selected. If it is in a Detail View
+     * of a donation the activity bar turns into a back button. */
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (donationDetailFragment.isVisible()) {
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setIcon(R.drawable.ic_blueprint_paw);
+            replaceFragment(donationListFragment);
+            mNavigationDrawerFragment.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 }
-
