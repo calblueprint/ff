@@ -242,7 +242,7 @@ public class MainActivity extends ActionBarActivity
             findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+                    replaceFragment(donationListFragment);
                 }
             });
         } else {
