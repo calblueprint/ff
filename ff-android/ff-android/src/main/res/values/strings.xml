@@ -29,7 +29,11 @@
     <string name="faq_description">About Food Finder</string>
     <string name="created_by_cal_blueprint">Created by Cal Blueprint</string>
     <string name="faq_link">Organization Website</string>
-    <string name="cancel_pickup">Cancel Pick Up</string>
+    <string name="cancel_pickup">Cancel</string>
+    <string name="canceled">Canceled</string>
+    <string name="picked_up">Picked Up</string>
+
+
 
 
 

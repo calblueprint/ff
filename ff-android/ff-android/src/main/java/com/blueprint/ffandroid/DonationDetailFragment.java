@@ -1,24 +1,17 @@
 package com.blueprint.ffandroid;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.support.v4.app.FragmentTransaction;
-import android.content.Intent;
-import android.net.Uri;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 
@@ -44,16 +37,31 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
     private ImageView midCircle;
     /** The bottom circle in the view. */
     private ImageView botCircle;
+    /** The cancle image in the view. */
+    private ImageView cancelCircle;
     /** The status of the donation. */
     private String statusValue;
     /** Determins whether or not the view was created. */
     private boolean created = false;
+    /** The parent activity. */
+    private MainActivity parent;
+    /** The TextView for case1. */
+    private TextView case1;
+    /** The TextView for case2. */
+    private TextView case2;
+    /** The TextView for case3. */
+    private TextView case3;
+    /** The TextView for case4. */
+    private TextView case4;
+    /** Original TextView Colors. */
+    private ColorStateList oldColors;
 
     public static DonationDetailFragment newInstance(){
         return new DonationDetailFragment();
     }
 
     public DonationDetailFragment(){
+        parent = (MainActivity) getActivity();
         donation = new Donation();
     }
 
@@ -66,16 +74,16 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         Context context = this.getActivity();
         if (statusValue.equals("complete")) {
             status.setTextColor(context.getResources().getColor(R.color.complete));
-            setProgress(0);
+            setProgress(2);
         } else if (statusValue.equals("canceled")) {
             status.setTextColor(context.getResources().getColor(R.color.canceled));
-            setProgress(4);
+            setProgress(3);
         } else if (statusValue.equals("moving")) {
             status.setTextColor(context.getResources().getColor(R.color.moving));
-            setProgress(0);
+            setProgress(2);
         } else if (statusValue.equals("available")) {
             status.setTextColor(context.getResources().getColor(R.color.available));
-            setProgress(2);
+            setProgress(0);
         } else if (statusValue.equals("claimed")) {
             setProgress(1);
             status.setTextColor(context.getResources().getColor(R.color.claimed));
@@ -116,9 +124,18 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         topCircle = (ImageView) rootView.findViewById(R.id.top_circle);
         midCircle = (ImageView) rootView.findViewById(R.id.mid_circle);
         botCircle = (ImageView) rootView.findViewById(R.id.bot_circle);
+        cancelCircle = (ImageView) rootView.findViewById(R.id.bot_circle);
 
+        case1 = (TextView) rootView.findViewById(R.id.case_1);
+        case2 = (TextView) rootView.findViewById(R.id.case_2);
+        case3 = (TextView) rootView.findViewById(R.id.case_3);
+        case4 = (TextView) rootView.findViewById(R.id.case_4);
+
+
+        parent = (MainActivity) getActivity();
         setDonationText(donation);
-
+        oldColors =  case1.getTextColors();
+        setFonts();
         return rootView;
     }
 
@@ -132,16 +149,34 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
 
     /** Sets the progress bar to the correct STEP. */
     private void setProgress(int step) {
-        topCircle.setImageResource(R.drawable.ic_black_circle);
-        midCircle.setImageResource(R.drawable.ic_black_circle);
-        botCircle.setImageResource(R.drawable.ic_black_circle);
-        if (step == 2) {
-            topCircle.setImageResource(R.drawable.ic_bp_blue_circle);
+        case1.setTextColor(Color.BLACK);
+        case2.setTextColor(Color.BLACK);
+        case3.setTextColor(Color.BLACK);
+        case4.setTextColor(Color.BLACK);
+        if (step == 0) {
+            case1.setTextColor(getResources().getColor(R.color.bp_blue));
         } else if (step == 1) {
-            midCircle.setImageResource(R.drawable.ic_bp_blue_circle);
-        } else if (step == 0) {
-            botCircle.setImageResource(R.drawable.ic_bp_blue_circle);
+            case2.setTextColor(getResources().getColor(R.color.bp_blue));
+        } else if (step == 2) {
+            case3.setTextColor(getResources().getColor(R.color.bp_blue));
+        } else {
+            case4.setTextColor(getResources().getColor(R.color.bp_blue));
         }
+    }
+
+    /**
+     * Sets the fonts of the Buttons and TextViews in this fragment
+     */
+    private void setFonts(){
+        Typeface tf = (parent.myTypeface);
+        kind.setTypeface(tf);
+        date.setTypeface(tf);
+        status.setTypeface(tf);
+        address.setTypeface(tf);
+        case1.setTypeface(tf);
+        case2.setTypeface(tf);
+        case3.setTypeface(tf);
+        case4.setTypeface(tf);
     }
 }
 

@@ -132,8 +132,6 @@ public class AccountFragment extends Fragment implements View.OnClickListener, F
         ((TextView) rootView.findViewById(R.id.account_name_header)).setTypeface(tf);
         ((TextView) rootView.findViewById(R.id.account_email_header)).setTypeface(tf);
         ((TextView) rootView.findViewById(R.id.account_organization_header)).setTypeface(tf);
-
-
     }
 
     /**

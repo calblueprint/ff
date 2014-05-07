@@ -30,7 +30,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/kind"
         android:layout_toRightOf="@id/img"
-        android:gravity="center"
         android:textSize="15sp"/>
 
     <TextView
@@ -65,11 +64,12 @@
 
     <ImageView
         android:id="@+id/top_circle"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:background="@drawable/ic_black_circle"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/find_user"
         android:layout_below="@id/address"
-        android:layout_marginLeft="30dp" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="20dp" />
 
     <TextView
         android:id="@+id/case_1"
@@ -80,23 +80,17 @@
         android:layout_alignTop="@id/top_circle"
         android:layout_toRightOf="@id/top_circle"
         android:text="Awaiting Driver Assignment"
-        android:textSize="15sp"/>
-
-    <ImageView
-        android:id="@+id/top_bar"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:src="@drawable/ic_black_bar"
-        android:layout_below="@id/top_circle"/>
+        android:textSize="19sp" />
 
 
     <ImageView
         android:id="@+id/mid_circle"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:background="@drawable/ic_black_circle"
-        android:layout_below="@id/top_bar"
-        android:layout_marginLeft="30dp" />
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/cars"
+        android:layout_below="@id/top_circle"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:id="@+id/case_2"
@@ -107,21 +101,24 @@
         android:layout_alignTop="@id/mid_circle"
         android:layout_toRightOf="@id/mid_circle"
         android:text="Awaiting Pickup"
-        android:textSize="15sp"/>
+        android:textSize="19sp"/>
 
-    <ImageView
-        android:id="@+id/bottom_bar"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:src="@drawable/ic_black_bar"
-        android:layout_below="@id/mid_circle"/>
 
     <ImageView
         android:id="@+id/bot_circle"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:background="@drawable/ic_black_circle"
-        android:layout_below="@id/bottom_bar"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/checkmark"
+        android:layout_below="@id/mid_circle"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="20dp"/>
+
+    <ImageView
+        android:id="@+id/cancel_circle"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/cancel"
+        android:layout_below="@id/bot_circle"
         android:layout_marginLeft="30dp"
         android:layout_marginBottom="20dp"/>
 
@@ -133,14 +130,25 @@
         android:paddingLeft="10dp"
         android:layout_alignTop="@id/bot_circle"
         android:layout_toRightOf="@id/bot_circle"
-        android:text="Pickedup"
-        android:textSize="15sp"/>
+        android:text="@string/picked_up"
+        android:textSize="19sp"/>
+
+    <TextView
+        android:id="@+id/case_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="1dp"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@id/cancel_circle"
+        android:layout_toRightOf="@id/cancel_circle"
+        android:text="@string/canceled"
+        android:textSize="19sp"/>
 
     <Button
         android:id="@+id/cancel_pickup"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:layout_below="@id/bot_circle"
+        android:layout_below="@id/cancel_circle"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="5dp"
