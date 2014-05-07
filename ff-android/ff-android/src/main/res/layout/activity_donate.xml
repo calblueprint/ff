@@ -11,11 +11,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/layout_top">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="#2ea3fe"/>
-
         <FrameLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
