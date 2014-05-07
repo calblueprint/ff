@@ -18,6 +18,7 @@ import android.text.SpannableString;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -216,7 +217,8 @@ public class MainActivity extends ActionBarActivity
         }
         SpannableString s = new SpannableString(mTitle);
         s.setSpan(new TypefaceSpan(this, "myTypeface"), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        actionBar.setTitle(s);
+        TextView titleView = (TextView) findViewById(R.id.title);
+        titleView.setText(mTitle);
     }
 
     public void replaceFragment(Fragment newFragment){
