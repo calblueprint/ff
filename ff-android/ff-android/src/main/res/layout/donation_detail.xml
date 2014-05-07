@@ -80,7 +80,7 @@
         android:layout_alignTop="@id/top_circle"
         android:layout_toRightOf="@id/top_circle"
         android:text="Awaiting Driver Assignment"
-        android:textSize="15sp" />
+        android:textSize="17sp" />
 
 
     <ImageView
@@ -101,7 +101,7 @@
         android:layout_alignTop="@id/mid_circle"
         android:layout_toRightOf="@id/mid_circle"
         android:text="Awaiting Pickup"
-        android:textSize="15sp"/>
+        android:textSize="17sp"/>
 
 
     <ImageView
@@ -131,7 +131,7 @@
         android:layout_alignTop="@id/bot_circle"
         android:layout_toRightOf="@id/bot_circle"
         android:text="Pickedup"
-        android:textSize="15sp"/>
+        android:textSize="17sp"/>
 
     <TextView
         android:id="@+id/case_4"
@@ -142,7 +142,7 @@
         android:layout_alignTop="@id/cancel_circle"
         android:layout_toRightOf="@id/cancel_circle"
         android:text="@string/canceled"
-        android:textSize="15sp"/>
+        android:textSize="17sp"/>
 
     <Button
         android:id="@+id/cancel_pickup"

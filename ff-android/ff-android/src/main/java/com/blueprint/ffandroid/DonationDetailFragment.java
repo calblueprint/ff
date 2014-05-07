@@ -3,6 +3,7 @@ package com.blueprint.ffandroid;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.graphics.Typeface;
+import android.media.Image;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
@@ -47,6 +48,8 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
     private ImageView midCircle;
     /** The bottom circle in the view. */
     private ImageView botCircle;
+    /** The cancle image in the view. */
+    private ImageView cancelCircle;
     /** The status of the donation. */
     private String statusValue;
     /** Determins whether or not the view was created. */
@@ -80,18 +83,18 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         Context context = this.getActivity();
         if (statusValue.equals("complete")) {
             status.setTextColor(context.getResources().getColor(R.color.complete));
-            //setProgress(0);
+            setProgress(2);
         } else if (statusValue.equals("canceled")) {
             status.setTextColor(context.getResources().getColor(R.color.canceled));
-            //setProgress(4);
+            setProgress(3);
         } else if (statusValue.equals("moving")) {
             status.setTextColor(context.getResources().getColor(R.color.moving));
-            //setProgress(0);
+            setProgress(2);
         } else if (statusValue.equals("available")) {
             status.setTextColor(context.getResources().getColor(R.color.available));
-            //setProgress(2);
+            setProgress(0);
         } else if (statusValue.equals("claimed")) {
-            //setProgress(1);
+            setProgress(1);
             status.setTextColor(context.getResources().getColor(R.color.claimed));
         } else {
             status.setTextColor(context.getResources().getColor(R.color.unknown));
@@ -141,6 +144,8 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
         topCircle = (ImageView) rootView.findViewById(R.id.top_circle);
         midCircle = (ImageView) rootView.findViewById(R.id.mid_circle);
         botCircle = (ImageView) rootView.findViewById(R.id.bot_circle);
+        cancelCircle = (ImageView) rootView.findViewById(R.id.bot_circle);
+
         case1 = (TextView) rootView.findViewById(R.id.case_1);
         case2 = (TextView) rootView.findViewById(R.id.case_2);
         case3 = (TextView) rootView.findViewById(R.id.case_3);
@@ -173,15 +178,18 @@ public class DonationDetailFragment extends Fragment implements FragmentLifeCycl
 
     /** Sets the progress bar to the correct STEP. */
     private void setProgress(int step) {
-        topCircle.setImageResource(R.drawable.ic_black_circle);
-        midCircle.setImageResource(R.drawable.ic_black_circle);
-        botCircle.setImageResource(R.drawable.ic_black_circle);
-        if (step == 2) {
-            topCircle.setImageResource(R.drawable.ic_bp_blue_circle);
+        topCircle.clearColorFilter();;
+        midCircle.clearColorFilter();
+        botCircle.clearColorFilter();
+        cancelCircle.clearColorFilter();
+        if (step == 0) {
+            topCircle.setColorFilter(R.color.bp_blue);
         } else if (step == 1) {
-            midCircle.setImageResource(R.drawable.ic_bp_blue_circle);
-        } else if (step == 0) {
-            botCircle.setImageResource(R.drawable.ic_bp_blue_circle);
+            midCircle.setColorFilter(R.color.bp_blue);
+        } else if (step == 2) {
+            botCircle.setColorFilter(R.color.bp_blue);
+        } else {
+            cancelCircle.setColorFilter(R.color.bp_blue);
         }
     }
 
