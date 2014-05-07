@@ -275,5 +275,10 @@ public class NavigationDrawerFragment extends Fragment {
          */
         void onNavigationDrawerItemSelected(int position);
     }
+
+    /** Returns the ActionBarDrawerToggle for the Navigation Drawer. */
+    public ActionBarDrawerToggle getActionBarDrawerToggle() {
+        return mDrawerToggle;
+    }
 }
 

@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWL-un-L0Z" customClass="FFButtonWithStyleGreenH40">
-                                <rect key="frame" x="59" y="208" width="202" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWL-un-L0Z">
+                                <rect key="frame" x="59" y="256" width="202" height="40"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="C8L-zB-76E"/>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bY5-Ce-PZW">
-                                <rect key="frame" x="-29" y="274" width="378" height="64"/>
+                                <rect key="frame" x="-29" y="322" width="378" height="64"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
                                 <state key="normal" image="button_facebook_login.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -56,13 +56,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="login_divider_with_or_230x1.png" translatesAutoresizingMaskIntoConstraints="NO" id="n8A-6T-ePi">
-                                <rect key="frame" x="45" y="256" width="230" height="20"/>
+                                <rect key="frame" x="45" y="304" width="230" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="kfT-CI-geZ"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m2d-5L-XgO">
-                                <rect key="frame" x="45" y="497" width="230" height="33"/>
+                                <rect key="frame" x="45" y="545" width="230" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgd-re-qBK">
                                         <rect key="frame" x="0.0" y="-11" width="230" height="44"/>
@@ -82,17 +82,21 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GyQ-JU-sZj">
-                                <rect key="frame" x="45" y="124" width="230" height="30"/>
+                                <rect key="frame" x="45" y="172" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Knb-w7-QgJ">
-                                <rect key="frame" x="45" y="162" width="230" height="30"/>
+                                <rect key="frame" x="45" y="210" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_blueprint_paw.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Wv-QV-smx">
+                                <rect key="frame" x="95" y="43" width="130" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.88223453439999999" green="0.88223453439999999" blue="0.88223453439999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -122,40 +126,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="signup_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="dm3-kJ-HM2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="signup_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="dm3-kJ-HM2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-0N-w3S" customClass="FFTextFieldWithStyleWhite">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-0N-w3S" customClass="FFTextFieldWithStyleWhite">
                                 <rect key="frame" x="45" y="188" width="230" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Dbi-7T-aOE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="UWk-iZ-0ep" id="FhB-Ox-KW5"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Zk-pC-oEj" customClass="FFTextFieldWithStyleWhite">
-                                <rect key="frame" x="45" y="236" width="230" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Zk-pC-oEj" customClass="FFTextFieldWithStyleWhite">
+                                <rect key="frame" x="45" y="236" width="230" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Qpr-bU-1U2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="UWk-iZ-0ep" id="5Cb-wB-aPZ"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6y-Q7-adg" customClass="FFButtonWithStyleGreenH40">
-                                <rect key="frame" x="45" y="284" width="230" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6y-Q7-adg">
+                                <rect key="frame" x="45" y="274" width="230" height="40"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Lji-sZ-SBE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -170,7 +172,7 @@
                                     <action selector="buttonSignup_onTouchUpInside:" destination="UWk-iZ-0ep" eventType="touchUpInside" id="H2x-MR-eyD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Or sign up using your email address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="4lX-jr-Isj">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Or sign up using your email address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="4lX-jr-Isj">
                                 <rect key="frame" x="45" y="138" width="230" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="7Sc-Ot-B7z"/>
@@ -179,11 +181,8 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuK-Xx-mCd">
-                                <rect key="frame" x="45" y="66" width="230" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="A2j-v9-dQ5"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuK-Xx-mCd">
+                                <rect key="frame" x="45" y="51" width="230" height="64"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
                                 <state key="normal" image="button_facebook_login.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -199,10 +198,10 @@
                                     <segue destination="MSZ-2h-EVm" kind="modal" id="D4R-4D-0GB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGV-PZ-JTC" customClass="FFButtonWithStyleGreenH40">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGV-PZ-JTC">
                                 <rect key="frame" x="45" y="508" width="230" height="40"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -217,7 +216,7 @@
                                     <action selector="buttonLogin_onTouchUpInside:" destination="UWk-iZ-0ep" eventType="touchUpInside" id="QiW-NR-qTK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqE-ee-jml">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqE-ee-jml">
                                 <rect key="frame" x="62" y="479" width="196" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Pbk-c3-WfB"/>
@@ -226,36 +225,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XF4-Sf-iNH">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Register to Donate" id="gaT-YM-5wu">
-                                        <barButtonItem key="rightBarButtonItem" id="9h9-uI-uAD">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jpo-WA-uXg">
-                                                <rect key="frame" x="254" y="-3" width="50" height="50"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                <state key="normal" title="X">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonExit_onTouchUpInside:" destination="UWk-iZ-0ep" eventType="touchUpInside" id="kPx-zd-pgR"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="navigationbar_top_left_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="PM4-A4-FQk">
-                                <rect key="frame" x="5" y="5" width="50" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="VMX-ox-91o"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="divider_230x1.png" translatesAutoresizingMaskIntoConstraints="NO" id="lMl-yd-9Nb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="divider_230x1.png" translatesAutoresizingMaskIntoConstraints="NO" id="lMl-yd-9Nb">
                                 <rect key="frame" x="45" y="106" width="230" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="c83-uP-ifu"/>
@@ -263,39 +233,6 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4lX-jr-Isj" firstAttribute="trailing" secondItem="lMl-yd-9Nb" secondAttribute="trailing" id="0w2-tH-feo"/>
-                            <constraint firstItem="4lX-jr-Isj" firstAttribute="leading" secondItem="xvj-ZR-iMS" secondAttribute="leading" constant="45" id="1xW-zd-2ur"/>
-                            <constraint firstItem="9Zk-pC-oEj" firstAttribute="leading" secondItem="xvj-ZR-iMS" secondAttribute="leading" constant="45" id="2Z3-En-ZfQ"/>
-                            <constraint firstItem="BuK-Xx-mCd" firstAttribute="leading" secondItem="xvj-ZR-iMS" secondAttribute="leading" constant="45" id="3s8-fg-INv"/>
-                            <constraint firstItem="aqE-ee-jml" firstAttribute="leading" secondItem="xvj-ZR-iMS" secondAttribute="leading" constant="62" id="65y-Fo-cIc"/>
-                            <constraint firstAttribute="bottom" secondItem="MGV-PZ-JTC" secondAttribute="bottom" constant="20" symbolic="YES" id="6nf-k2-5YZ"/>
-                            <constraint firstItem="MGV-PZ-JTC" firstAttribute="leading" secondItem="xvj-ZR-iMS" secondAttribute="leading" constant="45" id="Ing-PE-T5A"/>
-                            <constraint firstItem="QMV-0N-w3S" firstAttribute="top" secondItem="xvj-ZR-iMS" secondAttribute="top" constant="188" id="KSh-rp-9jm"/>
-                            <constraint firstItem="MGV-PZ-JTC" firstAttribute="top" secondItem="aqE-ee-jml" secondAttribute="bottom" constant="8" symbolic="YES" id="Lol-Qt-HKH"/>
-                            <constraint firstItem="lMl-yd-9Nb" firstAttribute="leading" secondItem="xvj-ZR-iMS" secondAttribute="leading" constant="45" id="MY4-OE-BAN"/>
-                            <constraint firstItem="J6y-Q7-adg" firstAttribute="trailing" secondItem="9Zk-pC-oEj" secondAttribute="trailing" id="Mgp-Dm-DjC"/>
-                            <constraint firstItem="PM4-A4-FQk" firstAttribute="centerY" secondItem="XF4-Sf-iNH" secondAttribute="centerY" id="R0h-ex-xIs"/>
-                            <constraint firstItem="QMV-0N-w3S" firstAttribute="leading" secondItem="xvj-ZR-iMS" secondAttribute="leading" constant="45" id="RH9-1f-RRd"/>
-                            <constraint firstItem="J6y-Q7-adg" firstAttribute="top" secondItem="xvj-ZR-iMS" secondAttribute="top" constant="284" id="TGR-Sc-ejn"/>
-                            <constraint firstItem="XF4-Sf-iNH" firstAttribute="leading" secondItem="xvj-ZR-iMS" secondAttribute="leading" id="Trs-bo-W6J"/>
-                            <constraint firstItem="9Zk-pC-oEj" firstAttribute="top" secondItem="xvj-ZR-iMS" secondAttribute="top" constant="236" id="UYe-6Y-2xb"/>
-                            <constraint firstItem="MGV-PZ-JTC" firstAttribute="centerX" secondItem="aqE-ee-jml" secondAttribute="centerX" id="WJo-Rf-8Wi"/>
-                            <constraint firstItem="dm3-kJ-HM2" firstAttribute="leading" secondItem="xvj-ZR-iMS" secondAttribute="leading" id="ZRp-dK-k4K"/>
-                            <constraint firstItem="QMV-0N-w3S" firstAttribute="trailing" secondItem="9Zk-pC-oEj" secondAttribute="trailing" id="aTY-8p-uKM"/>
-                            <constraint firstItem="lMl-yd-9Nb" firstAttribute="top" secondItem="xvj-ZR-iMS" secondAttribute="top" constant="106" id="azD-DG-UlK"/>
-                            <constraint firstAttribute="bottom" secondItem="aqE-ee-jml" secondAttribute="bottom" constant="68" id="bMi-sc-6YR"/>
-                            <constraint firstItem="PM4-A4-FQk" firstAttribute="leading" secondItem="xvj-ZR-iMS" secondAttribute="leading" constant="5" id="bNA-1Q-gVu"/>
-                            <constraint firstItem="dm3-kJ-HM2" firstAttribute="top" secondItem="xvj-ZR-iMS" secondAttribute="top" id="gy7-E7-10k"/>
-                            <constraint firstItem="XF4-Sf-iNH" firstAttribute="top" secondItem="xvj-ZR-iMS" secondAttribute="top" id="jeg-UC-5sT"/>
-                            <constraint firstItem="QMV-0N-w3S" firstAttribute="trailing" secondItem="4lX-jr-Isj" secondAttribute="trailing" id="k2F-JJ-Gb3"/>
-                            <constraint firstItem="MGV-PZ-JTC" firstAttribute="trailing" secondItem="J6y-Q7-adg" secondAttribute="trailing" id="mr9-mt-RzO"/>
-                            <constraint firstItem="4lX-jr-Isj" firstAttribute="top" secondItem="xvj-ZR-iMS" secondAttribute="top" constant="138" id="mw8-dL-eIv"/>
-                            <constraint firstItem="BuK-Xx-mCd" firstAttribute="top" secondItem="xvj-ZR-iMS" secondAttribute="top" constant="66" id="sUr-Lo-8Uc"/>
-                            <constraint firstItem="dm3-kJ-HM2" firstAttribute="bottom" secondItem="xvj-ZR-iMS" secondAttribute="bottom" id="tYD-PJ-wI8"/>
-                            <constraint firstItem="XF4-Sf-iNH" firstAttribute="trailing" secondItem="xvj-ZR-iMS" secondAttribute="trailing" id="tqb-PZ-cd4"/>
-                            <constraint firstItem="J6y-Q7-adg" firstAttribute="leading" secondItem="xvj-ZR-iMS" secondAttribute="leading" constant="45" id="uo1-EY-QCI"/>
-                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -325,37 +262,37 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="signup_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="pJi-6W-xfK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JrJ-Iy-ocd" customClass="FFTextFieldWithStyleWhite">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JrJ-Iy-ocd" customClass="FFTextFieldWithStyleWhite">
                                 <rect key="frame" x="45" y="106" width="230" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bo6-qX-gv0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="whd-GA-U4A" id="xY9-L8-umU"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Organization / Affiliation" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NUu-as-nK6" customClass="FFTextFieldWithStyleWhite">
-                                <rect key="frame" x="45" y="257" width="230" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Organization / Affiliation" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NUu-as-nK6" customClass="FFTextFieldWithStyleWhite">
+                                <rect key="frame" x="45" y="257" width="230" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WkU-xW-j96"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="whd-GA-U4A" id="7kU-ga-UeD"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Phone Number" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9D9-mZ-tPT" customClass="FFTextFieldWithStyleWhite">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile Phone Number" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9D9-mZ-tPT" customClass="FFTextFieldWithStyleWhite">
                                 <rect key="frame" x="45" y="209" width="230" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7D9-39-iXF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="whd-GA-U4A" id="GOO-h2-N8g"/>
@@ -376,13 +313,13 @@
                                     <constraint firstAttribute="height" constant="38" id="Rmg-Wu-GSQ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6O-4O-2At" customClass="FFButtonWithStyleGreenH40">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6O-4O-2At">
                                 <rect key="frame" x="45" y="309" width="230" height="40"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PlK-dT-ps7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal" title="Complete Registration">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -466,7 +403,6 @@
         <!--AUTFacebookLoginViewController-->
         <scene sceneID="gCh-Hc-MCI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UDe-Xr-C0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AUTFacebookLoginViewController" id="MSZ-2h-EVm" userLabel="AUTFacebookLoginViewController" customClass="AUTFacebookLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vbb-T5-lgJ"/>
@@ -498,6 +434,7 @@
                         <outlet property="webView" destination="FYj-kJ-n0A" id="nM5-Cs-AnO"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UDe-Xr-C0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1086" y="208"/>
         </scene>
@@ -528,13 +465,13 @@
                                 <color key="textColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR0-pw-CRG" customClass="FFButtonWithStyleGreenH40">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR0-pw-CRG">
                                 <rect key="frame" x="45" y="130" width="230" height="40"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="mBH-mX-9S4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="LOG IN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -549,13 +486,13 @@
                                     <segue destination="xev-t7-JVc" kind="modal" id="ogx-Ka-Qmx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTa-Xa-Tmt" customClass="FFButtonWithStyleGreenH40">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTa-Xa-Tmt">
                                 <rect key="frame" x="45" y="218" width="230" height="47"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SKx-x6-cvf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="SIGN UP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -621,25 +558,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="signup_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="ARe-AC-6iC">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pmT-Fu-cMK" customClass="FFTextFieldWithStyleWhite">
-                                <rect key="frame" x="45" y="146" width="231" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pmT-Fu-cMK" customClass="FFTextFieldWithStyleWhite">
+                                <rect key="frame" x="45" y="146" width="231" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="mcm-ak-tIe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="AuC-Mm-0gl" id="MTP-nm-ZY1"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CX9-ec-nCX" customClass="FFButtonWithStyleGreenH40">
-                                <rect key="frame" x="45" y="219" width="231" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CX9-ec-nCX">
+                                <rect key="frame" x="45" y="191" width="231" height="40"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.59607843140000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TpB-9X-XTC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Send me the instructions">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -663,43 +600,11 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwE-Ea-vlY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Forgot Password" id="gvj-FZ-mcS">
-                                        <barButtonItem key="rightBarButtonItem" id="4Sk-LL-gPs">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qeX-PT-TLu">
-                                                <rect key="frame" x="254" y="-3" width="50" height="50"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                <state key="normal" title="X">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonExit_onTouchUpInside:" destination="AuC-Mm-0gl" eventType="touchUpInside" id="Yv4-4m-Mdy"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="navigationbar_top_left_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="o5n-vK-H5i">
-                                <rect key="frame" x="5" y="5" width="50" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="PCx-pj-90b"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xwE-Ea-vlY" firstAttribute="top" secondItem="6Ev-3t-T1V" secondAttribute="top" id="0fL-hf-IXa"/>
                             <constraint firstItem="S0T-qw-faE" firstAttribute="trailing" secondItem="pmT-Fu-cMK" secondAttribute="trailing" id="4cx-FM-pfX"/>
-                            <constraint firstItem="xwE-Ea-vlY" firstAttribute="leading" secondItem="6Ev-3t-T1V" secondAttribute="leading" id="AgW-Bo-lAn"/>
                             <constraint firstItem="ARe-AC-6iC" firstAttribute="bottom" secondItem="6Ev-3t-T1V" secondAttribute="bottom" id="FfQ-VL-hBe"/>
-                            <constraint firstItem="o5n-vK-H5i" firstAttribute="centerY" secondItem="xwE-Ea-vlY" secondAttribute="centerY" id="GHQ-Xc-HKH"/>
                             <constraint firstItem="ARe-AC-6iC" firstAttribute="top" secondItem="6Ev-3t-T1V" secondAttribute="top" id="JLO-Sd-h6E"/>
                             <constraint firstItem="CX9-ec-nCX" firstAttribute="leading" secondItem="6Ev-3t-T1V" secondAttribute="leading" constant="45" id="K6U-QF-ZJ5"/>
                             <constraint firstItem="ARe-AC-6iC" firstAttribute="leading" secondItem="6Ev-3t-T1V" secondAttribute="leading" id="LHO-YD-5Hh"/>
@@ -708,8 +613,6 @@
                             <constraint firstItem="S0T-qw-faE" firstAttribute="leading" secondItem="6Ev-3t-T1V" secondAttribute="leading" constant="45" id="YRY-9P-MsT"/>
                             <constraint firstItem="CX9-ec-nCX" firstAttribute="trailing" secondItem="pmT-Fu-cMK" secondAttribute="trailing" id="fVi-GA-9Sx"/>
                             <constraint firstItem="CX9-ec-nCX" firstAttribute="top" secondItem="6Ev-3t-T1V" secondAttribute="top" constant="219" id="l1J-da-fUO"/>
-                            <constraint firstItem="xwE-Ea-vlY" firstAttribute="trailing" secondItem="6Ev-3t-T1V" secondAttribute="trailing" id="rMR-iJ-2Fg"/>
-                            <constraint firstItem="o5n-vK-H5i" firstAttribute="leading" secondItem="6Ev-3t-T1V" secondAttribute="leading" constant="5" id="ru0-WW-zlS"/>
                             <constraint firstItem="pmT-Fu-cMK" firstAttribute="top" secondItem="S0T-qw-faE" secondAttribute="bottom" constant="8" symbolic="YES" id="ycv-KA-aeB"/>
                         </constraints>
                     </view>
@@ -747,6 +650,7 @@
     <resources>
         <image name="button_facebook_login.png" width="208" height="50"/>
         <image name="divider_230x1.png" width="230" height="1"/>
+        <image name="ic_blueprint_paw.png" width="288" height="288"/>
         <image name="login_divider_with_or_230x1.png" width="230" height="10"/>
         <image name="navigationbar_top_left_icon.png" width="50" height="31"/>
         <image name="signup_background.png" width="320" height="480"/>
@@ -758,8 +662,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="lvi-8s-AvD"/>
         <segue reference="ogx-Ka-Qmx"/>
         <segue reference="MWH-JG-fuH"/>
+        <segue reference="lvi-8s-AvD"/>
     </inferredMetricsTieBreakers>
 </document>

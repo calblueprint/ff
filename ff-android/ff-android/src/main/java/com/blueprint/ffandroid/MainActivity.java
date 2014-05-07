@@ -21,7 +21,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.view.MenuItem;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -402,9 +402,25 @@ public class MainActivity extends ActionBarActivity
         // Your implementation here.
     }
 
+    /** Updates the DetailView for Donation D. */
     void updateDetailView(Donation d){
         this.donationDetailFragment.updateView(d);
+        FragmentManager fm = getSupportFragmentManager();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
         replaceFragment(donationDetailFragment);
+    }
 
+    /** Activates when MenuItem Item is selected. If it is in a Detail View
+     * of a donation the activity bar turns into a back button. */
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (donationDetailFragment.isVisible()) {
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setIcon(R.drawable.ic_blueprint_paw);
+            replaceFragment(donationListFragment);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 }

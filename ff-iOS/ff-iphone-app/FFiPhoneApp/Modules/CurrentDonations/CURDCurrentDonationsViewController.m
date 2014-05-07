@@ -140,20 +140,20 @@
 			[self.viewTableViewFooter setHidden:YES];
 			[self.tableViewCurrentDonations reloadData];
 			if (isNoMoreData) {
-				// Create a label as the table view's footer to inform user
-				//  that there are no more data
-				UIView *v = self.tableViewCurrentDonations.tableFooterView;
-				UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(v.frame.origin.x,
-																																	 v.frame.origin.y,
-																																	 v.frame.size.width,
-																																	 v.frame.size.height)];
-				[label setText:@"No more donations"];
-				[label setTextAlignment:NSTextAlignmentCenter];
-				[label setTextColor:[UIColor lightGrayColor]];
-				[label setFont:[UIFont fontWithName:@"Verdana-Bold" size:12.0f]];
-				[label setBackgroundColor:self.tableViewCurrentDonations.tableFooterView.backgroundColor];
-				
-				self.tableViewCurrentDonations.tableFooterView = label;
+//				// Create a label as the table view's footer to inform user
+//				//  that there are no more data
+//				UIView *v = self.tableViewCurrentDonations.tableFooterView;
+//				UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(v.frame.origin.x,
+//																																	 v.frame.origin.y,
+//																																	 v.frame.size.width,
+//																																	 v.frame.size.height)];
+//				[label setText:@"No more donations"];
+//				[label setTextAlignment:NSTextAlignmentCenter];
+//				[label setTextColor:[UIColor lightGrayColor]];
+//				[label setFont:[UIFont fontWithName:@"Verdana-Bold" size:12.0f]];
+//				[label setBackgroundColor:self.tableViewCurrentDonations.tableFooterView.backgroundColor];
+//				
+//				self.tableViewCurrentDonations.tableFooterView = label;
 			}
 		} failure:^(FFError *error) {
 			[FFUI showPopupMessageWithTitle:@"Error" message:error.errorDescription];
@@ -173,15 +173,15 @@
 	//
 	// Display a placeholder message when the table view is empty
 	//
-	if ([self.moduleController.donationContainerCollection count] == 0) {
-		UIImageView *placeholderImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kStyleDonationTablePlaceholderImage]];
-		[placeholderImageView setContentMode:UIViewContentModeScaleAspectFill];
-		[self.tableViewCurrentDonations setBackgroundView:placeholderImageView];
-	}
-	else {
-		[self.tableViewCurrentDonations setBackgroundView:nil];
-	}
-	
+//	if ([self.moduleController.donationContainerCollection count] == 0) {
+//		UIImageView *placeholderImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kStyleDonationTablePlaceholderImage]];
+//		[placeholderImageView setContentMode:UIViewContentModeScaleAspectFill];
+//		[self.tableViewCurrentDonations setBackgroundView:placeholderImageView];
+//	}
+//	else {
+//		[self.tableViewCurrentDonations setBackgroundView:nil];
+//	}
+//	
 	return 3;
 	//    return [self.moduleController.donationContainerCollection count];
 }
