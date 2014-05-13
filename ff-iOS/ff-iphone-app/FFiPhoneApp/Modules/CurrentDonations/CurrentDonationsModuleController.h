@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "ModuleControllerProtocol.h"
+#import "MMDrawerController.h"
 
 @class FFError, FFTableCellDataContainer, FFDataDonation;
 
@@ -16,6 +17,7 @@
 
 @property (strong, nonatomic) UIStoryboard *storyboard;
 @property (strong, nonatomic) NSMutableArray *donationContainerCollection;
+@property (strong, nonatomic) MMDrawerController *mmDrawerController;
 
 - (UINavigationController *)instantiateCurrentDonationsNavigationViewController;
 - (void)setDonationContainerCollectionWithDonations:(NSArray *)donations;

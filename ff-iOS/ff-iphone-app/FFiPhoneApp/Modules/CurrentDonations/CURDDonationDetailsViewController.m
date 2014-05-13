@@ -25,16 +25,17 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelAddress;
 @property (strong, nonatomic) IBOutlet UILabel *labelAvailableDate;
 @property (strong, nonatomic) IBOutlet UILabel *labelAvailableTime;
-@property (strong, nonatomic) IBOutlet UIView *iconForStatusClaimed;
-@property (strong, nonatomic) IBOutlet UIView *iconForStatusPickedUp;
-@property (strong, nonatomic) IBOutlet UILabel *labelStatusClaimed;
-@property (strong, nonatomic) IBOutlet UILabel *labelInfoForStatusClaimed;
+@property (strong, nonatomic) IBOutlet UIImageView *iconForStatusAwaitingDriver;
+@property (strong, nonatomic) IBOutlet UIImageView *iconForStatusAwaitingPickup;
+@property (strong, nonatomic) IBOutlet UIImageView *iconForStatusPickedUp;
+@property (strong, nonatomic) IBOutlet UIImageView *iconForStatusCanceled;
+@property (strong, nonatomic) IBOutlet UILabel *labelStatusAwaitingDriverAssignment;
+@property (strong, nonatomic) IBOutlet UILabel *labelStatusAwaitingPickup;
 @property (strong, nonatomic) IBOutlet UILabel *labelStatusPickedUp;
-@property (strong, nonatomic) IBOutlet UILabel *labelInfoForStatusPickedUp;
+@property (strong, nonatomic) IBOutlet UILabel *labelStatusCanceled;
 @property (strong, nonatomic) IBOutlet UIButton *buttonCancelDonation;
 
 - (IBAction)buttonCancelDonation_onTouchUpInsde:(id)sender;
-- (IBAction)buttonBack_onTouchUpInside:(id)sender;
 
 @end
 
@@ -45,95 +46,79 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [self.navigationController.navigationBar setTintColor:[UIColor darkGrayColor]];
+    
     [self.labelDonationTitle setText:self.donation.donationTitle];
+    [self.labelDonationTitle setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:25]];
     [self.labelStatusText setText:self.donation.statusText];
+    [self.labelStatusText setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:16]];
     [self.labelTotalLBS setText:[NSString stringWithFormat:@"%u pounds", self.donation.totalLBS]];
+    [self.labelTotalLBS setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:16]];
     
     // Show meal photo
-    if (self.donation.mealPhoto)
-    {
-        // Try to load meal photo from image store
-        UIImage *mealPhotoThumbImage = [[FFImageStore sharedStore] imageForKey:self.donation.mealPhoto.thumbnailURL];
-        
-        // If the image store doesn't have it, download it asynchronously.
-        if (!mealPhotoThumbImage)
-        {
-            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.donation.mealPhoto.thumbnailURL]];
-            __weak __typeof(&*self)weakSelf = self;
-            [self.imageViewMealPhoto setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                __strong __typeof(&*weakSelf)strongSelf = weakSelf;
-                
-                // Save the downloaded image into image store
-                [[FFImageStore sharedStore] setImage:image forKey:strongSelf.donation.mealPhoto.thumbnailURL];
-                // Show meal photo
-                [strongSelf.imageViewMealPhoto setImage:image];
-            } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                __strong __typeof(&*weakSelf)strongSelf = weakSelf;
-                /* Failed to download image */
-                
-                // Use default image
-                [strongSelf.imageViewMealPhoto setImage:[UIImage imageNamed:kCurrentDonationsDefaultMealPhoto]];
-            }];
-        }
-        else {
-            [self.imageViewMealPhoto setImage:mealPhotoThumbImage];
-        }
-    }
-    else {
-        // Use default image
-        [self.imageViewMealPhoto setImage:[UIImage imageNamed:kCurrentDonationsDefaultMealPhoto]];
-    }
+    self.imageViewMealPhoto.contentMode = UIViewContentModeScaleAspectFill;
+    self.imageViewMealPhoto.clipsToBounds = YES;
+    [self.imageViewMealPhoto setImage:[UIImage imageNamed:self.donation.mealPhoto.imageURL]];
+    
     
     [self.labelAddress setText:[self.donation.location formattedAddress]];
     [self.labelAvailableDate setText:[self.donation.availableStart ff_stringWithFormat:@"LLLL d"]];
     [self.labelAvailableTime setText:[NSString stringWithFormat:@"%@ - %@", [self.donation.availableStart ff_stringWithFormat:@"hh:mm a"], [self.donation.availableEnd ff_stringWithFormat:@"hh:mm a"]]];
     
-    //
+    [self.buttonCancelDonation.titleLabel setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:18]];
+    
+    //Set Donation status icons and labels
+    [self.labelStatusAwaitingDriverAssignment setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:16]];
+    [self.labelStatusAwaitingDriverAssignment setTextColor:[UIColor lightGrayColor]];
+    [self.labelStatusAwaitingPickup setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:16]];
+    [self.labelStatusAwaitingPickup setTextColor:[UIColor lightGrayColor]];
+    [self.labelStatusPickedUp setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:16]];
+    [self.labelStatusPickedUp setTextColor:[UIColor lightGrayColor]];
+    [self.labelStatusCanceled setFont:[UIFont fontWithName:@"ProximaNovaA-Regular" size:16]];
+    [self.labelStatusCanceled setTextColor:[UIColor lightGrayColor]];
+    
+    [self.iconForStatusAwaitingDriver setImage:[[UIImage imageNamed:@"find_user-32.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [self.iconForStatusAwaitingDriver setTintColor:[UIColor lightGrayColor]];
+    [self.iconForStatusAwaitingPickup setImage:[[UIImage imageNamed:@"cars-32.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [self.iconForStatusAwaitingPickup setTintColor:[UIColor lightGrayColor]];
+    [self.iconForStatusPickedUp setImage:[[UIImage imageNamed:@"checkmark-32.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [self.iconForStatusPickedUp setTintColor:[UIColor lightGrayColor]];
+    [self.iconForStatusCanceled setImage:[[UIImage imageNamed:@"cancel-32.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [self.iconForStatusCanceled setTintColor:[UIColor lightGrayColor]];
+    
+    
     // Donation status
-    //
-    // Hide the Cancel Donation button by default, show it only if donationStatus == 0
-    [self.buttonCancelDonation setHidden:YES];
     int donationStatus = self.donation.statusCode;
-    FFDataDelivery *delivery = self.donation.delivery;
-    //  Donation claimed?
-    if (donationStatus == 0)
-    {
-        [self.labelStatusClaimed setText:@"Waiting to assign driver for pick up"];
-        [self.labelInfoForStatusClaimed setText:@"Once assigned, you'll be given contact info and the estimated arrival time of the driver."];
-        [self setBgOrange:self.iconForStatusClaimed];
-        [self.buttonCancelDonation setHidden:NO];
-    }
-    else
-    {
-        FFDataUser *recoveryOrg = delivery.recoveryOrg;
-        
-        [self.labelStatusClaimed setText:@"Driver assigned"];
-        [self.labelInfoForStatusClaimed setText:[NSString stringWithFormat:@"%@ (%@)", recoveryOrg.fullName, recoveryOrg.mobilePhoneNumber]];
-        [self setBgGreen:self.iconForStatusClaimed];
-    }
-    // Donation picked up?
-    if (donationStatus < 1)
-    {
-        [self.labelStatusPickedUp setText:@"Awaiting Pick Up"];
-        [self.labelInfoForStatusPickedUp setText:@"Once your donation is picked up, it will be taken to a nearby recipient organization."];
-    }
-    else if (donationStatus == 1)
-    {
-        // pickup date/time
-        if (!delivery.pickupTime) {
-            [self.labelInfoForStatusPickedUp setText:@""];
-        }
-        else {
-            [self.labelInfoForStatusPickedUp setText:[NSString stringWithFormat:@"Estimated arrival time: %@ at %@", [delivery.pickupTime ff_stringWithFormat:@"MMMM dd"], [delivery.pickupTime ff_stringWithFormat:@"hh:mm a"]]];
-        }
-        [self.labelStatusPickedUp setText:@"Awaiting Pick-up and Delivery"];
-        [self setBgOrange:self.iconForStatusPickedUp];
-    }
-    else
-    {
-        [self.labelStatusPickedUp setText:@"Delivery Confirmed"];
-        [self.labelInfoForStatusPickedUp setText:@""];
-        [self setBgGreen:self.iconForStatusPickedUp];
+    NSLog(@"Donation status: %d", donationStatus);
+    //FFDataDelivery *delivery = self.donation.delivery;
+    
+    /**
+     Donation Statuses:
+     1 = awaiting driver assignment
+     2 = awaiting pickup
+     3 = picked up
+     4 = canceled
+     */
+    
+    switch (donationStatus) {
+        case 1:
+            [self.class setTintBlue:self.iconForStatusAwaitingDriver];
+            [self.class setTextBlue:self.labelStatusAwaitingDriverAssignment];
+            break;
+        case 2:
+            [self.class setTintBlue:self.iconForStatusAwaitingPickup];
+            [self.class setTextBlue:self.labelStatusAwaitingPickup];
+            break;
+        case 3:
+            [self.class setTintBlue:self.iconForStatusPickedUp];
+            [self.class setTextBlue:self.labelStatusPickedUp];
+            break;
+        case 4:
+            [self.class setTintBlue:self.iconForStatusCanceled];
+            [self.class setTextBlue:self.labelStatusCanceled];
+            break;
+        default:
+            break;
     }
 }
 
@@ -202,14 +187,16 @@
     }];
 }
 
-- (void)setBgGreen:(UIView *)view
++ (void)setTintBlue:(UIImageView *)imageView
 {
-    [view setBackgroundColor:[FFUI colorFromHexString:@"#00BE56"]];
+    UIColor *bpBlue = [UIColor colorWithRed:27.0/255 green:117.0/255 blue:188.0/255 alpha:1.0];
+    [imageView setTintColor:bpBlue];
 }
 
-- (void)setBgOrange:(UIView *)view
++ (void)setTextBlue:(UILabel *)label
 {
-    [view setBackgroundColor:[FFUI colorFromHexString:@"#F98200"]];
+    UIColor *bpBlue = [UIColor colorWithRed:27.0/255 green:117.0/255 blue:188.0/255 alpha:1.0];
+    [label setTextColor:bpBlue];
 }
 
 
