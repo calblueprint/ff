@@ -19,6 +19,7 @@
 
 @interface CURDCurrentDonationsViewController ()
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewCurrentDonations;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) IBOutlet UIView *viewTableViewFooter;
@@ -35,6 +36,10 @@
 {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    //Configure Button appearance
+    [self.menuButton setImage:[UIImage imageNamed:@"menu.png"]];
+    [self.menuButton setTintColor:[UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:0.65]];
 	
 	if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
 		self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -236,6 +241,10 @@
 }
 
 - (FFDataDonation *) testDonationForIndex:(int)index {
+    NSDate *date = [[NSDate alloc] initWithTimeIntervalSinceNow:NSTimeIntervalSince1970];
+    FFDataLocation *location = [[FFDataLocation alloc] init];
+    [location setStreetAddressOne:@"12345 First Street"];
+    
 	FFDataDonation *donation = [[FFDataDonation alloc] init];
 	FFDataImage *dataImage = [[FFDataImage alloc] init];
 	donation.mealPhoto = dataImage;
@@ -243,14 +252,29 @@
 		case 0:
 			donation.donationTitle = @"Red Velvet Cake";
 			dataImage.imageURL = @"cake.jpg";
+            donation.statusCode = 1;
+            donation.availableStart = date;
+            donation.availableEnd = date;
+            donation.statusText = @"Fresh";
+            donation.location = location;
 			break;
 		case 1:
 			donation.donationTitle = @"Strawberry Pie";
 			dataImage.imageURL = @"pie.jpeg";
+            donation.statusCode = 2;
+            donation.availableStart = date;
+            donation.availableEnd = date;
+            donation.statusText = @"Not so fresh";
+            donation.location = location;
 			break;
 		case 2:
 			donation.donationTitle = @"Cookies";
 			dataImage.imageURL = @"cookie.jpg";
+            donation.statusCode = 3;
+            donation.availableStart = date;
+            donation.availableEnd = date;
+            donation.statusText = @"status";
+            donation.location = location;
 			break;
 		default:
 			break;
@@ -260,6 +284,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CURDDonationDetailsViewController *viewController = [self.moduleController.storyboard instantiateViewControllerWithIdentifier:@"CURDDonationDetailsViewController"];
+    [viewController setModuleController:self.moduleController];
+    [viewController setCurrentDonationsViewController:self];
+    // TODO: Populate detailed view with data
+    [viewController setDonation:[self testDonationForIndex:indexPath.row]];
+    NSLog(@"image: %@", [self testDonationForIndex:indexPath.row].mealPhoto.imageURL);
+    [self.navigationController pushViewController:viewController animated:YES];
 //	FFTableCellDataContainer *donationContainer = [self.moduleController.donationContainerCollection objectAtIndex:indexPath.row];
 //	if (donationContainer.didSelectRowBlock) {
 //		donationContainer.didSelectRowBlock(self, tableView, indexPath);
@@ -274,6 +305,11 @@
 //		[viewController setDonation:donationContainer.data];
 //		[self.navigationController pushViewController:viewController animated:YES];
 //	}
+}
+
+- (IBAction)menuButtonPressed:(id)sender
+{
+    [self.moduleController.mmDrawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 @end

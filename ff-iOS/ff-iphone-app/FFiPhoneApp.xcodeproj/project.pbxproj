@@ -16,6 +16,9 @@
 		0987D9B718FC7CE7001510F8 /* donatelist.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B218FC7CE7001510F8 /* donatelist.png */; };
 		0987D9B818FC7CE7001510F8 /* donate.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B318FC7CE7001510F8 /* donate.png */; };
 		0987D9B918FC7CE7001510F8 /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 0987D9B418FC7CE7001510F8 /* account.png */; };
+		09C80B23192219B90053CC68 /* checkmark-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C80B1F192219B90053CC68 /* checkmark-32.png */; };
+		09C80B24192219B90053CC68 /* cars-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C80B20192219B90053CC68 /* cars-32.png */; };
+		09C80B25192219B90053CC68 /* find_user-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C80B21192219B90053CC68 /* find_user-32.png */; };
 		9B1ABD4217AE50D90041CA0F /* POSDChooseAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1ABD4117AE50D90041CA0F /* POSDChooseAmountViewController.m */; };
 		9B28D32E17AC7105001D742D /* AuthenticationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B28D32D17AC7104001D742D /* AuthenticationConstants.m */; };
 		9B4F18EC17A59826005516A0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4F18EB17A59825005516A0 /* ImageIO.framework */; };
@@ -332,11 +335,7 @@
 
 /* Begin PBXFileReference section */
 		01AD18368F1B46E9A38A5085 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		090AB5E819198B830026FB72 /* checkmark-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark-32.png"; sourceTree = "<group>"; };
-		090AB5EA19198B9D0026FB72 /* cars-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cars-32.png"; sourceTree = "<group>"; };
-		090AB5EC19198BA90026FB72 /* find_user-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find_user-32.png"; sourceTree = "<group>"; };
 		090AB5EE19198BBD0026FB72 /* cancel-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-32.png"; sourceTree = "<group>"; };
-		090AB5EF19198BBD0026FB72 /* decision-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "decision-32.png"; sourceTree = "<group>"; };
 		0958EC1A190DF868009412A4 /* ic_blueprint_paw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_blueprint_paw.png; sourceTree = "<group>"; };
 		0958EC1E190E16DF009412A4 /* menu-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button@2x.png"; sourceTree = "<group>"; };
 		0958EC20190E1711009412A4 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
@@ -347,6 +346,9 @@
 		0987D9B218FC7CE7001510F8 /* donatelist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donatelist.png; sourceTree = "<group>"; };
 		0987D9B318FC7CE7001510F8 /* donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donate.png; sourceTree = "<group>"; };
 		0987D9B418FC7CE7001510F8 /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account.png; sourceTree = "<group>"; };
+		09C80B1F192219B90053CC68 /* checkmark-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark-32.png"; sourceTree = "<group>"; };
+		09C80B20192219B90053CC68 /* cars-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cars-32.png"; sourceTree = "<group>"; };
+		09C80B21192219B90053CC68 /* find_user-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find_user-32.png"; sourceTree = "<group>"; };
 		1F46002C458C4125A3A1E6B5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		9B025A7B17A0EEC6004960C4 /* FFRecordAuthToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecordAuthToken.h; sourceTree = "<group>"; };
 		9B025A7C17A0EEC7004960C4 /* FFRecordAuthToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecordAuthToken.m; sourceTree = "<group>"; };
@@ -757,10 +759,9 @@
 			isa = PBXGroup;
 			children = (
 				090AB5EE19198BBD0026FB72 /* cancel-32.png */,
-				090AB5EF19198BBD0026FB72 /* decision-32.png */,
-				090AB5EC19198BA90026FB72 /* find_user-32.png */,
-				090AB5EA19198B9D0026FB72 /* cars-32.png */,
-				090AB5E819198B830026FB72 /* checkmark-32.png */,
+				09C80B1F192219B90053CC68 /* checkmark-32.png */,
+				09C80B20192219B90053CC68 /* cars-32.png */,
+				09C80B21192219B90053CC68 /* find_user-32.png */,
 			);
 			name = donationIcons;
 			sourceTree = "<group>";
@@ -1691,6 +1692,7 @@
 				9B5B223117A851EC0003B1CD /* AppLoaderStoryboard.storyboard in Resources */,
 				9B5B233117A8D9A30003B1CD /* navigationbar_background@2x.png in Resources */,
 				E4B0A1B419159C480034C32B /* Default@2x.png in Resources */,
+				09C80B24192219B90053CC68 /* cars-32.png in Resources */,
 				9BFA588917A9D62B00908526 /* postdonation_button_howmuch_normal.png in Resources */,
 				9BFA588B17A9D62B00908526 /* postdonation_button_picture_highlighted.png in Resources */,
 				9BFA588C17A9D62B00908526 /* postdonation_button_picture_normal.png in Resources */,
@@ -1793,6 +1795,7 @@
 				9B64E1D017BB0A790051E8F1 /* button_red_30x30_disabled.png in Resources */,
 				9B64E1D117BB0A790051E8F1 /* button_red_30x30_disabled@2x.png in Resources */,
 				9B64E1D217BB0A790051E8F1 /* button_red_30x30_highlighted.png in Resources */,
+				09C80B23192219B90053CC68 /* checkmark-32.png in Resources */,
 				9B64E1D317BB0A790051E8F1 /* button_red_30x30_highlighted@2x.png in Resources */,
 				9B64E1D417BB0A790051E8F1 /* button_red_30x30_normal.png in Resources */,
 				9B64E1D517BB0A790051E8F1 /* button_red_30x30_normal@2x.png in Resources */,
@@ -1803,6 +1806,7 @@
 				9B64E1DA17BB0A790051E8F1 /* button_red_40x40_normal.png in Resources */,
 				9B64E1DB17BB0A790051E8F1 /* button_red_40x40_normal@2x.png in Resources */,
 				9B64E1DE17BB35C80051E8F1 /* donation_table_placeholder.png in Resources */,
+				09C80B25192219B90053CC68 /* find_user-32.png in Resources */,
 				9B64E1DF17BB35C80051E8F1 /* donation_table_placeholder@2x.png in Resources */,
 				9BC778A717BB80E000ADFD9A /* SocialShareStoryboard.storyboard in Resources */,
 				9BC778B617BB8D0D00ADFD9A /* sharedonation_default_message_picture.png in Resources */,
