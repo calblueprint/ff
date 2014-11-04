@@ -1,5 +1,7 @@
 This Android and iOS application lets you donate your excess food to local organizations serving the hungry. Any organization committed to helping relieve hunger in their community is welcome to use this app.
 
+See a video demo of the Android app here:
+[![FF Video](http://img.youtube.com/vi/Asx2FZrB1Jg/0.jpg)](http://www.youtube.com/watch?v=Asx2FZrB1Jg)
 
 Who We Are
 ----
